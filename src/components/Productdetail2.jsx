@@ -1895,7 +1895,7 @@ import Bar_Light_info from "../assets/Bar_Light.png";
 import Ring_Light_info from "../assets/Ring_Light.png";
 import Dome_Light_info from "../assets/Dome_Light.png";
 import Flat_Diffused_Light_With_Center_Hole_info from "../assets/Flat_Direct_Diffused_Light_With_Center_Hole.png";
-import Flat_Diffused_Light_info from "../assets/Flat_Direct_Diffused_Light.png";
+import Flat_Diffused_Light_info from "../assets/Flat_DIrect_Diffused_Light.png";
 import Indirect_Flat_Light_info from "../assets/Indirect_Flat_Light.png";
 import Back_Light_info from "../assets/Back_Light.png";
 import Spot_Light_info from "../assets/Spot_Light.png";
