@@ -1969,10 +1969,10 @@ import SpotLight5 from "../assets/SpotLightGallery/SpotLightImg(9).webp";
 
 // import TunnelLight1 from "../assets/TunnelLight(1).png";
 // import TunnelLight2 from "../assets/TunnelLight(2).png";
-// import TunnelLight3 from "../assets/TunnelLight(3).png";
+// import TunnelLight3 from "../assets/TunnelLight(3).png";s
 // Import dimension images
 import bar_light_dimension from "../assets/Dimension/Bar_Light_Dimension.jpg";
-import ring_light_dimension from "../assets/Dimension/Ring_Light_Dimension.jpg";
+import ring_light_dimension from "../assets/Dimension/ring_light_dimension.jpg";
 import dome_light_dimension from "../assets/Dimension/Dome_Light_Dimension.png";
 import flat_diffused_light_with_center_hole_dimension from "../assets/Dimension/Flat_Diffused_Light_With_Center_Hole_Dimension.png";
 import flat_diffused_light_dimension from "../assets/Dimension/Flat_Diffused_Light_Dimension.png";
