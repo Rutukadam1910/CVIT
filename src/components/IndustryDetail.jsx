@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import aerospacePlaceholder from "../assets/aerospace_placeholder.png";
 import fmcgPlaceholder from "../assets/fmcg_placeholder.jpg";
 import wirePlaceholder from "../assets/wire_placeholder.png";
-import metalandminingPlaceholder from "../assets/metals_mining_placeholder.jpg";
+import metalandminingPlaceholder from "../assets/Metals_Mining_placeholder.jpg";
 import warehousePlaceholder from "../assets/warehouse-2_placeholder.jpg";
 import plasticAndRubberPlaceholder from "../assets/plastic_rubber_placeholder.png";
 

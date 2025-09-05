@@ -1,4 +1,4 @@
-import{j as r}from"./index-CB1z3ct1.js";const e="/assets/TIDES-5bfM-s00.png",s="/assets/HIKROBOT-ZxKjhzuW.jpg",a="/assets/baumer-CetAQBpb.png",n=()=>r.jsxs("div",{className:"supporting-partners-section",children:[r.jsx("style",{children:`
+import{j as r}from"./index-DKL6fd2z.js";const e="/assets/TIDES-5bfM-s00.png",s="/assets/HIKROBOT-ZxKjhzuW.jpg",a="/assets/baumer-CetAQBpb.png",n=()=>r.jsxs("div",{className:"supporting-partners-section",children:[r.jsx("style",{children:`
         * {
           font-family: 'Inter', sans-serif !important;
         }
