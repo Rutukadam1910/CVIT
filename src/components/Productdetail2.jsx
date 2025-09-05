@@ -1977,7 +1977,7 @@ import dome_light_dimension from "../assets/Dimension/Dome_Light_Dimension.png";
 import flat_diffused_light_with_center_hole_dimension from "../assets/Dimension/Flat_Diffused_Light_With_Center_Hole_Dimension.png";
 import flat_diffused_light_dimension from "../assets/Dimension/Flat_Diffused_Light_Dimension.png";
 import indirect_flat_light_dimension from "../assets/Dimension/Indirect_Flat_Light_Dimension.png";
-import back_light_dimension from "../assets/Dimension/Back_Light_dimension.png";
+import back_light_dimension from "../assets/Dimension/Back_Light_Dimension.png";
 import spot_light_dimension from "../assets/Dimension/Spot_Light_Dimension.png";
 import tunnel_light_dimension from "../assets/Dimension/Tunnel_Light_Dimension.png";
 
