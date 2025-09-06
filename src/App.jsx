@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import DashboardTwo from "./components/DashboardTwo";
 import IndustryDetail from "./components/IndustryDetail";
 import CustomerBenefits from "./components/CustomerBenefits";
 import Client from "./components/Client";
@@ -22,7 +21,7 @@ function App() {
         {/* Dashboard page */}
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboardTwo" element={<DashboardTwo />} />
+        <Route path="/dashboardTwo" element={<Dashboard />} /> {/* Use Dashboard instead of DashboardTwo */}
         <Route path="/industry/:industryId" element={<IndustryDetail />} />
         <Route path="/customer-benefits" element={<CustomerBenefits />} />
         <Route path="/clients" element={<Client />} />
