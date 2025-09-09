@@ -9,14 +9,14 @@ const sections = [
     id: "about",
     title: "ABOUT US",
     heading: "Pushing the Boundaries",
-    text: `At CVIT Solution, we are dedicated to pushing the boundaries of computer vision to address critical challenges across various industries.We specialize in developing cutting-edge computer vision applications. Harnessing the power of Artificial Intelligence, we enable businesses to automate tasks, gain valuable insights from visual data, and create innovative applications that were once considered impossible.`,
+    text: `At CVIT Solution, we are dedicated to pushing the boundaries of computer vision to address critical challenges across various industries. We specialize in developing cutting-edge computer vision applications. Harnessing the power of Artificial Intelligence, we enable businesses to automate tasks, gain valuable insights from visual data, and create innovative applications that were once considered impossible.`,
     img: aboutImg,
   },
   {
     id: "vision",
     title: "OUR VISION",
     heading: "Create Safer, More Efficient, and Intelligent Systems",
-    text: `Our vision is to be at the forefront of innovation, leveraging the potential of computer vision to solve complex problems.We believe that computer vision has the capacity to transform industries and create safer, more efficient, and intelligent systems.`,
+    text: `Our vision is to be at the forefront of innovation, leveraging the potential of computer vision to solve complex problems. We believe that computer vision has the capacity to transform industries and create safer, more efficient, and intelligent systems.`,
     img: visionImg,
   },
   {
@@ -28,11 +28,18 @@ const sections = [
   },
 ];
 
-export default function Aboutus_Mission_Vision() {
+export default function Aboutus_Mission_Vision({ initialTab }) {
   const [active, setActive] = useState("about");
   const [loadedImages, setLoadedImages] = useState({});
   const tabRefs = useRef({});
   const underlineControls = useAnimation();
+
+  // Set initial active tab if provided
+  useEffect(() => {
+    if (initialTab && sections.some((s) => s.id === initialTab)) {
+      setActive(initialTab);
+    }
+  }, [initialTab]);
 
   const updateUnderline = () => {
     const el = tabRefs.current[active];
@@ -59,7 +66,7 @@ export default function Aboutus_Mission_Vision() {
 
   useEffect(() => {
     const section = sections.find((s) => s.id === active);
-    if (!loadedImages[section.id]) {
+    if (section && !loadedImages[section.id]) {
       const img = new Image();
       img.src = section.img;
       img.onload = () =>
@@ -229,6 +236,15 @@ export default function Aboutus_Mission_Vision() {
               className={`tab ${active === sec.id ? "active" : ""}`}
               ref={(el) => (tabRefs.current[sec.id] = el)}
               onClick={() => setActive(sec.id)}
+              tabIndex={0}
+              role="tab"
+              aria-selected={active === sec.id}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActive(sec.id);
+                }
+              }}
             >
               {sec.title}
             </div>
@@ -260,7 +276,7 @@ export default function Aboutus_Mission_Vision() {
           <div className="image-section">
             {sections.map((sec) => {
               const isActive = sec.id === active;
-              const isLoaded = loadedImages[sec.id];
+              const isLoaded = loadedImages[sec.id] || false;
               return (
                 <motion.img
                   key={sec.id}

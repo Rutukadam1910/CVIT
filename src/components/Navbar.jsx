@@ -7,14 +7,15 @@ import { FiDownload, FiPhone } from "react-icons/fi";
 const navbarData = {
   Products: {
     "Machine Vision Lights": [
-      { name: "Flat Direct Diffused Light" },
-      { name: "Indirect Flat Light" },
+      { name: "Bar Light" },
       { name: "Ring Light" },
+      { name: "Dome Light" },
+      { name: "Flat Diffused Light With Center Hole" },
+      { name: "Flat Diffused Light" },
+      { name: "Indirect Flat Light" },
+      { name: "Back Light" },
       { name: "Spot Light" },
       { name: "Tunnel Light" },
-      { name: "Back Light" },
-      { name: "Bar Light" },
-      { name: "Demo Light" },
     ],
     "Machine Vision Cameras Enclosure": [
       { name: "With Cooling Jacket" },
@@ -32,8 +33,17 @@ const navbarData = {
     "wire",
     "aerospace",
   ],
-  "Case Studies": ["Sprocket wheel inspection", "Tyre inspection", "Sealant Strip inspection"],
-  "About Us": ["About Us", "Our Vision", "Our Mission"],
+  "Case Studies": [
+    { id: 1, title: "Vial Adopter Inspection" },
+    { id: 2, title: "Adpter Packet Inspection" },
+    { id: 3, title: "Gap Measurement" },
+    { id: 4, title: "Punched Number Detection" },
+    { id: 5, title: "Tracing and Tracking" },
+    { id: 6, title: "Door Sealent Absence" },
+    { id: 7, title: "SpRocket Wheel Inspection" },
+    { id: 8, title: "Window Glass" },
+  ],
+  "About Us": ["About Us", "Our Mission", "Our Vision"],
 };
 
 const Navbar = () => {
@@ -65,17 +75,34 @@ const Navbar = () => {
     }));
   };
 
+  const toSlug = (name) => {
+    if (!name) return "";
+    return name.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
+  };
+
   const formatProductName = (name) => {
     if (!name) return "";
-    const match = name.match(/^([A-Z]+)(.+)$/i);
-    if (match) {
-      const splitIndex = name.search(/\d/);
-      if (splitIndex > 0) {
-        return `${name.slice(0, splitIndex)} ${name.slice(splitIndex)}`;
-      }
-      return name;
-    }
     return name;
+  };
+
+  const handleProductClick = (name) => {
+    const slug = toSlug(name);
+    navigate(`/product/${slug}`);
+    setOpenDropdown(null);
+    setToggledSubmenu({});
+  };
+
+  const handleCaseStudyClick = (id) => {
+    navigate(`/case-study/${id}`);
+    setOpenDropdown(null);
+    setToggledSubmenu({});
+  };
+
+  const handleAboutUsClick = (item) => {
+    const scrollTo = item === "About Us" ? "about" : item === "Our Mission" ? "mission" : "vision";
+    navigate("/", { state: { scrollTo, freshNavigation: true } });
+    setOpenDropdown(null);
+    setToggledSubmenu({});
   };
 
   const renderNestedMenu = (items, level = 0, parentPath = "") => {
@@ -83,29 +110,39 @@ const Navbar = () => {
       const currentPath = `${parentPath}-${index}`;
       if (typeof item === "string") {
         const displayName = formatProductName(item);
-        const isProductCode = /^CMV[A-Z]*\d/.test(item);
         const isIndustry = navbarData.Industries.includes(item);
+        const isProductLight = navbarData.Products["Machine Vision Lights"].some(
+          (p) => p.name === item
+        );
         return (
           <li
             key={item}
-            className={`sub-sub-item${isProductCode ? " product-code-item" : ""}`}
+            className={`sub-sub-item${isProductLight ? " product-light-item" : ""}`}
             role="menuitem"
             tabIndex={0}
             aria-label={displayName}
             onClick={() => {
               if (isIndustry) {
-                navigate(`/industry/${item}`, { state: { scrollTo: null } });
+                navigate(`/industry/${item}`);
                 setOpenDropdown(null);
                 setToggledSubmenu({});
+              } else if (isProductLight) {
+                handleProductClick(item);
+              } else if (navbarData["About Us"].includes(item)) {
+                handleAboutUsClick(item);
               }
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
                 if (isIndustry) {
-                  navigate(`/industry/${item}`, { state: { scrollTo: null } });
+                  navigate(`/industry/${item}`);
                   setOpenDropdown(null);
                   setToggledSubmenu({});
+                } else if (isProductLight) {
+                  handleProductClick(item);
+                } else if (navbarData["About Us"].includes(item)) {
+                  handleAboutUsClick(item);
                 }
               }
             }}
@@ -119,10 +156,7 @@ const Navbar = () => {
           <li key={item.name} className="nested-dropdown-item" role="menuitem" tabIndex={0}>
             <div
               className="subcategory-heading"
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleSubmenu(currentPath, e);
-              }}
+              onClick={(e) => toggleSubmenu(currentPath, e)}
               aria-label={`Toggle ${item.name} submenu`}
               role="button"
               tabIndex={0}
@@ -150,14 +184,49 @@ const Navbar = () => {
         );
       } else if (item.name) {
         const displayName = formatProductName(item.name);
-        const isProductCode = /^CMV[A-Z]*\d/.test(item.name);
+        const isProductLight = navbarData.Products["Machine Vision Lights"].some(
+          (p) => p.name === item.name
+        );
         return (
           <li
             key={item.name}
-            className={`sub-sub-item${isProductCode ? " product-code-item" : ""}`}
+            className={`sub-sub-item${isProductLight ? " product-light-item" : ""}`}
             role="menuitem"
             tabIndex={0}
             aria-label={displayName}
+            onClick={() => {
+              if (isProductLight) {
+                handleProductClick(item.name);
+              }
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                if (isProductLight) {
+                  handleProductClick(item.name);
+                }
+              }
+            }}
+          >
+            {displayName}
+          </li>
+        );
+      } else if (item.id && item.title) {
+        const displayName = formatProductName(item.title);
+        return (
+          <li
+            key={item.id}
+            className="sub-sub-item"
+            role="menuitem"
+            tabIndex={0}
+            aria-label={displayName}
+            onClick={() => handleCaseStudyClick(item.id)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleCaseStudyClick(item.id);
+              }
+            }}
           >
             {displayName}
           </li>
@@ -252,8 +321,8 @@ const Navbar = () => {
           top: 0;
           background-color: #1c1c1c;
           padding: 0.1rem 0;
-          min-width: 180px;
-          max-width: 300px;
+          min-width: 220px;
+          max-width: 350px;
           border-radius: 4.02px;
           z-index: 1000;
           display: none;
@@ -261,12 +330,12 @@ const Navbar = () => {
           visibility: visible;
         }
         .sub-sub-item {
-          padding: 0.3rem 0.6rem;
-          font-size: 0.6rem;
+          padding: 0.6rem 0.8rem;
+          font-size: 0.75rem;
           color: #fff;
           cursor: pointer;
-          white-space: nowrap;
-          transition: background-color 0.3s ease, font-weight 0.3s ease, border 0.3s ease;
+          white-space: normal;
+          transition: background-color 0.3s ease, font-weight 0.3s ease, border-radius 0.3s ease;
           overflow: visible;
           text-overflow: clip;
           display: block;
@@ -274,6 +343,7 @@ const Navbar = () => {
           user-select: none;
           outline: none;
           line-height: 1.3rem;
+          border-radius: 2px;
         }
         .sub-sub-item:hover,
         .sub-sub-item:focus {
@@ -282,12 +352,10 @@ const Navbar = () => {
           border-radius: 2px;
           outline: none;
         }
-        .product-code-item {
-          padding-top: 0.5rem;
-          padding-bottom: 0.5rem;
-          font-weight: 700;
-          line-height: 1.6rem;
-          white-space: normal;
+        .product-light-item {
+          padding: 0.6rem 0.8rem;
+          font-size: 0.75rem;
+          line-height: 1.3rem;
         }
         ul.menu {
           list-style: none;
@@ -422,8 +490,7 @@ const Navbar = () => {
           align-items: center;
           justify-content: center;
         }
-        .contact-button:hover
-         {
+        .contact-button:hover {
           background: #00316e;
           outline: none;
         }
@@ -475,15 +542,14 @@ const Navbar = () => {
             font-size: 0.5rem;
           }
           .sub-sub-item {
-            padding: 0.2rem 0.5rem;
-            font-size: 0.5rem;
+            padding: 0.4rem 0.5rem;
+            font-size: 0.65rem;
             line-height: 1.2rem;
           }
-          .product-code-item {
-            padding-top: 0.4rem;
-            padding-bottom: 0.4rem;
-            font-weight: 700;
-            line-height: 1.4rem;
+          .product-light-item {
+            padding: 0.4rem 0.5rem;
+            font-size: 0.65rem;
+            line-height: 1.2rem;
           }
           .contact-button {
             font-size: 0.7rem;
@@ -495,14 +561,14 @@ const Navbar = () => {
       <nav ref={navRef} role="navigation" aria-label="Primary Navigation">
         <div
           className="logo-container"
-          onClick={() => navigate("/", { state: { scrollTo: "Home" } })}
+          onClick={() => navigate("/", { state: { scrollTo: "Home", freshNavigation: true } })}
           tabIndex={0}
           role="link"
           aria-label="Navigate to Home page"
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              navigate("/", { state: { scrollTo: "Home" } });
+              navigate("/", { state: { scrollTo: "Home", freshNavigation: true } });
             }
           }}
         >
@@ -512,13 +578,13 @@ const Navbar = () => {
         <ul className="menu" role="menubar" aria-label="Main menu">
           <li
             className="home-link"
-            onClick={() => navigate("/", { state: { scrollTo: "Home" } })}
+            onClick={() => navigate("/", { state: { scrollTo: "Home", freshNavigation: true } })}
             role="menuitem"
             tabIndex={0}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
-                navigate("/", { state: { scrollTo: "Home" } });
+                navigate("/", { state: { scrollTo: "Home", freshNavigation: true } });
               }
             }}
           >
@@ -531,10 +597,7 @@ const Navbar = () => {
               <li
                 key={menu}
                 className={`hasDropdown ${isOpen ? "open" : ""}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleDropdown(menu);
-                }}
+                onClick={() => toggleDropdown(menu)}
                 role="menuitem"
                 tabIndex={0}
                 aria-haspopup="true"
@@ -549,7 +612,7 @@ const Navbar = () => {
                 {menu}
                 <span className="plus" aria-hidden="true">+</span>
                 <ul className="dropdown" role="menu" aria-label={`${menu} submenu`}>
-                  {menu === "Products" && typeof items === "object" && items !== null ? (
+                  {menu === "Products" && typeof items === "object" ? (
                     Object.entries(items).map(([subcat, subitems], index) => {
                       const path = `products-${subcat}-${index}`;
                       const isSubOpen = toggledSubmenu[path];
@@ -557,10 +620,7 @@ const Navbar = () => {
                         <li key={subcat} className="nested-dropdown-item" role="menuitem" tabIndex={0}>
                           <div
                             className="subcategory-heading"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              toggleSubmenu(path, e);
-                            }}
+                            onClick={(e) => toggleSubmenu(path, e)}
                             role="button"
                             tabIndex={0}
                             aria-label={`Toggle ${subcat} submenu`}
@@ -590,45 +650,37 @@ const Navbar = () => {
                   ) : Array.isArray(items) ? (
                     items.map((item) => (
                       <li
-                        key={item}
+                        key={typeof item === "string" ? item : item.id}
                         className="sub-sub-item"
                         role="menuitem"
                         tabIndex={0}
                         onClick={() => {
                           if (menu === "Industries") {
-                            navigate(`/industry/${item}`, { state: { scrollTo: null } });
+                            navigate(`/industry/${item}`);
                             setOpenDropdown(null);
                             setToggledSubmenu({});
                           } else if (menu === "Case Studies") {
-                            navigate("/", { state: { scrollTo: "Our Case Studies" } });
-                            setOpenDropdown(null);
-                            setToggledSubmenu({});
+                            handleCaseStudyClick(item.id);
                           } else if (menu === "About Us") {
-                            navigate("/", { state: { scrollTo: item } });
-                            setOpenDropdown(null);
-                            setToggledSubmenu({});
+                            handleAboutUsClick(item);
                           }
                         }}
                         onKeyDown={(e) => {
                           if (e.key === "Enter" || e.key === " ") {
                             e.preventDefault();
                             if (menu === "Industries") {
-                              navigate(`/industry/${item}`, { state: { scrollTo: null } });
+                              navigate(`/industry/${item}`);
                               setOpenDropdown(null);
                               setToggledSubmenu({});
                             } else if (menu === "Case Studies") {
-                              navigate("/", { state: { scrollTo: "Our Case Studies" } });
-                              setOpenDropdown(null);
-                              setToggledSubmenu({});
+                              handleCaseStudyClick(item.id);
                             } else if (menu === "About Us") {
-                              navigate("/", { state: { scrollTo: item } });
-                              setOpenDropdown(null);
-                              setToggledSubmenu({});
+                              handleAboutUsClick(item);
                             }
                           }
                         }}
                       >
-                        {item}
+                        {typeof item === "string" ? item : item.title}
                       </li>
                     ))
                   ) : null}
@@ -651,7 +703,7 @@ const Navbar = () => {
           </a>
           <button
             className="contact-button"
-            onClick={() => navigate("/", { state: { scrollTo: "Contact Us" } })}
+            onClick={() => navigate("/", { state: { scrollTo: "Contact Us", freshNavigation: true } })}
             title="Contact Us"
             aria-label="Navigate to Contact Us section"
           >

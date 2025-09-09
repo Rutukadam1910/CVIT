@@ -219,6 +219,7 @@ const CaseStudyDetail = () => {
         setIsExiting(true);
         timeoutRef.current = setTimeout(() => {
           isNavigatingRef.current = false;
+          navigate("/", { state: { scrollTo: "Our Case Studies", fromCaseStudy: true } });
         }, 500);
       }
     };
@@ -230,7 +231,7 @@ const CaseStudyDetail = () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [study]);
+  }, [study, navigate]);
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -331,7 +332,7 @@ const CaseStudyDetail = () => {
     isNavigatingRef.current = true;
     setIsExiting(true);
     timeoutRef.current = setTimeout(() => {
-      navigate(-1, { state: { fromCaseStudy: true } });
+      navigate("/", { state: { scrollTo: "Our Case Studies", fromCaseStudy: true } });
       isNavigatingRef.current = false;
     }, 500);
   };
@@ -343,7 +344,7 @@ const CaseStudyDetail = () => {
         <button
           style={notFoundStyles.button}
           onClick={handleBackClick}
-          aria-label="Go back"
+          aria-label="Go back to case studies"
         >
           ← Go Back
         </button>
@@ -892,7 +893,7 @@ const CaseStudyDetail = () => {
                       ref={backBtnRef}
                       className="back-btn"
                       onClick={handleBackClick}
-                      aria-label="Go back"
+                      aria-label="Go back to case studies"
                     >
                       ← Go Back
                     </button>

@@ -578,12 +578,14 @@
 
 // export default Dashboard;
 
-// Dashboard.jsx
+
+
 import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 
-// Lazy load heavy components
+const backgroundVideo = "https://res.cloudinary.com/dpsdxf2bc/video/upload/q_auto/background_cimxfk.mp4";
+
 const CustomerBenefits = lazy(() => import("./CustomerBenefits"));
 const Client = lazy(() => import("./Client"));
 const CaseStudy = lazy(() => import("./CaseStudy"));
@@ -596,7 +598,6 @@ const Review = lazy(() => import("./Review"));
 const ContactUs = lazy(() => import("./ContactUs"));
 const Footer = lazy(() => import("./Footer"));
 
-// Assets for DashboardTwo
 import Bar_Light from "../assets/Bar_Light.png";
 import Ring_Light from "../assets/Ring_Light.png";
 import Dome_Light from "../assets/Dome_Light.png";
@@ -606,8 +607,6 @@ import Indirect_Flat_Light from "../assets/Indirect_Flat_Light.png";
 import Back_Light from "../assets/Back_Light.png";
 import Spot_Light from "../assets/Spot_Light.png";
 import Tunnel_Light from "../assets/Tunnel_Light.png";
-
-const backgroundVideo = "https://res.cloudinary.com/dpsdxf2bc/video/upload/q_auto/background_cimxfk.mp4";
 
 const products = [
   { name: "Bar Light", image: Bar_Light },
@@ -746,9 +745,16 @@ const VideoBackground = ({ videoRef }) => (
 );
 
 const Dashboard = () => {
-  const [toggleState, setToggleState] = useState("dashboardOne");
+  const [toggleState, setToggleState] = useState(() => {
+    const saved = localStorage.getItem("toggleState");
+    const path = window.location.pathname;
+    if (path === "/dashboardTwo" && saved === "dashboardTwo") {
+      return "dashboardTwo";
+    }
+    return "dashboardOne";
+  });
   const [isSliding, setIsSliding] = useState(false);
-  const [showRestContent, setShowRestContent] = useState(true);
+  const [showRestContent, setShowRestContent] = useState(() => window.location.pathname !== "/dashboardTwo");
   const navigate = useNavigate();
   const location = useLocation();
   const videoRef = useRef(null);
@@ -758,10 +764,17 @@ const Dashboard = () => {
   const implementationRef = useRef(null);
   const clientRef = useRef(null);
   const contactUsRef = useRef(null);
+  const aboutUsRef = useRef(null);
   const navigateTimeoutRef = useRef(null);
 
   useEffect(() => {
-    // Disable browser scroll restoration
+    localStorage.setItem("toggleState", toggleState);
+    if (toggleState === "dashboardOne") {
+      setShowRestContent(true);
+    }
+  }, [toggleState]);
+
+  useEffect(() => {
     if (window.history.scrollRestoration) {
       window.history.scrollRestoration = "manual";
     }
@@ -782,62 +795,72 @@ const Dashboard = () => {
       video.addEventListener("timeupdate", handleTimeUpdate);
     }
 
-    // Handle initial navigation state
-    const isDashboardTwo = location.pathname === "/dashboardTwo";
-    setToggleState(isDashboardTwo ? "dashboardTwo" : "dashboardOne");
-    setShowRestContent(!isDashboardTwo);
+    const scrollTo = location.state?.scrollTo;
+    const fromCaseStudy = location.state?.fromCaseStudy;
+    console.log("Current pathname:", location.pathname, "ScrollTo:", scrollTo, "FromCaseStudy:", fromCaseStudy);
 
-    // Handle scrolling
-    console.log("Current pathname:", location.pathname, "ScrollTo:", location.state?.scrollTo);
-    if (location.pathname === "/") {
-      const scrollTo = location.state?.scrollTo;
-      if (scrollTo && scrollTo !== "Home") {
-        // Scroll to specific section if provided (but not for Home)
-        switch (scrollTo) {
-          case "Customer Benefits":
-            customerBenefitsRef.current?.scrollIntoView({ behavior: "smooth" });
-            console.log("Scrolling to Customer Benefits");
-            break;
-          case "Our Case Studies":
-            caseStudyRef.current?.scrollIntoView({ behavior: "smooth" });
-            console.log("Scrolling to Our Case Studies");
-            break;
-          case "Implementation Roadmap":
-            implementationRef.current?.scrollIntoView({ behavior: "smooth" });
-            console.log("Scrolling to Implementation Roadmap");
-            break;
-          case "Our Clients":
-            clientRef.current?.scrollIntoView({ behavior: "smooth" });
-            console.log("Scrolling to Our Clients");
-            break;
-          case "Contact Us":
-            contactUsRef.current?.scrollIntoView({ behavior: "smooth" });
-            console.log("Scrolling to Contact Us");
-            break;
-          default:
+    const scrollToSection = () => {
+      if (location.pathname === "/") {
+        setShowRestContent(true);
+        setToggleState("dashboardOne");
+        setTimeout(() => {
+          if (fromCaseStudy && caseStudyRef.current) {
+            caseStudyRef.current.scrollIntoView({ behavior: "smooth" });
+            window.history.replaceState({ ...location.state, fromCaseStudy: false, scrollTo: null }, "");
+          } else if (scrollTo) {
+            switch (scrollTo) {
+              case "Home":
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                break;
+              case "Customer Benefits":
+                customerBenefitsRef.current?.scrollIntoView({ behavior: "smooth" });
+                break;
+              case "Our Case Studies":
+                caseStudyRef.current?.scrollIntoView({ behavior: "smooth" });
+                break;
+              case "Implementation Roadmap":
+                implementationRef.current?.scrollIntoView({ behavior: "smooth" });
+                break;
+              case "Our Clients":
+                clientRef.current?.scrollIntoView({ behavior: "smooth" });
+                break;
+              case "Contact Us":
+                contactUsRef.current?.scrollIntoView({ behavior: "smooth" });
+                break;
+              case "about":
+              case "mission":
+              case "vision":
+                aboutUsRef.current?.scrollIntoView({ behavior: "smooth" });
+                break;
+              default:
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                break;
+            }
+            window.history.replaceState({ ...location.state, scrollTo: null, fromCaseStudy: false }, "");
+          } else {
             window.scrollTo({ top: 0, behavior: "smooth" });
-            console.log("Scrolling to top (default)");
-            break;
-        }
-      } else {
-        // Always scroll to top for dashboardOne
+          }
+        }, 100);
+      } else if (location.pathname === "/dashboardTwo") {
+        setShowRestContent(false);
+        setToggleState("dashboardTwo");
         window.scrollTo({ top: 0, behavior: "smooth" });
-        console.log("Scrolling to top for dashboardOne");
       }
-    } else if (isDashboardTwo) {
-      // Ensure top for dashboardTwo
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      console.log("Scrolling to top for dashboardTwo");
-    }
+    };
 
-    // Handle popstate for back/forward navigation
+    scrollToSection();
+
     const handlePopstate = () => {
       const isDashboardTwo = window.location.pathname === "/dashboardTwo";
       setToggleState(isDashboardTwo ? "dashboardTwo" : "dashboardOne");
       setShowRestContent(!isDashboardTwo);
-      if (!isDashboardTwo) {
+      if (window.location.pathname === "/" && location.state?.fromCaseStudy && caseStudyRef.current) {
+        setTimeout(() => {
+          caseStudyRef.current.scrollIntoView({ behavior: "smooth" });
+          window.history.replaceState({ ...location.state, fromCaseStudy: false, scrollTo: null }, "");
+        }, 100);
+      } else {
         window.scrollTo({ top: 0, behavior: "smooth" });
-        console.log("Popstate: Scrolling to top for dashboardOne");
       }
     };
 
@@ -852,15 +875,14 @@ const Dashboard = () => {
         clearTimeout(navigateTimeoutRef.current);
       }
     };
-  }, [location]);
+  }, [location, navigate]);
 
   const handleToggle = () => {
     if (navigateTimeoutRef.current) return;
     setIsSliding(true);
-
     const newState = toggleState === "dashboardOne" ? "dashboardTwo" : "dashboardOne";
     setToggleState(newState);
-
+    setShowRestContent(newState === "dashboardOne");
     navigateTimeoutRef.current = setTimeout(() => {
       if (newState === "dashboardTwo") {
         navigate("/dashboardTwo", { state: { showRestContent: false } });
@@ -876,7 +898,7 @@ const Dashboard = () => {
     if (navigateTimeoutRef.current) return;
     setIsSliding(true);
     navigateTimeoutRef.current = setTimeout(() => {
-      navigate(`/industry/${id}`);
+      navigate(`/industry/${id}`, { state: {} });
       setIsSliding(false);
       navigateTimeoutRef.current = null;
     }, 300);
@@ -886,7 +908,7 @@ const Dashboard = () => {
     if (navigateTimeoutRef.current) return;
     setIsSliding(true);
     navigateTimeoutRef.current = setTimeout(() => {
-      navigate(`/product/${slug}`);
+      navigate(`/product/${slug}`, { state: {} });
       setIsSliding(false);
       navigateTimeoutRef.current = null;
     }, 300);
@@ -937,7 +959,7 @@ const Dashboard = () => {
           width: 100%;
           max-width: 2000px;
           padding: 3rem;
-          margin: 0 auto; /* Removed 40.6px top margin to prevent offset */
+          margin: 0 auto;
           box-sizing: border-box;
           position: relative;
           z-index: 2;
@@ -1009,6 +1031,8 @@ const Dashboard = () => {
           align-items: center;
           flex-wrap: wrap;
           gap: 1.8rem;
+          min-height: 200px;
+          padding-bottom: 2rem;
         }
         .industry-card {
           width: 170px;
@@ -1025,6 +1049,18 @@ const Dashboard = () => {
           align-items: center;
           justify-content: flex-start;
           padding-top: 2.144rem;
+          transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        .industry-card:hover {
+          background-color: #f2f2f2;
+          color: #222;
+          transform: translateY(-4.02px);
+        }
+        .industry-card:hover .icon {
+          stroke: #EF3A3A !important;
+        }
+        .industry-card:hover .icon-circle {
+          border-color: #EF3A3A !important;
         }
         .icon-circle {
           width: 67px;
@@ -1055,6 +1091,9 @@ const Dashboard = () => {
           padding: 0 10px;
           box-sizing: border-box;
         }
+        .industry-card:hover .industry-name {
+          color: #EF3A3A;
+        }
         .product-card {
           width: 130px;
           height: 190.9px;
@@ -1072,7 +1111,15 @@ const Dashboard = () => {
           padding-top: 1rem;
           text-align: center;
           user-select: none;
-          z-index: 2;
+          transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        .product-card:hover {
+          background-color: #f2f2f2;
+          color: #222;
+          transform: translateY(-4.02px);
+        }
+        .product-card:hover .industry-name {
+          color: #EF3A3A;
         }
         .product-logo {
           width: 70px;
@@ -1197,7 +1244,7 @@ const Dashboard = () => {
 
         {showRestContent && toggleState === "dashboardOne" && (
           <Suspense fallback={<div className="loading-placeholder">Loading content...</div>}>
-            <section style={{ marginTop: "1.68rem" }} ref={customerBenefitsRef}>
+            <section style={{ marginTop: "4rem" }} ref={customerBenefitsRef}>
               <CustomerBenefits />
             </section>
             <section ref={clientRef}>
@@ -1206,8 +1253,8 @@ const Dashboard = () => {
             <section ref={caseStudyRef}>
               <CaseStudy />
             </section>
-            <section>
-              <Aboutus_Mission_Vision />
+            <section ref={aboutUsRef}>
+              <Aboutus_Mission_Vision initialTab={location.state?.scrollTo} />
             </section>
             <section>
               <CoreValues />
