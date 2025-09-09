@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
-import brochurePDF from "../assets/Machine_Vision_System.pdf";
-import { useNavigate } from "react-router-dom";
+import machineVisionSolutionPDF from "../assets/Machine_Vision_System.pdf";
+import machineVisionLightPDF from "../assets/Machine_Vision_Lights.pdf";
 import { FiDownload, FiPhone } from "react-icons/fi";
 
 const navbarData = {
@@ -51,6 +53,10 @@ const Navbar = () => {
   const [toggledSubmenu, setToggledSubmenu] = useState({});
   const navRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Determine which PDF to download based on the current route
+  const brochurePDF = location.pathname === "/" ? machineVisionSolutionPDF : machineVisionLightPDF;
 
   useEffect(() => {
     const handleClickOutside = (event) => {
