@@ -9,8 +9,8 @@ import logo6 from "../assets/logo6.png";
 import logo7 from "../assets/logo7.png";
 import logo8 from "../assets/logo8.png";
 import logo9 from "../assets/logo9.png";
-
-const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
+import logo10 from "../assets/logo10.png";
+const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9,logo10];
 
 const Client = () => {
   return (

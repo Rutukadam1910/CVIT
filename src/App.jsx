@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import VideoBackground from "./components/VideoBackground";
 import Dashboard from "./components/Dashboard";
 import IndustryDetail from "./components/IndustryDetail";
 import CustomerBenefits from "./components/CustomerBenefits";
@@ -12,16 +13,25 @@ import Buy from "./components/buy";
 import Enquire from "./components/enquire";
 import Implementation from "./components/Implementation";
 import ContactUs from "./components/ContactUs";
+import './App.css';
+
+const DashboardLayout = ({ type }) => {
+  const videoRef = useRef(null);
+
+  return (
+    <div className="dashboard-layout">
+      <VideoBackground videoRef={videoRef} />
+      <Dashboard type={type} />
+    </div>
+  );
+};
 
 function App() {
-  console.log("CaseStudyDetail:", CaseStudyDetail);
   return (
     <Router>
       <Routes>
-        {/* Dashboard page */}
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboardTwo" element={<Dashboard />} /> {/* Use Dashboard instead of DashboardTwo */}
+        <Route path="/" element={<DashboardLayout type="dashboardOne" />} />
+        <Route path="/dashboardTwo" element={<DashboardLayout type="dashboardTwo" />} />
         <Route path="/industry/:industryId" element={<IndustryDetail />} />
         <Route path="/customer-benefits" element={<CustomerBenefits />} />
         <Route path="/clients" element={<Client />} />

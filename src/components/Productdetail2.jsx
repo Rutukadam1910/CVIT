@@ -3207,7 +3207,7 @@ const renderModelStructureTable = () => {
 };
 
  const renderCommonSpec = () => {
-  const commonSpecs = { ...COMMON_SPECIFICATIONS, geometry: product.title };
+  const commonSpecs = { ...COMMON_SPECIFICATIONS, Geometry: product.title };
   const entries = Object.entries(commonSpecs);
 
   const pairedRows = [];
@@ -4981,7 +4981,7 @@ const renderModelStructureTable = () => {
     <span>Contact</span>
   </a>
   <a
-    href="mailto:info@cvitsolution.in"
+    href="mailto:sales@cvit.in"
     rel="nofollow"
     target="_blank"
     aria-label="Email"
@@ -4991,7 +4991,7 @@ const renderModelStructureTable = () => {
     <span>Email</span>
   </a>
   <a
-    href="https://api.whatsapp.com/send?phone=919876543210"
+    href="https://api.whatsapp.com/send?phone=7507149084"
     rel="nofollow"
     target="_blank"
     aria-label="WhatsApp"

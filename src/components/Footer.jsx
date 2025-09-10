@@ -12,242 +12,258 @@ import MachineVisionLights from "../assets/Machine_Vision_Lights.pdf";
 const Footer = () => {
   const navigate = useNavigate();
 
-// Navigation mapping for quick links
-const navigationMap = {
-  Home: "Home",
-  "Customer Benefits": "Customer Benefits",
-  "Our Case Studies": "Our Case Studies",
-  "Implementation Roadmap": "Implementation Roadmap",
-  "Our Clients": "Our Clients",
-  "Contact Us": "Contact Us",
-};
+  // Navigation mapping for quick links
+  const navigationMap = {
+    Home: "Home",
+    "Customer Benefits": "Customer Benefits",
+    "Our Case Studies": "Our Case Studies",
+    "Implementation Roadmap": "Implementation Roadmap",
+    "Our Clients": "Our Clients",
+    "Contact Us": "Contact Us",
+  };
 
-// Function to handle navigation with scrollTo state
-const handleNavigation = (section) => {
-  const targetSection = navigationMap[section];
-  navigate("/", {
-    state: { scrollTo: targetSection, showRestContent: true },
-  });
-};
+  // Function to handle navigation with scrollTo state
+  const handleNavigation = (section) => {
+    const targetSection = navigationMap[section];
+    navigate("/", {
+      state: { scrollTo: targetSection, showRestContent: true },
+    });
+  };
 
   return (
     <footer className="footer">
       <style>{`
-        * {
-          font-family: 'Inter', sans-serif !important;
-        }
+  * {
+    font-family: 'Inter', sans-serif !important;
+  }
 
-        .footer {
-          background-color: #0c0e1b;
-          color: #ffffff;
-          padding: 2.34rem 2.34rem;
-        }
+  .footer {
+    background-color: #0c0e1b;
+    color: #ffffff;
+    padding: 2.34rem 2.34rem;
+  }
 
-        .footer-top {
-          max-width: 1941px;
-          margin: 0 1.4rem 2.01rem;
-          display: flex;
-          gap: 0.2rem;
-          justify-content: space-between;
-          flex-wrap: wrap;
-        }
+  .footer-top {
+    max-width: 1941px;
+    margin: 0 1.4rem 2.01rem;
+    display: flex;
+    gap: 0.2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
-        .footer-map {
-          flex: 2 1 600px;
-          min-height: 250px;
-        }
+  .footer-map {
+    flex: 2 1 600px;
+    min-height: 250px;
+  }
 
-        .footer-map iframe {
-          width: 100%;
-          height: 100%;
-          border: 0;
-          border-radius: 8.04px;
-        }
+  .footer-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8.04px;
+  }
 
-        .footer-certs {
-          flex: 1 1 320px;
-          min-height: 234.5px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        }
+  .footer-certs {
+    flex: 1 1 320px;
+    min-height: 234.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-        .cert-title {
-          font-size: 1.34rem;
-          font-weight: bold;
-          margin-bottom: 1.005rem;
-          color: #fff;
-        }
+  .cert-title {
+    font-size: 1.34rem;
+    font-weight: bold;
+    margin-bottom: 1.005rem;
+    color: #fff;
+  }
 
-        .certifications {
-          display: flex;
-          gap: 1.34rem;
-          overflow-x: auto;
-          padding: 0.67rem 1.34rem;
-        }
+  .certifications {
+    display: flex;
+    gap: 1.34rem;
+    overflow-x: auto;
+    padding: 0.67rem 1.34rem;
+  }
 
-        .cert-box {
-          background-color: white;
-          width: 100.5px;
-          height: 100.5px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 5.36px;
-          box-shadow: 0 2.68px 8.04px rgba(0,0,0,0.2);
-          transition: transform 0.3s ease;
-          flex: 0 0 auto;
-        }
+  .cert-box {
+    background-color: white;
+    width: 100.5px;
+    height: 100.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5.36px;
+    box-shadow: 0 2.68px 8.04px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    flex: 0 0 auto;
+  }
 
-        .cert-box:hover {
-          transform: scale(1.05);
-        }
+  .cert-box:nth-child(1),
+  .cert-box:nth-child(4) {
+    background-color: #f0f0f0;
+  }
 
-        .cert-box img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
+  .cert-box:hover {
+    transform: scale(1.05);
+  }
 
-        .footer-container {
-          max-width: 1340px;
-          margin: 13.4px 53.6px;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(147.4px, 1fr));
-          gap: 1.742rem;
-        }
+  .cert-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
 
-        .footer-logo img {
-          width: 127.3px;
-          height: auto;
-        }
+  .footer-container {
+    max-width: 1340px;
+    margin: 13.4px 53.6px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(147.4px, 1fr));
+    gap: 1.742rem;
+  }
 
-        .footer-logo h3 {
-          margin-top: 0.67rem;
-          font-size: 1.34rem;
-          font-weight: 600;
-        }
+  .footer-logo img {
+    margin-top: 3rem;
+    width: 127.3px;
+    height: auto;
+  }
 
-        .footer-logo p {
-          margin-top: 0.67rem;
-          margin-left: 0.335rem;
-          font-size: 0.804rem;
-          color: #ccc;
-        }
+  .footer-logo h3 {
+    font-size: 1.34rem;
+    font-weight: 600;
+  }
 
-        .footer-heading {
-          font-size: 1.206rem;
-          font-weight: 600;
-          margin-bottom: 0.67rem;
-        }
+  .footer-logo p {
+    margin-top: 0.67rem;
+    margin-left: 0.335rem;
+    font-size: 0.804rem;
+    color: #ccc;
+  }
 
-        .footer-links a {
-          display: block;
-          color: #aaa;
-          text-decoration: none;
-          margin-bottom: 0.402rem;
-          font-size: 0.871rem;
-          transition: color 0.3s ease;
-          cursor: pointer;
-        }
+  .footer-heading {
+    font-size: 1.206rem;
+    font-weight: 600;
+    margin-bottom: 0.67rem;
+  }
 
-        .footer-links a:hover {
-          color: #ffffff;
-        }
+  .footer-links a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 0.402rem;
+    font-size: 0.871rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
 
-        .footer-newsletter p {
-          font-size: 0.804rem;
-          margin-bottom: 0.536rem;
-          color: #ccc;
-        }
+  .footer-links a:hover {
+    color: #ef3a3a;
+  }
 
-        .newsletter-input {
-          display: flex;
-          border: 1px solid #444;
-          border-radius: 20.1px;
-          overflow: hidden;
-        }
+  .footer-newsletter p {
+    font-size: 0.804rem;
+    margin-bottom: 0.536rem;
+    color: #ccc;
+  }
 
-        .newsletter-input input {
-          flex: 1;
-          padding: 0.536rem 1.072rem;
-          background: transparent;
-          border: none;
-          color: #fff;
-          outline: none;
-        }
+  .newsletter-input {
+    display: flex;
+    border: 1px solid #444;
+    border-radius: 20.1px;
+    overflow: hidden;
+  }
 
-        .newsletter-input button {
-          padding: 0 0.67rem;
-          background-color: #EF3A3A;
-          border: none;
-          color: white;
-          cursor: pointer;
-          width: 40.2px;
-        }
+  .newsletter-input input {
+    flex: 1;
+    padding: 0.536rem 1.072rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+  }
 
-        .footer-bottom {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-top: 1.34rem;
-          padding-top: 1.34rem;
-          border-top: 1px solid #333;
-          flex-wrap: wrap;
-          font-size: 0.938rem;
-          color: #aaa;
-        }
+  .newsletter-input button {
+    padding: 0 0.67rem;
+    background-color: #EF3A3A;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 40.2px;
+  }
 
-        .footer-bottom .left,
-        .footer-bottom .center,
-        .footer-bottom .right {
-          display: flex;
-          align-items: center;
-          gap: 0.67rem;
-        }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.34rem;
+    padding-top: 1.34rem;
+    border-top: 1px solid #333;
+    flex-wrap: wrap;
+    font-size: 0.938rem;
+    color: #aaa;
+  }
 
-        .footer-socials {
-          display: flex;
-          gap: 1rem;
-        }
+  .footer-bottom .left,
+  .footer-bottom .center,
+  .footer-bottom .right {
+    display: flex;
+    align-items: center;
+    gap: 0.67rem;
+  }
 
-        .footer-socials a {
-          display: inline-block;
-          color: white;
-        }
+  .footer-socials {
+    display: flex;
+    gap: 1rem;
+  }
 
-        .footer-socials svg {
-          width: 25px;
-          height: 25px;
-          fill: #fff;
-          pointer-events: auto;
-          cursor: pointer;
-        }
+  .footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius:50%;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
 
-        @media (max-width: 768px) {
-          .footer-top {
-            flex-direction: column;
-            gap: 1rem;
-          }
+  .footer-socials a:hover {
+    background: #0077b5; /* LinkedIn blue */
+    transform: scale(1.1);
+    border-radius:50%;
+  }
 
-          .footer-container {
-            margin: 0;
-          }
+  .footer-socials svg {
+    width: 22px;
+    height: 22px;
+    pointer-events: none; /* Ensures entire button is clickable */
+  }
 
-          .footer-bottom {
-            flex-direction: column;
-            gap: 0.67rem;
-            text-align: center;
-          }
+  @media (max-width: 768px) {
+    .footer-top {
+      flex-direction: column;
+      gap: 1rem;
+    }
 
-          .footer-bottom .left,
-          .footer-bottom .center,
-          .footer-bottom .right {
-            justify-content: center;
-          }
-        }
-      `}</style>
+    .footer-container {
+      margin: 0;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 0.67rem;
+      text-align: center;
+    }
+
+    .footer-bottom .left,
+    .footer-bottom .center,
+    .footer-bottom .right {
+      justify-content: center;
+    }
+  }
+`}</style>
 
       {/* Top Row: Map and Certifications */}
       <div className="footer-top">
@@ -285,10 +301,6 @@ const handleNavigation = (section) => {
         <div className="footer-logo">
           <img src={logo} alt="CVIT Logo" />
           <h3>CVIT Solution</h3>
-          <p>
-            CONTACT <br />
-            sales@cvit.in
-          </p>
         </div>
 
         <div>
@@ -316,25 +328,19 @@ const handleNavigation = (section) => {
           </div>
         </div>
 
- <div>
-      <h4 className="footer-heading">Catalogue</h4>
-      <div className="footer-links">
-        {/* Brochure PDF */}
-        <a href={MachineVisionSystem} download="Machine_Vision_System.pdf">
-          Brochure
-        </a>
-
-        {/* MV Lights PDF */}
-        <a href={MachineVisionLights} download="Machine_Vision_Lights.pdf">
-          MV Lights
-        </a>
-      </div>
-    </div>
-
+        <div>
+          <h4 className="footer-heading">Catalogue</h4>
+          <div className="footer-links">
+            <a href={MachineVisionSystem} download="Machine_Vision_System.pdf">
+              Brochure
+            </a>
+            <a href={MachineVisionLights} download="Machine_Vision_Lights.pdf">
+              MV Lights
+            </a>
+          </div>
+        </div>
 
         <div className="footer-newsletter">
-          <h4 className="footer-heading">Newsletter</h4>
-          <p>Subscribe to receive future updates</p>
           <div className="newsletter-input">
             <input type="email" placeholder="Email address" />
             <button>&#9658;</button>
@@ -345,7 +351,7 @@ const handleNavigation = (section) => {
       {/* Bottom Footer */}
       <div className="footer-bottom">
         <div className="left">
-          English&nbsp;&nbsp;|&nbsp;&nbsp;Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;Support
+          &nbsp;&nbsp;English&nbsp;&nbsp;|&nbsp;&nbsp;Privacy Policy
         </div>
 
         <div className="center">© 2025 CVIT. All rights reserved</div>

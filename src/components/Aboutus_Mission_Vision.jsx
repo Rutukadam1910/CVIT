@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import aboutImg from "../assets/aboutus.jpg";
 import visionImg from "../assets/ourvision.png";
 import missionImg from "../assets/mission.png";
@@ -31,8 +31,6 @@ const sections = [
 export default function Aboutus_Mission_Vision({ initialTab }) {
   const [active, setActive] = useState("about");
   const [loadedImages, setLoadedImages] = useState({});
-  const tabRefs = useRef({});
-  const underlineControls = useAnimation();
 
   // Set initial active tab if provided
   useEffect(() => {
@@ -40,29 +38,6 @@ export default function Aboutus_Mission_Vision({ initialTab }) {
       setActive(initialTab);
     }
   }, [initialTab]);
-
-  const updateUnderline = () => {
-    const el = tabRefs.current[active];
-    if (el && el.parentNode) {
-      const rect = el.getBoundingClientRect();
-      const parentRect = el.parentNode.getBoundingClientRect();
-      underlineControls.start({
-        left: rect.left - parentRect.left,
-        width: rect.width,
-        transition: { type: "spring", stiffness: 300, damping: 30 },
-      });
-    }
-  };
-
-  useEffect(() => {
-    updateUnderline();
-  }, [active]);
-
-  useEffect(() => {
-    const handleScroll = () => updateUnderline();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [active]);
 
   useEffect(() => {
     const section = sections.find((s) => s.id === active);
@@ -123,20 +98,27 @@ export default function Aboutus_Mission_Vision({ initialTab }) {
           cursor: pointer;
           transition: color 0.3s ease;
           text-align: center;
-          z-index: 5;
           user-select: none;
           flex: 1;
+          position: relative;
         }
         .tab:hover, .tab.active {
           color: #fff;
         }
-        .underline {
+        .tab::after {
+          content: '';
           position: absolute;
-          bottom: 0;
-          height: 2px;
+          bottom: -2px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 3px;
           background: #ef3a3a;
           border-radius: 2px;
-          z-index: 4;
+          transition: width 0.3s ease-out;
+        }
+        .tab.active::after {
+          width: 180px;
         }
         .content-area {
           max-width: 1140px;
@@ -218,6 +200,12 @@ export default function Aboutus_Mission_Vision({ initialTab }) {
             font-size: 0.9rem;
             padding: 0.5rem;
           }
+          .tab::after {
+            height: 2px;
+          }
+          .tab.active::after {
+            width: 60px;
+          }
           .text-section {
             padding: 0 1rem;
           }
@@ -234,7 +222,6 @@ export default function Aboutus_Mission_Vision({ initialTab }) {
             <div
               key={sec.id}
               className={`tab ${active === sec.id ? "active" : ""}`}
-              ref={(el) => (tabRefs.current[sec.id] = el)}
               onClick={() => setActive(sec.id)}
               tabIndex={0}
               role="tab"
@@ -249,7 +236,6 @@ export default function Aboutus_Mission_Vision({ initialTab }) {
               {sec.title}
             </div>
           ))}
-          <motion.div className="underline" initial={false} animate={underlineControls} />
         </div>
 
         <div className="content-area">

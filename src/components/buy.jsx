@@ -162,6 +162,14 @@ const Buy = () => {
     transition: "transform 0.2s, opacity 0.2s",
   };
 
+  const requiredStarStyle = {
+    color: "#ef3a3a",
+    fontSize: "0.9rem",
+    verticalAlign: "baseline",
+    marginLeft: "0.25rem",
+    fontWeight: 600,
+  };
+
   return (
     <div style={formStyle}>
       <button
@@ -203,7 +211,9 @@ const Buy = () => {
             </span>
           </div>
 
-          <label style={labelStyle}>Model Number:</label>
+          <label style={labelStyle}>
+            Model Number:<span style={requiredStarStyle}>*</span>
+          </label>
           <input
             type="text"
             name="model"
@@ -212,23 +222,28 @@ const Buy = () => {
             style={inputStyle}
             placeholder="Enter model number or custom specification"
             readOnly={isDefaultModel}
+            required
           />
 
-          <label style={labelStyle}>Color:</label>
-<select
-  name="color"
-  value={formData.color || ""}
-  onChange={handleChange}
-  style={inputStyle}
-  required
->
-  <option value="">Select a color</option>
-  <option value="Red">Red</option>
-  <option value="White">White</option>
-  <option value="Green">Green</option>
-  <option value="Blue">Blue</option>
-</select>
-          <label style={labelStyle}>Quantity Required:</label>
+          <label style={labelStyle}>
+            Color:<span style={requiredStarStyle}>*</span>
+          </label>
+          <select
+            name="color"
+            value={formData.color || ""}
+            onChange={handleChange}
+            style={inputStyle}
+            required
+          >
+            <option value="">Select a color</option>
+            <option value="Red">Red</option>
+            <option value="White">White</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+          </select>
+          <label style={labelStyle}>
+            Quantity Required:<span style={requiredStarStyle}>*</span>
+          </label>
           <input
             type="number"
             name="quantity"
@@ -237,6 +252,7 @@ const Buy = () => {
             style={inputStyle}
             placeholder="Enter quantity"
             min="1"
+            required
           />
         </div>
 
@@ -245,7 +261,9 @@ const Buy = () => {
           <label style={{ ...labelStyle, marginBottom: "1.5rem", fontSize: "1.3rem", color: "#374151" }}>
             Personal Details
           </label>
-          <label style={labelStyle}>Contact Person Name:</label>
+          <label style={labelStyle}>
+            Contact Person Name:<span style={requiredStarStyle}>*</span>
+          </label>
           <input
             type="text"
             name="contactName"
@@ -255,7 +273,9 @@ const Buy = () => {
             placeholder="Enter name"
             required
           />
-          <label style={labelStyle}>Phone Number:</label>
+          <label style={labelStyle}>
+            Phone Number:<span style={requiredStarStyle}>*</span>
+          </label>
           <input
             type="tel"
             name="phoneNumber"
@@ -265,7 +285,9 @@ const Buy = () => {
             placeholder="Enter phone number"
             required
           />
-          <label style={labelStyle}>Email Address:</label>
+          <label style={labelStyle}>
+            Email Address:<span style={requiredStarStyle}>*</span>
+          </label>
           <input
             type="email"
             name="emailAddress"
@@ -282,8 +304,9 @@ const Buy = () => {
           <label style={{ ...labelStyle, marginBottom: "1.5rem", fontSize: "1.3rem", color: "#374151" }}>
             Address Details
           </label>
-
-          <label style={labelStyle}>Company Name:</label>
+          <label style={labelStyle}>
+            Company Name:<span style={requiredStarStyle}>*</span>
+          </label>
           <input
             type="text"
             name="companyName"
@@ -291,8 +314,11 @@ const Buy = () => {
             onChange={handleChange}
             style={inputStyle}
             placeholder="Enter company name"
+            required
           />
-          <label style={labelStyle}>GST Number:</label>
+          <label style={labelStyle}>
+            GST Number:<span style={requiredStarStyle}>*</span>
+          </label>
           <input
             type="text"
             name="gstNumber"
@@ -300,8 +326,11 @@ const Buy = () => {
             onChange={handleChange}
             style={inputStyle}
             placeholder="Enter GST number"
+            required
           />
-          <label style={labelStyle}>Billing Address:</label>
+          <label style={labelStyle}>
+            Billing Address:<span style={requiredStarStyle}>*</span>
+          </label>
           <textarea
             name="billingAddress"
             value={formData.billingAddress}
@@ -311,7 +340,9 @@ const Buy = () => {
             rows="4"
             required
           />
-          <label style={labelStyle}>Shipping Address:</label>
+          <label style={labelStyle}>
+            Shipping Address:<span style={requiredStarStyle}>*</span>
+          </label>
           <textarea
             name="shippingAddress"
             value={formData.shippingAddress}

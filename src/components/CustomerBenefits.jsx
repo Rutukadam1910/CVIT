@@ -455,7 +455,7 @@ const CustomerBenefitsdata = ({
         <svg
           width={size}
           viewBox={`0 0 ${size} ${size / 2 + 14.4}`}
-          style={{ overflow: "visible", marginBottom: "132.46px", marginTop: "-165.16px" }}
+          style={{ overflow: "visible", marginBottom: "132.46px", marginTop: "-145.16px" }}
         >
           <path
             d={arcPath(startAngle, endAngle, radius)}
