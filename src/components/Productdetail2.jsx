@@ -3949,113 +3949,89 @@ const renderModelStructureTable = () => {
           .close-btn:active {
             transform: scale(0.95);
           }
-  .huake-side-bar {
-    position: fixed;
-    right: 10px;
-    top: 30%;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    z-index: 1000;
-   
-    padding: 0px 0;
-    
-   
-  }
-
-  .huake-side-bar a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-    border: 1px solid #e9e9e9;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    text-decoration: none;
-    color: #0f172a;
-    font-size: 0.7rem;
-    font-weight: 600;
-    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-    width: 70px;
-    height: 70px;
-  }
-
-  .huake-side-bar a:hover {
-    transform: translateY(-2px);
-    background: #ef3a3a;
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(239, 58, 58, 0.2);
-  }
-
-  .huake-side-bar a img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0.8);
-    transition: filter 0.2s ease;
-  }
-
-  .huake-side-bar a:hover img {
-    filter: brightness(1.2);
-  }
-
-  .huake-side-bar a#gotop {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0s linear 0.4s;
-    visibility: hidden;
-  }
-
-  .huake-side-bar a#gotop.visible {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-  }
-
-  @media (max-width: 760px) {
-    .huake-side-bar {
-      right: 10px;
-      top: 15%;
-      padding: 8px 0;
-      width: 150px;
-    }
-
-    .huake-side-bar a {
-      padding: 8px;
-      font-size: 0.8rem;
-      width: 140px;
-      height: 140px;
-    }
-
-    .huake-side-bar a img {
-      width: 36px;
-      height: 36px;
-    }
-  }
-
-  @media (max-width: 420px) {
-    .huake-side-bar {
-      right: 10px;
-      top: 15%;
-      padding: 8px 0;
-      width: 150px;
-    }
-
-    .huake-side-bar a {
-      padding: 8px 12px;
-      font-size: 0.8rem;
-      width: 140px;
-    }
-
-    .huake-side-bar a img {
-      width: 18px;
-      height: 18px;
-    }
-  }
-}
+ .huake-side-bar {
+        position: fixed;
+        right: 10px;
+        top: 25%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        z-index: 1000;
+        padding: 0px 0;
+      }
+      .huake-side-bar a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #ef3a3a;
+        border: 1px solid #ef3a3a;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 0.7rem;
+        font-weight: 600;
+        transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+        width: 70px;
+        height: 70px;
+      }
+      .huake-side-bar a:hover {
+        transform: translateY(-2px);
+        border: 1px solid #ffffff;
+        background: #C62828;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(239, 58, 58, 0.2);
+      }
+      .huake-side-bar a img {
+        width: 30px;
+        height: 30px;
+        filter: brightness(0) invert(1);
+        transition: filter 0.2s ease;
+      }
+      .huake-side-bar a:hover img {
+        filter: brightness(0);
+      }
+      .huake-side-bar a#gotop {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
+      }
+      @media (max-width: 760px) {
+        .huake-side-bar {
+          right: 10px;
+          top: 15%;
+          padding: 8px 0;
+          width: 150px;
+        }
+        .huake-side-bar a {
+          padding: 8px;
+          font-size: 0.8rem;
+          width: 140px;
+          height: 140px;
+        }
+        .huake-side-bar a img {
+          width: 36px;
+          height: 36px;
+        }
+      }
+      @media (max-width: 420px) {
+        .huake-side-bar {
+          right: 10px;
+          top: 15%;
+          padding: 8px 0;
+          width: 150px;
+        }
+        .huake-side-bar a {
+          padding: 8px 12px;
+          font-size: 0.8rem;
+          width: 140px;
+        }
+        .huake-side-bar a img {
+          width: 18px;
+          height: 18px;
+        }
+      }
     @media (max-width: 760px) {
       :root {
         --marquee-width: 100vw;
@@ -4160,41 +4136,55 @@ const renderModelStructureTable = () => {
           </div>
         </nav>
 
-        <section
-          ref={productSectionRef}
-          id="product"
-          style={{ width: "100%", maxWidth: 1300, scrollMarginTop: "120px" }}
-          className="reveal-on-scroll"
-        >
-          <h2 style={sectionTitleStyle}>PRODUCTS</h2>
-          {renderModelStructureTable()}
-          <div style={enquireContainerStyle} className="enquire reveal-on-scroll">
-            <span style={enquireTextStyle}>Need customized light?</span>
-            <button
-              onClick={() => navigate("/enquire", { state: { productName: slug } })}
-              className="enquire-btn"
-              aria-label="Enquire now"
-            >
-              Enquire Now
-            </button>
-          </div>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem", marginBottom: "2rem" }} className="reveal-on-scroll">
-            <img
-              src={dimensionImage}
-              alt={`${product.title} dimension`}
-              style={{
-                maxWidth: "800px",
-                width: "100%",
-                height: "auto",
-                objectFit: "contain",
-                marginTop: "2rem",
-              }}
-              loading="lazy"
-              draggable={false}
-            />
-          </div>
-        </section>
-
+    <section
+    ref={productSectionRef}
+    id="product"
+    style={{ width: "100%", maxWidth: 1300, scrollMarginTop: "120px" }}
+    className="reveal-on-scroll"
+  >
+    <h2 style={sectionTitleStyle}>PRODUCTS</h2>
+    {renderModelStructureTable()}
+    <div style={enquireContainerStyle} className="enquire reveal-on-scroll">
+      <span style={enquireTextStyle}>Need customized light?</span>
+      <button
+        onClick={() => navigate("/enquire", { state: { productName: slug } })}
+        className="enquire-btn"
+        aria-label="Enquire now"
+      >
+        Enquire Now
+      </button>
+    </div>
+    <div >
+      <h3 style={{
+        fontSize: "1.3rem",
+        color: "#555555",
+        textAlign: "center",
+        fontWeight: 600,
+        marginTop:"4rem",
+        marginRight:"0.5rem",
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        textTransform: "uppercase"
+      }}>
+       Dimensional Overview
+      </h3>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem", marginBottom: "2rem" }} className="reveal-on-scroll">
+        <img
+        src={dimensionImage}
+        alt={`${product.title} dimension`}
+        style={{
+          maxWidth: "800px",
+          width: "100%",
+          height: "auto",
+          objectFit: "contain",
+          marginTop: "1rem",
+        }}
+        loading="lazy"
+        draggable={false}
+      />
+      </div>
+      
+    </div>
+  </section>
         <hr style={hrStyle} />
 
       <section
@@ -4965,55 +4955,66 @@ const renderModelStructureTable = () => {
 
 
 
+<div id="huake-side-bar" className="huake-side-bar" aria-label="Quick contact options">
+            <a
+              href="/contact-us"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/contact-us");
+              }}
+              rel="nofollow"
+              aria-label="Contact"
+              className="text"
+            >
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span>Contact</span>
+            </a>
+            <a
+              href="mailto:sales@cvit.in"
+              rel="nofollow"
+              target="_blank"
+              aria-label="Email"
+              className="text"
+            >
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <span>Email</span>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send?phone=7507149084"
+              rel="nofollow"
+              target="_blank"
+              aria-label="WhatsApp"
+              className="text"
+            >
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M11.991 21.781a9.9 9.9 0 0 1-5.034-1.38l-.36-.216-3.741.981.999-3.649-.234-.376a9.84 9.84 0 0 1-1.511-5.258c0-5.439 4.436-9.876 9.887-9.876a9.84 9.84 0 0 1 6.99 2.897 9.84 9.84 0 0 1 2.892 6.99c-.006 5.459-4.442 9.888-9.888 9.888m5.423-7.401c-.296-.149-1.755-.867-2.03-.969-.273-.098-.473-.149-.667.149-.2.296-.77.969-.941 1.163-.171.199-.348.222-.645.075-.296-.15-1.254-.462-2.388-1.478-.885-.787-1.478-1.763-1.655-2.058-.171-.297-.016-.456.132-.604.131-.132.296-.348.444-.519.15-.171.199-.297.297-.495.098-.201.051-.372-.022-.52-.075-.149-.667-1.614-.918-2.205-.24-.583-.484-.502-.667-.51-.171-.01-.37-.01-.57-.01a1.095 1.095 0 0 0-.794.37c-.273.297-1.037 1.016-1.037 2.482s1.065 2.874 1.215 3.074c.147.199 2.091 3.198 5.075 4.488.705.307 1.26.489 1.694.627.713.228 1.356.193 1.869.12.57-.087 1.757-.72 2.007-1.414.246-.696.246-1.29.171-1.414-.073-.126-.273-.199-.57-.348"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <a
+              href="#"
+              rel="nofollow"
+              aria-label="Top"
+              id="gotop"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 19V5" />
+                <path d="M5 12l7-7 7 7" />
+              </svg>
+              <span>Top</span>
+            </a>
+          </div>
 
-      <div id="huake-side-bar" className="huake-side-bar" aria-label="Quick contact options">
-  <a
-    href="/contact-us"
-    onClick={(e) => {
-      e.preventDefault();
-      navigate("/contact-us");
-    }}
-    rel="nofollow"
-    aria-label="Contact"
-    className="text"
-  >
-    <img src="https://shopcdnpro.grainajz.com/category/348148/1163/8ccaaf1674524c9be90f44af930f6206/icons8-5-50.png" alt="Contact" loading="lazy" />
-    <span>Contact</span>
-  </a>
-  <a
-    href="mailto:sales@cvit.in"
-    rel="nofollow"
-    target="_blank"
-    aria-label="Email"
-    className="text"
-  >
-    <img src="https://shopcdnpro.grainajz.com/category/348148/1163/1c934ef346330f2b7577c83d3498e886/icons8-4-50.png" alt="Email" loading="lazy" />
-    <span>Email</span>
-  </a>
-  <a
-    href="https://api.whatsapp.com/send?phone=7507149084"
-    rel="nofollow"
-    target="_blank"
-    aria-label="WhatsApp"
-    className="text"
-  >
-    <img src="https://shopcdnpro.grainajz.com/category/348148/1163/2917eb55a2620ffcbbb5c253a45e3e56/icons8-whatsapp-50.png" alt="WhatsApp" loading="lazy" />
-    <span>WhatsApp</span>
-  </a>
-  <a
-    href="#"
-    rel="nofollow"
-    aria-label="Top"
-    id="gotop"
-    onClick={(e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }}
-  >
-    <img src="https://shopcdnpro.grainajz.com/category/348148/1163/26aae9182f3cb8f4afdbb73aeb797736/icons8-1-50.png" alt="Top" loading="lazy" />
-    <span>Top</span>
-  </a>
-</div>
       </main>
     </>
   );
