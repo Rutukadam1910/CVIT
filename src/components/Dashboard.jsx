@@ -1937,6 +1937,7 @@ const Dashboard = ({ type }) => {
         justify-content: center;
         background: #ef3a3a;
         border: 1px solid #ef3a3a;
+        border-radius:6px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         text-decoration: none;
         color: #ffffff;
