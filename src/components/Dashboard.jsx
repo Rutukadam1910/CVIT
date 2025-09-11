@@ -1949,7 +1949,7 @@ const Dashboard = ({ type }) => {
       }
       .huake-side-bar a:hover {
         transform: translateY(-2px);
-        border: 1px solid #ffffff;
+        border: 1px solid #ef3a3a;
         background: #C62828;
         color: #ffffff;
         box-shadow: 0 4px 12px rgba(239, 58, 58, 0.2);
