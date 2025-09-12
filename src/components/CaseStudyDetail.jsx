@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -10,6 +9,7 @@ import sealentPresenceImg from "../assets/CaseStudies/Door_Sealent_Presence.png"
 import vialAdapterImg from "../assets/CaseStudies/vial_adapter.png";
 import tracingTrackingImg from "../assets/CaseStudies/Tracing_And_Tracking.png";
 import WindowGlassImg from "../assets/CaseStudies/Window_Glass.png";
+import "../Styles/CaseStudyDetail.css";
 
 const caseStudies = [
   {
@@ -399,608 +399,136 @@ const CaseStudyDetail = () => {
   const descriptionSections = subSections.filter((_, idx) => idx !== solutionSectionIndex);
 
   return (
-    <>
-      <style>{`
-        :root {
-          --bg: #f7f9fc;
-          --card-bg: #ffffff;
-          --text-primary: #1a2a44;
-          --text-secondary: #4a5568;
-          --accent-color: #ef3a3a;
-          --border-color: #e2e8f0;
-          --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-          --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-          --max-content-w: 1280px;
-          --right-col-w: 600px;
-          --description-card-height: 400px;
-          --solution-card-height: 350px;
-          --image-height: 500px;
-        }
+    <TransitionGroup>
+      <CSSTransition
+        timeout={500}
+        classNames="cs-container"
+        unmountOnExit
+      >
+        <div key={id} className="cs-container" role="main">
+          <div className="transition-overlay" aria-hidden="true" />
+          <div ref={containerRef} className="cs-inner" aria-live="polite">
+            <h1 className={`cs-title reveal ${!isExiting ? "in-view" : ""}`}>
+              {study.title}
+            </h1>
 
-        .cs-container {
-          background: var(--bg);
-          min-height: 100vh;
-          padding: 60px 20px;
-          box-sizing: border-box;
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
-          font-family: var(--font-family);
-          color: var(--text-primary);
-          scroll-padding-top: 80px;
-          position: relative;
-          z-index: 1;
-          pointer-events: auto;
-        }
-
-        .cs-container-exit,
-        .cs-container-exit-active {
-          opacity: 0;
-          transform: translateY(15px) scale(0.98);
-          transition: opacity 0.5s var(--ease-smooth), transform 0.5s var(--ease-smooth);
-          pointer-events: none;
-        }
-
-        .transition-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: var(--bg);
-          opacity: 0;
-          transition: opacity 0.5s var(--ease-smooth);
-          pointer-events: none;
-          z-index: 2;
-        }
-
-        .cs-container-exit ~ .transition-overlay,
-        .cs-container-exit-active ~ .transition-overlay {
-          opacity: 1;
-        }
-
-        .cs-inner {
-          width: 100%;
-          max-width: var(--max-content-w);
-          margin: 0 auto;
-          box-sizing: border-box;
-        }
-
-        .cs-title {
-          font-weight: 700;
-          font-size: clamp(2rem, 3.5vw, 2rem);
-          line-height: 1.3;
-          margin-bottom: 2rem;
-          color: var(--text-primary);
-          padding-left: 16px;
-          border-left: 5px solid var(--accent-color);
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth);
-        }
-        .cs-title.in-view {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .layout {
-          display: grid;
-          grid-template-columns: 1fr var(--right-col-w);
-          gap: 32px;
-          align-items: start;
-        }
-        @media (max-width: 1024px) {
-          .layout {
-            grid-template-columns: 1fr;
-            gap: 24px;
-          }
-        }
-
-        .image-wrap {
-          position: relative;
-          border-radius: 12px;
-          overflow: hidden;
-          box-shadow: var(--shadow);
-          background: #ffffff;
-          transition: transform 0.2s var(--ease-smooth);
-          margin-top: 62px;
-          height: var(--image-height);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .image-wrap:hover {
-          transform: translateY(-4px);
-        }
-
-        .image-frame {
-          border-radius: 8px;
-          overflow: hidden;
-          background: #f8fafc;
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.3s var(--ease-smooth) var(--reveal-delay),
-                      transform 0.3s var(--ease-smooth) var(--reveal-delay);
-          width: 100%;
-          height: 100%;
-        }
-        .image-frame.in-view {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .image-canvas {
-          border-radius: 6px;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-sizing: border-box;
-          overflow: hidden;
-        }
-
-        .image-canvas img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-          border-radius: 4px;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-          transition: transform 0.2s var(--ease-smooth), filter 0.2s var(--ease-smooth);
-        }
-
-        .right-column {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-          align-self: flex-start;
-          max-width: var(--right-col-w);
-          width: 100%;
-          box-sizing: border-box;
-        }
-
-        .description-card {
-          background: var(--card-bg);
-          border-radius: 12px;
-          padding: 24px;
-          border: 1px solid var(--border-color);
-          box-shadow: var(--shadow);
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.3s var(--ease-smooth) var(--reveal-delay),
-                      transform 0.3s var(--ease-smooth) var(--reveal-delay);
-          min-height: var(--description-card-height);
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-        }
-        .description-card.in-view {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        .description-card:hover {
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-          transform: translateY(-2px);
-        }
-
-        .description-card .main-heading {
-          font-weight: 600;
-          font-size: 1.25rem;
-          margin-bottom: 16px;
-          color: var(--text-primary);
-          border-left: 4px solid var(--accent-color);
-          padding-left: 12px;
-        }
-
-        .description-card .sub-section {
-          margin-bottom: 16px;
-        }
-
-        .description-card .sub-section:last-child {
-          margin-bottom: 0;
-        }
-
-        .description-card .sub-heading {
-          font-weight: 600;
-          font-size: 1.1rem;
-          margin-bottom: 12px;
-          color: var(--text-primary);
-          padding-left: 12px;
-        }
-
-        .description-card .content {
-          font-size: 1rem;
-          line-height: 1.6;
-          color: var(--text-secondary);
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .description-card .content p {
-          margin: 0;
-          padding-left: 28px;
-          color: var(--text-primary);
-        }
-
-        .description-card .content ol {
-          padding-left: 28px;
-          margin: 0;
-          list-style: none;
-          counter-reset: li;
-        }
-
-        .description-card .content ol li {
-          position: relative;
-          margin-bottom: 12px;
-          font-weight: 400;
-          color: var(--text-primary);
-          padding-left: 36px;
-          counter-increment: li;
-          line-height: 1.6;
-        }
-
-        .description-card .content ol li::before {
-          content: counter(li);
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          height: 24px;
-          width: 24px;
-          border-radius: 50%;
-          background: var(--accent-color);
-          color: #ffffff;
-          font-size: 0.9rem;
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .description-card .content ol li:hover {
-          color: var(--accent-color);
-          transform: scale(1.02);
-        }
-
-        .solution-card {
-          margin-top: 40px;
-          background: var(--card-bg);
-          border-radius: 12px;
-          padding: 32px;
-          border: 1px solid var(--border-color);
-          box-shadow: var(--shadow);
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.3s var(--ease-smooth) var(--reveal-delay),
-                      transform 0.3s var(--ease-smooth) var(--reveal-delay);
-          min-height: var(--solution-card-height);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          max-width: var(--max-content-w);
-          width: 100%;
-        }
-        .solution-card.in-view {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        .solution-card:hover {
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-        }
-
-        .solution-header {
-          margin-bottom: 24px;
-          border-left: 5px solid var(--accent-color);
-          padding-left: 12px;
-        }
-        .solution-header h3 {
-          margin: 0;
-          font-weight: 700;
-          font-size: 1.5rem;
-          color: var(--text-primary);
-        }
-
-        .solution-body {
-          font-size: 1rem;
-          line-height: 1.6;
-          color: var(--text-secondary);
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .solution-body ol {
-          padding-left: 28px;
-          margin: 0;
-          list-style: none;
-          counter-reset: li;
-        }
-        .solution-body ol li {
-          position: relative;
-          margin-bottom: 12px;
-          font-weight: 400;
-          color: var(--text-primary);
-          padding-left: 36px;
-          counter-increment: li;
-          line-height: 1.6;
-        }
-        .solution-body ol li::before {
-          content: counter(li);
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          height: 24px;
-          width: 24px;
-          border-radius: 50%;
-          background: var(--accent-color);
-          color: #ffffff;
-          font-size: 0.9rem;
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .solution-body ol li:hover {
-          color: var(--accent-color);
-          transform: scale(1.02);
-        }
-
-        .solution-body div.line {
-          padding-left: 0;
-          color: var(--text-secondary);
-          font-weight: 400;
-        }
-        .solution-body div.line::before {
-          content: "";
-        }
-
-        .back-wrap {
-          display: flex;
-          justify-content: flex-end;
-          gap: 16px;
-          margin-top: 32px;
-        }
-
-        .back-btn, .next-btn {
-          background: var(--accent-color);
-          color: #ffffff;
-          border: none;
-          padding: 12px 24px;
-          border-radius: 8px;
-          font-weight: 600;
-          font-size: 1rem;
-          cursor: pointer;
-          box-shadow: var(--shadow);
-          transition: background 0.2s ease, box-shadow 0.2s ease;
-        }
-        .back-btn:hover, .next-btn:hover {
-          background: #c53030;
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-        }
-        .back-btn:focus-visible, .next-btn:focus-visible {
-          outline: 2px solid #c53030;
-          outline-offset: 2px;
-        }
-        .back-btn:active, .next-btn:active {
-          box-shadow: var(--shadow);
-        }
-
-        .reveal {
-          opacity: 0;
-          transform: translateY(10px);
-          transition-property: opacity, transform;
-          transition-timing-function: var(--ease-smooth);
-          transition-duration: 0.3s;
-          transition-delay: var(--reveal-delay);
-        }
-        .reveal.in-view {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        button, a {
-          user-select: none;
-        }
-
-        @media (max-width: 1024px) {
-          :root {
-            --right-col-w: 100%;
-            --description-card-height: 350px;
-            --solution-card-height: 300px;
-            --image-height: 300px;
-          }
-          .cs-container {
-            padding: 40px 16px;
-          }
-          .cs-title {
-            font-size: clamp(1.8rem, 3vw, 2.2rem);
-          }
-          .image-wrap {
-            margin-top: 24px;
-          }
-          .description-card {
-            padding: 20px;
-            min-height: var(--description-card-height);
-          }
-          .description-card .main-heading {
-            font-size: 1.15rem;
-          }
-          .description-card .sub-heading {
-            font-size: 1rem;
-          }
-          .description-card .content {
-            font-size: 0.95rem;
-          }
-          .solution-card {
-            padding: 24px;
-            min-height: var(--solution-card-height);
-          }
-          .solution-header h3 {
-            font-size: 1.3rem;
-          }
-          .back-btn, .next-btn {
-            padding: 10px 20px;
-            font-size: 0.95rem;
-          }
-        }
-
-        @media (max-width: 640px) {
-          :root {
-            --image-height: 200px;
-            --description-card-height: 300px;
-          }
-          .cs-title {
-            font-size: 1.6rem;
-            padding-left: 12px;
-          }
-          .description-card {
-            padding: 16px;
-            min-height: var(--description-card-height);
-          }
-          .solution-card {
-            padding: 20px;
-            min-height: var(--solution-card-height);
-          }
-        }
-      `}</style>
-
-      <TransitionGroup>
-        <CSSTransition
-          timeout={500}
-          classNames="cs-container"
-          unmountOnExit
-        >
-          <div key={id} className="cs-container" role="main">
-            <div className="transition-overlay" aria-hidden="true" />
-            <div ref={containerRef} className="cs-inner" aria-live="polite">
-              <h1 className={`cs-title reveal ${!isExiting ? "in-view" : ""}`}>
-                {study.title}
-              </h1>
-
-              <div className="layout" role="region" aria-label="Case study content">
+            <div className="layout" role="region" aria-label="Case study content">
+              <div
+                className={`image-wrap reveal ${!isExiting ? "in-view" : ""}`}
+                ref={imgWrapRef}
+                tabIndex={-1}
+                aria-hidden={prefersReducedMotion ? "true" : "false"}
+              >
                 <div
-                  className={`image-wrap reveal ${!isExiting ? "in-view" : ""}`}
-                  ref={imgWrapRef}
-                  tabIndex={-1}
-                  aria-hidden={prefersReducedMotion ? "true" : "false"}
+                  className={`image-frame reveal ${!isExiting ? "in-view" : ""}`}
+                  style={{ transitionDelay: !isExiting ? "150ms" : "0ms" }}
                 >
-                  <div
-                    className={`image-frame reveal ${!isExiting ? "in-view" : ""}`}
-                    style={{ transitionDelay: !isExiting ? "150ms" : "0ms" }}
-                  >
-                    <div className="image-canvas">
-                      {study.image && (
-                        <img
-                          src={study.image}
-                          alt={study.title}
-                          loading="eager"
-                          onError={(e) => {
-                            console.error(`Failed to load image: ${study.image}`);
-                            e.currentTarget.style.display = "none";
-                          }}
-                        />
-                      )}
-                    </div>
+                  <div className="image-canvas">
+                    {study.image && (
+                      <img
+                        src={study.image}
+                        alt={study.title}
+                        loading="eager"
+                        onError={(e) => {
+                          console.error(`Failed to load image: ${study.image}`);
+                          e.currentTarget.style.display = "none";
+                        }}
+                      />
+                    )}
                   </div>
-                </div>
-
-                <div
-                  className="right-column"
-                  aria-hidden={prefersReducedMotion ? "true" : "false"}
-                >
-                  <article
-                    className={`description-card reveal ${!isExiting ? "in-view" : ""}`}
-                    style={{ transitionDelay: "150ms" }}
-                    aria-label="Case study description"
-                    tabIndex={-1}
-                  >
-                    {mainHeading && (
-                      <div className="main-heading">{mainHeading}</div>
-                    )}
-                    {overviewContent.length > 0 && (
-                      <div className="sub-section">
-                        <div className="content">
-                          {overviewContent.map((line, li) => (
-                            <p key={li}>{line}</p>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {descriptionSections.map((section, sIdx) => (
-                      <div key={sIdx} className="sub-section">
-                        <div className="sub-heading">{section.title}</div>
-                        <div className="content">
-                          {section.title.toLowerCase().includes("the system must") ||
-                          section.title.toLowerCase().includes("key challenges") ? (
-                            <ol>
-                              {section.content.map((line, li) => (
-                                <li key={li}>{line}</li>
-                              ))}
-                            </ol>
-                          ) : (
-                            section.content.map((line, li) => (
-                              <p key={li}>{line}</p>
-                            ))
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </article>
                 </div>
               </div>
 
-              {solutionSection && (
-                <section
-                  className={`solution-card reveal ${!isExiting ? "in-view" : ""}`}
-                  style={{ transitionDelay: "250ms" }}
+              <div
+                className="right-column"
+                aria-hidden={prefersReducedMotion ? "true" : "false"}
+              >
+                <article
+                  className={`description-card reveal ${!isExiting ? "in-view" : ""}`}
+                  style={{ transitionDelay: "150ms" }}
+                  aria-label="Case study description"
                   tabIndex={-1}
-                  aria-label={solutionSection.title}
                 >
-                  <div className="solution-header">
-                    <h3>{solutionSection.title}</h3>
-                  </div>
-                  <div
-                    className="solution-body"
-                    aria-hidden={prefersReducedMotion ? "true" : "false"}
-                  >
-                    <ol>
-                      {solutionSection.content.map((line, idx) => (
-                        <li key={idx}>{line}</li>
-                      ))}
-                    </ol>
-                  </div>
-
-                  <div className="back-wrap">
-                    <button
-                      ref={backBtnRef}
-                      className="back-btn"
-                      onClick={handleBackClick}
-                      aria-label="Go back to case studies"
-                    >
-                      ← Go Back
-                    </button>
-                    <button
-                      ref={nextBtnRef}
-                      className="next-btn"
-                      onClick={handleNextClick}
-                      aria-label="Go to next case study"
-                    >
-                      Next Case Study →
-                    </button>
-                  </div>
-                </section>
-              )}
+                  {mainHeading && (
+                    <div className="main-heading">{mainHeading}</div>
+                  )}
+                  {overviewContent.length > 0 && (
+                    <div className="sub-section">
+                      <div className="content">
+                        {overviewContent.map((line, li) => (
+                          <p key={li}>{line}</p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {descriptionSections.map((section, sIdx) => (
+                    <div key={sIdx} className="sub-section">
+                      <div className="sub-heading">{section.title}</div>
+                      <div className="content">
+                        {section.title.toLowerCase().includes("the system must") ||
+                        section.title.toLowerCase().includes("key challenges") ? (
+                          <ol>
+                            {section.content.map((line, li) => (
+                              <li key={li}>{line}</li>
+                            ))}
+                          </ol>
+                        ) : (
+                          section.content.map((line, li) => (
+                            <p key={li}>{line}</p>
+                          ))
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </article>
+              </div>
             </div>
+
+            {solutionSection && (
+              <section
+                className={`solution-card reveal ${!isExiting ? "in-view" : ""}`}
+                style={{ transitionDelay: "250ms" }}
+                tabIndex={-1}
+                aria-label={solutionSection.title}
+              >
+                <div className="solution-header">
+                  <h3>{solutionSection.title}</h3>
+                </div>
+                <div
+                  className="solution-body"
+                  aria-hidden={prefersReducedMotion ? "true" : "false"}
+                >
+                  <ol>
+                    {solutionSection.content.map((line, idx) => (
+                      <li key={idx}>{line}</li>
+                    ))}
+                  </ol>
+                </div>
+
+                <div className="back-wrap">
+                  <button
+                    ref={backBtnRef}
+                    className="back-btn"
+                    onClick={handleBackClick}
+                    aria-label="Go back to case studies"
+                  >
+                    ← Go Back
+                  </button>
+                  <button
+                    ref={nextBtnRef}
+                    className="next-btn"
+                    onClick={handleNextClick}
+                    aria-label="Go to next case study"
+                  >
+                    Next Case Study →
+                  </button>
+                </div>
+              </section>
+            )}
           </div>
-        </CSSTransition>
-      </TransitionGroup>
-    </>
+        </div>
+      </CSSTransition>
+    </TransitionGroup>
   );
 };
 

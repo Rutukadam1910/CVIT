@@ -1410,6 +1410,7 @@
 import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
+import "../Styles/Dashboard.css";
 
 const CustomerBenefits = lazy(() => import("./CustomerBenefits"));
 const Client = lazy(() => import("./Client"));
@@ -1557,7 +1558,6 @@ const Dashboard = ({ type }) => {
   const aboutUsRef = useRef(null);
   const navigateTimeoutRef = useRef(null);
 
-
   useEffect(() => {
     const handleScroll = () => {
       const gotop = document.getElementById("gotop");
@@ -1586,8 +1586,6 @@ const Dashboard = ({ type }) => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
-  
 
   useEffect(() => {
     localStorage.setItem("toggleState", type);
@@ -1710,495 +1708,200 @@ const Dashboard = ({ type }) => {
   };
 
   return (
-   <>
-    <style>{`
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Inter', sans-serif;
-        background: #000;
-      }
-      .dashboard-container {
-        width: 100%;
-        color: white;
-        overflow-x: hidden;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        z-index: 2;
-      }
-      .content-wrapper {
-        width: 100%;
-        max-width: 2000px;
-        padding: 5rem 3rem 3rem 3rem;
-        margin: 0 auto;
-        box-sizing: border-box;
-        position: relative;
-        z-index: 3;
-      }
-      .heading-section {
-        text-align: center;
-        margin-bottom: 1.68rem;
-      }
-      .heading-section h1 {
-        font-family: "Special Gothic Expanded One", sans-serif;
-        font-weight: 700;
-        font-size: 4.35vw;
-        color: #EF3A3A;
-        text-shadow: 0 0 5.36px rgba(239, 58, 58, 0.5);
-      }
-      .heading-section h2 {
-        font-size: 2vw;
-        color: white;
-        font-weight: 700;
-      }
-      .slider-toggle-container {
-        display: flex;
-        justify-content: center;
-        margin: 2.01rem 0 2.68rem;
-      }
-      .slider-toggle {
-        position: relative;
-        width: 40.2%;
-        max-width: 402px;
-        height: 68px;
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(4.02px);
-        border: 0.67px solid rgba(255, 255, 255, 0.08);
-        border-radius: 33.5px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 5.36px;
-        box-shadow: 0 4.02px 12.06px rgba(0, 0, 0, 0.35);
-        cursor: pointer;
-        user-select: none;
-      }
-      .toggle-option {
-        width: 50%;
-        text-align: center;
-        font-size: 0.938rem;
-        font-weight: 700;
-        z-index: 2;
-        color: white;
-        cursor: pointer;
-      }
-      .slider-indicator {
-        position: absolute;
-        width: 49%;
-        height: 87%;
-        background: #EF3A3A;
-        border-radius: 30.8px;
-        top: 7%;
-        left: 5.36px;
-        transition: transform 0.3s ease-in-out;
-        z-index: 1;
-      }
-      .slider-toggle.right .slider-indicator {
-        transform: translateX(99%);
-      }
-      .industries-grid {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1.8rem;
-        min-height: 200px;
-        padding-bottom: 2rem;
-      }
-      .industry-card {
-        width: 170px;
-        height: 180.9px;
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(4.02px);
-        border-radius: 20.1px;
-        box-shadow: 0 4.02px 12.06px rgba(0, 0, 0, 0.35);
-        color: white;
-        font-weight: 700;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 2.144rem;
-        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-      }
-      .industry-card:hover {
-        background-color: #f2f2f2;
-        color: #222;
-        transform: translateY(-4.02px);
-      }
-      .industry-card:hover .icon {
-        stroke: #EF3A3A !important;
-      }
-      .industry-card:hover .icon-circle {
-        border-color: #EF3A3A !important;
-      }
-      .icon-circle {
-        width: 67px;
-        height: 67px;
-        border-radius: 50%;
-        border: 1.675px solid white;
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 !important;
-      }
-      .icon-wrapper svg {
-        margin: 0 auto;
-        display: block;
-        width: 26.8px;
-        height: 26.8px;
-      }
-      .industry-name {
-        font-size: 0.938rem;
-        font-weight: 600;
-        margin-top: 0.67rem;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 10px;
-        box-sizing: border-box;
-      }
-      .industry-card:hover .industry-name {
-        color: #EF3A3A;
-      }
-      .product-card {
-        width: 130px;
-        height: 190.9px;
-        background: rgba(255, 255, 255, 0.10);
-        backdrop-filter: blur(4.02px);
-        border-radius: 20.1px;
-        box-shadow: 0 4.02px 12.06px rgba(0, 0, 0, 0.35);
-        color: white;
-        font-weight: 700;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 1rem;
-        text-align: center;
-        user-select: none;
-        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-      }
-      .product-card:hover {
-        background-color: #f2f2f2;
-        color: #222;
-        transform: translateY(-4.02px);
-      }
-      .product-card:hover .industry-name {
-        color: #EF3A3A;
-      }
-      .product-logo {
-        width: 70px;
-        height: 70px;
-        object-fit: contain;
-        border-radius: 12px;
-        user-select: none;
-        pointer-events: none;
-        filter: drop-shadow(0 0 2px rgba(0,0,0,0.7));
-      }
-      .dashboard-content {
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        opacity: ${isSliding ? 0 : 1};
-        transform: ${isSliding ? "translateY(10px)" : "translateY(0)"};
-        min-height: 200px;
-      }
-      .loading-placeholder {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-        color: white;
-        font-size: 1.2rem;
-        opacity: 0.7;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 12px;
-      }
-      .huake-side-bar {
-        position: fixed;
-        right: 10px;
-        top: 25%;
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        z-index: 1000;
-        padding: 0px 0;
-      }
-      .huake-side-bar a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #ef3a3a;
-        border: 1px solid #ef3a3a;
-        border-radius:6px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 0.7rem;
-        font-weight: 600;
-        transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-        width: 70px;
-        height: 70px;
-      }
-      .huake-side-bar a:hover {
-        transform: translateY(-2px);
-        border: 1px solid #ef3a3a;
-        background: #C62828;
-        color: #ffffff;
-        box-shadow: 0 4px 12px rgba(239, 58, 58, 0.2);
-      }
-      .huake-side-bar a img {
-        width: 30px;
-        height: 30px;
-        filter: brightness(0) invert(1);
-        transition: filter 0.2s ease;
-      }
-      .huake-side-bar a:hover img {
-        filter: brightness(0);
-      }
-      .huake-side-bar a#gotop {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(20px);
-        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
-      }
-      @media (max-width: 760px) {
-        .huake-side-bar {
-          right: 10px;
-          top: 15%;
-          padding: 8px 0;
-          width: 150px;
-        }
-        .huake-side-bar a {
-          padding: 8px;
-          font-size: 0.8rem;
-          width: 140px;
-          height: 140px;
-        }
-        .huake-side-bar a img {
-          width: 36px;
-          height: 36px;
-        }
-      }
-      @media (max-width: 420px) {
-        .huake-side-bar {
-          right: 10px;
-          top: 15%;
-          padding: 8px 0;
-          width: 150px;
-        }
-        .huake-side-bar a {
-          padding: 8px 12px;
-          font-size: 0.8rem;
-          width: 140px;
-        }
-        .huake-side-bar a img {
-          width: 18px;
-          height: 18px;
-        }
-      }
-    `}</style>
-
-    <Navbar />
-    <div className="dashboard-container" ref={homeRef}>
-      <div className="content-wrapper">
-        <div className="heading-section">
-          <h1>The Future Of AI Is Here !</h1>
-          <h2>CVIT Solution Pvt Ltd</h2>
-        </div>
-
-        <div className="slider-toggle-container">
-          <div
-            className={`slider-toggle ${toggleState === "dashboardOne" ? "left" : "right"}`}
-            onClick={handleToggle}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleToggle();
-              }
-            }}
-            aria-pressed={toggleState === "dashboardTwo"}
-            aria-label="Toggle between Solutions and Machine Vision Light"
-          >
-            <div className="toggle-option">Solutions</div>
-            <div className="toggle-option">Machine Vision Light</div>
-            <div className="slider-indicator" />
+    <>
+      <Navbar />
+      <div className="dashboard-container" ref={homeRef}>
+        <div className="content-wrapper">
+          <div className="heading-section">
+            <h1>The Future Of AI Is Here !</h1>
+            <h2>CVIT Solution Pvt Ltd</h2>
           </div>
-        </div>
 
-        <div className="dashboard-content">
-          {toggleState === "dashboardOne" && (
-            <section key="dashboardOne">
-              <div className="industries-grid" role="list">
-                {industries.map(({ id, name, icon }) => (
-                  <div
-                    key={id}
-                    className="industry-card"
-                    onClick={() => handleIndustryClick(id)}
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        handleIndustryClick(id);
-                      }
-                    }}
-                    role="button"
-                    aria-label={`Go to details for industry ${name}`}
-                  >
-                    <IconCircle>{icon}</IconCircle>
-                    <div className="industry-name">{name}</div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-          {toggleState === "dashboardTwo" && (
-            <section key="dashboardTwo">
-              <div className="industries-grid" role="list">
-                {products.map(({ name, image }) => {
-                  const slug = toSlug(name);
-                  return (
+          <div className="slider-toggle-container">
+            <div
+              className={`slider-toggle ${toggleState === "dashboardOne" ? "left" : "right"}`}
+              onClick={handleToggle}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleToggle();
+                }
+              }}
+              aria-pressed={toggleState === "dashboardTwo"}
+              aria-label="Toggle between Solutions and Machine Vision Light"
+            >
+              <div className="toggle-option">Solutions</div>
+              <div className="toggle-option">Machine Vision Light</div>
+              <div className="slider-indicator" />
+            </div>
+          </div>
+
+          <div className={`dashboard-content ${isSliding ? "slide-out" : "slide-in"}`}>
+            {toggleState === "dashboardOne" && (
+              <section key="dashboardOne">
+                <div className="industries-grid" role="list">
+                  {industries.map(({ id, name, icon }) => (
                     <div
-                      key={slug}
-                      className="product-card"
-                      onClick={() => handleProductClick(slug)}
+                      key={id}
+                      className="industry-card"
+                      onClick={() => handleIndustryClick(id)}
                       tabIndex={0}
                       onKeyDown={(e) => {
                         if (e.key === "Enter" || e.key === " ") {
                           e.preventDefault();
-                          handleProductClick(slug);
+                          handleIndustryClick(id);
                         }
                       }}
-                      role="listitem"
-                      aria-label={`Go to details for product ${name}`}
+                      role="button"
+                      aria-label={`Go to details for industry ${name}`}
                     >
-                      <img
-                        src={image}
-                        alt={`${name} logo`}
-                        className="product-logo"
-                        draggable={false}
-                        loading="lazy"
-                      />
+                      <IconCircle>{icon}</IconCircle>
                       <div className="industry-name">{name}</div>
                     </div>
-                  );
-                })}
-              </div>
-            </section>
+                  ))}
+                </div>
+              </section>
+            )}
+            {toggleState === "dashboardTwo" && (
+              <section key="dashboardTwo">
+                <div className="industries-grid" role="list">
+                  {products.map(({ name, image }) => {
+                    const slug = toSlug(name);
+                    return (
+                      <div
+                        key={slug}
+                        className="product-card"
+                        onClick={() => handleProductClick(slug)}
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            handleProductClick(slug);
+                          }
+                        }}
+                        role="listitem"
+                        aria-label={`Go to details for product ${name}`}
+                      >
+                        <img
+                          src={image}
+                          alt={`${name} logo`}
+                          className="product-logo"
+                          draggable={false}
+                          loading="lazy"
+                        />
+                        <div className="industry-name">{name}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+          </div>
+
+          {toggleState === "dashboardOne" && (
+            <div id="huake-side-bar" className="huake-side-bar" aria-label="Quick contact options">
+              <a
+                href="/contact-us"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/contact-us");
+                }}
+                rel="nofollow"
+                aria-label="Contact"
+                className="text"
+              >
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span>Contact</span>
+              </a>
+              <a
+                href="mailto:sales@cvit.in"
+                rel="nofollow"
+                target="_blank"
+                aria-label="Email"
+                className="text"
+              >
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <span>Email</span>
+              </a>
+              <a
+                href="https://api.whatsapp.com/send?phone=7507149084"
+                rel="nofollow"
+                target="_blank"
+                aria-label="WhatsApp"
+                className="text"
+              >
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M11.991 21.781a9.9 9.9 0 0 1-5.034-1.38l-.36-.216-3.741.981.999-3.649-.234-.376a9.84 9.84 0 0 1-1.511-5.258c0-5.439 4.436-9.876 9.887-9.876a9.84 9.84 0 0 1 6.99 2.897 9.84 9.84 0 0 1 2.892 6.99c-.006 5.459-4.442 9.888-9.888 9.888m5.423-7.401c-.296-.149-1.755-.867-2.03-.969-.273-.098-.473-.149-.667.149-.2.296-.77.969-.941 1.163-.171.199-.348.222-.645.075-.296-.15-1.254-.462-2.388-1.478-.885-.787-1.478-1.763-1.655-2.058-.171-.297-.016-.456.132-.604.131-.132.296-.348.444-.519.15-.171.199-.297.297-.495.098-.201.051-.372-.022-.52-.075-.149-.667-1.614-.918-2.205-.24-.583-.484-.502-.667-.51-.171-.01-.37-.01-.57-.01a1.095 1.095 0 0 0-.794.37c-.273.297-1.037 1.016-1.037 2.482s1.065 2.874 1.215 3.074c.147.199 2.091 3.198 5.075 4.488.705.307 1.26.489 1.694.627.713.228 1.356.193 1.869.12.57-.087 1.757-.72 2.007-1.414.246-.696.246-1.29.171-1.414-.073-.126-.273-.199-.57-.348"/>
+                </svg>
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href="#"
+                rel="nofollow"
+                aria-label="Top"
+                id="gotop"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 19V5" />
+                  <path d="M5 12l7-7 7 7" />
+                </svg>
+                <span>Top</span>
+              </a>
+            </div>
           )}
         </div>
 
-        {toggleState === "dashboardOne" && (
-          <div id="huake-side-bar" className="huake-side-bar" aria-label="Quick contact options">
-            <a
-              href="/contact-us"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/contact-us");
-              }}
-              rel="nofollow"
-              aria-label="Contact"
-              className="text"
-            >
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-              <span>Contact</span>
-            </a>
-            <a
-              href="mailto:sales@cvit.in"
-              rel="nofollow"
-              target="_blank"
-              aria-label="Email"
-              className="text"
-            >
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              <span>Email</span>
-            </a>
-            <a
-              href="https://api.whatsapp.com/send?phone=7507149084"
-              rel="nofollow"
-              target="_blank"
-              aria-label="WhatsApp"
-              className="text"
-            >
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M11.991 21.781a9.9 9.9 0 0 1-5.034-1.38l-.36-.216-3.741.981.999-3.649-.234-.376a9.84 9.84 0 0 1-1.511-5.258c0-5.439 4.436-9.876 9.887-9.876a9.84 9.84 0 0 1 6.99 2.897 9.84 9.84 0 0 1 2.892 6.99c-.006 5.459-4.442 9.888-9.888 9.888m5.423-7.401c-.296-.149-1.755-.867-2.03-.969-.273-.098-.473-.149-.667.149-.2.296-.77.969-.941 1.163-.171.199-.348.222-.645.075-.296-.15-1.254-.462-2.388-1.478-.885-.787-1.478-1.763-1.655-2.058-.171-.297-.016-.456.132-.604.131-.132.296-.348.444-.519.15-.171.199-.297.297-.495.098-.201.051-.372-.022-.52-.075-.149-.667-1.614-.918-2.205-.24-.583-.484-.502-.667-.51-.171-.01-.37-.01-.57-.01a1.095 1.095 0 0 0-.794.37c-.273.297-1.037 1.016-1.037 2.482s1.065 2.874 1.215 3.074c.147.199 2.091 3.198 5.075 4.488.705.307 1.26.489 1.694.627.713.228 1.356.193 1.869.12.57-.087 1.757-.72 2.007-1.414.246-.696.246-1.29.171-1.414-.073-.126-.273-.199-.57-.348"/>
-              </svg>
-              <span>WhatsApp</span>
-            </a>
-            <a
-              href="#"
-              rel="nofollow"
-              aria-label="Top"
-              id="gotop"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            >
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 19V5" />
-                <path d="M5 12l7-7 7 7" />
-              </svg>
-              <span>Top</span>
-            </a>
-          </div>
+        {showRestContent && toggleState === "dashboardOne" && (
+          <Suspense fallback={<div className="loading-placeholder">Loading content...</div>}>
+            <section style={{ marginTop: "2rem" }} ref={customerBenefitsRef}>
+              <CustomerBenefits />
+            </section>
+            <section ref={clientRef}>
+              <Client />
+            </section>
+            <section ref={caseStudyRef}>
+              <CaseStudy />
+            </section>
+            <section ref={aboutUsRef}>
+              <Aboutus_Mission_Vision initialTab={location.state?.scrollTo} />
+            </section>
+            <section>
+              <CoreValues />
+            </section>
+            <section ref={implementationRef}>
+              <Implementation />
+            </section>
+            <section>
+              <OurExpertises />
+            </section>
+            <section>
+              <SupportingPartners />
+            </section>
+            <section>
+              <Review />
+            </section>
+            <section id="contact-us-section" ref={contactUsRef}>
+              <ContactUs />
+            </section>
+            <section>
+              <Footer />
+            </section>
+          </Suspense>
         )}
       </div>
-
-      {showRestContent && toggleState === "dashboardOne" && (
-        <Suspense fallback={<div className="loading-placeholder">Loading content...</div>}>
-          <section style={{ marginTop: "2rem" }} ref={customerBenefitsRef}>
-            <CustomerBenefits />
-          </section>
-          <section ref={clientRef}>
-            <Client />
-          </section>
-          <section ref={caseStudyRef}>
-            <CaseStudy />
-          </section>
-          <section ref={aboutUsRef}>
-            <Aboutus_Mission_Vision initialTab={location.state?.scrollTo} />
-          </section>
-          <section>
-            <CoreValues />
-          </section>
-          <section ref={implementationRef}>
-            <Implementation />
-          </section>
-          <section>
-            <OurExpertises />
-          </section>
-          <section>
-            <SupportingPartners />
-          </section>
-          <section>
-            <Review />
-          </section>
-          <section id="contact-us-section" ref={contactUsRef}>
-            <ContactUs />
-          </section>
-          <section>
-            <Footer />
-          </section>
-        </Suspense>
-      )}
-    </div>
-  </>
+    </>
   );
 };
 

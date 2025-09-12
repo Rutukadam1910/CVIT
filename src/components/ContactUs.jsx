@@ -6,6 +6,7 @@ import {
   Phone,
   FileText,
 } from "lucide-react";
+import "../Styles/ContactUs.css";
 
 const ContactUs = () => {
   const [toastVisible, setToastVisible] = useState(false);
@@ -18,336 +19,74 @@ const ContactUs = () => {
   };
 
   return (
-    <>
-      <style>{`
-        * {
-          font-family: 'Inter', sans-serif !important;
-        }
-        .contact-section {
-          background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-          padding: 4.02rem 0.67rem;
-          color: white;
-          position: relative;
-          overflow: hidden;
-        }
-        .contact-section::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: radial-gradient(circle at 70% 30%, rgba(239, 58, 58, 0.1) 0%, transparent 50%);
-          z-index: 0;
-        }
-        .contact-container {
-          max-width: 1340px;
-          margin: auto;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 2.68rem;
-          background: rgba(20, 20, 20, 0.7);
-          border-radius: 16.08px;
-          padding: 2.68rem;
-          backdrop-filter: blur(13.4px);
-          box-shadow: 0 13.4px 26.8px rgba(0, 0, 0, 0.4);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          animation: fadeInScale 0.8s ease-out both;
-          position: relative;
-          z-index: 1;
-        }
-        .contact-form,
-        .contact-info {
-          flex: 1 1 45%;
-          min-width: 201px;
-        }
-        .contact-form h2,
-        .contact-info h2 {
-          font-size: 2rem;
-          margin-bottom: 1.3rem;
-          font-weight: 600;
-          position: relative;
-          display: inline-block;
-        }
-        .contact-form h2::after {
-          content: "";
-          position: absolute;
-          bottom: -6.7px;
-          left: 0;
-          width: 445px;
-          height: 2.68px;
-          background: #ef3a3a;
-          border-radius: 1.34px;
-        }
-        .contact-info h2::after {
-          content: "";
-          position: absolute;
-          bottom: -6.7px;
-          left: 0;
-          width: 170px;
-          height: 2.68px;
-          background: #ef3a3a;
-          border-radius: 1.34px;
-        }
-        .form-row {
-          display: flex;
-          gap: 1.005rem;
-          margin-top: 2.68rem;
-          margin-bottom: 2.68rem;
-          flex-wrap: wrap;
-        }
-        input,
-        textarea {
-          flex: 1;
-          padding: 0.804rem 1.005rem;
-          border-radius: 8.04px;
-          background: rgba(30, 30, 30, 0.8);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: white;
-          font-size: 1.34rem;
-          width: 100%;
-          transition: all 0.3s ease;
-        }
-        input::placeholder,
-        textarea::placeholder {
-          color: #999;
-          font-size: 0.9782rem;
-        }
-        input:focus,
-        textarea:focus {
-          outline: none;
-          border-color: #ef3a3a;
-          background: rgba(40, 40, 40, 0.8);
-          box-shadow: 0 0 0 2.01px rgba(239, 58, 58, 0.2);
-        }
-        textarea {
-          resize: none;
-          margin-bottom: 1.675rem;
-          min-height: 187.6px;
-        }
-        .checkbox-container {
-          display: flex;
-          align-items: flex-start;
-          gap: 0.603rem;
-          font-size: 0.67rem;
-          color: #ccc;
-          font-weight: 400;
-          margin-bottom: 1.34rem;
-          max-width: 60%;
-        }
-        .checkbox-container input[type="checkbox"] {
-          appearance: none;
-          width: 12.06px;
-          height: 12.06px;
-          border: 1.34px solid #ef3a3a;
-          background: transparent;
-          cursor: pointer;
-          position: relative;
-          border-radius: 2.68px;
-          margin-top: 1.34px;
-        }
-        .checkbox-container input[type="checkbox"]::after {
-          content: "";
-          position: absolute;
-          top: 4.5px;
-          left: 12.02px;
-          width: 6.68px;
-          height: 14.03px;
-          border: solid white;
-          border-width: 0 2.34px 2.34px 0;
-          transform: rotate(45deg);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-        .checkbox-container input[type="checkbox"]:checked {
-          background-color: #ef3a3a;
-        }
-        .checkbox-container input[type="checkbox"]:checked::after {
-          opacity: 1;
-        }
-        .submit-wrapper {
-          display: flex;
-          justify-content: flex-start;
-        }
-        .send-button {
-          background-color: #ef3a3a;
-          border: none;
-          color: white;
-          padding: 0.67rem 1.675rem;
-          font-size: 0.871rem;
-          font-weight: 600;
-          border-radius: 8.04px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-        .send-button:hover {
-          background-color: #c82c2c;
-         
-          
-        }
-        .contact-info {
-          display: flex;
-          flex-direction: column;
-          gap: 1.005rem;
-        }
-        .info-block {
-          display: flex;
-          gap: 1.005rem;
-          align-items: flex-start;
-          padding: 1.005rem;
-          background: rgba(30, 30, 30, 0.5);
-          border-radius: 10.72px;
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          transition: all 0.3s ease;
-        }
-        .info-block:hover {
-          background: rgba(40, 40, 40, 0.5);
-          border-color: rgba(239, 58, 58, 0.3);
-          transform: translateY(-2.01px);
-        }
-        .info-icon {
-          width: 33.5px;
-          height: 33.5px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.15);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .info-block h4 {
-          font-size: 0.938rem;
-          margin: 0 0 0.335rem 0;
-          color: #efefef;
-          font-weight: 600;
-        }
-        .info-block p {
-          margin: 0;
-          color: #aaa;
-          font-size: 0.938rem;
-          line-height: 1.6;
-        }
-        .toast {
-          position: fixed;
-          bottom: 20.1px;
-          right: 20.1px;
-          background-color: #28a745;
-          color: white;
-          padding: 0.67rem 1.005rem;
-          border-radius: 6.7px;
-          font-weight: 600;
-          opacity: 0;
-          transform: translateY(6.7px);
-          transition: opacity 0.3s ease, transform 0.3s ease;
-          z-index: 9999;
-          box-shadow: 0 3.35px 10.05px rgba(0, 0, 0, 0.3);
-        }
-        .toast.show {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        @media (max-width: 1024px) {
-          .contact-container {
-            max-width: 95%;
-            padding: 2.01rem;
-            gap: 2.01rem;
-          }
-        }
-        @media (max-width: 768px) {
-          .contact-container {
-            flex-direction: column;
-            padding: 1.34rem;
-            gap: 1.34rem;
-          }
-          .info-block {
-            flex-direction: column;
-            gap: 0.67rem;
-          }
-          .info-icon {
-            width: 24.12px;
-            height: 24.12px;
-          }
-        }
-        @keyframes fadeInScale {
-          0% {
-            opacity: 0;
-            transform: scale(0.95) translateY(20.1px);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-        }
-      `}</style>
+    <div className="contact-section">
+      <div className="contact-container">
+        {/* Form Section */}
+        <div className="contact-form">
+          <h2>DISCUSS YOUR PROJECT</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-row">
+              <input type="text" placeholder="Full name" required />
+              <input type="email" placeholder="Email address" required />
+            </div>
+            <div className="form-row">
+              <input type="text" placeholder="Subject" required />
+              <input type="tel" placeholder="Phone number" />
+            </div>
+            <textarea placeholder="Message" required></textarea>
+            <div className="checkbox-container">
+              <input type="checkbox" id="agree" required />
+              <label htmlFor="agree">
+                By clicking Checkbox, you agree to use our 'Form' terms and consent to cookie usage in browser.
+              </label>
+            </div>
+            <div className="submit-wrapper">
+              <button type="submit" className="send-button">Send Message</button>
+            </div>
+          </form>
+        </div>
 
-      <div className="contact-section">
-        <div className="contact-container">
-          {/* Form Section */}
-          <div className="contact-form">
-            <h2>DISCUSS YOUR PROJECT</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="form-row">
-                <input type="text" placeholder="Full name" required />
-                <input type="email" placeholder="Email address" required />
-              </div>
-              <div className="form-row">
-                <input type="text" placeholder="Subject" required />
-                <input type="tel" placeholder="Phone number" />
-              </div>
-              <textarea placeholder="Message" required></textarea>
-              <div className="checkbox-container">
-                <input type="checkbox" id="agree" required />
-                <label htmlFor="agree">
-                  By clicking Checkbox, you agree to use our 'Form' terms and consent to cookie usage in browser.
-                </label>
-              </div>
-              <div className="submit-wrapper">
-                <button type="submit" className="send-button">Send Message</button>
-              </div>
-            </form>
+        {/* Info Section */}
+        <div className="contact-info">
+          <h2>FIND US</h2>
+
+          <div className="info-block">
+            <div className="info-icon"><MapPin size={18.76} strokeWidth={1.34} color="white" /></div>
+            <div className="info-content">
+              <h4>Office Address</h4>
+              <p>Office 206. Xion Mall, Near D-Mart, Wakad-Hinjewadi Road, Hinjewadi Pune, Maharashtra, 411057</p>
+            </div>
           </div>
 
-          {/* Info Section */}
-          <div className="contact-info">
-            <h2>FIND US</h2>
-
-            <div className="info-block">
-              <div className="info-icon"><MapPin size={18.76} strokeWidth={1.34} color="white" /></div>
-              <div className="info-content">
-                <h4>Office Address</h4>
-                <p>Office 206. Xion Mall, Near D-Mart, Wakad-Hinjewadi Road, Hinjewadi Pune, Maharashtra, 411057</p>
-              </div>
+          <div className="info-block">
+            <div className="info-icon"><Building2 size={18.76} strokeWidth={1.34} color="white" /></div>
+            <div className="info-content">
+              <h4>Registered Address</h4>
+              <p>S.NO. 176/1/9/1 FL-203, Sadguru CL-03, Manjoba Mandir, Pune, Maharashtra, 411057</p>
             </div>
+          </div>
 
-            <div className="info-block">
-              <div className="info-icon"><Building2 size={18.76} strokeWidth={1.34} color="white" /></div>
-              <div className="info-content">
-                <h4>Registered Address</h4>
-                <p>S.NO. 176/1/9/1 FL-203, Sadguru CL-03, Manjoba Mandir, Pune, Maharashtra, 411057</p>
-              </div>
+          <div className="info-block">
+            <div className="info-icon"><FileText size={18.76} strokeWidth={1.34} color="white" /></div>
+            <div className="info-content">
+              <h4>GST Number</h4>
+              <p>27AALCC1717A1Z3</p>
             </div>
+          </div>
 
-            <div className="info-block">
-              <div className="info-icon"><FileText size={18.76} strokeWidth={1.34} color="white" /></div>
-              <div className="info-content">
-                <h4>GST Number</h4>
-                <p>27AALCC1717A1Z3</p>
-              </div>
+          <div className="info-block">
+            <div className="info-icon"><Mail size={18.76} strokeWidth={1.34} color="white" /></div>
+            <div className="info-content">
+              <h4>Email Address</h4>
+              <p>sales@cvit.in</p>
             </div>
+          </div>
 
-            <div className="info-block">
-              <div className="info-icon"><Mail size={18.76} strokeWidth={1.34} color="white" /></div>
-              <div className="info-content">
-                <h4>Email Address</h4>
-                <p>sales@cvit.in</p>
-              </div>
-            </div>
-
-            <div className="info-block">
-              <div className="info-icon"><Phone size={18.76} strokeWidth={1.34} color="white" /></div>
-              <div className="info-content">
-                <h4>Phone Number</h4>
-                <p>+91 7507149084</p>
-              </div>
+          <div className="info-block">
+            <div className="info-icon"><Phone size={18.76} strokeWidth={1.34} color="white" /></div>
+            <div className="info-content">
+              <h4>Phone Number</h4>
+              <p>+91 7507149084</p>
             </div>
           </div>
         </div>
@@ -356,7 +95,7 @@ const ContactUs = () => {
       <div className={`toast ${toastVisible ? "show" : ""}`}>
         Message sent successfully!
       </div>
-    </>
+    </div>
   );
 };
 
