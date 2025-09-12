@@ -278,43 +278,6 @@ function Implementation() {
   const gsapTimelineRef = useRef(null);
   const animationTriggerRef = useRef(null);
 
-  useEffect(() => {
-    const chars = document.querySelectorAll(".heading-animated .char-inner");
-
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-    tl.to(
-      chars,
-      {
-        duration: 0.8,
-        y: "0%",
-        opacity: 1,
-        stagger: 0.05,
-      }
-    );
-
-    tl.to(
-      chars,
-      {
-        duration: 1.5,
-        scaleY: 1.15,
-        transformOrigin: "center bottom",
-        yoyo: true,
-        repeat: -1,
-        ease: "sine.inOut",
-        stagger: {
-          each: 0.1,
-          from: "center",
-        },
-      },
-      "+=1.5"
-    );
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
-
   const initAnimation = () => {
     const timelineItems = timelineItemsRefs.current;
     const timelineLine = timelineLineRef.current;
@@ -504,22 +467,11 @@ function Implementation() {
 
         <div className="text-center mb-10">
           <h1
-            className="text-4xl font-bold text-white-600 mb-5 relative inline-block heading-animated"
+            className="text-4xl font-bold text-white-600 mb-5 relative inline-block"
             tabIndex={0}
             aria-label="Implementation Roadmap"
           >
-            {Array.from("IMPLEMENTATION ROADMAP").map((char, i) => (
-              <span
-                key={i}
-                className={`char${char === " " ? " space" : ""}`}
-                aria-hidden="true"
-                style={{ display: "inline-block", overflow: "hidden" }}
-              >
-                <span className="char-inner" style={{ display: "inline-block" }}>
-                  {char}
-                </span>
-              </span>
-            ))}
+            IMPLEMENTATION ROADMAP
             <span
               ref={titleUnderlineRef}
               className="absolute -bottom-1.34 left-0 w-full h-0.67 bg-gradient-to-r from-primary to-secondary transform scale-x-0 origin-left transition-transform duration-335 roadmap-title-underline"
