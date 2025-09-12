@@ -228,35 +228,40 @@ const IndustryDetail = () => {
 
         <div className="media-section">
           {industryId === "automobile" ? (
-            <video
-              src={industry.video}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="media-video"
-              crossOrigin="anonymous"
-              onError={(e) => console.error("Automobile video error:", e)}
-            >
-              <source src={industry.video} type="video/mp4" />
-              <img src="/path/to/fallback-image.jpg" alt="Video unavailable" />
-            </video>
-          ) : (
-            <div className="image-container">
-              <img
-                src={industry.placeholder}
-                alt={`${industry.title} placeholder`}
-                className={`media-image ${imageLoaded ? "hidden" : "visible"}`}
-              />
-              <img
-                src={industry.image}
-                alt={industry.title}
-                className={`media-image ${imageLoaded ? "visible" : "hidden"}`}
-                loading="lazy"
-                onLoad={() => setImageLoaded(true)}
-              />
-            </div>
-          )}
+  <video
+    src={industry.video}
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="media-video"
+    onError={(e) => {
+      console.error("Automobile video error:", {
+        message: e.target.error?.message,
+        code: e.target.error?.code,
+        src: e.target.currentSrc,
+      });
+    }}
+  >
+    <source src={industry.video} type="video/mp4" />
+    <img src={aerospacePlaceholder} alt="Video unavailable" />
+  </video>
+) : (
+  <div className="image-container">
+    <img
+      src={industry.placeholder}
+      alt={`${industry.title} placeholder`}
+      className={`media-image ${imageLoaded ? "hidden" : "visible"}`}
+    />
+    <img
+      src={industry.image}
+      alt={industry.title}
+      className={`media-image ${imageLoaded ? "visible" : "hidden"}`}
+      loading="lazy"
+      onLoad={() => setImageLoaded(true)}
+    />
+  </div>
+)}
         </div>
 
         <p className="industry-description">{industry.description}</p>
