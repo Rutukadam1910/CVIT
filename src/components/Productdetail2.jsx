@@ -3263,7 +3263,7 @@ const renderModelStructureTable = () => {
     fontWeight: 600,
     color: "#475569",
     borderBottom: "1px solid #d1d5db",
-    width: "25%",
+    width: "29%",
     whiteSpace: "normal",
     wordBreak: "break-word",
     verticalAlign: "middle",

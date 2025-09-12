@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import VanillaTilt from "vanilla-tilt";
 import "../Styles/Implementation.css";
 
 const steps = [
@@ -316,74 +315,11 @@ function Implementation() {
     };
   }, []);
 
-  useEffect(() => {
-    VanillaTilt.init(document.querySelectorAll(".js-tilt"), {
-      max: 10,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.2,
-      scale: 1.03,
-      perspective: 670,
-      transition: true,
-      easing: "cubic-bezier(.03,.98,.52,.99)",
-    });
-  }, []);
-
-  const animateParticles = (particlesContainer) => {
-    const particles = particlesContainer.querySelectorAll(".particle");
-    particles.forEach((particle) => {
-      const x = (Math.random() - 0.5) * 53.6;
-      const y = (Math.random() - 0.5) * 53.6;
-      const size = 1.34 + Math.random() * 2.68;
-      const delay = Math.random() * 0.335;
-      const duration = 0.67 + Math.random() * 1.005;
-      const color = Math.random() > 0.5 ? "#ef3a3a" : "#ff9e80";
-
-      gsap.set(particle, {
-        x: 0,
-        y: 0,
-        width: size,
-        height: size,
-        opacity: 0,
-        backgroundColor: color,
-      });
-
-      gsap.to(particle, {
-        x: x,
-        y: y,
-        opacity: 0.8,
-        duration: 0.268,
-        delay: delay,
-        ease: "power1.out",
-        onComplete: () => {
-          gsap.to(particle, {
-            x: x * 2,
-            y: y * 2,
-            opacity: 0,
-            duration: duration,
-            ease: "power1.in",
-          });
-        },
-      });
-    });
-  };
-
   const initAnimation = () => {
     const timelineItems = timelineItemsRefs.current;
     const timelineLine = timelineLineRef.current;
     const timelineEnd = timelineEndRef.current;
     const titleUnderline = titleUnderlineRef.current;
-
-    timelineItems.forEach((item) => {
-      const particlesContainer = item.querySelector(".particles");
-      if (particlesContainer.children.length === 0) {
-        for (let i = 0; i < 15; i++) {
-          const particle = document.createElement("div");
-          particle.classList.add("particle");
-          particlesContainer.appendChild(particle);
-        }
-      }
-    });
 
     gsap.set(timelineItems, { opacity: 0, y: 13.4 });
     gsap.set(".text-reveal span, .custom-bullets li", { y: "100%", opacity: 0 });
@@ -430,40 +366,11 @@ function Implementation() {
 
     timelineItems.forEach((item, index) => {
       const dot = item.querySelector(".timeline-dot");
-      const glow = item.querySelector(".glow");
       const textElements = item.querySelectorAll(".text-reveal span");
       const bulletElements = item.querySelectorAll(".custom-bullets li");
-      const particlesContainer = item.querySelector(".particles");
 
       const posRatio = stepPositions[index] / lineHeightToLastDot;
       const startTime = posRatio * totalDuration;
-
-      mainTimeline.to(
-        dot,
-        {
-          scale: 1.5,
-          boxShadow:
-            "0 0 0 5.36px rgba(239, 58, 58, 0.3), 0 0 16.75px rgba(239, 58, 58, 0.6)",
-          duration: 0.402,
-          ease: "elastic.out(1, 0.5)",
-          onStart: () => {
-            gsap.to(glow, {
-              opacity: 0.8,
-              duration: 0.402,
-              ease: "power2.out",
-              onComplete: () => {
-                gsap.to(glow, {
-                  opacity: 0,
-                  duration: 1.005,
-                  ease: "power2.in",
-                });
-              },
-            });
-            animateParticles(particlesContainer);
-          },
-        },
-        startTime
-      );
 
       mainTimeline.to(
         dot,
@@ -477,7 +384,7 @@ function Implementation() {
             item.classList.add("visible");
           },
         },
-        startTime + 0.402
+        startTime
       );
 
       mainTimeline.to(
@@ -563,35 +470,6 @@ function Implementation() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const mouseX = e.clientX / window.innerWidth - 0.5;
-      const mouseY = e.clientY / window.innerHeight - 0.5;
-      const timelineItems = timelineItemsRefs.current;
-
-      timelineItems.forEach((item, index) => {
-        if (item.classList.contains("visible")) {
-          const depth = 0.03 + ((index % 3) * 0.0067);
-          const moveX = mouseX * depth * 20.1;
-          const moveY = mouseY * depth * 20.1;
-
-          gsap.to(item.querySelector(".content-inner"), {
-            x: moveX,
-            y: moveY,
-            duration: 1,
-            ease: "power1.out",
-          });
-        }
-      });
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
   return (
     <div className="implementation-root">
       <div className="floating-shapes" aria-hidden="true">
@@ -674,16 +552,7 @@ function Implementation() {
               aria-label={`Step ${step}: ${title}`}
             >
               <div className="timeline-dot" aria-hidden="true"></div>
-              <div className="glow" aria-hidden="true"></div>
-              <div className="particles" aria-hidden="true"></div>
-
-              <div
-                className="timeline-content js-tilt"
-                data-tilt-max="10"
-                data-tilt-speed="400"
-                data-tilt-perspective="670"
-                tabIndex={0}
-              >
+              <div className="timeline-content" tabIndex={0}>
                 <div className="arrow" aria-hidden="true" />
                 <div className="content-inner">
                   <div className="bg-red-50 text-primary text-1xl font-semibold px-2 py-0.67 rounded-full inline-block mb-1.8 step-badge">
@@ -698,7 +567,6 @@ function Implementation() {
                     <div className="text-gray-600 text-1.2xl">{description}</div>
                   </div>
                 </div>
-                <div className="progress-indicator" aria-hidden="true" />
               </div>
             </article>
           ))}
