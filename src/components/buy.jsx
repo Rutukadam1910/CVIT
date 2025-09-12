@@ -250,6 +250,7 @@ const Buy = () => {
               <option value="White">White</option>
               <option value="Green">Green</option>
               <option value="Blue">Blue</option>
+              <option value="RGB">RGB</option>
             </select>
             <label style={labelStyle}>
               Quantity Required:<span style={requiredStarStyle}>*</span>
