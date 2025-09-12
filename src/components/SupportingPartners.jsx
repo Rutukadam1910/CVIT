@@ -1,7 +1,7 @@
 import React from "react";
-import TidesLogo from "../assets/TIDES.png";
-import HIKROBOTLogo from "../assets/HIKROBOT.jpg";
-import BAUMERLogo from "../assets/baumer.png";
+import TidesLogo from "../assets/Partners/TIDES.png";
+import HIKROBOTLogo from "../assets/Partners/HIKROBOT.jpg";
+import BAUMERLogo from "../assets/Partners/baumer.png";
 
 const SupportingPartners = () => {
   return (

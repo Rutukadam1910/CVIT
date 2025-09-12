@@ -1,16 +1,16 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import barLight from "../assets/BarLight.png";
-import domeLight from "../assets/DomeLight.png";
-import ringLight from "../assets/RingLight.png";
-import angledRingLight from "../assets/AngledRingLight.png";
-import tunnelLight from "../assets/TunnelLight.png";
-import spotLight from "../assets/SpotLight.png";
-import flatLightCenterHole from "../assets/DirectDiffusedLight.png";
-import flatLight from "../assets/DiffusedLight.png";
-import indirectFlatLight from "../assets/IndirectFlatLight.png";
-import backLight from "../assets/BackLight.png";
+import barLight from "../assets/Lights/BarLight.png";
+import domeLight from "../assets/Lights/DomeLight.png";
+import ringLight from "../assets/Lights/RingLight.png";
+import angledRingLight from "../assets/Lights/AngledRingLight.png";
+import tunnelLight from "../assets/Lights/TunnelLight.png";
+import spotLight from "../assets/Lights/SpotLight.png";
+import flatLightCenterHole from "../assets/Lights/DirectDiffusedLight.png";
+import flatLight from "../assets/Lights/DiffusedLight.png";
+import indirectFlatLight from "../assets/Lights/IndirectFlatLight.png";
+import backLight from "../assets/Lights/BackLight.png";
 
 const products = [
   {

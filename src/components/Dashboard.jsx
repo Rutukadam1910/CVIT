@@ -1418,20 +1418,20 @@ const Aboutus_Mission_Vision = lazy(() => import("./Aboutus_Mission_Vision"));
 const CoreValues = lazy(() => import("./CoreValues"));
 const Implementation = lazy(() => import("./Implementation"));
 const OurExpertises = lazy(() => import("./OurExpertise"));
-const SupportingPartners = lazy(() => import("./SupportingParteners"));
+const SupportingPartners = lazy(() => import("./SupportingPartners"));
 const Review = lazy(() => import("./Review"));
 const ContactUs = lazy(() => import("./ContactUs"));
 const Footer = lazy(() => import("./Footer"));
 
-import Bar_Light from "../assets/Bar_Light.png";
-import Ring_Light from "../assets/Ring_Light.png";
-import Dome_Light from "../assets/Dome_Light.png";
-import Flat_Diffused_Light_With_Center_Hole from "../assets/Flat_Direct_Diffused_Light_With_Center_Hole.png";
-import Flat_Diffused_Light from "../assets/Flat_DIrect_Diffused_Light.png";
-import Indirect_Flat_Light from "../assets/Indirect_Flat_Light.png";
-import Back_Light from "../assets/Back_Light.png";
-import Spot_Light from "../assets/Spot_Light.png";
-import Tunnel_Light from "../assets/Tunnel_Light.png";
+import Bar_Light from "../assets/Lights/Bar_Light.png";
+import Ring_Light from "../assets/Lights/Ring_Light.png";
+import Dome_Light from "../assets/Lights/Dome_Light.png";
+import Flat_Diffused_Light_With_Center_Hole from "../assets/Lights/Flat_Direct_Diffused_Light_With_Center_Hole.png";
+import Flat_Diffused_Light from "../assets/Lights/Flat_DIrect_Diffused_Light.png";
+import Indirect_Flat_Light from "../assets/Lights/Indirect_Flat_Light.png";
+import Back_Light from "../assets/Lights/Back_Light.png";
+import Spot_Light from "../assets/Lights/Spot_Light.png";
+import Tunnel_Light from "../assets/Lights/Tunnel_Light.png";
 
 const products = [
   { name: "Bar Light", image: Bar_Light },

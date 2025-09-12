@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import aboutImg from "../assets/aboutus.jpg";
-import visionImg from "../assets/ourvision.png";
-import missionImg from "../assets/mission.png";
+import aboutImg from "../assets/About/aboutus.jpg";
+import visionImg from "../assets/About/ourvision.png";
+import missionImg from "../assets/About/mission.png";
 
 const sections = [
   {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
-import indiamartLogo from "../assets/indiamart.png"; // Adjust path as needed
-import googleimg from "../assets/google.png";
+import indiamartLogo from "../assets/logo/indiamart.png"; // Adjust path as needed
+import googleimg from "../assets/logo/google.png";
 
 const Review = () => {
   const [count, setCount] = useState(0);

@@ -2,12 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
 import logo from "../assets/logo/logo.png";
-import iso from "../assets/iso.jpeg";
-import rohs from "../assets/rohs.jpeg";
-import ce from "../assets/ce.jpg";
-import iso9001 from "../assets/ISO_14001.jpeg";
-import MachineVisionSystem from "../assets/Machine_Vision_System.pdf";
-import MachineVisionLights from "../assets/Machine_Vision_Lights.pdf";
+import iso from "../assets/Certifications/iso.jpeg";
+import rohs from "../assets/Certifications/rohs.jpeg";
+import ce from "../assets/Certifications/ce.jpg";
+import iso9001 from "../assets/Certifications/ISO_14001.jpeg";
+import MachineVisionSystem from "../assets/Broucher/Machine_Vision_System.pdf";
+import MachineVisionLights from "../assets/Broucher/Machine_Vision_Lights.pdf";
 
 const Footer = () => {
   const navigate = useNavigate();

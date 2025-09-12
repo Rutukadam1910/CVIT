@@ -2,20 +2,20 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 // Placeholder images (low-resolution versions for faster initial load)
-import aerospacePlaceholder from "../assets/aerospace_placeholder.png";
-import fmcgPlaceholder from "../assets/fmcg_placeholder.jpg";
-import wirePlaceholder from "../assets/wire_placeholder.png";
-import metalandminingPlaceholder from "../assets/Metals_Mining_placeholder.jpg";
-import warehousePlaceholder from "../assets/warehouse-2_placeholder.jpg";
-import plasticAndRubberPlaceholder from "../assets/plastic_rubber_placeholder.png";
+import aerospacePlaceholder from "../assets/Placeholder/aerospace_placeholder.png";
+import fmcgPlaceholder from "../assets/Placeholder/fmcg_placeholder.jpg";
+import wirePlaceholder from "../assets/Placeholder/wire_placeholder.png";
+import metalandminingPlaceholder from "../assets/Placeholder/Metals_Mining_placeholder.jpg";
+import warehousePlaceholder from "../assets/Placeholder/warehouse-2_placeholder.jpg";
+import plasticAndRubberPlaceholder from "../assets/Placeholder/plastic_rubber_placeholder.png";
 
 // High-resolution images
-import aerospaceImg from "../assets/aerospace.png";
-import FMCGImg from "../assets/fmcg.jpg";
-import wireImg from "../assets/wire.png";
-import metalandminingImg from "../assets/Metals_Mining.jpg";
-import WareHouseImg from "../assets/warehouse-2.jpg";
-import PlasticAndRubberImg from "../assets/plastic_rubber.png";
+import aerospaceImg from "../assets/Industry/aerospace.png";
+import FMCGImg from "../assets/Industry/fmcg.jpg";
+import wireImg from "../assets/Industry/wire.png";
+import metalandminingImg from "../assets/Industry/Metals_Mining.jpg";
+import WareHouseImg from "../assets/Industry/warehouse-2.jpg";
+import PlasticAndRubberImg from "../assets/Industry/plastic_rubber.png";
 
 const automobileVideo = "https://res.cloudinary.com/dpsdxf2bc/video/upload/q_auto/Expo_uxojqx.mp4";
 
