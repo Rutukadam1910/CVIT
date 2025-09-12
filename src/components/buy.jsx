@@ -90,6 +90,13 @@ const Buy = () => {
     }
   };
 
+  const pageStyle = {
+    backgroundColor: "#ffffff",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+  };
+
   const formStyle = {
     width: "90%",
     maxWidth: "950px",
@@ -121,6 +128,8 @@ const Buy = () => {
     border: "1px solid #d1d5db",
     borderRadius: "6px",
     fontSize: "1rem",
+    backgroundColor: "#ffffff",
+    color: "#0f172a",
     transition: "border-color 0.3s",
   };
 
@@ -171,206 +180,208 @@ const Buy = () => {
   };
 
   return (
-    <div style={formStyle}>
-      <button
-        style={closeButtonStyle}
-        onClick={handleClose}
-        aria-label="Close buy form"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#ffffff"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+    <div style={pageStyle}>
+      <div style={formStyle}>
+        <button
+          style={closeButtonStyle}
+          onClick={handleClose}
+          aria-label="Close buy form"
         >
-          <path d="M18 6L6 18" />
-          <path d="M6 6l12 12" />
-        </svg>
-      </button>
-      <h1
-        style={{
-          textAlign: "center",
-          color: "#ef3a3a",
-          marginBottom: "2.5rem",
-          fontSize: "1.8rem",
-          fontWeight: 700,
-        }}
-      >
-        Machine Vision Light Buying Form
-      </h1>
-      <form onSubmit={handleSubmit}>
-        {/* Product Info Section */}
-        <div style={sectionStyle}>
-          <div style={toggleWrapperStyle}>
-            <span style={{ fontWeight: 600, color: "#374151", fontSize: "1.3rem" }}>
-              Product Information
-            </span>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M18 6L6 18" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </button>
+        <h1
+          style={{
+            textAlign: "center",
+            color: "#ef3a3a",
+            marginBottom: "2.5rem",
+            fontSize: "1.8rem",
+            fontWeight: 700,
+          }}
+        >
+          Machine Vision Light Buying Form
+        </h1>
+        <form onSubmit={handleSubmit}>
+          {/* Product Info Section */}
+          <div style={sectionStyle}>
+            <div style={toggleWrapperStyle}>
+              <span style={{ fontWeight: 600, color: "#374151", fontSize: "1.3rem" }}>
+                Product Information
+              </span>
+            </div>
+
+            <label style={labelStyle}>
+              Model Number:<span style={requiredStarStyle}>*</span>
+            </label>
+            <input
+              type="text"
+              name="model"
+              value={formData.model}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter model number or custom specification"
+              readOnly={isDefaultModel}
+              required
+            />
+
+            <label style={labelStyle}>
+              Color:<span style={requiredStarStyle}>*</span>
+            </label>
+            <select
+              name="color"
+              value={formData.color || ""}
+              onChange={handleChange}
+              style={inputStyle}
+              required
+            >
+              <option value="">Select a color</option>
+              <option value="Red">Red</option>
+              <option value="White">White</option>
+              <option value="Green">Green</option>
+              <option value="Blue">Blue</option>
+            </select>
+            <label style={labelStyle}>
+              Quantity Required:<span style={requiredStarStyle}>*</span>
+            </label>
+            <input
+              type="number"
+              name="quantity"
+              value={formData.quantity}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter quantity"
+              min="1"
+              required
+            />
           </div>
 
-          <label style={labelStyle}>
-            Model Number:<span style={requiredStarStyle}>*</span>
-          </label>
-          <input
-            type="text"
-            name="model"
-            value={formData.model}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter model number or custom specification"
-            readOnly={isDefaultModel}
-            required
-          />
+          {/* Personal Details Section */}
+          <div style={sectionStyle}>
+            <label style={{ ...labelStyle, marginBottom: "1.5rem", fontSize: "1.3rem", color: "#374151" }}>
+              Personal Details
+            </label>
+            <label style={labelStyle}>
+              Contact Person Name:<span style={requiredStarStyle}>*</span>
+            </label>
+            <input
+              type="text"
+              name="contactName"
+              value={formData.contactName}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter name"
+              required
+            />
+            <label style={labelStyle}>
+              Phone Number:<span style={requiredStarStyle}>*</span>
+            </label>
+            <input
+              type="tel"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter phone number"
+              required
+            />
+            <label style={labelStyle}>
+              Email Address:<span style={requiredStarStyle}>*</span>
+            </label>
+            <input
+              type="email"
+              name="emailAddress"
+              value={formData.emailAddress}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter email"
+              required
+            />
+          </div>
 
-          <label style={labelStyle}>
-            Color:<span style={requiredStarStyle}>*</span>
-          </label>
-          <select
-            name="color"
-            value={formData.color || ""}
-            onChange={handleChange}
-            style={inputStyle}
-            required
-          >
-            <option value="">Select a color</option>
-            <option value="Red">Red</option>
-            <option value="White">White</option>
-            <option value="Green">Green</option>
-            <option value="Blue">Blue</option>
-          </select>
-          <label style={labelStyle}>
-            Quantity Required:<span style={requiredStarStyle}>*</span>
-          </label>
-          <input
-            type="number"
-            name="quantity"
-            value={formData.quantity}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter quantity"
-            min="1"
-            required
-          />
-        </div>
+          {/* Address Section */}
+          <div style={sectionStyle}>
+            <label style={{ ...labelStyle, marginBottom: "1.5rem", fontSize: "1.3rem", color: "#374151" }}>
+              Address Details
+            </label>
+            <label style={labelStyle}>
+              Company Name:<span style={requiredStarStyle}>*</span>
+            </label>
+            <input
+              type="text"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter company name"
+              required
+            />
+            <label style={labelStyle}>
+              GST Number:<span style={requiredStarStyle}>*</span>
+            </label>
+            <input
+              type="text"
+              name="gstNumber"
+              value={formData.gstNumber}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter GST number"
+              required
+            />
+            <label style={labelStyle}>
+              Billing Address:<span style={requiredStarStyle}>*</span>
+            </label>
+            <textarea
+              name="billingAddress"
+              value={formData.billingAddress}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter billing address"
+              rows="4"
+              required
+            />
+            <label style={labelStyle}>
+              Shipping Address:<span style={requiredStarStyle}>*</span>
+            </label>
+            <textarea
+              name="shippingAddress"
+              value={formData.shippingAddress}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter shipping address"
+              rows="4"
+              required
+            />
+          </div>
 
-        {/* Personal Details Section */}
-        <div style={sectionStyle}>
-          <label style={{ ...labelStyle, marginBottom: "1.5rem", fontSize: "1.3rem", color: "#374151" }}>
-            Personal Details
-          </label>
-          <label style={labelStyle}>
-            Contact Person Name:<span style={requiredStarStyle}>*</span>
-          </label>
-          <input
-            type="text"
-            name="contactName"
-            value={formData.contactName}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter name"
-            required
-          />
-          <label style={labelStyle}>
-            Phone Number:<span style={requiredStarStyle}>*</span>
-          </label>
-          <input
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter phone number"
-            required
-          />
-          <label style={labelStyle}>
-            Email Address:<span style={requiredStarStyle}>*</span>
-          </label>
-          <input
-            type="email"
-            name="emailAddress"
-            value={formData.emailAddress}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter email"
-            required
-          />
-        </div>
+          {/* Notes */}
+          <div style={sectionStyle}>
+            <label style={labelStyle}>Additional Notes:</label>
+            <textarea
+              name="additionalNotes"
+              value={formData.additionalNotes}
+              onChange={handleChange}
+              style={inputStyle}
+              placeholder="Enter any additional notes"
+              rows="4"
+            />
+          </div>
 
-        {/* Address Section */}
-        <div style={sectionStyle}>
-          <label style={{ ...labelStyle, marginBottom: "1.5rem", fontSize: "1.3rem", color: "#374151" }}>
-            Address Details
-          </label>
-          <label style={labelStyle}>
-            Company Name:<span style={requiredStarStyle}>*</span>
-          </label>
-          <input
-            type="text"
-            name="companyName"
-            value={formData.companyName}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter company name"
-            required
-          />
-          <label style={labelStyle}>
-            GST Number:<span style={requiredStarStyle}>*</span>
-          </label>
-          <input
-            type="text"
-            name="gstNumber"
-            value={formData.gstNumber}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter GST number"
-            required
-          />
-          <label style={labelStyle}>
-            Billing Address:<span style={requiredStarStyle}>*</span>
-          </label>
-          <textarea
-            name="billingAddress"
-            value={formData.billingAddress}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter billing address"
-            rows="4"
-            required
-          />
-          <label style={labelStyle}>
-            Shipping Address:<span style={requiredStarStyle}>*</span>
-          </label>
-          <textarea
-            name="shippingAddress"
-            value={formData.shippingAddress}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter shipping address"
-            rows="4"
-            required
-          />
-        </div>
-
-        {/* Notes */}
-        <div style={sectionStyle}>
-          <label style={labelStyle}>Additional Notes:</label>
-          <textarea
-            name="additionalNotes"
-            value={formData.additionalNotes}
-            onChange={handleChange}
-            style={inputStyle}
-            placeholder="Enter any additional notes"
-            rows="4"
-          />
-        </div>
-
-        <button type="submit" style={submitButtonStyle}>
-          Submit Inquiry
-        </button>
-      </form>
+          <button type="submit" style={submitButtonStyle}>
+            Submit Inquiry
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

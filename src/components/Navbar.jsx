@@ -42,8 +42,8 @@ const navbarData = {
     { id: 4, title: "Punched Number Detection" },
     { id: 5, title: "Tracing and Tracking" },
     { id: 6, title: "Door Sealent Absence" },
-    { id: 7, title: "SpRocket Wheel Inspection" },
-    { id: 8, title: "Window Glass" },
+    { id: 7, title: "Window Glass" },
+  
   ],
   "About Us": ["About Us", "Our Mission", "Our Vision"],
 };

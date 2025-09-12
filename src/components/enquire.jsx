@@ -70,6 +70,13 @@ const Enquire = () => {
     }
   };
 
+  const pageStyle = {
+    backgroundColor: "#ffffff",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+  };
+
   const formStyle = {
     width: "90%",
     maxWidth: "950px",
@@ -101,6 +108,8 @@ const Enquire = () => {
     border: "1px solid #d1d5db",
     borderRadius: "6px",
     fontSize: "1rem",
+    backgroundColor: "#ffffff",
+    color: "#0f172a",
     transition: "border-color 0.3s",
   };
 
@@ -144,7 +153,7 @@ const Enquire = () => {
   };
 
   return (
-    <>
+    <div style={pageStyle}>
       <Navbar />
       <div style={formStyle}>
         <button
@@ -342,7 +351,7 @@ const Enquire = () => {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
