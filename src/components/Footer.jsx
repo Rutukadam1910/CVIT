@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo/logo.png";
 import iso from "../assets/iso.jpeg";
 import rohs from "../assets/rohs.jpeg";
 import ce from "../assets/ce.jpg";

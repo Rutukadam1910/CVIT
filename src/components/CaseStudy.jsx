@@ -7,7 +7,6 @@ import gapMeasurementImg from "../assets/Gap_Measurement.png";
 import packetInspectionImg from "../assets/Packet_Inspection.png";
 import punchedNumberImg from "../assets/Punched_Number_detection.png";
 import sealentPresenceImg from "../assets/Door_Sealent_Presence.png";
-import sprocketWheelImg from "../assets/SpRocket_Wheel_Inspection.png";
 import vialAdapterImg from "../assets/vial_adapter.png";
 import tracingTrackingImg from "../assets/Tracing_And_Tracking.png";
 import WindowGlassImg from "../assets/Window_Glass.png";
@@ -15,20 +14,20 @@ import WindowGlassImg from "../assets/Window_Glass.png";
 const caseStudies = [
   {
     id: 1,
-    title: "Vial Adopter Inspection",
-    studyHeader: "CASE STUDY 1 - AI BASED MACHINE VISION SYSTEM FOR VIAL ADOPTER INSPECTION",
+    title: "Vial Adapter Inspection",
+    studyHeader: "CASE STUDY 1 - AI BASED MACHINE VISION SYSTEM FOR VIAL ADAPTER INSPECTION",
     imgSrc: vialAdapterImg,
   },
   {
     id: 2,
-    title: "Adpter Packet Inspection",
-    studyHeader: "CASE STUDY 2 - AI BASED OCR-OCV SYSTEM FOR VIAL ADAPTER PACKET INSPECTION",
+    title: "Vial Adapter Tray OCR-OCV",
+    studyHeader: "CASE STUDY 2 - AI BASED OCR-OCV SYSTEM FOR VIAL ADAPTER TRAY",
     imgSrc: packetInspectionImg,
   },
   {
     id: 3,
     title: "Gap Measurement",
-    studyHeader: "CASE STUDY 3 - AI BASED MACHINE VISION SYSTEM FOR GAP MEASUREMENT",
+    studyHeader: "CASE STUDY 3 - AI BASED MACHINE VISION SYSTEM FOR GAP MEASUREMENT BETWEEN VIAL AND VIAL ADAPTER TRAY",
     imgSrc: gapMeasurementImg,
   },
   {
@@ -39,26 +38,20 @@ const caseStudies = [
   },
   {
     id: 5,
-    title: "Tracing and Tracking",
-    studyHeader: "CASE STUDY 5 - AI BASED MACHINE VISION SYSTEM TRACKING AND TRACING OF TYRE",
+    title: "Tyre Traceability and Tracking",
+    studyHeader: "CASE STUDY 5 - AI BASED TYRE TRACEABILITY AND TRACKING SOLUTION",
     imgSrc: tracingTrackingImg,
   },
   {
     id: 6,
-    title: "Door Sealent Absence",
-    studyHeader: "CASE STUDY 6 - AI BASED MACHINE VISION SYSTEM FOR DOOR SEALENT PRESENCE - ABSENCE",
+    title: "Door Sealant Presence Detection",
+    studyHeader: "CASE STUDY 6 - AI BASED MACHINE VISION SYSTEM FOR DOOR SEALANT PRESENCE DETECTION",
     imgSrc: sealentPresenceImg,
   },
   {
     id: 7,
-    title: "SpRocket Wheel Inspection",
-    studyHeader: "CASE STUDY 7 - AI BASED MACHINE VISION SYSTEM FOR SPROCKET WHEEL INSPECTION",
-    imgSrc: sprocketWheelImg,
-  },
-  {
-    id: 8,
-    title: "Window Glass",
-    studyHeader: "CASE STUDY 8 - AI BASED MACHINE VISION SYSTEM TO CHECK OPEN AND CLOSED WINDOW GLASS",
+    title: "Window Glass Open/Close Inspection",
+    studyHeader: "CASE STUDY 7 - AI BASED MACHINE VISION SYSTEM FOR WINDOW GLASS OPEN/CLOSE INSPECTION",
     imgSrc: WindowGlassImg,
   },
 ];
@@ -69,7 +62,6 @@ const CaseStudy = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if navigating back from CaseStudyDetail and set index based on ID
     const params = new URLSearchParams(location.search);
     const caseStudyId = params.get("fromId");
     if (caseStudyId) {
@@ -257,21 +249,21 @@ const CaseStudy = () => {
           background: #333;
         }
 
-  .icon-animation {
-    font-size: 2.7rem;
-    margin-bottom: 0.8rem;
-    cursor: pointer !important; /* Ensure cursor style takes precedence */
-    pointer-events: auto; /* Ensure the element can receive pointer events */
-  }
-    .icon-animation:hover, .icon-animation > * {
-    cursor: pointer !important; /* Ensure the icon itself has pointer cursor */
-  }
+        .icon-animation {
+          font-size: 2.7rem;
+          margin-bottom: 0.8rem;
+          cursor: pointer !important;
+          pointer-events: auto;
+        }
+        .icon-animation:hover, .icon-animation > * {
+          cursor: pointer !important;
+        }
 
         .view-text {
           font-size: 1.2rem;
           font-weight: 600;
           letter-spacing: 10px;
-            cursor: pointer;
+          cursor: pointer;
         }
       `}</style>
 
@@ -285,43 +277,43 @@ const CaseStudy = () => {
           OUR CASE STUDIES
         </motion.h2>
 
-    <div className="carousel-wrapper">
-  <AnimatePresence mode="popLayout">
-    {caseStudies.map((study, index) => {
-      const position = getPositionClass(index);
-      return (
-        <motion.div
-          key={study.id}
-          className={`carousel-card ${position}`}
-          custom={position}
-          variants={cardVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          onClick={() => handleImageClick(index, study.id)}
-        >
-          <div className="card-header">{study.studyHeader}</div>
-          <img src={study.imgSrc} alt={study.title} />
-          <div className="overlay">
-            <motion.div
-              className="icon-animation"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent overlay click from interfering
-                handleImageClick(index, study.id);
-              }}
-            >
-              <FiExternalLink />
-            </motion.div>
-            <div className="view-text">VIEW DETAILS</div>
-          </div>
-        </motion.div>
-      );
-    })}
-  </AnimatePresence>
-</div>
+        <div className="carousel-wrapper">
+          <AnimatePresence mode="popLayout">
+            {caseStudies.map((study, index) => {
+              const position = getPositionClass(index);
+              return (
+                <motion.div
+                  key={study.id}
+                  className={`carousel-card ${position}`}
+                  custom={position}
+                  variants={cardVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  onClick={() => handleImageClick(index, study.id)}
+                >
+                  <div className="card-header">{study.studyHeader}</div>
+                  <img src={study.imgSrc} alt={study.title} />
+                  <div className="overlay">
+                    <motion.div
+                      className="icon-animation"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleImageClick(index, study.id);
+                      }}
+                    >
+                      <FiExternalLink />
+                    </motion.div>
+                    <div className="view-text">VIEW DETAILS</div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </div>
 
         <div className="carousel-controls">
           <button className="arrow-button" onClick={handlePrev}>❮</button>

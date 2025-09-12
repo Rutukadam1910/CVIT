@@ -4187,8 +4187,7 @@ const renderModelStructureTable = () => {
     </div>
   </section>
         <hr style={hrStyle} />
-
-      <section
+<section
   ref={techInfoSectionRef}
   id="technical"
   style={{ width: "100%", maxWidth: 1300, scrollMarginTop: "160px" }}
@@ -4203,7 +4202,7 @@ const renderModelStructureTable = () => {
       margin: "0 auto 1.5rem",
       boxShadow: "0 8px 24px rgba(4, 12, 30, 0.08)",
       background: "linear-gradient(180deg, #ffffff, #f9fafb)",
-      padding: "0.5rem",
+      padding: "0rem",
       border: "1px solid rgba(15, 23, 42, 0.05)",
     }} className="reveal-on-scroll">
       <table
@@ -4227,28 +4226,7 @@ const renderModelStructureTable = () => {
         </colgroup>
         <thead>
           <tr>
-            <th
-              colSpan="5"
-              style={{
-                padding: "15px 10px",
-                background: "#d3d3d3",
-                color: "#000000",
-                borderBottom: "3px solid rgba(255, 255, 255, 0.1)",
-                borderRight: "3px solid rgba(255, 255, 255, 0.05)",
-                verticalAlign: "middle",
-                textAlign: "left",
-                fontWeight: 600,
-                fontSize: "0.73rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.5px",
-                boxSizing: "border-box",
-                whiteSpace: "normal",
-                wordBreak: "break-word",
-                lineHeight: 1.4,
-              }}
-            >
-              Technical Specification
-            </th>
+            {/* Removed the Technical Specification heading */}
           </tr>
         </thead>
         <tbody>
@@ -4256,8 +4234,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4268,7 +4246,7 @@ const renderModelStructureTable = () => {
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 600,
-                background: "#ffffff",
+                background: "#d3d3d3",
                 transition: "background 200ms ease",
               }}
             >
@@ -4278,8 +4256,9 @@ const renderModelStructureTable = () => {
               colSpan="4"
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderTop: "1px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4301,8 +4280,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4313,7 +4292,7 @@ const renderModelStructureTable = () => {
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 600,
-                background: "#ffffff",
+                background: "#d3d3d3",
                 transition: "background 200ms ease",
               }}
             >
@@ -4322,8 +4301,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4343,8 +4322,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4364,8 +4343,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4385,8 +4364,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4408,8 +4387,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4420,7 +4399,7 @@ const renderModelStructureTable = () => {
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 600,
-                background: "#ffffff",
+                background: "#d3d3d3",
                 transition: "background 200ms ease",
               }}
             >
@@ -4429,8 +4408,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4450,8 +4429,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4471,8 +4450,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4492,8 +4471,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4515,8 +4494,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4527,7 +4506,7 @@ const renderModelStructureTable = () => {
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 600,
-                background: "#ffffff",
+                background: "#d3d3d3",
                 transition: "background 200ms ease",
               }}
             >
@@ -4536,8 +4515,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4557,8 +4536,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4578,15 +4557,15 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
                 whiteSpace: "normal",
                 fontSize: "0.85rem",
                 wordBreak: "break-word",
-                boxSizing:"border-box",
+                boxSizing: "border-box",
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 400,
@@ -4599,8 +4578,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4622,8 +4601,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4634,7 +4613,7 @@ const renderModelStructureTable = () => {
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 600,
-                background: "#ffffff",
+                background: "#d3d3d3",
                 transition: "background 200ms ease",
               }}
             >
@@ -4644,8 +4623,8 @@ const renderModelStructureTable = () => {
               colSpan="4"
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4667,8 +4646,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4679,7 +4658,7 @@ const renderModelStructureTable = () => {
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 600,
-                background: "#ffffff",
+                background: "#d3d3d3",
                 transition: "background 200ms ease",
               }}
             >
@@ -4689,8 +4668,8 @@ const renderModelStructureTable = () => {
               colSpan="4"
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4712,8 +4691,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4724,7 +4703,7 @@ const renderModelStructureTable = () => {
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 600,
-                background: "#ffffff",
+                background: "#d3d3d3",
                 transition: "background 200ms ease",
               }}
             >
@@ -4734,8 +4713,8 @@ const renderModelStructureTable = () => {
               colSpan="4"
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4757,8 +4736,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4769,7 +4748,7 @@ const renderModelStructureTable = () => {
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 600,
-                background: "#ffffff",
+                background: "#d3d3d3",
                 transition: "background 200ms ease",
               }}
             >
@@ -4779,8 +4758,8 @@ const renderModelStructureTable = () => {
               colSpan="4"
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4802,8 +4781,8 @@ const renderModelStructureTable = () => {
             <td
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",
@@ -4814,7 +4793,7 @@ const renderModelStructureTable = () => {
                 lineHeight: 1.5,
                 color: "#1a2a44",
                 fontWeight: 600,
-                background: "#ffffff",
+                background: "#d3d3d3",
                 transition: "background 200ms ease",
               }}
             >
@@ -4824,8 +4803,8 @@ const renderModelStructureTable = () => {
               colSpan="4"
               style={{
                 padding: "14px 16px",
-                borderBottom: "3px solid rgba(15, 23, 42, 0.05)",
-                borderRight: "3px solid rgba(15, 23, 42, 0.05)",
+                borderBottom: "2px solid rgba(15, 23, 42, 0.05)",
+                borderRight: "2px solid rgba(15, 23, 42, 0.05)",
                 verticalAlign: "middle",
                 textAlign: "left",
                 overflow: "hidden",

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo/logo.png";
 import brochurePDF from "../assets/Machine_Vision_System.pdf";
 import { useNavigate } from "react-router-dom";
 import { FiDownload, FiPhone } from "react-icons/fi";
