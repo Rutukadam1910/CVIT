@@ -3,13 +3,13 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 
-import gapMeasurementImg from "../assets/Gap_Measurement.png";
-import packetInspectionImg from "../assets/Packet_Inspection.png";
-import punchedNumberImg from "../assets/Punched_Number_detection.png";
-import sealentPresenceImg from "../assets/Door_Sealent_Presence.png";
-import vialAdapterImg from "../assets/vial_adapter.png";
-import tracingTrackingImg from "../assets/Tracing_And_Tracking.png";
-import WindowGlassImg from "../assets/Window_Glass.png";
+import gapMeasurementImg from "../assets/CaseStudies/Gap_Measurement.png";
+import packetInspectionImg from "../assets/CaseStudies/Packet_Inspection.png";
+import punchedNumberImg from "../assets/CaseStudies/Punched_Number_detection.png";
+import sealentPresenceImg from "../assets/CaseStudies/Door_Sealent_Presence.png";
+import vialAdapterImg from "../assets/CaseStudies/vial_adapter.png";
+import tracingTrackingImg from "../assets/CaseStudies/Tracing_And_Tracking.png";
+import WindowGlassImg from "../assets/CaseStudies/Window_Glass.png";
 
 const caseStudies = [
   {
