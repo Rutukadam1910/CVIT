@@ -9,13 +9,31 @@ import {
 import "../Styles/ContactUs.css";
 
 const ContactUs = () => {
-  const [toastVisible, setToastVisible] = useState(false);
+  const [toast, setToast] = useState({ visible: false, message: "", type: "" });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setToastVisible(true);
-    setTimeout(() => setToastVisible(false), 2010);
-    e.target.reset();
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mwpnzwor", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        setToast({ visible: true, message: "Message sent successfully!", type: "success" });
+        e.target.reset();
+      } else {
+        setToast({ visible: true, message: "Something went wrong. Please try again.", type: "error" });
+      }
+    } catch (error) {
+      setToast({ visible: true, message: "Network error. Please try again.", type: "error" });
+    }
+
+    setTimeout(() => setToast({ visible: false, message: "", type: "" }), 3000);
   };
 
   return (
@@ -26,14 +44,14 @@ const ContactUs = () => {
           <h2>DISCUSS YOUR PROJECT</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-row">
-              <input type="text" placeholder="Full name" required />
-              <input type="email" placeholder="Email address" required />
+              <input type="text" name="name" placeholder="Full name" required />
+              <input type="email" name="email" placeholder="Email address" required />
             </div>
             <div className="form-row">
-              <input type="text" placeholder="Subject" required />
-              <input type="tel" placeholder="Phone number" />
+              <input type="text" name="subject" placeholder="Subject" required />
+              <input type="tel" name="phone" placeholder="Phone number" />
             </div>
-            <textarea placeholder="Message" required></textarea>
+            <textarea name="message" placeholder="Message" required></textarea>
             <div className="checkbox-container">
               <input type="checkbox" id="agree" required />
               <label htmlFor="agree">
@@ -92,8 +110,9 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <div className={`toast ${toastVisible ? "show" : ""}`}>
-        Message sent successfully!
+      {/* Toast */}
+      <div className={`toast ${toast.visible ? "show" : ""} ${toast.type}`}>
+        {toast.message}
       </div>
     </div>
   );

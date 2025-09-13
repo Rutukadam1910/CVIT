@@ -82,16 +82,25 @@
 
 .footer-container {
   max-width: 1340px;
-  margin: 13.4px 53.6px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(147.4px, 1fr));
-  gap: 1.742rem;
+  margin: 13.4px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 0 53.6px;
+}
+
+.footer-logo {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-logo img {
-  margin-top: 3rem;
-  width: 127.3px;
+  width: 230px;
   height: auto;
+  margin-bottom: 0.67rem;
 }
 
 .footer-logo h3 {
@@ -101,15 +110,41 @@
 
 .footer-logo p {
   margin-top: 0.67rem;
-  margin-left: 0.335rem;
   font-size: 0.804rem;
   color: #ccc;
+}
+
+.footer-links-container {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-catalogue-container {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .footer-heading {
   font-size: 1.206rem;
   font-weight: 600;
   margin-bottom: 0.67rem;
+ 
+}
+.footer-heading-1 {
+  font-size: 1.206rem;
+  font-weight: 600;
+  margin-bottom: 0.67rem;
+  margin-left: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-links a {
@@ -126,36 +161,6 @@
   color: #ef3a3a;
 }
 
-.footer-newsletter p {
-  font-size: 0.804rem;
-  margin-bottom: 0.536rem;
-  color: #ccc;
-}
-
-.newsletter-input {
-  display: flex;
-  border: 1px solid #444;
-  border-radius: 20.1px;
-  overflow: hidden;
-}
-
-.newsletter-input input {
-  flex: 1;
-  padding: 0.536rem 1.072rem;
-  background: transparent;
-  border: none;
-  color: #fff;
-  outline: none;
-}
-
-.newsletter-input button {
-  padding: 0 0.67rem;
-  background-color: #EF3A3A;
-  border: none;
-  color: white;
-  cursor: pointer;
-  width: 40.2px;
-}
 
 .footer-bottom {
   display: flex;
@@ -213,7 +218,30 @@
   }
 
   .footer-container {
-    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    width: 100%;
+    align-items: center;
+  }
+
+  .footer-links-container {
+    width: 100%;
+    align-items: center;
+  }
+
+  .footer-catalogue-container {
+    width: 100%;
+    align-items: center;
+  }
+
+  .footer-links {
+    align-items: center;
   }
 
   .footer-bottom {

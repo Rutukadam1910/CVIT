@@ -221,6 +221,13 @@ textarea {
   opacity: 1;
   transform: translateY(0);
 }
+.toast.success {
+  background-color: #28a745;
+}
+.toast.error {
+  background-color: #dc3545;
+}
+
 @media (max-width: 1024px) {
   .contact-container {
     max-width: 95%;

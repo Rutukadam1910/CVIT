@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
-import logo from "../assets/logo/logo.png";
+import logo from "../assets/logo/Logo-footer.png";
 import iso from "../assets/Certifications/iso.jpeg";
 import rohs from "../assets/Certifications/rohs.jpeg";
 import ce from "../assets/Certifications/ce.jpg";
@@ -68,11 +68,11 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-logo">
           <img src={logo} alt="CVIT Logo" />
-          <h3>CVIT Solution</h3>
+        
         </div>
 
         <div>
-          <h4 className="footer-heading">Quick Links</h4>
+          <h4 className="footer-heading-1">Quick Links</h4>
           <div className="footer-links">
             {[
               "Home",
@@ -108,12 +108,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-newsletter">
-          <div className="newsletter-input">
-            <input type="email" placeholder="Email address" />
-            <button>&#9658;</button>
-          </div>
-        </div>
+       
       </div>
 
       {/* Bottom Footer */}
