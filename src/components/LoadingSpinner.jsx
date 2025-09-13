@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-// LoadingInfinity.jsx
-// Infinity shaped loading animation with white theme, black background, and animated loading text.
-
 export default function LoadingSpinner({
   size = 220,
   message = "Loading",
@@ -11,16 +8,15 @@ export default function LoadingSpinner({
   const svgSize = size;
   const strokeWidth = 6;
 
+  // Smooth dot animation for "Loading..."
   const [dotCount, setDotCount] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setDotCount((prev) => (prev < 3 ? prev + 1 : 0));
-    }, 500); // speed of dot animation
+    }, 500);
     return () => clearInterval(interval);
   }, []);
 
-  // Create dots array for smooth fade-in
   const dots = Array.from({ length: 3 }, (_, i) => (
     <span
       key={i}
@@ -57,6 +53,7 @@ export default function LoadingSpinner({
 
           {/* Infinity SVG */}
           <svg
+            key="infinity-svg"
             viewBox="0 0 200 100"
             className="relative z-10 w-full h-full"
             preserveAspectRatio="xMidYMid meet"
@@ -112,9 +109,9 @@ export default function LoadingSpinner({
             </g>
           </svg>
 
-          {/* Loading Text (closer with inline negative margin) */}
+          {/* Loading Text */}
           <p
-            className="text-lg font-semibold text-white tracking-widest"
+            className="text-lg font-semibold text-white tracking-widest transition-opacity duration-500"
             style={{ marginTop: "-60px" }}
           >
             {message}
@@ -123,7 +120,6 @@ export default function LoadingSpinner({
         </div>
       </div>
 
-      {/* Animations */}
       <style>{`
         @keyframes draw {
           0% { stroke-dashoffset: 300; opacity: 0.7 }
@@ -134,8 +130,8 @@ export default function LoadingSpinner({
         }
 
         @keyframes spin-slow {
-          from { transform: rotate(0deg) }
-          to { transform: rotate(360deg) }
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
 
         svg { shape-rendering: geometricPrecision; }

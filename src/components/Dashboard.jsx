@@ -1411,6 +1411,7 @@
 import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
+import LoadingSpinner from "./LoadingSpinner";
 import "../Styles/Dashboard.css";
 
 const CustomerBenefits = lazy(() => import("./CustomerBenefits"));
@@ -1544,6 +1545,44 @@ const IconCircle = ({ children }) => (
   </div>
 );
 
+// Custom Suspense component to ensure minimum duration for the fallback
+const SuspenseWithMinDuration = ({ children, fallback, minDuration = 2400 }) => {
+  const [isMinDurationMet, setIsMinDurationMet] = useState(false);
+  const [isContentLoaded, setIsContentLoaded] = useState(false);
+
+  useEffect(() => {
+    // Set minimum duration for the fallback
+    const timeout = setTimeout(() => {
+      setIsMinDurationMet(true);
+    }, minDuration);
+
+    return () => clearTimeout(timeout);
+  }, [minDuration]);
+
+  // Wrap children in a component to detect when they are fully loaded
+  const ContentWrapper = ({ children }) => {
+    useEffect(() => {
+      setIsContentLoaded(true);
+    }, []);
+
+    return <>{children}</>;
+  };
+
+  return (
+    <Suspense
+      fallback={
+        isMinDurationMet && isContentLoaded ? (
+          <div style={{ display: "none" }} />
+        ) : (
+          fallback
+        )
+      }
+    >
+      <ContentWrapper>{children}</ContentWrapper>
+    </Suspense>
+  );
+};
+
 const Dashboard = ({ type }) => {
   const [toggleState, setToggleState] = useState(type);
   const [isSliding, setIsSliding] = useState(false);
@@ -1563,12 +1602,12 @@ const Dashboard = ({ type }) => {
     const handleScroll = () => {
       const gotop = document.getElementById("gotop");
       if (!gotop) return;
-  
+
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const middlePoint = documentHeight / 2;
-  
+
       if (scrollTop + windowHeight / 2 >= middlePoint) {
         gotop.style.opacity = "1";
         gotop.style.transform = "translateY(0)";
@@ -1583,7 +1622,7 @@ const Dashboard = ({ type }) => {
         }, 400);
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -1692,7 +1731,7 @@ const Dashboard = ({ type }) => {
     if (navigateTimeoutRef.current) return;
     setIsSliding(true);
     navigateTimeoutRef.current = setTimeout(() => {
-      navigate(`/industry/${id}`, { state: {} });
+      navigate(`/industry/${id}`, { state: { fromIndustry: true } });
       setIsSliding(false);
       navigateTimeoutRef.current = null;
     }, 500);
@@ -1702,7 +1741,7 @@ const Dashboard = ({ type }) => {
     if (navigateTimeoutRef.current) return;
     setIsSliding(true);
     navigateTimeoutRef.current = setTimeout(() => {
-      navigate(`/product/${slug}`, { state: {} });
+      navigate(`/product/${slug}`, { state: { fromProduct: true } });
       setIsSliding(false);
       navigateTimeoutRef.current = null;
     }, 500);
@@ -1800,72 +1839,13 @@ const Dashboard = ({ type }) => {
               </section>
             )}
           </div>
-
-          {toggleState === "dashboardOne" && (
-            <div id="huake-side-bar" className="huake-side-bar" aria-label="Quick contact options">
-              <a
-                href="/contact-us"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/contact-us");
-                }}
-                rel="nofollow"
-                aria-label="Contact"
-                className="text"
-              >
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                <span>Contact</span>
-              </a>
-              <a
-                href="mailto:sales@cvit.in"
-                rel="nofollow"
-                target="_blank"
-                aria-label="Email"
-                className="text"
-              >
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-                <span>Email</span>
-              </a>
-              <a
-                href="https://api.whatsapp.com/send?phone=7507149084"
-                rel="nofollow"
-                target="_blank"
-                aria-label="WhatsApp"
-                className="text"
-              >
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M11.991 21.781a9.9 9.9 0 0 1-5.034-1.38l-.36-.216-3.741.981.999-3.649-.234-.376a9.84 9.84 0 0 1-1.511-5.258c0-5.439 4.436-9.876 9.887-9.876a9.84 9.84 0 0 1 6.99 2.897 9.84 9.84 0 0 1 2.892 6.99c-.006 5.459-4.442 9.888-9.888 9.888m5.423-7.401c-.296-.149-1.755-.867-2.03-.969-.273-.098-.473-.149-.667.149-.2.296-.77.969-.941 1.163-.171.199-.348.222-.645.075-.296-.15-1.254-.462-2.388-1.478-.885-.787-1.478-1.763-1.655-2.058-.171-.297-.016-.456.132-.604.131-.132.296-.348.444-.519.15-.171.199-.297.297-.495.098-.201.051-.372-.022-.52-.075-.149-.667-1.614-.918-2.205-.24-.583-.484-.502-.667-.51-.171-.01-.37-.01-.57-.01a1.095 1.095 0 0 0-.794.37c-.273.297-1.037 1.016-1.037 2.482s1.065 2.874 1.215 3.074c.147.199 2.091 3.198 5.075 4.488.705.307 1.26.489 1.694.627.713.228 1.356.193 1.869.12.57-.087 1.757-.72 2.007-1.414.246-.696.246-1.29.171-1.414-.073-.126-.273-.199-.57-.348"/>
-                </svg>
-                <span>WhatsApp</span>
-              </a>
-              <a
-                href="#"
-                rel="nofollow"
-                aria-label="Top"
-                id="gotop"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 19V5" />
-                  <path d="M5 12l7-7 7 7" />
-                </svg>
-                <span>Top</span>
-              </a>
-            </div>
-          )}
         </div>
 
         {showRestContent && toggleState === "dashboardOne" && (
-          <Suspense fallback={<div className="loading-placeholder">Loading content...</div>}>
+          <SuspenseWithMinDuration
+            fallback={<LoadingSpinner message="Loading content..." />}
+            minDuration={2400}
+          >
             <section style={{ marginTop: "2rem" }} ref={customerBenefitsRef}>
               <CustomerBenefits />
             </section>
@@ -1899,9 +1879,71 @@ const Dashboard = ({ type }) => {
             <section>
               <Footer />
             </section>
-          </Suspense>
+          </SuspenseWithMinDuration>
         )}
       </div>
+
+      {toggleState === "dashboardOne" && (
+        <div id="huake-side-bar" className="huake-side-bar" aria-label="Quick contact options">
+          <a
+            href="/contact-us"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/contact-us");
+            }}
+            rel="nofollow"
+            aria-label="Contact"
+            className="text"
+          >
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Contact</span>
+          </a>
+          <a
+            href="mailto:sales@cvit.in"
+            rel="nofollow"
+            target="_blank"
+            aria-label="Email"
+            className="text"
+          >
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <span>Email</span>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=7507149084"
+            rel="nofollow"
+            target="_blank"
+            aria-label="WhatsApp"
+            className="text"
+          >
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M11.991 21.781a9.9 9.9 0 0 1-5.034-1.38l-.36-.216-3.741.981.999-3.649-.234-.376a9.84 9.84 0 0 1-1.511-5.258c0-5.439 4.436-9.876 9.887-9.876a9.84 9.84 0 0 1 6.99 2.897 9.84 9.84 0 0 1 2.892 6.99c-.006 5.459-4.442 9.888-9.888 9.888m5.423-7.401c-.296-.149-1.755-.867-2.03-.969-.273-.098-.473-.149-.667.149-.2.296-.77.969-.941 1.163-.171.199-.348.222-.645.075-.296-.15-1.254-.462-2.388-1.478-.885-.787-1.478-1.763-1.655-2.058-.171-.297-.016-.456.132-.604.131-.132.296-.348.444-.519.15-.171.199-.297.297-.495.098-.201.051-.372-.022-.52-.075-.149-.667-1.614-.918-2.205-.24-.583-.484-.502-.667-.51-.171-.01-.37-.01-.57-.01a1.095 1.095 0 0 0-.794.37c-.273.297-1.037 1.016-1.037 2.482s1.065 2.874 1.215 3.074c.147.199 2.091 3.198 5.075 4.488.705.307 1.26.489 1.694.627.713.228 1.356.193 1.869.12.57-.087 1.757-.72 2.007-1.414.246-.696.246-1.29.171-1.414-.073-.126-.273-.199-.57-.348"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+          <a
+            href="#"
+            rel="nofollow"
+            aria-label="Top"
+            id="gotop"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 19V5" />
+              <path d="M5 12l7-7 7 7" />
+            </svg>
+            <span>Top</span>
+          </a>
+        </div>
+      )}
     </>
   );
 };
