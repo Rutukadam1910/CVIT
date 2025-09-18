@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
-import logo from "../assets/logo/Logo-footer.png";
+import logo from "../assets/logo/CVIT_LOGO2.png";
 import iso from "../assets/Certifications/iso.jpeg";
 import rohs from "../assets/Certifications/rohs.jpeg";
 import ce from "../assets/Certifications/ce.jpg";
