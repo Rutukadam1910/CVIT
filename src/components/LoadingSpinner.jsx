@@ -84,7 +84,7 @@ export default function LoadingSpinner({
             <path
               d="M20,50 C20,20 80,20 100,50 C120,80 180,80 180,50 C180,20 120,20 100,50 C80,80 20,80 20,50 Z"
               fill="none"
-              stroke="#ffffff"
+              stroke="#ef3a3a"
               strokeWidth={strokeWidth}
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -95,13 +95,13 @@ export default function LoadingSpinner({
 
             {/* Moving Glow Dots */}
             <g>
-              <circle r="5" fill="#ffffff" filter="url(#f1)" opacity="0.98">
+              <circle r="5" fill="#ef3a3a" filter="url(#f1)" opacity="0.98">
                 <animateMotion dur="2.4s" repeatCount="indefinite" rotate="auto">
                   <mpath xlinkHref="#infinityPath" />
                 </animateMotion>
               </circle>
 
-              <circle r="2.2" fill="#ffffff" opacity="0.9">
+              <circle r="2.2" fill="#ef3a3a" opacity="0.9">
                 <animateMotion dur="2.4s" repeatCount="indefinite" rotate="auto">
                   <mpath xlinkHref="#infinityPath" />
                 </animateMotion>

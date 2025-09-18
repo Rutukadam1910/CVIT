@@ -1408,12 +1408,19 @@
 
 // export default Dashboard;
 
+
+
 import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
+import LoadingSpinner from "./LoadingSpinner";
 import "../Styles/Dashboard.css";
 
-const CustomerBenefits = lazy(() => import("./CustomerBenefits"));
+const CustomerBenefits = lazy(() =>
+  new Promise((resolve) => {
+    setTimeout(() => resolve(import("./CustomerBenefits")), 5000); // 5-second delay
+  })
+);
 const Client = lazy(() => import("./Client"));
 const CaseStudy = lazy(() => import("./CaseStudy"));
 const Aboutus_Mission_Vision = lazy(() => import("./Aboutus_Mission_Vision"));
@@ -1563,12 +1570,12 @@ const Dashboard = ({ type }) => {
     const handleScroll = () => {
       const gotop = document.getElementById("gotop");
       if (!gotop) return;
-  
+
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const middlePoint = documentHeight / 2;
-  
+
       if (scrollTop + windowHeight / 2 >= middlePoint) {
         gotop.style.opacity = "1";
         gotop.style.transform = "translateY(0)";
@@ -1583,7 +1590,7 @@ const Dashboard = ({ type }) => {
         }, 400);
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -1865,7 +1872,7 @@ const Dashboard = ({ type }) => {
         </div>
 
         {showRestContent && toggleState === "dashboardOne" && (
-          <Suspense fallback={<div className="loading-placeholder">Loading content...</div>}>
+          <Suspense fallback={<LoadingSpinner message="Loading..." />}>
             <section style={{ marginTop: "2rem" }} ref={customerBenefitsRef}>
               <CustomerBenefits />
             </section>
@@ -1909,17 +1916,16 @@ const Dashboard = ({ type }) => {
 export default Dashboard;
 
 
+
+
+
+
 // import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 // import { useNavigate, useLocation } from "react-router-dom";
 // import Navbar from "./Navbar";
-// import LoadingSpinner from "./LoadingSpinner";
 // import "../Styles/Dashboard.css";
 
-// const CustomerBenefits = lazy(() =>
-//   new Promise((resolve) => {
-//     setTimeout(() => resolve(import("./CustomerBenefits")), 5000); // 5-second delay
-//   })
-// );
+// const CustomerBenefits = lazy(() => import("./CustomerBenefits"));
 // const Client = lazy(() => import("./Client"));
 // const CaseStudy = lazy(() => import("./CaseStudy"));
 // const Aboutus_Mission_Vision = lazy(() => import("./Aboutus_Mission_Vision"));
@@ -2069,12 +2075,12 @@ export default Dashboard;
 //     const handleScroll = () => {
 //       const gotop = document.getElementById("gotop");
 //       if (!gotop) return;
-
+  
 //       const windowHeight = window.innerHeight;
 //       const documentHeight = document.documentElement.scrollHeight;
 //       const scrollTop = window.scrollY || document.documentElement.scrollTop;
 //       const middlePoint = documentHeight / 2;
-
+  
 //       if (scrollTop + windowHeight / 2 >= middlePoint) {
 //         gotop.style.opacity = "1";
 //         gotop.style.transform = "translateY(0)";
@@ -2089,7 +2095,7 @@ export default Dashboard;
 //         }, 400);
 //       }
 //     };
-
+  
 //     window.addEventListener("scroll", handleScroll, { passive: true });
 //     return () => window.removeEventListener("scroll", handleScroll);
 //   }, []);
@@ -2371,7 +2377,7 @@ export default Dashboard;
 //         </div>
 
 //         {showRestContent && toggleState === "dashboardOne" && (
-//           <Suspense fallback={<LoadingSpinner message="Loading..." />}>
+//           <Suspense fallback={<div className="loading-placeholder">Loading content...</div>}>
 //             <section style={{ marginTop: "2rem" }} ref={customerBenefitsRef}>
 //               <CustomerBenefits />
 //             </section>
