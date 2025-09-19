@@ -1417,7 +1417,7 @@ import "../Styles/Dashboard.css";
 
 const CustomerBenefits = lazy(() =>
   new Promise((resolve) => {
-    setTimeout(() => resolve(import("./CustomerBenefits")), 1000); 
+    setTimeout(() => resolve(import("./CustomerBenefits")), 300); 
   })
 );
 const Client = lazy(() => import("./Client"))
