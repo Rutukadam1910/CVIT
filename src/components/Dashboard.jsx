@@ -1417,10 +1417,10 @@ import "../Styles/Dashboard.css";
 
 const CustomerBenefits = lazy(() =>
   new Promise((resolve) => {
-    setTimeout(() => resolve(import("./CustomerBenefits")), 5000); // 5-second delay
+    setTimeout(() => resolve(import("./CustomerBenefits")), 1000); 
   })
 );
-const Client = lazy(() => import("./Client"));
+const Client = lazy(() => import("./Client"))
 const CaseStudy = lazy(() => import("./CaseStudy"));
 const Aboutus_Mission_Vision = lazy(() => import("./Aboutus_Mission_Vision"));
 const CoreValues = lazy(() => import("./CoreValues"));
