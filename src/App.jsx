@@ -68,6 +68,7 @@ import Implementation from "./components/Implementation";
 import ContactUs from "./components/ContactUs";
 import LoadingSpinner from "./components/LoadingSpinner";
 import './App.css';
+import './Styles/LoadingSpinner.css'; // Add this line
 
 const DashboardLayout = ({ type }) => {
   const videoRef = useRef(null);

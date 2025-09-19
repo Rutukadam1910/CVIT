@@ -312,16 +312,18 @@
 //   );
 // }
 
+// src/components/LoadingSpinner.js
 import React, { useEffect, useRef, useState } from "react";
 
 export default function LoadingSpinner({
   size = 240,
   message = "Loading",
   ariaLabel = "Loading",
-  duration = 2400, // sync duration (ms)
+  duration = 2400,
+  fullScreen = false,
 }) {
-  const svgSize = size;
-  const strokeWidth = 7;
+  const svgSize = fullScreen ? size : Math.min(size, 120);
+  const strokeWidth = fullScreen ? 7 : 4;
   const pathRef = useRef(null);
   const dotRef = useRef(null);
   const strokeRef = useRef(null);
@@ -345,7 +347,7 @@ export default function LoadingSpinner({
     const stroke = strokeRef.current;
 
     const totalLength = path.getTotalLength();
-    const dashLength = totalLength / 2; // size of visible segment
+    const dashLength = totalLength / 2;
 
     let start = null;
     let animationFrame;
@@ -355,7 +357,7 @@ export default function LoadingSpinner({
       const elapsed = timestamp - start;
       const progress = (elapsed % duration) / duration;
 
-      // Stroke dash animation - seamless infinite scroll
+      // Stroke dash animation
       stroke.setAttribute("stroke-dasharray", `${dashLength} ${totalLength}`);
       stroke.setAttribute(
         "stroke-dashoffset",
@@ -384,28 +386,40 @@ export default function LoadingSpinner({
     </span>
   ));
 
+  const containerClass = fullScreen 
+    ? "fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" 
+    : "flex items-center justify-center min-h-[80px] py-4";
+
+  const textSize = fullScreen ? "text-lg" : "text-sm";
+  const textMarginTop = fullScreen ? "-65px" : "-20px";
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
-      <div className="flex flex-col items-center p-6">
+    <div 
+      className={containerClass}
+      role={fullScreen ? "status" : "img"}
+      aria-live="polite"
+      aria-label={fullScreen ? "Loading page content" : ariaLabel}
+    >
+      <div className="flex flex-col items-center p-4">
         <div
           className="relative flex flex-col items-center"
           style={{ width: svgSize, height: svgSize / 1.1 }}
-          role="img"
-          aria-label={ariaLabel}
         >
           {/* Rotating Halo */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div
-              className="rounded-full opacity-20"
-              style={{
-                width: svgSize * 0.95,
-                height: svgSize * 0.95,
-                border: "1px solid rgba(255,255,255,0.2)",
-                transformOrigin: "center",
-                animation: "spin-slow 6s linear infinite",
-              }}
-            />
-          </div>
+          {fullScreen && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div
+                className="rounded-full opacity-20"
+                style={{
+                  width: svgSize * 0.95,
+                  height: svgSize * 0.95,
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  transformOrigin: "center",
+                  animation: "spin-slow 6s linear infinite",
+                }}
+              />
+            </div>
+          )}
 
           {/* Infinity SVG */}
           <svg
@@ -415,7 +429,7 @@ export default function LoadingSpinner({
           >
             <defs>
               <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="2.2" result="b" />
+                <feGaussianBlur stdDeviation={fullScreen ? "2.2" : "1"} result="b" />
                 <feMerge>
                   <feMergeNode in="b" />
                   <feMergeNode in="SourceGraphic" />
@@ -451,7 +465,7 @@ export default function LoadingSpinner({
             {/* Moving Glow Dot */}
             <circle
               ref={dotRef}
-              r="6"
+              r={fullScreen ? "6" : "3"}
               fill="#ef3a3a"
               filter="url(#f1)"
               opacity="0.98"
@@ -460,8 +474,8 @@ export default function LoadingSpinner({
 
           {/* Loading Text */}
           <p
-            className="text-lg font-bold text-white tracking-widest transition-opacity duration-500"
-            style={{ marginTop: "-65px" }}
+            className={`${textSize} font-bold text-white tracking-widest transition-opacity duration-500`}
+            style={{ marginTop: textMarginTop }}
           >
             {message}
             {dots}
@@ -469,14 +483,18 @@ export default function LoadingSpinner({
         </div>
       </div>
 
-      <style>{`
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
+      {!fullScreen && (
+        <style>{`
+          @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
 
-        svg { shape-rendering: geometricPrecision; }
-      `}</style>
+          .loading-spinner svg { 
+            shape-rendering: geometricPrecision; 
+          }
+        `}</style>
+      )}
     </div>
   );
 }

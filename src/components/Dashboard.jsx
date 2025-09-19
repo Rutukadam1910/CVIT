@@ -2375,7 +2375,7 @@ const Dashboard = ({ type }) => {
         </div>
 
         {showRestContent && toggleState === "dashboardOne" && (
-          <Suspense fallback={<DelayedFallback message="Loading..." delay={300} />}>
+          <Suspense fallback={<DelayedFallback message="Loading content..." delay={300} />}>
             <section style={{ marginTop: "2rem" }} ref={customerBenefitsRef}>
               <CustomerBenefits />
             </section>

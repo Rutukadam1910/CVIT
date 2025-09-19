@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 
-const DelayedFallback = ({ message, delay = 300 }) => {
+const DelayedFallback = ({ message = "Loading...", delay = 300 }) => {
   const [showSpinner, setShowSpinner] = useState(false);
 
   useEffect(() => {
@@ -13,7 +13,14 @@ const DelayedFallback = ({ message, delay = 300 }) => {
     return () => clearTimeout(timer);
   }, [delay]);
 
-  return showSpinner ? <LoadingSpinner message={message} /> : null;
+  return showSpinner ? (
+    <LoadingSpinner 
+      message={message} 
+      fullScreen={false}
+      size={120}
+      duration={2000}
+    />
+  ) : null;
 };
 
 export default DelayedFallback;
