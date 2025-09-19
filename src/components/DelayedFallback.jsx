@@ -1,4 +1,4 @@
-// src/components/DelayedFallback.js
+// src/components/DelayedFallback.jsx
 import React, { useState, useEffect } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 
