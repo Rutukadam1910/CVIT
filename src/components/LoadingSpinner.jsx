@@ -312,7 +312,7 @@
 //   );
 // }
 
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function LoadingSpinner({
   size = 240,
@@ -329,7 +329,7 @@ export default function LoadingSpinner({
   const [dotCount, setDotCount] = useState(0);
 
   // Loading dots animation (...)
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setDotCount((prev) => (prev < 3 ? prev + 1 : 0));
     }, 500);
@@ -337,7 +337,7 @@ export default function LoadingSpinner({
   }, []);
 
   // Sync stroke and dot animation
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!pathRef.current || !dotRef.current || !strokeRef.current) return;
 
     const path = pathRef.current;
@@ -345,15 +345,7 @@ export default function LoadingSpinner({
     const stroke = strokeRef.current;
 
     const totalLength = path.getTotalLength();
-    const dashLength = totalLength / 2; // visible segment
-
-    // ✅ Initialize stroke & dot before animation to prevent flicker
-    stroke.setAttribute("stroke-dasharray", `${dashLength} ${totalLength}`);
-    stroke.setAttribute("stroke-dashoffset", "0");
-
-    const startPoint = path.getPointAtLength(0);
-    dot.setAttribute("cx", startPoint.x);
-    dot.setAttribute("cy", startPoint.y);
+    const dashLength = totalLength / 2; // size of visible segment
 
     let start = null;
     let animationFrame;
@@ -482,6 +474,7 @@ export default function LoadingSpinner({
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
+
         svg { shape-rendering: geometricPrecision; }
       `}</style>
     </div>
