@@ -1919,12 +1919,8 @@ import Navbar from "./Navbar";
 import DelayedFallback from "./DelayedFallback";
 import "../Styles/Dashboard.css";
 
-const CustomerBenefits = lazy(() =>
-  new Promise((resolve) => {
-    setTimeout(() => resolve(import("./CustomerBenefits")), 300); 
-  })
-);
-const Client = lazy(() => import("./Client"))
+const CustomerBenefits = lazy(() =>import("./CustomerBenefits"));
+const Client = lazy(() => import("./Client"));
 const CaseStudy = lazy(() => import("./CaseStudy"));
 const Aboutus_Mission_Vision = lazy(() => import("./Aboutus_Mission_Vision"));
 const CoreValues = lazy(() => import("./CoreValues"));
@@ -2375,7 +2371,7 @@ const Dashboard = ({ type }) => {
         </div>
 
         {showRestContent && toggleState === "dashboardOne" && (
-          <Suspense fallback={<DelayedFallback message="Loading content..." delay={300} />}>
+          <Suspense fallback={<DelayedFallback message="Loading..." delay={300} />}>
             <section style={{ marginTop: "2rem" }} ref={customerBenefitsRef}>
               <CustomerBenefits />
             </section>

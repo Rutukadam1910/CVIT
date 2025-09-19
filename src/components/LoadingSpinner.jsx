@@ -390,8 +390,11 @@ export default function LoadingSpinner({
     ? "fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" 
     : "flex items-center justify-center min-h-[80px] py-4";
 
-  const textSize = fullScreen ? "text-lg" : "text-sm";
-  const textMarginTop = fullScreen ? "-65px" : "-20px";
+  // Smaller text size for both fullScreen and regular modes
+  const textSize = fullScreen ? "text-sm" : "text-sm";
+  
+  // Reduced margin-top to bring text closer to infinity shape
+  const textMarginTop = fullScreen ? "-45px" : "-8px"; 
 
   return (
     <div 
@@ -400,10 +403,14 @@ export default function LoadingSpinner({
       aria-live="polite"
       aria-label={fullScreen ? "Loading page content" : ariaLabel}
     >
-      <div className="flex flex-col items-center p-4">
+      <div className="flex flex-col items-center p-2">
         <div
           className="relative flex flex-col items-center"
-          style={{ width: svgSize, height: svgSize / 1.1 }}
+          style={{ 
+            width: svgSize, 
+            height: svgSize / 1.2, // Slightly reduced height to accommodate closer text
+            marginBottom: fullScreen ? '0' : '4px' // Small bottom margin for non-fullscreen
+          }}
         >
           {/* Rotating Halo */}
           {fullScreen && (
@@ -421,61 +428,69 @@ export default function LoadingSpinner({
             </div>
           )}
 
-          {/* Infinity SVG */}
-          <svg
-            viewBox="0 0 240 120"
-            className="relative z-10 w-full h-full"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <defs>
-              <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation={fullScreen ? "2.2" : "1"} result="b" />
-                <feMerge>
-                  <feMergeNode in="b" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
+          {/* Infinity SVG - Positioned slightly higher to make room for closer text */}
+          <div style={{ transform: fullScreen ? 'translateY(-2px)' : 'translateY(-1px)' }}>
+            <svg
+              viewBox="0 0 240 120"
+              className="relative z-10 w-full h-full"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <defs>
+                <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation={fullScreen ? "2.2" : "1"} result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
 
-            {/* Base Path */}
-            <path
-              ref={pathRef}
-              d="M20,60 C20,20 100,20 120,60 C140,100 220,100 220,60 
-                 C220,20 140,20 120,60 C100,100 20,100 20,60 Z"
-              fill="none"
-              stroke="#ffffff"
-              strokeWidth={strokeWidth}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeOpacity="0.18"
-            />
+              {/* Base Path */}
+              <path
+                ref={pathRef}
+                d="M20,60 C20,20 100,20 120,60 C140,100 220,100 220,60 
+                   C220,20 140,20 120,60 C100,100 20,100 20,60 Z"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeOpacity="0.18"
+              />
 
-            {/* Animated Stroke */}
-            <path
-              ref={strokeRef}
-              d="M20,60 C20,20 100,20 120,60 C140,100 220,100 220,60 
-                 C220,20 140,20 120,60 C100,100 20,100 20,60 Z"
-              fill="none"
-              stroke="#ef3a3a"
-              strokeWidth={strokeWidth}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+              {/* Animated Stroke */}
+              <path
+                ref={strokeRef}
+                d="M20,60 C20,20 100,20 120,60 C140,100 220,100 220,60 
+                   C220,20 140,20 120,60 C100,100 20,100 20,60 Z"
+                fill="none"
+                stroke="#ef3a3a"
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
 
-            {/* Moving Glow Dot */}
-            <circle
-              ref={dotRef}
-              r={fullScreen ? "6" : "3"}
-              fill="#ef3a3a"
-              filter="url(#f1)"
-              opacity="0.98"
-            />
-          </svg>
+              {/* Moving Glow Dot */}
+              <circle
+                ref={dotRef}
+                r={fullScreen ? "6" : "3"}
+                fill="#ef3a3a"
+                filter="url(#f1)"
+                opacity="0.98"
+              />
+            </svg>
+          </div>
 
-          {/* Loading Text */}
+          {/* Loading Text - Much closer to the infinity shape */}
           <p
-            className={`${textSize} font-bold text-white tracking-widest transition-opacity duration-500`}
-            style={{ marginTop: textMarginTop }}
+            className={`${textSize} font-semibold text-white tracking-wide whitespace-nowrap transition-opacity duration-500`}
+            style={{ 
+              marginTop: textMarginTop,
+              lineHeight: 1,
+              letterSpacing: '0.05em',
+              // Additional fine-tuning for perfect alignment
+              paddingTop: fullScreen ? '2px' : '1px'
+            }}
           >
             {message}
             {dots}
@@ -483,18 +498,21 @@ export default function LoadingSpinner({
         </div>
       </div>
 
-      {!fullScreen && (
-        <style>{`
-          @keyframes spin-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
+      <style>{`
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
 
-          .loading-spinner svg { 
-            shape-rendering: geometricPrecision; 
-          }
-        `}</style>
-      )}
+        .loading-spinner svg { 
+          shape-rendering: geometricPrecision; 
+        }
+
+        /* Ensure text stays on one line */
+        .whitespace-nowrap {
+          white-space: nowrap;
+        }
+      `}</style>
     </div>
   );
 }
