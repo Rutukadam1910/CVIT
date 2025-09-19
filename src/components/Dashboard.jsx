@@ -1409,11 +1409,10 @@
 // export default Dashboard;
 
 
-
 import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import LoadingSpinner from "./LoadingSpinner";
+import DelayedFallback from "./DelayedFallBack";
 import "../Styles/Dashboard.css";
 
 const CustomerBenefits = lazy(() =>
@@ -1872,7 +1871,7 @@ const Dashboard = ({ type }) => {
         </div>
 
         {showRestContent && toggleState === "dashboardOne" && (
-          <Suspense fallback={<LoadingSpinner message="Loading..." />}>
+          <Suspense fallback={<DelayedFallback message="Loading..." delay={300} />}>
             <section style={{ marginTop: "2rem" }} ref={customerBenefitsRef}>
               <CustomerBenefits />
             </section>
@@ -1914,11 +1913,6 @@ const Dashboard = ({ type }) => {
 };
 
 export default Dashboard;
-
-
-
-
-
 
 // import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 // import { useNavigate, useLocation } from "react-router-dom";
