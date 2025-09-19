@@ -1917,6 +1917,7 @@ import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import DelayedFallback from "./DelayedFallback";
+import CookieConsent from "./CookieConsent";
 import "../Styles/Dashboard.css";
 
 const CustomerBenefits = lazy(() =>import("./CustomerBenefits"));
@@ -2369,6 +2370,8 @@ const Dashboard = ({ type }) => {
             </div>
           )}
         </div>
+        
+          <CookieConsent />  
 
         {showRestContent && toggleState === "dashboardOne" && (
           <Suspense fallback={<DelayedFallback message="Loading..." delay={300} />}>
