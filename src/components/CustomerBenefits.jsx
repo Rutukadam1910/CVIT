@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
 import backgroundImage from "../assets/blue2.jpg";
 
 const CustomerBenefitsdata = ({
@@ -48,8 +49,7 @@ const CustomerBenefitsdata = ({
           const eased = 1 - Math.pow(1 - progress, 3);
           const bounce = eased + Math.sin(progress * Math.PI) * 0.015;
 
-          // For "Defect-Free Industry", display one decimal place; otherwise, use integer
-          if (label === "Defect-Free Industry") {
+          if (label === "DefectFreeIndustry") {
             setDisplayValue((targetValue * eased).toFixed(1));
           } else {
             setDisplayValue(Math.floor(targetValue * eased));
@@ -223,6 +223,7 @@ const CustomerBenefitsdata = ({
             transition: "opacity 1s ease",
             userSelect: "none",
           }}
+          aria-label={`${displayValue}${unit} ${label}`}
         >
           {displayValue}{unit}
         </div>
@@ -231,6 +232,10 @@ const CustomerBenefitsdata = ({
             fontSize: "1.35rem",
             fontWeight: 600,
             color: "white",
+            whiteSpace: "normal",
+            overflow: "visible",
+            maxWidth: "100%",
+            fontFamily: "'Inter', 'Noto Sans', 'Noto Sans SC', sans-serif",
           }}
         >
           {label}
@@ -241,6 +246,7 @@ const CustomerBenefitsdata = ({
 };
 
 const CustomerBenefits = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const { ref, inView } = useInView({
     triggerOnce: false,
@@ -248,12 +254,12 @@ const CustomerBenefits = () => {
   });
 
   const metrics = [
-    { label: "Inspection Accuracy", value: 99, unit: "%" },
-    { label: "Production Efficiency", value: 20, unit: "%" },
-    { label: "Labour Cost Saving", value: 30, unit: "%" },
-    { label: "Minimise Downtime", value: 25, unit: "%" },
-    { label: "Inspection Speed", value: 10, unit: "%" },
-    { label: "Defect-Free Industry", value: 99.9, unit: "%" },
+    { label: t("InspectionAccuracy"), value: 99, unit: "%" },
+    { label: t("ProductionEfficiency"), value: 20, unit: "%" },
+    { label: t("LabourCostSaving"), value: 30, unit: "%" },
+    { label: t("MinimiseDowntime"), value: 25, unit: "%" },
+    { label: t("InspectionSpeed"), value: 10, unit: "%" },
+    { label: t("DefectFreeIndustry"), value: 99.9, unit: "%" },
   ];
 
   useEffect(() => {
@@ -310,10 +316,13 @@ const CustomerBenefits = () => {
               animation: "fadeSlideUp 0.8s ease-out forwards",
               letterSpacing: "-0.02em",
               color: "white",
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', 'Noto Sans', 'Noto Sans SC', sans-serif",
+              whiteSpace: "normal",
+              overflow: "visible",
+              maxWidth: "100%",
             }}
           >
-            CUSTOMER BENEFITS
+            {t("CustomerBenefitsTitle")}
           </h1>
         </div>
 
@@ -325,7 +334,7 @@ const CustomerBenefits = () => {
             justifyItems: "center",
             marginBottom: "26.8px",
             color: "white",
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Inter', 'Noto Sans', 'Noto Sans SC', sans-serif",
           }}
         >
           {metrics.slice(0, 3).map((metric) => (
@@ -347,7 +356,7 @@ const CustomerBenefits = () => {
             justifyItems: "center",
             marginBottom: "26.8px",
             color: "white",
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Inter', 'Noto Sans', 'Noto Sans SC', sans-serif",
           }}
         >
           {metrics.slice(3, 6).map((metric) => (
@@ -371,6 +380,13 @@ const CustomerBenefits = () => {
         @keyframes fadeSlideUp {
           0% { opacity: 0; transform: translateY(26.8px); }
           100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+          h1, h3 {
+            font-size: 1.1rem;
+            line-height: 1.4;
+          }
         }
       `}</style>
     </div>

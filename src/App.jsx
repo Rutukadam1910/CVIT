@@ -142,12 +142,15 @@
 
 // export default AppWrapper;
 
-
-
-import React, { useEffect, useState, useRef, Suspense, lazy } from 'react';
+import React, { Suspense, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { CookiesProvider } from 'react-cookie'; 
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import { I18nextProvider } from 'react-i18next';
+import Backend from 'i18next-http-backend';
 
+// Components
 import VideoBackground from "./components/VideoBackground";
 import Dashboard from "./components/Dashboard";
 import IndustryDetail from "./components/IndustryDetail";
@@ -167,6 +170,21 @@ import LoadingSpinner from "./components/LoadingSpinner";
 // CSS imports
 import './App.css';
 import '../src/Styles/LoadingSpinner.css'; 
+
+// Initialize i18next with Backend for loading JSON files
+i18n
+  .use(Backend)
+  .use(initReactI18next)
+  .init({
+    lng: localStorage.getItem('selectedLanguage') || 'en_IN',
+    fallbackLng: 'en_IN',
+    backend: {
+      loadPath: '/locales/{{lng}}/translation.json',
+    },
+    interpolation: {
+      escapeValue: false
+    }
+  });
 
 const DashboardLayout = ({ type }) => {
   const videoRef = useRef(null);
@@ -194,7 +212,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <div style={{ textAlign: 'center', padding: '50px', color: '#fff' }}>
-          <h2>Something went wrong.</h2>
+          <h2>{i18n.t('PageNotFound')}</h2>
           <p>Please try refreshing the page or contact support.</p>
         </div>
       );
@@ -224,7 +242,7 @@ function App() {
           <Route path="/case-study/:id" element={<CaseStudyDetail />} />
           <Route path="/enquire" element={<Enquire />} />
           <Route path="/buy/:model" element={<Buy />} />
-          <Route path="*" element={<h2>Page Not Found</h2>} />
+          <Route path="*" element={<h2>{i18n.t('PageNotFound')}</h2>} />
         </Routes>
       </Suspense>
     </ErrorBoundary>
@@ -234,9 +252,11 @@ function App() {
 function AppWrapper() {
   return (
     <CookiesProvider>
-      <Router>
-        <App />
-      </Router>
+      <I18nextProvider i18n={i18n}>
+        <Router>
+          <App />
+        </Router>
+      </I18nextProvider>
     </CookiesProvider>
   );
 }

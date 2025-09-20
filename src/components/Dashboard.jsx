@@ -1911,16 +1911,15 @@
 
 // export default Dashboard;
 
-
-
 import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import Navbar from "./Navbar";
 import DelayedFallback from "./DelayedFallback";
 import CookieConsent from "./CookieConsent";
 import "../Styles/Dashboard.css";
 
-const CustomerBenefits = lazy(() =>import("./CustomerBenefits"));
+const CustomerBenefits = lazy(() => import("./CustomerBenefits"));
 const Client = lazy(() => import("./Client"));
 const CaseStudy = lazy(() => import("./CaseStudy"));
 const Aboutus_Mission_Vision = lazy(() => import("./Aboutus_Mission_Vision"));
@@ -1943,21 +1942,21 @@ import Spot_Light from "../assets/Lights/Spot_Light.png";
 import Tunnel_Light from "../assets/Lights/Tunnel_Light.png";
 
 const products = [
-  { name: "Bar Light", image: Bar_Light },
-  { name: "Ring Light", image: Ring_Light },
-  { name: "Dome Light", image: Dome_Light },
-  { name: "Flat Diffused Light With Center Hole", image: Flat_Diffused_Light_With_Center_Hole },
-  { name: "Flat Diffused Light", image: Flat_Diffused_Light },
-  { name: "Indirect Flat Light", image: Indirect_Flat_Light },
-  { name: "Back Light", image: Back_Light },
-  { name: "Spot Light", image: Spot_Light },
-  { name: "Tunnel Light", image: Tunnel_Light },
+  { key: "BarLight", image: Bar_Light },
+  { key: "RingLight", image: Ring_Light },
+  { key: "DomeLight", image: Dome_Light },
+  { key: "FlatDiffusedLightWithCenterHole", image: Flat_Diffused_Light_With_Center_Hole },
+  { key: "FlatDiffusedLight", image: Flat_Diffused_Light },
+  { key: "IndirectFlatLight", image: Indirect_Flat_Light },
+  { key: "BackLight", image: Back_Light },
+  { key: "SpotLight", image: Spot_Light },
+  { key: "TunnelLight", image: Tunnel_Light },
 ];
 
 const industries = [
   {
     id: "automobile",
-    name: "Automobile",
+    key: "Automobile",
     icon: (
       <svg width="26.8" height="26.8" fill="none" stroke="#ffffff" strokeWidth="1.005" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="icon">
         <rect x="3" y="11" width="18" height="7" rx="2" />
@@ -1969,7 +1968,7 @@ const industries = [
   },
   {
     id: "metal-mining-cement",
-    name: "Metal, Mining and Cement",
+    key: "MetalMiningCement",
     icon: (
       <svg width="26.8" height="26.8" fill="none" stroke="#ffffff" strokeWidth="1.005" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="icon">
         <rect x="3" y="12" width="18" height="8" />
@@ -1980,7 +1979,7 @@ const industries = [
   },
   {
     id: "pharma-fmcg",
-    name: "Pharma and FMCG",
+    key: "PharmaFmcg",
     icon: (
       <svg width="26.8" height="26.8" fill="none" stroke="#ffffff" strokeWidth="1.005" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="icon">
         <path d="M12 22V2M7 12h10" />
@@ -1990,7 +1989,7 @@ const industries = [
   },
   {
     id: "plastic-rubber",
-    name: "Plastic and Rubber Industry",
+    key: "PlasticRubberIndustry",
     icon: (
       <svg width="26.8" height="26.8" fill="none" stroke="#ffffff" strokeWidth="1.005" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="icon">
         <rect x="3" y="12" width="18" height="8" />
@@ -2000,7 +1999,7 @@ const industries = [
   },
   {
     id: "warehouse-distribution",
-    name: "Warehouse and Distribution",
+    key: "WarehouseDistribution",
     icon: (
       <svg width="26.8" height="26.8" fill="none" stroke="#ffffff" strokeWidth="1.005" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="icon">
         <path d="M3 12h18M7 9l-4 3 4 3M17 9l4 3-4 3" />
@@ -2010,7 +2009,7 @@ const industries = [
   },
   {
     id: "wire",
-    name: "Wire Industry",
+    key: "WireIndustry",
     icon: (
       <svg width="26.8" height="26.8" fill="none" stroke="#ffffff" strokeWidth="1.005" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="icon">
         <path d="M4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8" />
@@ -2020,7 +2019,7 @@ const industries = [
   },
   {
     id: "aerospace",
-    name: "Aerospace",
+    key: "Aerospace",
     icon: (
       <svg width="26.8" height="26.8" fill="none" stroke="#ffffff" strokeWidth="1.005" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" className="icon">
         <path d="M12 2l3 7-3 13-3-13 3-7z" />
@@ -2052,6 +2051,7 @@ const IconCircle = ({ children }) => (
 );
 
 const Dashboard = ({ type }) => {
+  const { t } = useTranslation();
   const [toggleState, setToggleState] = useState(type);
   const [isSliding, setIsSliding] = useState(false);
   const [showRestContent, setShowRestContent] = useState(type === "dashboardOne");
@@ -2221,8 +2221,8 @@ const Dashboard = ({ type }) => {
       <div className="dashboard-container" ref={homeRef}>
         <div className="content-wrapper">
           <div className="heading-section">
-            <h1>The Future Of AI Is Here !</h1>
-            <h2>CVIT Solution Pvt Ltd</h2>
+            <h1>{t('DashboardHeading')}</h1>
+            <h2>{t('DashboardSubheading')}</h2>
           </div>
 
           <div className="slider-toggle-container">
@@ -2238,10 +2238,10 @@ const Dashboard = ({ type }) => {
                 }
               }}
               aria-pressed={toggleState === "dashboardTwo"}
-              aria-label="Toggle between Solutions and Machine Vision Light"
+              aria-label={t('ToggleAriaLabel')}
             >
-              <div className="toggle-option">Solutions</div>
-              <div className="toggle-option">Machine Vision Light</div>
+              <div className="toggle-option">{t('Solutions')}</div>
+              <div className="toggle-option">{t('MachineVisionLight')}</div>
               <div className="slider-indicator" />
             </div>
           </div>
@@ -2250,7 +2250,7 @@ const Dashboard = ({ type }) => {
             {toggleState === "dashboardOne" && (
               <section key="dashboardOne">
                 <div className="industries-grid" role="list">
-                  {industries.map(({ id, name, icon }) => (
+                  {industries.map(({ id, key, icon }) => (
                     <div
                       key={id}
                       className="industry-card"
@@ -2263,10 +2263,10 @@ const Dashboard = ({ type }) => {
                         }
                       }}
                       role="button"
-                      aria-label={`Go to details for industry ${name}`}
+                      aria-label={t('IndustryAriaLabel', { name: t(key) })}
                     >
                       <IconCircle>{icon}</IconCircle>
-                      <div className="industry-name">{name}</div>
+                      <div className="industry-name">{t(key)}</div>
                     </div>
                   ))}
                 </div>
@@ -2275,8 +2275,8 @@ const Dashboard = ({ type }) => {
             {toggleState === "dashboardTwo" && (
               <section key="dashboardTwo">
                 <div className="industries-grid" role="list">
-                  {products.map(({ name, image }) => {
-                    const slug = toSlug(name);
+                  {products.map(({ key, image }) => {
+                    const slug = toSlug(key);
                     return (
                       <div
                         key={slug}
@@ -2290,16 +2290,16 @@ const Dashboard = ({ type }) => {
                           }
                         }}
                         role="listitem"
-                        aria-label={`Go to details for product ${name}`}
+                        aria-label={t('ProductAriaLabel', { name: t(key) })}
                       >
                         <img
                           src={image}
-                          alt={`${name} logo`}
+                          alt={t(`${key}Alt`)}
                           className="product-logo"
                           draggable={false}
                           loading="lazy"
                         />
-                        <div className="industry-name">{name}</div>
+                        <div className="industry-name">{t(key)}</div>
                       </div>
                     );
                   })}
@@ -2309,7 +2309,7 @@ const Dashboard = ({ type }) => {
           </div>
 
           {toggleState === "dashboardOne" && (
-            <div id="huake-side-bar" className="huake-side-bar" aria-label="Quick contact options">
+            <div id="huake-side-bar" className="huake-side-bar" aria-label={t('QuickContactAriaLabel')}>
               <a
                 href="/contact-us"
                 onClick={(e) => {
@@ -2317,44 +2317,44 @@ const Dashboard = ({ type }) => {
                   navigate("/contact-us");
                 }}
                 rel="nofollow"
-                aria-label="Contact"
+                aria-label={t('Contact')}
                 className="text"
               >
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                   <circle cx="12" cy="7" r="4" />
                 </svg>
-                <span>Contact</span>
+                <span>{t('Contact')}</span>
               </a>
               <a
                 href="mailto:sales@cvit.in"
                 rel="nofollow"
                 target="_blank"
-                aria-label="Email"
+                aria-label={t('Email')}
                 className="text"
               >
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
-                <span>Email</span>
+                <span>{t('Email')}</span>
               </a>
               <a
                 href="https://api.whatsapp.com/send?phone=7507149084"
                 rel="nofollow"
                 target="_blank"
-                aria-label="WhatsApp"
+                aria-label={t('WhatsApp')}
                 className="text"
               >
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M11.991 21.781a9.9 9.9 0 0 1-5.034-1.38l-.36-.216-3.741.981.999-3.649-.234-.376a9.84 9.84 0 0 1-1.511-5.258c0-5.439 4.436-9.876 9.887-9.876a9.84 9.84 0 0 1 6.99 2.897 9.84 9.84 0 0 1 2.892 6.99c-.006 5.459-4.442 9.888-9.888 9.888m5.423-7.401c-.296-.149-1.755-.867-2.03-.969-.273-.098-.473-.149-.667.149-.2.296-.77.969-.941 1.163-.171.199-.348.222-.645.075-.296-.15-1.254-.462-2.388-1.478-.885-.787-1.478-1.763-1.655-2.058-.171-.297-.016-.456.132-.604.131-.132.296-.348.444-.519.15-.171.199-.297.297-.495.098-.201.051-.372-.022-.52-.075-.149-.667-1.614-.918-2.205-.24-.583-.484-.502-.667-.51-.171-.01-.37-.01-.57-.01a1.095 1.095 0 0 0-.794.37c-.273.297-1.037 1.016-1.037 2.482s1.065 2.874 1.215 3.074c.147.199 2.091 3.198 5.075 4.488.705.307 1.26.489 1.694.627.713.228 1.356.193 1.869.12.57-.087 1.757-.72 2.007-1.414.246-.696.246-1.29.171-1.414-.073-.126-.273-.199-.57-.348"/>
+                  <path d="M11.991 21.781a9.9 9.9 0 0 1-5.034-1.38l-.36-.216-3.741.981.999-3.649-.234-.376a9.84 9.84 0 0 1-1.511-5.258c0-5.439 4.436-9.876 9.887-9.876a9.84 9.84 0 0 1 6.99 2.897 9.84 9.84 0 0 1 2.892 6.99c-.006 5.459-4.442 9.888-9.888 9.888m5.423-7.401c-.296-.149-1.755-.867-2.03-.969-.273-.098-.473-.149-.667.149-.2.296-.77.969-.941 1.163-.171.199-.348.222-.645.075-.296-.15-1.254-.462-2.388-1.478-.885-.787-1.478-1.763-1.655-2.058-.171-.297-.016-.456.132-.604.131-.132.296-.348.444-.519.15-.171.199-.297.297-.495.098-.201.051-.372-.022-.52-.075-.149-.667-1.614-.918-2.205-.24-.583-.484-.502-.667-.51-.171-.01-.37-.01-.57-.01a1.095 1.095 0 0 0-.794.37c-.273.297-1.037 1.016-1.037 2.482s1.065 2.874 1.215 3.074c.147.199 2.091 3.198 5.075 4.488.705.307 1.26.489 1.694.627.713.228 1.356.193 1.869.12.57-.087 1.757-.720 2.007-1.414.246-.696.246-1.29.171-1.414-.073-.126-.273-.199-.57-.348"/>
                 </svg>
-                <span>WhatsApp</span>
+                <span>{t('WhatsApp')}</span>
               </a>
               <a
                 href="#"
                 rel="nofollow"
-                aria-label="Top"
+                aria-label={t('Top')}
                 id="gotop"
                 onClick={(e) => {
                   e.preventDefault();
@@ -2365,16 +2365,16 @@ const Dashboard = ({ type }) => {
                   <path d="M12 19V5" />
                   <path d="M5 12l7-7 7 7" />
                 </svg>
-                <span>Top</span>
+                <span>{t('Top')}</span>
               </a>
             </div>
           )}
         </div>
         
-          <CookieConsent />  
+        <CookieConsent />  
 
         {showRestContent && toggleState === "dashboardOne" && (
-          <Suspense fallback={<DelayedFallback message="Loading..." delay={300} />}>
+          <Suspense fallback={<DelayedFallback message={t('Loading')} delay={300} />}>
             <section style={{ marginTop: "2rem" }} ref={customerBenefitsRef}>
               <CustomerBenefits />
             </section>

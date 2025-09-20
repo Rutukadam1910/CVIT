@@ -1,7 +1,7 @@
-// src/components/Footer.jsx
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaLinkedinIn, FaArrowUp } from "react-icons/fa";
+import { useTranslation } from 'react-i18next';
 import logo from "../assets/logo/CVIT_LOGO3.png";
 import iso from "../assets/Certifications/iso.jpeg";
 import rohs from "../assets/Certifications/rohs.jpeg";
@@ -11,17 +11,33 @@ import MachineVisionSystem from "../assets/Broucher/Machine_Vision_System.pdf";
 import MachineVisionLights from "../assets/Broucher/Machine_Vision_Lights.pdf";
 import "../Styles/Footer.css";
 
-const Footer = () => {
-  const navigate = useNavigate();
+// Define languages array within Footer.jsx
+const languages = [
+  { code: 'en', name: 'English', country: 'USA', flag: '🇺🇸' },
+  { code: 'en_IN', name: 'English', country: 'India', flag: '🇮🇳' },
+  { code: 'es', name: 'Español', country: 'Spain', flag: '🇪🇸' },
+  { code: 'fr', name: 'Français', country: 'France', flag: '🇫🇷' },
+  { code: 'hi', name: 'हिन्दी', country: 'India', flag: '🇮🇳' },
+  { code: 'de', name: 'Deutsch', country: 'Germany', flag: '🇩🇪' },
+  { code: 'zh', name: '中文', country: 'China', flag: '🇨🇳' },
+];
 
-  // Navigation mapping for quick links
+const Footer = () => {
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+
+  // Get current language name
+  const currentLang = languages.find(lang => lang.code === i18n.language) || languages[0];
+
+  // Navigation mapping for quick links (updated to match translation file keys)
   const navigationMap = {
     Home: "Home",
-    "Customer Benefits": "Customer Benefits",
-    "Our Case Studies": "Our Case Studies",
-    "Implementation Roadmap": "Implementation Roadmap",
-    "Our Clients": "Our Clients",
-    "Contact Us": "Contact Us",
+    CustomerBenefits: "CustomerBenefits",
+    OurCaseStudies: "OurCaseStudies",
+    ImplementationRoadmap: "ImplementationRoadmap",
+    OurClients: "OurClients",
+    ContactUs: "ContactUs",
   };
 
   // Function to handle navigation with scrollTo state
@@ -35,16 +51,21 @@ const Footer = () => {
   // Handle Privacy Policy click - Navigate to privacy page with scroll to top
   const handlePrivacyPolicyClick = (e) => {
     e.preventDefault();
-    // Scroll to top before navigation
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth'
     });
-    // Small delay to ensure scroll completes before navigation
     setTimeout(() => {
       navigate('/privacy');
     }, 300);
+  };
+
+  // Handle language selection
+  const handleLanguageSelect = (code) => {
+    i18n.changeLanguage(code);
+    localStorage.setItem('selectedLanguage', code);
+    setShowModal(false);
   };
 
   // Handle scroll to top
@@ -58,7 +79,6 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      {/* Top Row: Map and Certifications */}
       <div className="footer-top">
         <div className="footer-map">
           <iframe
@@ -66,46 +86,38 @@ const Footer = () => {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="CVIT Office Map Location"
+            title={t('MapTitle')}
           ></iframe>
         </div>
 
         <div className="footer-certs">
-          <div className="cert-title">CERTIFICATIONS</div>
+          <div className="cert-title">{t('CERTIFICATIONS')}</div>
           <div className="certifications">
             <div className="cert-box">
-              <img src={iso} alt="ISO Certification" />
+              <img src={iso} alt={t('ISOCertification')} />
             </div>
             <div className="cert-box">
-              <img src={rohs} alt="RoHS Certification" />
+              <img src={rohs} alt={t('RoHSCertification')} />
             </div>
             <div className="cert-box">
-              <img src={ce} alt="CE Certification" />
+              <img src={ce} alt={t('CECertification')} />
             </div>
             <div className="cert-box">
-              <img src={iso9001} alt="ISO 9001 Certification" />
+              <img src={iso9001} alt={t('ISO9001Certification')} />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Footer Grid */}
       <div className="footer-container">
         <div className="footer-logo">
-          <img src={logo} alt="CVIT Logo" />
+          <img src={logo} alt={t('CVITLogo')} />
         </div>
 
         <div>
-          <h4 className="footer-heading-1">Quick Links</h4>
+          <h4 className="footer-heading-1">{t('QuickLinks')}</h4>
           <div className="footer-links">
-            {[
-              "Home",
-              "Customer Benefits",
-              "Our Case Studies",
-              "Implementation Roadmap",
-              "Our Clients",
-              "Contact Us",
-            ].map((link) => (
+            {Object.keys(navigationMap).map((link) => (
               <a
                 key={link}
                 href="#"
@@ -114,40 +126,51 @@ const Footer = () => {
                   handleNavigation(link);
                 }}
               >
-                {link}
+                {t(link)}
               </a>
             ))}
           </div>
         </div>
 
         <div>
-          <h4 className="footer-heading">Catalogue</h4>
+          <h4 className="footer-heading">{t('Catalogue')}</h4>
           <div className="footer-links">
             <a href={MachineVisionSystem} download="Machine_Vision_System.pdf">
-              Brochure
+              {t('Brochure')}
             </a>
             <a href={MachineVisionLights} download="Machine_Vision_Lights.pdf">
-              MV Lights
+              {t('MVLights')}
             </a>
           </div>
         </div>
       </div>
 
-      {/* Bottom Footer */}
       <div className="footer-bottom">
         <div className="left">
-          &nbsp;&nbsp;English&nbsp;&nbsp;|&nbsp;&nbsp;
+          &nbsp;&nbsp;
+          <a 
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowModal(true);
+            }}
+            className="privacy-link"
+            aria-label={t('SelectLanguage')}
+          >
+            {currentLang.flag} {currentLang.country} - {currentLang.name}
+          </a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
           <a 
             href="/privacy" 
             onClick={handlePrivacyPolicyClick} 
             className="privacy-link"
-            aria-label="View Privacy Policy"
+            aria-label={t('PrivacyPolicy')}
           >
-            Privacy Policy
+            {t('PrivacyPolicy')}
           </a>
         </div>
 
-        <div className="center">© 2025 CVIT. All rights reserved</div>
+        <div className="center">© 2025 CVIT. {t('AllRightsReserved')}</div>
 
         <div className="right">
           <div className="footer-socials">
@@ -155,7 +178,7 @@ const Footer = () => {
               href="https://www.linkedin.com/company/cvit-solution/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Connect with us on LinkedIn"
+              aria-label={t('LinkedInAriaLabel')}
             >
               <FaLinkedinIn />
             </a>
@@ -163,15 +186,34 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Back to Top Button */}
       <button 
         className="back-to-top" 
         onClick={handleScrollToTop}
-        aria-label="Scroll to top of page"
-        title="Back to top"
+        aria-label={t('BackToTopAriaLabel')}
+        title={t('BackToTop')}
       >
         <FaArrowUp />
       </button>
+
+      {showModal && (
+        <div className="language-modal">
+          <div className="language-modal-content">
+            <h3>{t('SelectLanguage')}</h3>
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => handleLanguageSelect(lang.code)}
+                className={lang.code === i18n.language ? 'active' : ''}
+              >
+                {lang.flag} {lang.country} - {lang.name}
+              </button>
+            ))}
+            <button onClick={() => setShowModal(false)} className="close-btn">
+              {t('Close')}
+            </button>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };
