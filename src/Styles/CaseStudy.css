@@ -1,0 +1,322 @@
+.carousel-container {
+  width: 100%;
+  padding: 3.015rem 0.67rem;
+  text-align: center;
+  background: #FFFFFF;
+}
+
+.carousel-title {
+  font-size: 2.6rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  color: #EF3A3A;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.carousel-wrapper {
+  position: relative;
+  height: 522.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel-card {
+  width: 670px;
+  height: 462.3px;
+  border-radius: 13.4px;
+  border: 3px solid black;
+  position: absolute;
+  overflow: hidden;
+  background: #000000;
+}
+
+.carousel-card  * {
+  cursor: pointer !important;
+}
+
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.carousel-card .card-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12%;
+  background-color: white;
+  color: black;
+  font-size: 0.91rem;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  z-index: 5;
+  text-align: center;
+  cursor: default;
+}
+
+.carousel-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.carousel-card.active:hover .overlay {
+  opacity: 1;
+}
+
+.carousel-card.active {
+  cursor: zoom-in;
+}
+
+.carousel-card.active:hover {
+  transform: scale(1.0469);
+}
+
+.carousel-card.left,
+.carousel-card.right {
+  cursor: pointer;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.34rem;
+  margin-top: 0.1rem;
+}
+
+.arrow-button {
+  font-size: 2.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #EF3A3A;
+}
+
+.nav-indicators {
+  display: flex;
+  gap: 0.536rem;
+}
+
+.nav-indicator {
+  width: 6.7px;
+  height: 6.7px;
+  border-radius: 50%;
+  background: #c1c1c1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-indicator.active {
+  background: #EF3A3A;
+  transform: scale(1.6);
+}
+
+.nav-indicator:hover {
+  background: #333;
+}
+
+.icon-animation {
+  font-size: 2.7rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer !important;
+  pointer-events: auto;
+}
+
+.icon-animation:hover, .icon-animation > * {
+  cursor: pointer !important;
+}
+
+.view-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 10px;
+  cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Screen size <= 1300px */
+@media (max-width: 1300px) {
+  .carousel-title {
+    font-size: 2.2rem;
+  }
+
+  .carousel-wrapper {
+    height: 450px;
+  }
+
+  .carousel-card {
+    width: 550px;
+    height: 380px;
+    border-radius: 11px;
+  }
+
+  .carousel-card .card-header {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .icon-animation {
+    font-size: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .view-text {
+    font-size: 1rem;
+    letter-spacing: 8px;
+  }
+
+  .arrow-button {
+    font-size: 2rem;
+  }
+
+  .nav-indicator {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Screen size <= 780px */
+@media (max-width: 780px) {
+  .carousel-title {
+    font-size: 1.4rem;
+  }
+
+  .carousel-wrapper {
+    height: 350px;
+  }
+
+  .carousel-card {
+    width: 400px;
+    height: 280px;
+    border-radius: 9px;
+  }
+
+  .carousel-card .card-header {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .icon-animation {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .view-text {
+    font-size: 0.8rem;
+    letter-spacing: 6px;
+  }
+
+  .arrow-button {
+    font-size: 1.8rem;
+  }
+
+  .nav-indicator {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+/* Screen size <= 480px */
+@media (max-width: 480px) {
+  .carousel-title {
+    font-size: 1rem;
+  }
+
+  .carousel-wrapper {
+    height: 250px;
+  }
+
+  .carousel-card {
+    width: 300px;
+    height: 200px;
+    border-radius: 7px;
+  }
+
+  .carousel-card .card-header {
+    font-size: 0.45rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .icon-animation {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .view-text {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+  }
+
+  .arrow-button {
+    font-size: 1.5rem;
+  }
+
+  .nav-indicator {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+/* Screen size <= 320px */
+@media (max-width: 320px) {
+  .carousel-title {
+    font-size: 1rem;
+  }
+
+  .carousel-wrapper {
+    height: 200px;
+  }
+
+  .carousel-card {
+    width: 220px;
+    height: 150px;
+    border-radius: 5px;
+  }
+
+  .carousel-card .card-header {
+    font-size: 0.35rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .icon-animation {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .view-text {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+  }
+
+  .arrow-button {
+    font-size: 1.2rem;
+  }
+
+  .nav-indicator {
+    width: 3px;
+    height: 3px;
+  }
+}

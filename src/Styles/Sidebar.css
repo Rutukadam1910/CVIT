@@ -1,0 +1,160 @@
+/* Sidebar Component Styles */
+.huake-side-bar {
+  position: fixed;
+  right: 20px;
+  bottom: 20px; /* Changed from top: 75% to bottom: 20px */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 9999;
+  padding: 0;
+  cursor: pointer;
+}
+
+.huake-side-bar *{
+  cursor: pointer;
+}
+.huake-side-bar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(239, 58, 58);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border: 1px solid rgba(239, 58, 58, 0.3); /* Semi-transparent border */
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #fff; /* Changed text color to match the original background */
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  width: 70px;
+  height: 70px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.huake-side-bar a:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.huake-side-bar a svg {
+  margin-bottom: 4px;
+  stroke: #fff; /* Changed SVG stroke color to match text */
+  transition: stroke 0.2s ease;
+    cursor: pointer;
+}
+.huake-side-bar a span {
+    cursor: pointer;
+}
+.huake-side-bar a:hover svg {
+  stroke: #fff; /* Darker SVG on hover */
+}
+
+/* Go-Top button - hidden by default */
+.huake-side-bar a#gotop {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+/* Go-Top button - visible when scrolled to middle of page */
+.huake-side-bar a#gotop.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Responsive styles for sidebar */
+@media (max-width: 1300px) {
+  .huake-side-bar {
+    bottom: 20px; /* Already set, but keeping for consistency */
+  }
+  
+  .huake-side-bar a {
+    width: 60px;
+    height: 60px;
+    font-size: 0.6rem;
+  }
+  
+  .huake-side-bar a svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 980px) {
+  .huake-side-bar {
+    right: 8px;
+    bottom: 15px;
+  }
+  
+  .huake-side-bar a {
+    width: 50px;
+    height: 50px;
+    font-size: 0.5rem;
+  }
+  
+  .huake-side-bar a svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 780px) {
+  .huake-side-bar {
+    right: 5px;
+    bottom: 15px;
+  }
+  
+  .huake-side-bar a {
+    width: 45px;
+    height: 45px;
+    font-size: 0.45rem;
+  }
+  
+  .huake-side-bar a svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .huake-side-bar {
+    right: 10px;
+    bottom: 10px;
+  }
+  
+  .huake-side-bar a {
+    width: 45px;
+    height: 45px;
+    font-size: 0.4rem;
+  }
+  
+  .huake-side-bar a svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 320px) {
+  .huake-side-bar {
+    right: 10px;
+    bottom: 10px;
+  }
+  
+  .huake-side-bar a {
+    width: 40px;
+    height: 40px;
+    font-size: 0.35rem;
+  }
+  
+  .huake-side-bar a svg {
+    width: 16px;
+    height: 16px;
+  }
+}

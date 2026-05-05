@@ -1,0 +1,1045 @@
+:root {
+  --accent: #ef3a3a;
+  --deep: #06102b;
+  --table-header-bg: #f1f5f9;
+  --table-header-color: #1e293b;
+  --table-value-color: #0f172a;
+  --marquee-gap: 2rem;
+  --marquee-image-width: 410px;
+  --marquee-image-height: 390px;
+  --marquee-height: 390px;
+  --sticky-offset: 80px; /* Default desktop offset for sticky navbar */
+}
+
+/* General resets and base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+main.camera-enclosure-without-cooling-jacket-main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.5rem 0; /* Reduced from 2rem */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Reduced from 1.2rem */
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.camera-enclosure-without-cooling-jacket-title {
+  font-size: clamp(1.2rem, 2.8vw, 1.8rem); /* Further reduced from 1.4rem, 3.2vw, 2.2rem */
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #0f172a, #1f3a8a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  letter-spacing: 0.4px; /* Further reduced from 0.5px */
+  line-height: 1;
+  margin-top: 2rem; /* Added top margin to prevent title from going under navbar */
+  cursor: default;
+}
+
+/* Dual Image Layout - Product + Dimension Diagram */
+.dual-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem; /* Reduced from 3rem */
+  width: 100%;
+  max-width: 1300px;
+  margin: 1.5rem auto; /* Reduced from 2rem */
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+.product-image-wrapper,
+.dimension-image-wrapper {
+  flex: 1;
+  min-width: 280px; /* Reduced from 300px */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-main-image,
+.dimension-diagram-image {
+  max-width: 100%;
+  max-height: 450px; /* Reduced from 500px */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  cursor: zoom-in;
+}
+
+.image-caption {
+  margin-top: 0.8rem; /* Reduced from 1rem */
+  font-size: 0.9rem; /* Further reduced from 1rem */
+  font-weight: 600;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.6px; /* Further reduced from 0.7px */
+}
+
+.information-container {
+  width: 100%;
+  max-width: 1310px;
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  padding: 1.2rem; /* Reduced from 1.5rem */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(4, 12, 30, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  margin-bottom: 1.2rem; /* Reduced from 1.5rem */
+}
+
+.information-text {
+  font-size: 0.85rem; /* Further reduced from 0.95rem */
+  line-height: 1.5; /* Further reduced from 1.6 */
+  color: #334155;
+  text-align: justify;
+  cursor: default;
+}
+
+/* Key Features Section */
+.key-features-container {
+  width: 100%;
+  max-width: 1400px;
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  padding: 1.5rem 2rem; /* Reduced from 2rem 2.5rem */
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(4, 12, 30, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  margin: 3rem auto 2rem; /* Reduced from 4rem auto 3rem */
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.key-features-container:hover {
+  box-shadow: 0 18px 48px rgba(4, 12, 30, 0.18);
+}
+
+.key-features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Reduced from 250px */
+  gap: 1.2rem 1.5rem; /* Reduced from 1.4rem 1.8rem */
+  list-style: none !important; /* Added !important to ensure bullet points are removed */
+  list-style-type: none !important; /* Added for better browser compatibility */
+  padding: 0;
+  margin: 0;
+}
+.key-feature-item {
+  background: #f7f9fc;
+  border-left: 5px solid var(--accent);
+  padding: 1rem 1.2rem 1rem 3.5rem; /* Reduced from 1.1rem 1.3rem 1.1rem 3.8rem */
+  font-size: 0.8rem; /* Further reduced from 0.9rem */
+  line-height: 1.3; /* Further reduced from 1.4 */
+  color: #1a2a44;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(14, 45, 120, 0.05);
+  position: relative;
+  animation: fadeUpIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.key-feature-item:nth-child(1) { animation-delay: 0.1s; }
+.key-feature-item:nth-child(2) { animation-delay: 0.25s; }
+.key-feature-item:nth-child(3) { animation-delay: 0.4s; }
+.key-feature-item:nth-child(4) { animation-delay: 0.55s; }
+
+.key-feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(14, 45, 120, 0.12);
+}
+
+.key-feature-item::before {
+  content: "✔";
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 1rem; /* Further reduced from 1.1rem */
+  position: absolute;
+  left: 1.3rem; /* Adjusted position */
+  top: 1.1rem; /* Adjusted position */
+}
+
+@keyframes fadeUpIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Section Divider */
+.section-divider {
+  border: none;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  margin: 2.5rem auto; /* Reduced from 3rem */
+  width: 90%;
+  opacity: 0.9;
+}
+
+/* Technical Info Table */
+.model-structure-table-container {
+  width: 100%;
+  max-width: 1000px; /* Reduced from 1100px */
+  margin: 1.5rem auto; /* Reduced from 2rem */
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  cursor: default;
+}
+
+.model-structure-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 500px; /* Ensure table has a minimum width */
+}
+
+.model-structure-table tbody td {
+  padding: 12px 18px; /* Reduced from 14px 20px */
+  font-size: 0.75rem; /* Further reduced from 0.85rem */
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.model-structure-table tbody td:first-child {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-color);
+  font-weight: 700;
+  text-align: left;
+  width: 40%;
+  text-transform: uppercase;
+  letter-spacing: 0.3px; /* Further reduced from 0.4px */
+}
+
+.model-structure-table tbody td:last-child {
+  font-weight: 700;
+  color: var(--table-value-color);
+  text-align: left;
+  background-color: #ffffff;
+}
+
+.model-structure-table tbody tr:nth-child(even) td {
+  background-color: #fafbfb;
+}
+
+.model-structure-table tbody tr:hover td {
+  background-color: #f1f5f9;
+}
+
+.model-structure-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Gallery Section */
+.gallery-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1.5rem 1.2rem; /* Reduced from 2rem 1.5rem */
+  box-sizing: border-box;
+}
+
+.gallery-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gallery-container:not(.loaded) .marquee-content {
+  animation: none !important;
+  transform: translateX(0) !important;
+}
+
+.gallery-container:not(.loaded) .marquee-content li {
+  background: #e0e0e0;
+  border-radius: 12px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.marquee {
+  width: 100%;
+  height: var(--marquee-height);
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 180px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  background: linear-gradient(to right, #fff 0%, transparent 100%);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #fff 0%, transparent 100%);
+}
+
+.marquee-content {
+  display: flex;
+  gap: var(--marquee-gap);
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: max-content;
+  will-change: transform;
+  animation-play-state: paused;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}
+
+.marquee-content.running {
+  animation: marqueeLoop calc(var(--marquee-real-elements, 6) * 6s) linear infinite;
+}
+
+@keyframes marqueeLoop {
+  from { transform: translate3d(0px, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+.marquee-content li {
+  flex: 0 0 var(--marquee-image-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marquee-content li img {
+  width: 410px !important;
+  height: 390px !important;
+  min-width: 410px !important;
+  min-height: 390px !important;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  user-select: none;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.marquee-content li:hover img {
+  transform: translateZ(0) scale(1.04);
+}
+
+/* Zoom Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 95vw;
+  height: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.zoom-container {
+  width: 740px;
+  max-width: 80vw;
+  height: 600px;
+  max-height: 80vh;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.3);
+  position: relative;
+  cursor: grab;
+  background: #000;
+}
+
+.zoom-container:active { cursor: grabbing; }
+
+.zoom-img-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transform-origin: 0 0;
+}
+
+/* Back to Products Button */
+.back-to-products-container {
+  width: 100%;
+  padding: 4rem 2rem 6rem; /* Reduced from 5rem 2rem 7rem */
+  background: linear-gradient(to top, #f8fafb 0%, transparent 70%);
+  text-align: center;
+  margin-top: 2.5rem; /* Reduced from 3rem */
+}
+
+.premium-btn.action-btn.pulse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 280px; /* Reduced from 300px */
+  height: 60px; /* Reduced from 64px */
+  padding: 0 2.2rem; /* Reduced from 2.5rem */
+  background: var(--accent);
+  color: #ffffff;
+  font-size: clamp(0.9rem, 2.1vw, 1rem); /* Further reduced from 1rem, 2.3vw, 1.1rem */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Further reduced from 1.2px */
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+ 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.premium-btn.action-btn.pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.premium-btn.action-btn.pulse:hover {
+  transform: translateY(-6px) scale(1.03);
+ 
+}
+
+.premium-btn.action-btn.pulse:hover::after {
+  opacity: 1;
+}
+
+.premium-btn.action-btn.pulse:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+
+/* Sticky Navigation */
+.product-nav {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 55px; /* Reduced from 60px */
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  margin: 1.5rem 0 0 0; /* Reduced from 2rem */
+  transition: all 0.3s ease;
+}
+
+.product-nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  width: calc(100% - 2rem);
+  height: 3.5px; /* Reduced from 4px */
+  background: linear-gradient(to right, var(--accent) 15%, var(--accent) 85%, transparent 100%);
+  pointer-events: none;
+}
+
+.product-nav.scrolled {
+  background: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+  height: 55px; /* Ensure full height when scrolled */
+}
+
+.nav-button-wrapper {
+  display: flex;
+  gap: 12px; /* Reduced from 14px */
+  padding-left: 5rem; /* Reduced from 6rem */
+  height: 100%;
+  align-items: flex-end;
+  padding-bottom: 3px; /* Reduced from 4px */
+}
+
+.nav-tab {
+  height: 38px; /* Reduced from 42px */
+  line-height: 36px; /* Reduced from 40px */
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(166, 164, 164, 0.2);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: 0 18px; /* Reduced from 20px */
+  min-width: 140px; /* Reduced from 150px */
+  font-weight: 700;
+  font-size: 0.68rem; /* Further reduced from 0.74rem */
+  color: #1e293b;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-tab:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.nav-tab[aria-current="page"] {
+  background: var(--accent);
+  color: #ffffff !important;
+  font-weight: 800;
+  height: 44px; /* Reduced from 48px */
+  line-height: 42px; /* Reduced from 46px */
+  border: 1px solid var(--accent);
+  border-bottom: none;
+  z-index: 10;
+}
+
+/* Section & Titles - KEY FIX APPLIED HERE */
+.section {
+  scroll-margin-top: var(--sticky-offset);
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 1.5rem; /* Reduced from 2rem */
+}
+
+.key-features-title,
+.technical-info-title,
+.section-title-3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem); /* Further reduced from 1.3rem, 2.8vw, 1.7rem */
+  color: #0b2340;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 auto 2.5rem; /* Reduced from 3rem */
+  letter-spacing: 0.8px; /* Further reduced from 0.9px */
+  position: relative;
+  padding-bottom: 10px; /* Reduced from 12px */
+  background-image: linear-gradient(to right, var(--accent) 40%, transparent 80%);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 55px 2.5px; /* Reduced from 60px 3px */
+  text-transform: uppercase;
+  cursor: default;
+}
+
+/* Responsive Styles - KEY FIX APPLIED HERE */
+
+/* Screen size less than 980px */
+@media (max-width: 979px) {
+  :root {
+    --sticky-offset: 95px; /* 55px navbar height + 40px gap */
+  }
+  
+  .camera-enclosure-without-cooling-jacket-title {
+    margin-top: 2.5rem; /* Reduced from 3rem */
+  }
+  
+  .dual-image-container {
+    gap: 1.5rem; /* Reduced from 2rem */
+  }
+  
+  .product-main-image,
+  .dimension-diagram-image {
+    max-height: 350px; /* Reduced from 400px */
+  }
+  
+  .key-features-container {
+    padding: 1.5rem; /* Reduced from 1.8rem */
+  }
+  
+  .key-features-list {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); /* Reduced from 230px */
+    gap: 1rem; /* Reduced from 1.1rem */
+  }
+  
+  .key-feature-item {
+    padding: 0.9rem 1rem 0.9rem 3.2rem; /* Reduced from 1rem 1.1rem 1rem 3.5rem */
+    font-size: 0.75rem; /* Further reduced from 0.85rem */
+  }
+  
+  .key-feature-item::before {
+    left: 1.2rem; /* Adjusted position */
+    top: 1rem; /* Adjusted position */
+    font-size: 0.9rem; /* Further reduced from 1rem */
+  }
+  
+  .model-structure-table-container {
+    max-width: 100%; /* Full width on smaller screens */
+    margin: 1.5rem auto; /* Reduced from 2rem */
+  }
+  
+  .model-structure-table {
+    min-width: 450px;
+  }
+  
+  .model-structure-table tbody td {
+    padding: 10px 15px; /* Reduced from 12px 18px */
+    font-size: 0.7rem; /* Further reduced from 0.8rem */
+  }
+  
+  .model-structure-table tbody td:first-child {
+    width: 45%; /* Increase width for smaller screens */
+  }
+  
+  .nav-button-wrapper {
+    padding-left: 2.5rem; /* Reduced from 3rem */
+  }
+  
+  .nav-tab {
+    min-width: 120px; /* Reduced from 130px */
+    font-size: 0.62rem; /* Further reduced from 0.68rem */
+    padding: 0 12px; /* Reduced from 15px */
+  }
+  
+  .marquee-content li img {
+    width: 360px !important; /* Reduced from 380px */
+    height: 340px !important; /* Reduced from 360px */
+    min-width: 360px !important; /* Reduced from 380px */
+    min-height: 340px !important; /* Reduced from 360px */
+  }
+  
+  /* ADJUSTED: Navbar position for smaller screens */
+  .product-nav {
+    top: 55px; /* Position below the main navbar */
+  }
+}
+
+/* Screen size less than 780px */
+@media (max-width: 779px) {
+  :root {
+    --sticky-offset: 85px; /* 45px navbar height + 40px gap */
+  }
+  
+  .camera-enclosure-without-cooling-jacket-title {
+    margin-top: 3rem; /* Reduced from 4rem */
+  }
+  
+  main.camera-enclosure-without-cooling-jacket-main {
+    padding: 1.2rem 0; /* Reduced from 1.5rem */
+  }
+  
+  .dual-image-container {
+    flex-direction: column;
+    gap: 1.2rem; /* Reduced from 1.5rem */
+  }
+  
+  .product-image-wrapper,
+  .dimension-image-wrapper {
+    min-width: 100%;
+  }
+  
+  .product-main-image,
+  .dimension-diagram-image {
+    max-height: 300px; /* Reduced from 350px */
+  }
+  
+  .information-container {
+    padding: 1rem; /* Reduced from 1.2rem */
+  }
+  
+  .information-text {
+    font-size: 0.8rem; /* Further reduced from 0.9rem */
+  }
+  
+  .key-features-container {
+    padding: 1.1rem; /* Reduced from 1.3rem */
+    margin: 2.5rem auto 1.5rem; /* Reduced from 3rem auto 2rem */
+  }
+  
+  .key-features-list {
+    grid-template-columns: 1fr;
+    gap: 0.9rem; /* Reduced from 1rem */
+  }
+  
+  .key-feature-item {
+    padding: 0.8rem 0.9rem 0.8rem 3rem; /* Reduced from 0.9rem 1rem 0.9rem 3.2rem */
+    font-size: 0.7rem; /* Further reduced from 0.8rem */
+  }
+  
+  .key-feature-item::before {
+    left: 1rem; /* Adjusted position */
+    top: 0.9rem; /* Adjusted position */
+    font-size: 0.85rem; /* Further reduced from 0.95rem */
+  }
+  
+  .model-structure-table-container {
+    max-width: 100%; /* Full width on small screens */
+    margin: 1.2rem auto; /* Reduced from 1.5rem */
+  }
+  
+  .model-structure-table {
+    min-width: 400px;
+  }
+  
+  .model-structure-table tbody td {
+    padding: 8px 8px; /* Reduced from 10px 10px */
+    font-size: 0.65rem; /* Further reduced from 0.75rem */
+  }
+  
+  .model-structure-table tbody td:first-child {
+    width: 45%; /* Keep wider for better readability */
+  }
+  
+  .nav-button-wrapper {
+    padding-left: 1.2rem; /* Reduced from 1.5rem */
+  }
+  
+  .nav-tab {
+    min-width: 90px; /* Reduced from 100px */
+    font-size: 0.58rem; /* Further reduced from 0.64rem */
+    padding: 0 10px; /* Reduced from 12px */
+  }
+  
+  .marquee-content li img {
+    width: 320px !important; /* Reduced from 340px */
+    height: 300px !important; /* Reduced from 320px */
+    min-width: 320px !important; /* Reduced from 340px */
+    min-height: 300px !important; /* Reduced from 320px */
+  }
+  
+  .marquee::before,
+  .marquee::after {
+    width: 90px; /* Reduced from 100px */
+  }
+  
+  .zoom-container {
+    width: 90vw;
+    height: 55vh; /* Reduced from 60vh */
+  }
+  
+  /* ADJUSTED: Navbar position for smaller screens */
+  .product-nav {
+    top: 45px; /* Position below the main navbar */
+  }
+  
+  .product-nav::after {
+    left: 1.5rem;
+    height: 2.5px;
+  }
+  
+  .key-features-title,
+  .technical-info-title,
+  .section-title-3 {
+    font-size: clamp(1rem, 2.2vw, 1.3rem); /* Further reduced from 1.1rem, 2.5vw, 1.5rem */
+  }
+}
+
+/* Screen size less than 480px */
+@media (max-width: 479px) {
+  :root {
+    --sticky-offset: 80px; /* 40px navbar height + 40px gap */
+  }
+  
+  .camera-enclosure-without-cooling-jacket-title {
+    margin-top: 3.5rem; /* Reduced from 5rem */
+  }
+  
+  main.camera-enclosure-without-cooling-jacket-main {
+    padding: 0.8rem 0; /* Reduced from 1rem */
+  }
+  
+  .camera-enclosure-without-cooling-jacket-title {
+    font-size: clamp(1rem, 3vw, 1.5rem); /* Further reduced from 1.2rem, 3.5vw, 1.8rem */
+  }
+  
+  .product-main-image,
+  .dimension-diagram-image {
+    max-height: 240px; /* Reduced from 280px */
+  }
+  
+  .information-container {
+    padding: 0.8rem; /* Reduced from 1rem */
+  }
+  
+  .information-text {
+    font-size: 0.75rem; /* Further reduced from 0.85rem */
+  }
+  
+  .key-features-container {
+    padding: 0.9rem; /* Reduced from 1.1rem */
+    margin: 2rem auto 1.2rem; /* Reduced from 2.5rem auto 1.5rem */
+  }
+  
+  .key-feature-item {
+    padding: 0.7rem 0.8rem 0.7rem 2.6rem; /* Reduced from 0.8rem 0.9rem 0.8rem 2.8rem */
+    font-size: 0.65rem; /* Further reduced from 0.75rem */
+  }
+  
+  .key-feature-item::before {
+    left: 0.8rem; /* Adjusted position */
+    top: 0.8rem; /* Adjusted position */
+    font-size: 0.75rem; /* Further reduced from 0.85rem */
+  }
+  
+  .model-structure-table {
+    min-width: 350px;
+  }
+  
+  .model-structure-table tbody td {
+    padding: 6px 10px; /* Reduced from 8px 12px */
+    font-size: 0.6rem; /* Further reduced from 0.7rem */
+  }
+  
+  .model-structure-table tbody td:first-child {
+    width: 50%; /* Further increase for very small screens */
+  }
+  
+  .nav-button-wrapper {
+    padding-left: 1.5rem; /* Reduced from 2rem */
+  }
+  
+  .nav-tab {
+    min-width: 70px; /* Reduced from 80px */
+    font-size: 0.42rem; /* Further reduced from 0.48rem */
+    padding: 0 3px; /* Reduced from 4px */
+    height: 28px; /* Reduced from 30px */
+    line-height: 28px; /* Reduced from 30px */
+  }
+
+  .nav-tab:hover {
+    transform: translateY(-1px);
+  }
+  
+  .nav-tab[aria-current="page"] {
+    height: 30px; /* Reduced from 32px */
+    line-height: 30px; /* Reduced from 32px */
+  }
+  
+  .marquee-content li img {
+    width: 260px !important; /* Reduced from 280px */
+    height: 240px !important; /* Reduced from 260px */
+    min-width: 260px !important; /* Reduced from 280px */
+    min-height: 240px !important; /* Reduced from 260px */
+  }
+  
+  .marquee::before,
+  .marquee::after {
+    width: 50px; /* Reduced from 60px */
+  }
+  
+  .zoom-container {
+    width: 95vw;
+    height: 45vh; /* Reduced from 50vh */
+  }
+  
+  .premium-btn.action-btn.pulse {
+    min-width: 220px; /* Reduced from 240px */
+    height: 50px; /* Reduced from 56px */
+    font-size: 0.8rem; /* Further reduced from 0.9rem */
+    padding: 0 1.8rem; /* Reduced from 2rem */
+  }
+  
+  .back-to-products-container {
+    padding: 2.5rem 1rem 4rem; /* Reduced from 3rem 1rem 5rem */
+  }
+  
+  /* ADJUSTED: Navbar position for smaller screens */
+  .product-nav {
+    top: 40px; /* Position below the main navbar */
+  }
+  
+  .product-nav::after {
+    left: 1.5rem;
+    height: 2.2px;
+  }
+  
+  .key-features-title,
+  .technical-info-title,
+  .section-title-3 {
+    font-size: clamp(0.8rem, 2vw, 1.1rem); /* Further reduced from 0.9rem, 2.2vw, 1.3rem */
+  }
+
+  .back-to-products-container {
+    padding: 0.8rem 1rem 0.8rem; /* Reduced from 1rem 1rem 1rem */
+  }
+
+  .premium-btn.action-btn.pulse {  
+    min-width: 80px; /* Reduced from 90px */
+    height: 33px; /* Reduced from 37px */
+    padding: 0 0.8rem; /* Reduced from 1rem */
+    font-size: clamp(0.6rem, 0.6vw, 0.6rem); /* Further reduced from 0.7rem, 0.7vw, 0.7rem */
+  }
+}
+
+/* Screen size less than 320px */
+@media (max-width: 319px) {
+  :root {
+    --sticky-offset: 75px; /* 35px navbar height + 40px gap */
+  }
+  
+  .camera-enclosure-without-cooling-jacket-title {
+    margin-top: 4rem; /* Reduced from 6rem */
+  }
+  
+  main.camera-enclosure-without-cooling-jacket-main {
+    padding: 0.6rem 0; /* Reduced from 0.8rem */
+  }
+  
+  .camera-enclosure-without-cooling-jacket-title {
+    font-size: clamp(0.9rem, 4vw, 1.4rem); /* Further reduced from 1rem, 4.5vw, 1.6rem */
+  }
+  
+  .product-main-image,
+  .dimension-diagram-image {
+    max-height: 200px; /* Reduced from 220px */
+  }
+  
+  .information-container {
+    padding: 0.6rem; /* Reduced from 0.8rem */
+  }
+  
+  .information-text {
+    font-size: 0.7rem; /* Further reduced from 0.8rem */
+  }
+  
+  .key-features-container {
+    padding: 0.8rem; /* Reduced from 1rem */
+    margin: 1.5rem auto 0.8rem; /* Reduced from 2rem auto 1rem */
+  }
+  
+  .key-feature-item {
+    padding: 0.6rem 0.7rem 0.6rem 2.3rem; /* Reduced from 0.7rem 0.8rem 0.7rem 2.5rem */
+    font-size: 0.55rem; /* Further reduced from 0.6rem */
+  }
+  
+  .key-feature-item::before {
+    left: 0.6rem; /* Adjusted position */
+    top: 0.6rem; /* Adjusted position */
+    font-size: 0.55rem; /* Further reduced from 0.6rem */
+  }
+  
+  .model-structure-table {
+    min-width: 300px;
+  }
+  
+  .model-structure-table tbody td {
+    padding: 6px 10px; /* Reduced from 8px 12px */
+    font-size: 0.55rem; /* Further reduced from 0.65rem */
+  }
+  
+  .model-structure-table tbody td:first-child {
+    width: 50%; /* Keep at 50% for smallest screens */
+  }
+  
+  .nav-button-wrapper {
+    padding-left: 1.2rem; /* Reduced from 1.5rem */
+  }
+  
+  .nav-tab {
+    min-width: 45px; /* Reduced from 50px */
+    font-size: 0.34rem; /* Further reduced from 0.38rem */
+    padding: 0 2px; /* Reduced from 3px */
+    height: 25px; /* Reduced from 27px */
+    line-height: 25px; /* Reduced from 27px */
+  }
+  
+  .nav-tab:hover {
+    transform: translateY(-1px);
+  }
+  
+  .nav-tab[aria-current="page"] {
+    height: 29px; /* Reduced from 31px */
+    padding: 0 1px; /* Reduced from 2px */
+    line-height: 29px; /* Reduced from 31px */
+  }
+  
+  .marquee-content li img {
+    width: 220px !important; /* Reduced from 240px */
+    height: 200px !important; /* Reduced from 220px */
+    min-width: 220px !important; /* Reduced from 240px */
+    min-height: 200px !important; /* Reduced from 220px */
+  }
+  
+  .marquee::before,
+  .marquee::after {
+    width: 35px; /* Reduced from 40px */
+  }
+  
+  .zoom-container {
+    width: 98vw;
+    height: 35vh; /* Reduced from 40vh */
+  }
+  
+  .premium-btn.action-btn.pulse {
+    min-width: 180px; /* Reduced from 200px */
+    height: 45px; /* Reduced from 50px */
+    font-size: 0.7rem; /* Further reduced from 0.8rem */
+    padding: 0 1.2rem; /* Reduced from 1.5rem */
+  }
+  
+  .back-to-products-container {
+    padding: 1.5rem 0.8rem 3rem; /* Reduced from 2rem 0.8rem 4rem */
+  }
+  
+  /* ADJUSTED: Navbar position for smaller screens */
+  .product-nav {
+    top: 35px; /* Position below the main navbar */
+  }
+  
+  .product-nav::after {
+    left: 1.5rem;
+    height: 2px;
+  }
+  
+  .key-features-title,
+  .technical-info-title,
+  .section-title-3 {
+    font-size: clamp(0.7rem, 1.8vw, 1rem); /* Further reduced from 0.8rem, 2vw, 1.2rem */
+  }
+
+  .back-to-products-container {
+    padding: 0.8rem 0.8rem 0.8rem; /* Reduced from 1rem 1rem 1rem */
+  }
+
+  .premium-btn.action-btn.pulse {  
+    min-width: 60px; /* Reduced from 70px */
+    height: 30px; /* Reduced from 34px */
+    padding: 0 0.8rem; /* Reduced from 1rem */
+    font-size: clamp(0.45rem, 0.45vw, 0.45rem); /* Further reduced from 0.55rem, 0.55vw, 0.55rem */
+  }
+}

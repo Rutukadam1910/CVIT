@@ -1,0 +1,316 @@
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.expertise-section {
+  background: #0a0a0a;
+  color: white;
+  text-align: center;
+  padding: 4rem 1.34rem;
+  overflow: hidden;
+}
+
+.subtitle {
+  background: rgba(255, 255, 255, 0.06);
+  color: #cbd5e1;
+  font-size: 1rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 13px;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+  cursor: default;
+}
+
+.subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  cursor: default;
+}
+
+.expertise-scroll-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  scrollbar-width: none;
+}
+
+.expertise-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.expertise-grid {
+  display: inline-flex;
+  gap: 21px;
+}
+
+.expertise-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1.6rem 1.3rem;
+  border-radius: 13px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 225px;
+  height: 180px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  cursor: default;
+  transform: perspective(1000px);
+}
+
+.expertise-card *{
+  cursor: default;
+}
+
+.expertise-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: perspective(1000px) translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.15);
+  z-index: 10;
+}
+
+.icon-wrapper-expertise {
+  transition: transform 0.3s ease;
+  margin-top: 1.2rem;
+}
+
+.expertise-card:hover .icon-wrapper-expertise {
+  transform: scale(1.15);
+}
+
+.expertise-title {
+  font-size: 0.85rem;
+  color: #f0f4f8;
+  margin-top: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1500px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+  }
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per line */
+    margin-left: 5px;
+    width: 100%;
+    justify-items: center;
+  }
+  .expertise-scroll-wrapper {
+    overflow-x: hidden; /* Disable horizontal scroll */
+  }
+  .expertise-card {
+    width: 200px;
+    height: 180px;
+    padding: 1.2rem 1rem;
+  }
+  .expertise-title {
+    font-size: 0.75rem;
+    overflow-wrap: break-word; /* Ensure long words break */
+    white-space: normal; /* Allow text to wrap to multiple lines */
+  }
+  .icon-wrapper-expertise svg {
+    width: 50px;
+    height: 50px;
+  }
+  .expertise-card:hover {
+    transform: perspective(1000px) translateY(-6px) scale(1.04);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15), 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 1200px) {
+  .expertise-card {
+    width: 180px;
+    height: 170px;
+    padding: 1rem 0.8rem;
+  }
+  .expertise-title {
+    font-size: 0.7rem;
+       overflow-wrap: break-word; /* Ensure long words break */
+    white-space: normal; /* Allow text to wrap to multiple lines */
+  }
+  .icon-wrapper-expertise svg {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 900px) {
+  .expertise-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per line */
+    gap: 18px;
+  }
+  .expertise-card {
+    width: 160px;
+    height: 160px;
+    padding: 1rem 0.8rem;
+  }
+  .expertise-title {
+    font-size: 0.65rem;
+       overflow-wrap: break-word; /* Ensure long words break */
+    white-space: normal; /* Allow text to wrap to multiple lines */
+  }
+  .icon-wrapper-expertise svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 780px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.7rem;
+  }
+  .expertise-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per line */
+    margin-left: 4px;
+    gap: 15px;
+  }
+  .expertise-card {
+    width: 120px;
+    height: 150px;
+    padding: 0.8rem 0.6rem;
+  }
+  .expertise-title {
+    font-size: 0.55rem;
+       overflow-wrap: break-word; /* Ensure long words break */
+    white-space: normal; /* Allow text to wrap to multiple lines */
+  }
+  .icon-wrapper-expertise svg {
+    width: 40px;
+    height: 40px;
+  }
+  .expertise-card:hover {
+    transform: perspective(1000px) translateY(-5px) scale(1.03);
+    box-shadow: 0 5px 12px rgba(255, 255, 255, 0.12), 0 0 15px rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1rem;
+  }
+  .subtitle {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .expertise-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per line */
+    margin-left: 2px;
+    gap: 10px;
+  }
+  .expertise-card {
+    width: 100px;
+    height: 130px;
+    padding: 0.6rem 0.4rem;
+  }
+  .expertise-title {
+    font-size: 0.45rem;
+      overflow-wrap: break-word; /* Ensure long words break */
+    white-space: normal; /* Allow text to wrap to multiple lines */
+    margin-top: 0.6rem;
+  }
+  .icon-wrapper-expertise svg {
+    width: 32px;
+    height: 32px;
+  }
+  .expertise-card:hover {
+    transform: perspective(1000px) translateY(-4px) scale(1.02);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1), 0 0 12px rgba(255, 255, 255, 0.06);
+  }
+}
+
+@media (max-width: 380px) {
+  .heading {
+    font-size: 0.95rem;
+  }
+  .subtitle {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.5rem;
+  }
+  .expertise-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per line */
+    gap: 8px;
+    padding: 0 8px; /* Add padding to prevent cutoff */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .expertise-card {
+    width: 95px; /* Adjusted width for 3 cards */
+    height: 120px;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  .expertise-title {
+    font-size: 0.4rem;
+    overflow-wrap: break-word; /* Ensure long words break */
+    white-space: normal; /* Allow text to wrap to multiple lines */
+    margin-top: 0.8rem;
+  }
+  .icon-wrapper-expertise svg {
+    width: 28px;
+    height: 28px;
+  }
+  .expertise-card:hover {
+    transform: perspective(1000px) translateY(-3px) scale(1.02);
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.08), 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+}
+
+@media (max-width: 320px) {
+  .heading {
+    font-size: 0.90rem;
+  }
+  .subtitle {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.5rem;
+  }
+  .expertise-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per line */
+    gap: 6px;
+  }
+  .expertise-card {
+    width: 85px;
+    height: 110px;
+    padding: 0.4rem;
+  }
+  .expertise-title {
+    font-size: 0.38rem;
+    overflow-wrap: break-word; /* Ensure long words break */
+    white-space: normal; /* Allow text to wrap to multiple lines */
+  }
+  .icon-wrapper-expertise svg {
+    width: 24px;
+    height: 24px;
+  }
+  .expertise-card:hover {
+    transform: perspective(1000px) translateY(-3px) scale(1.02);
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.08), 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+}

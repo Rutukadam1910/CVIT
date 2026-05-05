@@ -1,0 +1,54 @@
+@keyframes draw {
+  0% { stroke-dashoffset: 300; opacity: 0.7 }
+  25% { stroke-dashoffset: 180; opacity: 1 }
+  50% { stroke-dashoffset: 60; opacity: 1 }
+  75% { stroke-dashoffset: -40; opacity: 1 }
+  100% { stroke-dashoffset: -300; opacity: 0.7 }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Dots moving along infinity path using offset-path */
+.infinity-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: white;
+}
+
+.infinity-dot-big {
+  width: 10px;
+  height: 10px;
+  animation: moveInfinity 2.4s linear infinite;
+}
+
+.infinity-dot-small {
+  width: 5px;
+  height: 5px;
+  animation: moveInfinity 2.4s linear infinite;
+  animation-delay: 1.2s;
+}
+
+/* Motion path */
+@keyframes moveInfinity {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+/* This works only if you have path as a motion path */
+.infinity-dot,
+.infinity-dot-big,
+.infinity-dot-small {
+  offset-path: path(
+    "M20,50 C20,20 80,20 100,50 C120,80 180,80 180,50 C180,20 120,20 100,50 C80,80 20,80 20,50 Z"
+  );
+  offset-rotate: auto;
+}

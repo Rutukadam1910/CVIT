@@ -1,0 +1,587 @@
+.review-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  max-width: 1900px;
+  margin: 0 auto;
+  min-height: 250px;
+  overflow-x: hidden;
+}
+
+.card {
+  flex: 1 1 250px;
+  min-width: 350px;
+  max-width: 450px;
+  text-align: center;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card2 {
+  flex: 1 1 250px;
+  min-width: 350px;
+  max-width: 450px;
+  text-align: center;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card *{
+  cursor: pointer;
+}
+
+.card2 *{
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.link-card:hover {
+  cursor: pointer;
+}
+
+.link-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.divider {
+  width: 1px;
+  background-color: #ccc;
+  height: auto;
+  min-height: 80%;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.heading-primary {
+  color: #ef3a3a;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+  cursor: default;
+}
+
+.heading-secondary {
+  color: #374151;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.mt-tight {
+  margin-top: 0.5rem;
+}
+
+.subtext {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.indiamart-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.indiamart-img:hover {
+  cursor: pointer;
+}
+
+.google-img {
+  width: 90px;
+  height: 90px;
+}
+
+.google-img:hover {
+  cursor: pointer;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+}
+
+.stars-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  font-size: 1.3rem;
+  color: #facc15;
+  cursor: pointer;
+}
+
+.rating-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4b5563;
+  animation: fadeIn 1s ease-in;
+  cursor: pointer;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s forwards ease-in-out;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1300px) {
+  .review-container {
+    padding: 0.8rem 1.5rem;
+    max-width: 1300px;
+    min-height: 220px;
+  }
+  .card, .card2 {
+    min-width: 180px;
+    max-width: 220px;
+    padding: 1.8rem 0.9rem;
+  }
+  .heading-primary {
+    font-size: 1.15rem;
+  }
+  .heading-secondary {
+    font-size: 0.95rem;
+  }
+  .subtext {
+    font-size: 0.8rem;
+  }
+  .indiamart-img {
+    width: 70px;
+    height: 70px;
+  }
+  .google-img {
+    width: 50px;
+    height: 50px;
+  }
+  .icon-wrapper {
+    height: 50px;
+  }
+  .stars {
+    font-size: 1.2rem;
+  }
+  .rating-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .review-container {
+    padding: 0.7rem 1.3rem;
+    min-height: 210px;
+  }
+  .card, .card2 {
+    min-width: 160px;
+    max-width: 200px;
+    padding: 1.6rem 0.8rem;
+  }
+  .heading-primary {
+    font-size: 1.1rem;
+  }
+  .heading-secondary {
+    font-size: 0.9rem;
+  }
+  .subtext {
+    font-size: 0.75rem;
+  }
+  .indiamart-img {
+    width: 60px;
+    height: 60px;
+  }
+  .google-img {
+    width: 45px;
+    height: 45px;
+  }
+  .icon-wrapper {
+    height: 45px;
+  }
+  .stars {
+    font-size: 1.15rem;
+  }
+  .rating-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .review-container {
+    padding: 0.5rem 1rem;
+    min-height: 200px;
+  }
+  .card, .card2 {
+    min-width: 120px;
+    max-width: 150px;
+    padding: 1.2rem 0.6rem;
+    min-height: 180px;
+  }
+  .divider {
+    width: 1px;
+    height: auto;
+    min-height: 60%;
+    margin: 0 0.5rem;
+  }
+  .heading-primary {
+    font-size: 1.05rem;
+  }
+  .heading-secondary {
+    font-size: 0.85rem;
+  }
+  .subtext {
+    font-size: 0.7rem;
+  }
+  .indiamart-img {
+    width: 50px;
+    height: 50px;
+  }
+  .google-img {
+    width: 35px;
+    height: 35px;
+  }
+  .icon-wrapper {
+    height: 35px;
+  }
+  .stars {
+    font-size: 1.1rem;
+  }
+  .rating-text {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .review-container {
+    padding: 0.45rem 0.9rem;
+    min-height: 190px;
+  }
+  .card, .card2 {
+    min-width: 100px;
+    max-width: 120px;
+    padding: 1.1rem 0.55rem;
+    min-height: 170px;
+  }
+  .divider {
+    width: 1px;
+    height: auto;
+    min-height: 55%;
+    margin: 0 0.4rem;
+  }
+  .heading-primary {
+    font-size: 0.9rem;
+  }
+  .heading-secondary {
+    font-size: 0.8rem;
+  }
+  .subtext {
+    font-size: 0.65rem;
+  }
+  .indiamart-img {
+    width: 40px;
+    height: 40px;
+  }
+  .google-img {
+    width: 30px;
+    height: 30px;
+  }
+  .icon-wrapper {
+    height: 30px;
+  }
+  .stars {
+    font-size: 1rem;
+  }
+  .rating-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-container {
+    padding: 0.4rem 0.8rem;
+    min-height: 180px;
+  }
+  .card, .card2 {
+    min-width: 80px;
+    max-width: 95px;
+    padding: 1rem 0.5rem;
+    min-height: 160px;
+  }
+  .divider {
+    width: 1px;
+    height: auto;
+    min-height: 50%;
+    margin: 0 0.3rem;
+  }
+  .heading-primary {
+    font-size: 0.75rem;
+  }
+  .heading-secondary {
+    font-size: 0.65rem;
+  }
+  .subtext {
+    font-size: 0.55rem;
+  }
+  .indiamart-img {
+    width: 35px;
+    height: 35px;
+  }
+  .google-img {
+    width: 25px;
+    height: 25px;
+  }
+  .icon-wrapper {
+    height: 25px;
+  }
+  .stars {
+    font-size: 0.9rem;
+  }
+  .rating-text {
+    font-size: 0.65rem;
+  }
+  .stars-wrapper {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .review-container {
+    padding: 0.3rem 0.6rem;
+    min-height: 160px;
+  }
+  .card, .card2 {
+    min-width: 60px;
+    max-width: 70px;
+    padding: 0.8rem 0.4rem;
+    min-height: 140px;
+  }
+  .divider {
+    width: 1px;
+    height: auto;
+    min-height: 40%;
+    margin: 0 0.2rem;
+  }
+   .heading-primary {
+    font-size: 0.7rem;
+  }
+  .heading-secondary {
+    font-size: 0.6rem;
+  }
+  .subtext {
+    font-size: 0.5rem;
+  }
+  .indiamart-img {
+    width: 25px;
+    height: 25px;
+  }
+  .google-img {
+    width: 18px;
+    height: 18px;
+  }
+  .icon-wrapper {
+    height: 18px;
+  }
+  .stars {
+    font-size: 0.8rem;
+  }
+  .rating-text {
+    font-size: 0.7rem;
+  }
+  .stars-wrapper {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .review-container {
+    padding: 0.2rem 0.5rem;
+    min-height: 140px;
+  }
+  .card, .card2 {
+    min-width: 50px;
+    max-width: 60px;
+    padding: 0.6rem 0.3rem;
+    min-height: 120px;
+  }
+  .divider {
+    width: 1px;
+    height: auto;
+    min-height: 30%;
+    margin: 0 0.1rem;
+  }
+    .heading-primary {
+    font-size: 0.65rem;
+  }
+  .heading-secondary {
+    font-size: 0.6rem;
+  }
+  .subtext {
+    font-size: 0.5rem;
+  }
+  .indiamart-img {
+    width: 20px;
+    height: 20px;
+  }
+  .google-img {
+    width: 15px;
+    height: 15px;
+  }
+  .icon-wrapper {
+    height: 15px;
+  }
+  .stars {
+    font-size: 0.7rem;
+  }
+  .rating-text {
+    font-size: 0.65rem;
+  }
+  .stars-wrapper {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+}
+
+@media (max-width: 280px) {
+  .review-container {
+    padding: 0.2rem 0.4rem;
+    min-height: 120px;
+  }
+  .card, .card2 {
+    min-width: 40px;
+    max-width: 40px;
+    padding: 0.2rem 0.1rem;
+    min-height: 100px;
+  }
+  .divider {
+    width: 1px;
+    height: auto;
+    min-height: 30%;
+    margin: 0 0.1rem;
+  }
+  .heading-primary {
+    font-size: 0.6rem;
+  }
+  .heading-secondary {
+    font-size: 0.55rem;
+  }
+  .subtext {
+    font-size: 0.45rem;
+  }
+  .indiamart-img {
+    width: 16px;
+    height: 16px;
+  }
+  .google-img {
+    width: 12px;
+    height: 12px;
+  }
+  .icon-wrapper {
+    height: 12px;
+  }
+  .stars {
+    font-size: 0.6rem;
+  }
+  .rating-text {
+    font-size: 0.6rem;
+  }
+  .stars-wrapper {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+}
+
+@media (max-width: 240px) {
+  .review-container {
+    padding: 0.2rem 0.3rem;
+    min-height: 100px;
+  }
+  .card, .card2 {
+    min-width: 30px;
+    max-width: 36px;
+    padding: 0.4rem 0.2rem;
+    min-height: 80px;
+  }
+  .divider {
+    width: 1px;
+    height: auto;
+    min-height: 30%;
+    margin: 0 0.05rem;
+  }
+  .heading-primary {
+    font-size: 0.5rem;
+  }
+  .heading-secondary {
+    font-size: 0.45rem;
+  }
+  .subtext {
+    font-size: 0.35rem;
+  }
+  .indiamart-img {
+    width: 12px;
+    height: 12px;
+  }
+  .google-img {
+    width: 9px;
+    height: 9px;
+  }
+  .icon-wrapper {
+    height: 9px;
+  }
+  .stars {
+    font-size: 0.5rem;
+  }
+  .rating-text {
+    font-size: 0.5rem;
+  }
+  .stars-wrapper {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+}

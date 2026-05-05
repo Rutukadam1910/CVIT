@@ -1,0 +1,1342 @@
+:root {
+  --detail-accent: #ef3a3a;
+  --detail-deep: #06102b;
+  --detail-muted: rgba(2,6,23,0.06);
+  --detail-glow: rgba(239,58,58,0.24);
+  --detail-sticky-offset: 80px; /* Default desktop offset for sticky navbar */
+}
+
+/* General resets and base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0f172a;
+  background: linear-gradient(180deg, #ffffff, #ffffff);
+}
+
+main.detail-camera-enclosure-without-cooling-jacket-main-product {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.detail-camera-enclosure-without-cooling-jacket-title-product {
+  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #0f172a, #1f3a8a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  letter-spacing: 0.6px;
+  line-height: 1;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  cursor: default;
+}
+
+/* Dual Image Layout - Product + Dimension Diagram */
+.detail-dual-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1300px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+.detail-product-image-wrapper,
+.detail-dimension-image-wrapper {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-product-main-image,
+.detail-dimension-diagram-image {
+  max-width: 100%;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  cursor: zoom-in;
+}
+
+.detail-image-caption {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Sticky Navigation */
+.detail-product-nav {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 60px;
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 998; /* Reduced z-index to be below sidebar */
+  margin: 2rem 0 0 0;
+  transition: all 0.3s ease;
+}
+
+.detail-product-nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  width: calc(100% - 2rem);
+  height: 4px;
+  background: linear-gradient(to right, var(--detail-accent) 15%, var(--detail-accent) 85%, transparent 100%);
+  pointer-events: none;
+}
+
+.detail-product-nav.scrolled {
+  background: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+  height: 60px; /* Ensure full height when scrolled */
+}
+
+.detail-nav-button-wrapper {
+  display: flex;
+  gap: 14px;
+  padding-left: 6rem;
+  height: 100%;
+  align-items: flex-end;
+  padding-bottom: 4px;
+}
+
+.detail-nav-tab {
+  height: 42px;
+  line-height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(166, 164, 164, 0.2);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: 0 20px;
+  min-width: 150px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: #1e293b;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detail-nav-tab:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.detail-nav-tab[aria-current="page"] {
+  background: var(--detail-accent);
+  color: #ffffff !important;
+  font-weight: 800;
+  height: 48px;
+  line-height: 46px;
+  border: 1px solid var(--detail-accent);
+  border-bottom: none;
+  z-index: 10;
+}
+
+/* Section Styles */
+.detail-mounting-section,
+.detail-lens-section {
+  scroll-margin-top: var(--detail-sticky-offset);
+  width: 100%;
+  max-width: 1400px;
+  margin: 1rem auto 2rem;
+  text-align: center;
+}
+
+.detail-mounting-title,
+.detail-lens-title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  color: #0b2340;
+  font-weight: 800;
+  margin: 2.5rem auto 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, var(--detail-accent) 40%, transparent 80%);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 60px 3px;
+  padding-bottom: 12px;
+  cursor: default;
+}
+
+.detail-information-container {
+  width: 100%;
+  max-width: 1300px;
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(4, 12, 30, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  margin: 0.5rem auto 2rem;
+}
+
+.detail-information-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #334155;
+  text-align: justify;
+  cursor: default;
+}
+
+.detail-mounting-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 5rem;
+}
+
+.detail-product-mounting-image {
+  max-width: 80%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 16px;
+  cursor: zoom-in;
+}
+
+/* Technical Specifications Table Container */
+.detail-tech-specs-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 3rem auto 2rem;
+  padding: 0 1.5rem;
+  cursor: default;
+}
+
+.detail-tech-specs-title {
+  font-size: clamp(1.3rem, 2.8vw, 1.6rem);
+  color: #0b2340;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-image: linear-gradient(to right, var(--detail-accent) 40%, transparent 80%);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 60px 3px;
+  padding-bottom: 12px;
+  cursor: default;
+}
+
+/* Technical Specifications Table */
+.detail-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(4, 12, 30, 0.08);
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+.detail-specs-table tr {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.detail-specs-table tr:last-child {
+  border-bottom: none;
+}
+
+.detail-specs-table td {
+  padding: 16px 24px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.detail-spec-label {
+  font-weight: 700;
+  color: #1e293b;
+  width: 40%;
+  min-width: 280px;
+  background-color: #f8fafc;
+}
+
+.detail-spec-value {
+  color: #334155;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.detail-specs-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+.detail-lens-highlight {
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 1rem;
+}
+
+.detail-lens-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 4rem;
+}
+
+.detail-lens-housing-image {
+  max-width: 80%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 16px;
+  cursor: zoom-in;
+}
+
+/* Wider Tables */
+.detail-tech-specs-container.detail-wide-table {
+  max-width: 1300px;
+  padding: 0 2rem;
+}
+
+/* Table wrapper for horizontal scrolling */
+.detail-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+/* Product Table (Model List) */
+.detail-product-table {
+  width: 100%;
+  margin-bottom: 3rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 800px; /* Ensure minimum width to prevent content squishing */
+}
+
+.detail-product-table th {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-weight: 700;
+  padding: 16px 12px;
+  text-align: center;
+  font-size: 0.98rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-right: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.detail-product-table th:last-child {
+  border-right: none;
+}
+
+.detail-product-table td {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  border-right: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.detail-product-table td:last-child {
+  border-right: none;
+}
+
+/* Buy button in product table */
+.detail-product-table .detail-buy-button {
+  background: var(--detail-accent);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.detail-product-table .detail-buy-button:hover {
+  transform: scale(1.12);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.detail-product-table .detail-buy-button:active {
+  transform: scale(0.95);
+}
+
+.buy-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes the icon white */
+}
+
+/* New column styling */
+.detail-product-table th:first-child{
+  font-weight: 700;
+  color: #1e293b;
+  background-color: #f1f5f9;
+  text-align: center;
+}
+.detail-product-table td.camera-housing-model {
+  font-weight: 700;
+  color: #1e293b;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Adjust padding for better spacing */
+.detail-product-table th,
+.detail-product-table td {
+  padding: 14px 10px;
+}
+/* Full row hover - now includes camera housing column */
+.detail-product-table tr:hover {
+  background-color: #f8fafc !important;
+}
+
+.detail-product-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Section Divider */
+.detail-section-divider {
+  border: none;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  margin: 3rem auto;
+  width: 90%;
+  opacity: 0.9;
+}
+
+/* Button container for zoom modal */
+.detail-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-control-btn, .detail-close-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+
+.detail-control-btn {
+  background: linear-gradient(45deg, #6b7280, #9ca3af);
+  color: #ffffff;
+}
+
+.detail-control-btn:hover {
+  background: linear-gradient(45deg, #9ca3af, #d1d5db);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.detail-close-btn {
+  background: var(--detail-accent);
+  color: #ffffff;
+}
+
+.detail-close-btn:hover { opacity: 0.9; transform: scale(1.1); }
+
+.detail-control-btn:active, .detail-close-btn:active { transform: scale(0.95); }
+
+/* Back to Products Button */
+.detail-back-to-products-container {
+  width: 100%;
+  padding: 5rem 2rem 7rem;
+  background: linear-gradient(to top, #f8fafb 0%, transparent 70%);
+  text-align: center;
+  margin-top: 3rem;
+  contain: layout style;
+}
+
+.detail-premium-btn.detail-action-btn.detail-pulse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  height: 64px;
+  padding: 0 2.5rem;
+  background: var(--detail-accent);
+  color: #ffffff;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+ 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  flex-shrink: 0;
+  will-change: transform, box-shadow;
+}
+
+.detail-premium-btn.detail-action-btn.detail-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.detail-premium-btn.detail-action-btn.detail-pulse:hover {
+  transform: translateY(-6px) scale(1.03);
+ 
+}
+
+.detail-premium-btn.detail-action-btn.detail-pulse:hover::after {
+  opacity: 1;
+}
+
+.detail-premium-btn.detail-action-btn.detail-pulse:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+/* Section Titles */
+.detail-key-features-title,
+.detail-section-title-3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  color: #0b2340;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 auto 3rem;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 12px;
+  background-image: linear-gradient(to right, var(--detail-accent) 40%, transparent 80%);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 60px 3px;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: default;
+}
+
+/* NEW: Enquire Container Styles */
+.detail-enquire-container {
+  width: 100%;
+  max-width: 1400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(4, 12, 30, 0.08);
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  padding: 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3rem;
+  color: #334155;
+  font-weight: 500;
+  margin: 2rem auto;
+}
+
+.detail-enquire-container span {
+  margin-left: 10rem;
+  flex-grow: 1;
+  text-align: center;
+  cursor: default;
+}
+
+.detail-enquire-btn {
+  background: var(--detail-accent);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+  user-select: none;
+}
+
+.detail-enquire-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.detail-enquire-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 15px rgba(239, 58, 58, 0.25), 0 0 15px rgba(239, 58, 58, 0.1);
+}
+
+/* Media query for screens smaller than 1300px */
+@media (max-width: 1300px) {
+  :root {
+    --detail-sticky-offset: 80px; /* Default for larger screens */
+  }
+  
+  main.detail-camera-enclosure-without-cooling-jacket-main-product {
+    padding: 1.5rem 0;
+  }
+  
+  .detail-camera-enclosure-without-cooling-jacket-title-product {
+    font-size: clamp(1.3rem, 3vw, 2.1rem);
+    margin-top: 5rem; /* Increased top margin to avoid navbar overlap */
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  
+  .detail-dual-image-container {
+    max-width: 1100px;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .detail-product-main-image,
+  .detail-dimension-diagram-image {
+    max-height: 400px;
+  }
+  
+  .detail-information-container {
+    max-width: 1000px;
+    padding: 1.2rem;
+  }
+  
+  .detail-information-text {
+    font-size: 0.9rem;
+  }
+  
+  .detail-product-mounting-image,
+  .detail-lens-housing-image {
+    max-height: 400px;
+  }
+  
+  .detail-tech-specs-container {
+    max-width: 1100px;
+    padding: 0 1.2rem;
+  }
+  
+  .detail-specs-table td {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .detail-spec-label {
+    min-width: 240px;
+    font-size: 0.9rem;
+  }
+  
+  .detail-product-table th {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+  
+  .detail-product-table td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+  
+  .detail-product-table .detail-buy-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .buy-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  /* DECREASED SECTION TITLES */
+  .detail-mounting-title,
+  .detail-lens-title,
+  .detail-tech-specs-title {
+    font-size: clamp(1.1rem, 2.3vw, 1.4rem);
+    margin-bottom: 1.2rem;
+  }
+  
+  .detail-premium-btn.detail-action-btn.detail-pulse {
+    min-width: 260px;
+    height: 56px;
+    font-size: clamp(0.9rem, 2.2vw, 1rem);
+  }
+  
+  .detail-back-to-products-container {
+    padding: 4rem 1.5rem 6rem;
+  }
+  
+  .detail-nav-button-wrapper {
+    padding-left: 3rem;
+  }
+  
+  .detail-nav-tab {
+    min-width: 130px;
+    font-size: 0.7rem;
+    padding: 0 15px;
+  }
+  
+  /* Enquire Container Responsive */
+  .detail-enquire-container {
+    max-width: 1100px;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+  }
+  
+  .detail-enquire-btn {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+  }
+}
+
+/* Media query for screens smaller than 980px */
+@media (max-width: 980px) {
+  :root {
+    --detail-sticky-offset: 95px; /* 55px navbar height + 40px gap */
+  }
+  
+  main.detail-camera-enclosure-without-cooling-jacket-main-product {
+    padding: 1.2rem 0;
+  }
+  
+  .detail-camera-enclosure-without-cooling-jacket-title-product {
+    font-size: clamp(1.1rem, 2.7vw, 1.7rem);
+    margin-top: 4.5rem; /* Increased top margin to avoid navbar overlap */
+    margin-bottom: 1.2rem;
+    width: 100%;
+  }
+  
+  .detail-dual-image-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .detail-product-main-image,
+  .detail-dimension-diagram-image {
+    max-height: 350px;
+  }
+  
+  .detail-information-container {
+    max-width: 750px;
+    padding: 1rem;
+  }
+  
+  .detail-information-text {
+    font-size: 0.85rem;
+  }
+  
+  .detail-product-mounting-image,
+  .detail-lens-housing-image {
+    max-height: 350px;
+  }
+  
+  .detail-tech-specs-container {
+    max-width: 800px;
+    padding: 0 1rem;
+  }
+  
+  .detail-specs-table td {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .detail-spec-label {
+    min-width: 200px;
+    font-size: 0.85rem;
+  }
+  
+  .detail-product-table {
+    font-size: 0.8rem;
+  }
+  
+  .detail-product-table th {
+    padding: 10px 6px;
+    font-size: 0.8rem;
+  }
+  
+  .detail-product-table td {
+    padding: 8px 6px;
+    font-size: 0.8rem;
+  }
+  
+  .detail-product-table .detail-buy-button {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .buy-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* DECREASED SECTION TITLES */
+  .detail-mounting-title,
+  .detail-lens-title,
+  .detail-tech-specs-title {
+    font-size: clamp(0.9rem, 2.0vw, 1.2rem);
+    margin-bottom: 1rem;
+  }
+  
+  .detail-premium-btn.detail-action-btn.detail-pulse {
+    min-width: 220px;
+    height: 50px;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+  }
+  
+  .detail-back-to-products-container {
+    padding: 3rem 1rem 5rem;
+  }
+  
+  .detail-nav-button-wrapper {
+    padding-left: 1.5rem;
+  }
+  
+  .detail-nav-tab {
+    min-width: 100px;
+    font-size: 0.65rem;
+    padding: 0 12px;
+  }
+  
+  /* ADJUSTED: Navbar position for smaller screens */
+  .detail-product-nav {
+    top: 55px; /* Position below the main navbar */
+  }
+  
+  /* Enquire Container Responsive */
+  .detail-enquire-container {
+    max-width: 800px;
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+  
+  .detail-enquire-container span {
+    margin-left: 3rem;
+  }
+  
+  .detail-enquire-btn {
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    margin-right: 1rem;
+  }
+}
+
+/* Media query for screens smaller than 780px */
+@media (max-width: 780px) {
+  :root {
+    --detail-sticky-offset: 85px; /* 45px navbar height + 40px gap */
+  }
+  
+  main.detail-camera-enclosure-without-cooling-jacket-main-product {
+    padding: 1rem 0;
+  }
+  
+  .detail-camera-enclosure-without-cooling-jacket-title-product {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-top: 4rem; /* Increased top margin to avoid navbar overlap */
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .detail-dual-image-container {
+    gap: 1.2rem;
+    padding: 0 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .detail-product-image-wrapper,
+  .detail-dimension-image-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .detail-product-main-image,
+  .detail-dimension-diagram-image {
+    max-height: 300px;
+  }
+  
+  .detail-information-container {
+    max-width: 700px;
+    padding: 0.8rem;
+  }
+  
+  .detail-information-text {
+    font-size: 0.8rem;
+  }
+  
+  .detail-product-mounting-image,
+  .detail-lens-housing-image {
+    max-height: 300px;
+  }
+  
+  .detail-tech-specs-container {
+    max-width: 700px;
+    padding: 0 0.8rem;
+  }
+  
+  .detail-specs-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .detail-specs-table td {
+    padding: 10px 12px;
+    font-size: 0.75rem; /* Reduced from 0.8rem */
+  }
+  
+  .detail-spec-label {
+    min-width: 180px;
+    font-size: 0.75rem; /* Reduced from 0.8rem */
+  }
+  
+  .detail-product-table {
+    font-size: 0.65rem; /* Reduced from 0.7rem */
+    min-width: 700px; /* Ensure minimum width for horizontal scrolling */
+  }
+  
+  .detail-product-table th {
+    padding: 8px 4px;
+    font-size: 0.65rem; /* Reduced from 0.7rem */
+  }
+  
+  .detail-product-table td {
+    padding: 6px 4px;
+    font-size: 0.65rem; /* Reduced from 0.7rem */
+  }
+  
+  .detail-product-table .detail-buy-button {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .buy-icon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* DECREASED SECTION TITLES */
+  .detail-mounting-title,
+  .detail-lens-title,
+  .detail-tech-specs-title {
+    font-size: clamp(0.8rem, 1.8vw, 1.1rem);
+    margin-bottom: 0.8rem;
+  }
+  
+  .detail-premium-btn.detail-action-btn.detail-pulse {
+    min-width: 130px; 
+    height: 35px; 
+    padding: 0 1.4rem; 
+    font-size: clamp(0.65rem, 0.65vw, 0.65rem); 
+  }
+  
+  .detail-back-to-products-container {
+    padding: 2.5rem 0.8rem 4rem;
+  }
+  
+  .detail-nav-button-wrapper {
+    padding-left: 1.5rem;
+  }
+  
+  .detail-nav-tab {
+    min-width: 100px;
+    font-size: 0.6rem;
+    padding: 0 12px;
+  }
+  
+  /* ADJUSTED: Navbar position for smaller screens */
+  .detail-product-nav {
+    top: 45px; /* Position below the main navbar */
+  }
+  
+  .detail-product-nav::after {
+    left: 1.5rem;
+    height: 2.5px;
+  }
+  
+  /* Enquire Container Responsive */
+  .detail-enquire-container {
+    max-width: 700px;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .detail-enquire-container span {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .detail-enquire-btn {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    margin: 0;
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+  :root {
+    --detail-sticky-offset: 80px; /* 40px navbar height + 40px gap */
+  }
+  
+  main.detail-camera-enclosure-without-cooling-jacket-main-product {
+    padding: 0.8rem 0;
+  }
+  
+  .detail-camera-enclosure-without-cooling-jacket-title-product {
+    font-size: clamp(0.9rem, 2.3vw, 1.3rem);
+    margin-top: 3.5rem; /* Increased top margin to avoid navbar overlap */
+    margin-bottom: 0.8rem;
+    width: 100%;
+  }
+  
+  .detail-dual-image-container {
+    gap: 1rem;
+    padding: 0 0.3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .detail-product-image-wrapper,
+  .detail-dimension-image-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .detail-product-main-image,
+  .detail-dimension-diagram-image {
+    max-height: 200px;
+    margin-bottom: 2rem;
+  }
+  
+  .detail-information-container {
+    max-width: 95%;
+    padding: 0.6rem;
+  }
+  
+  .detail-information-text {
+    font-size: 0.75rem;
+  }
+  
+  .detail-product-mounting-image,
+  .detail-lens-housing-image {
+    max-height: 250px;
+  }
+  
+  .detail-tech-specs-container {
+    max-width: 95%;
+    padding: 0 0.6rem;
+  }
+  
+  .detail-specs-table td {
+    padding: 8px 10px;
+    font-size: 0.65rem; /* Reduced from 0.75rem */
+  }
+  
+  .detail-spec-label {
+    min-width: 150px;
+    font-size: 0.65rem; /* Reduced from 0.75rem */
+  }
+  
+  .detail-product-table {
+    font-size: 0.55rem; /* Reduced from 0.6rem */
+    min-width: 600px; /* Ensure minimum width for horizontal scrolling */
+  }
+  
+  .detail-product-table th {
+    padding: 6px 3px;
+    font-size: 0.55rem; /* Reduced from 0.6rem */
+  }
+  
+  .detail-product-table td {
+    padding: 5px 3px;
+    font-size: 0.55rem; /* Reduced from 0.6rem */
+  }
+  
+  .detail-product-table .detail-buy-button {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .buy-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  /* DECREASED SECTION TITLES */
+  .detail-mounting-title,
+  .detail-lens-title,
+  .detail-tech-specs-title {
+    font-size: clamp(0.7rem, 1.6vw, 0.95rem);
+    margin-bottom: 0.6rem;
+  }
+  
+ .detail-premium-btn.detail-action-btn.detail-pulse {
+    min-width: 90px; 
+    height: 30px; 
+    padding: 0 0.8rem; 
+    font-size: clamp(0.55rem, 0.55vw, 0.55rem); 
+  }
+  
+  .detail-back-to-products-container {
+    padding: 2rem 0.5rem 3rem;
+  }
+  
+  .detail-nav-button-wrapper {
+    padding-left: 2rem;
+  }
+  
+  .detail-nav-tab {
+    min-width: 80px;
+    font-size: 0.45rem;
+    padding: 0 4px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .detail-nav-tab:hover {
+    transform: translateY(-1px);
+  }
+  
+  .detail-nav-tab[aria-current="page"] {
+    height: 32px;
+    line-height: 32px;
+  }
+  
+  /* ADJUSTED: Navbar position for smaller screens */
+  .detail-product-nav {
+    top: 40px; /* Position below the main navbar */
+  }
+  
+  .detail-product-nav::after {
+    left: 1.5rem;
+    height: 2.2px;
+  }
+  
+  /* Enquire Container Responsive */
+  .detail-enquire-container {
+    max-width: 95%;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .detail-enquire-btn {
+    font-size: 0.65rem;
+    padding: 3px 10px;
+  }
+}
+
+/* Media query for screens smaller than 320px */
+@media (max-width: 320px) {
+  :root {
+    --detail-sticky-offset: 75px; /* 35px navbar height + 40px gap */
+  }
+  
+  main.detail-camera-enclosure-without-cooling-jacket-main-product {
+    padding: 0.5rem 0;
+  }
+  
+  .detail-camera-enclosure-without-cooling-jacket-title-product {
+    font-size: clamp(0.8rem, 2.1vw, 1.1rem);
+    margin-top: 3rem; /* Increased top margin to avoid navbar overlap */
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .detail-dual-image-container {
+    gap: 0.8rem;
+    padding: 0 0.2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .detail-product-image-wrapper,
+  .detail-dimension-image-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .detail-product-main-image,
+  .detail-dimension-diagram-image {
+    max-height: 180px;
+  }
+  
+  .detail-information-container {
+    max-width: 95%;
+    padding: 0.4rem;
+  }
+  
+  .detail-information-text {
+    font-size: 0.7rem;
+  }
+  
+  .detail-product-mounting-image,
+  .detail-lens-housing-image {
+    max-height: 200px;
+  }
+  
+  .detail-tech-specs-container {
+    max-width: 95%;
+    padding: 0 0.4rem;
+  }
+  
+  .detail-specs-table td {
+    padding: 6px 8px;
+    font-size: 0.55rem; /* Reduced from 0.7rem */
+  }
+  
+  .detail-spec-label {
+    min-width: 120px;
+    font-size: 0.55rem; /* Reduced from 0.7rem */
+  }
+  
+  .detail-product-table {
+    font-size: 0.5rem; /* Reduced from 0.55rem */
+    min-width: 500px; /* Ensure minimum width for horizontal scrolling */
+  }
+  
+  .detail-product-table th {
+    padding: 5px 2px;
+    font-size: 0.5rem; /* Reduced from 0.55rem */
+  }
+  
+  .detail-product-table td {
+    padding: 4px 2px;
+    font-size: 0.5rem; /* Reduced from 0.55rem */
+  }
+  
+  .detail-product-table .detail-buy-button {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .buy-icon {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* DECREASED SECTION TITLES */
+  .detail-mounting-title,
+  .detail-lens-title,
+  .detail-tech-specs-title {
+    font-size: clamp(0.6rem, 1.4vw, 0.85rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .detail-premium-btn.detail-action-btn.detail-pulse {
+    min-width: 60px; 
+    height: 30px; 
+    padding: 0 0.8rem; 
+    font-size: clamp(0.45rem, 0.45vw, 0.45rem); 
+  }
+  
+  .detail-back-to-products-container {
+    padding: 1.5rem 0.3rem 2.5rem;
+  }
+  
+  .detail-nav-button-wrapper {
+    padding-left: 1.5rem;
+  }
+  
+  .detail-nav-tab {
+    min-width: 50px;
+    font-size: 0.35rem;
+    padding: 0 3px;
+    height: 27px;
+    line-height: 27px;
+  }
+  
+  .detail-nav-tab:hover {
+    transform: translateY(-1px);
+  }
+  
+  .detail-nav-tab[aria-current="page"] {
+    height: 31px;
+    padding: 0 2px;
+    line-height: 31px;
+  }
+  
+  /* ADJUSTED: Navbar position for smaller screens */
+  .detail-product-nav {
+    top: 35px; /* Position below the main navbar */
+  }
+  
+  .detail-product-nav::after {
+    left: 1.5rem;
+    height: 2px;
+  }
+  
+  /* Enquire Container Responsive */
+  .detail-enquire-container {
+    max-width: 95%;
+    padding: 0.4rem;
+    font-size: 0.7rem;
+  }
+  
+  .detail-enquire-btn {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+  }
+}

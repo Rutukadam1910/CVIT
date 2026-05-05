@@ -1,0 +1,200 @@
+/* Gallery Component Styles */
+:root {
+  --gallery-marquee-width: 95vw;
+  --gallery-marquee-margin: 2rem; /* Replaced gap with margin */
+  --gallery-marquee-image-width: 410px;
+  --gallery-marquee-image-height: 390px;
+  --gallery-marquee-height: 390px;
+  --gallery-marquee-elements-displayed: 4;
+  --set-size: 3; /* Default value, will be overridden by JS */
+}
+
+.gallery-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.gallery-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery-container:not(.loaded) .marquee-content {
+  animation: none !important;
+  transform: translateX(0) !important;
+}
+
+.gallery-container:not(.loaded) .marquee-content li {
+  background: #e0e0e0;
+  border-radius: 12px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.marquee {
+  width: 100%;
+  max-width: 100%;
+  height: var(--gallery-marquee-height);
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 180px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  background: linear-gradient(to right, #fff 0%, transparent 100%);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #fff 0%, transparent 100%);
+}
+
+.marquee-content {
+  display: flex;
+  /* Removed gap property */
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: max-content;
+  will-change: transform;
+  animation-play-state: paused;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}
+
+.marquee-content.running {
+  /* Simple -50% translate for perfect loop */
+  animation: marqueeLoop 30s linear infinite;
+}
+
+@keyframes marqueeLoop {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+.marquee-content li {
+  flex: 0 0 calc(var(--gallery-marquee-width) / var(--gallery-marquee-elements-displayed));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Use margin-right instead of gap */
+  margin-right: var(--gallery-marquee-margin);
+}
+
+/* Remove margin after each SET to eliminate the gap */
+.marquee-content li:nth-child(var(--set-size)n) {
+  margin-right: 0;
+}
+
+.marquee-content li img {
+  width: 410px !important;
+  height: 390px !important;
+  min-width: 410px !important;
+  min-height: 390px !important;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  user-select: none;
+  display: block;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.marquee-content li:hover img {
+  transform: translateZ(0) scale(1.04);
+}
+
+/* Responsive adjustments for gallery marquee */
+@media (max-width: 1024px) {
+  :root {
+    --gallery-marquee-elements-displayed: 3;
+    --gallery-marquee-height: 420px;
+  }
+  .marquee-content li img {
+    width: 420px !important;
+    height: 315px !important;
+    min-width: 420px !important;
+    min-height: 315px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gallery-marquee-elements-displayed: 2;
+    --gallery-marquee-height: 340px;
+  }
+  .marquee-content li img {
+    width: 340px !important;
+    height: 255px !important;
+    min-width: 340px !important;
+    min-height: 255px !important;
+  }
+  .marquee::before,
+  .marquee::after { width: 60px; }
+}
+
+/* New responsive breakpoints for smaller screens */
+@media (max-width: 480px) {
+  :root {
+    --gallery-marquee-elements-displayed: 1;
+    --gallery-marquee-height: 260px;
+  }
+  .marquee-content li img {
+    width: 260px !important;
+    height: 195px !important;
+    min-width: 260px !important;
+    min-height: 195px !important;
+  }
+  .marquee::before,
+  .marquee::after { width: 40px; }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --gallery-marquee-elements-displayed: 1;
+    --gallery-marquee-height: 200px;
+  }
+  .marquee-content li img {
+    width: 200px !important;
+    height: 150px !important;
+    min-width: 200px !important;
+    min-height: 150px !important;
+  }
+  .marquee::before,
+  .marquee::after { width: 30px; }
+}
+
+.gallery-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #666;
+}

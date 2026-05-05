@@ -1,0 +1,137 @@
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.supporting-partners-section {
+  padding: 2.68rem 1.34rem;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+}
+
+.supporting-partners-section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1.675rem;
+  font-weight: 600;
+  color: #EF3A3A;
+  text-shadow: 0 0 4.02px rgba(239, 58, 58, 0.3);
+  cursor: default;
+}
+
+.partners-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.partner-card {
+  background: #ffffff;
+  border-radius: 13.4px;
+  padding: 0.5rem;
+  width: 288px;
+  height: 164px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.partner-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1300px) {
+  .supporting-partners-section h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+  }
+  .partners-grid {
+    gap: 1.2rem;
+  }
+  .partner-card {
+    width: 200px;
+    height: 115px;
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .supporting-partners-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.3rem;
+  }
+  .partners-grid {
+    gap: 0.8rem;
+  }
+  .partner-card {
+    width: 140px;
+    height: 80px;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .supporting-partners-section h2 {
+    font-size: 1rem;
+    margin-bottom: 1.1rem;
+  }
+  .partners-grid {
+    gap: 0.6rem;
+  }
+  .partner-card {
+    width: 100px;
+    height: 55px;
+    padding: 0.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .supporting-partners-section h2 {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .partners-grid {
+    gap: 0.5rem;
+  }
+  .partner-card {
+     width: 90px;
+    height: 50px;
+    padding: 0.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .supporting-partners-section h2 {
+   font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .partners-grid {
+    gap: 0.4rem;
+  }
+  .partner-card {
+      width: 85px;
+    height: 45px;
+    padding: 0.15rem;
+  }
+}
+
+@media (max-width: 280px) {
+  .supporting-partners-section h2 {
+    font-size: 0.7rem;
+    margin-bottom: 0.8rem;
+  }
+  .partners-grid {
+    gap: 0.3rem;
+  }
+  .partner-card {
+     width: 70px;
+    height: 30px;
+    padding: 0.1rem;
+  }
+}

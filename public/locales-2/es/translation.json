@@ -1,0 +1,1466 @@
+{
+  "Home": "Inicio",
+  "CustomerBenefits": "Beneficios para los clientes",
+  "OurCaseStudies": "Nuestros estudios de caso",
+  "ImplementationRoadmap": "Hoja de ruta de implementación",
+  "OurClients": "Nuestros clientes",
+  "ContactUs": "Contáctenos",
+  "Catalogue": "Catálogo",
+  "Brochure": "Folleto",
+  "MVLights": "Luces de visión artificial",
+  "PrivacyPolicy": "Política de privacidad",
+  "AllRightsReserved": "Todos los derechos reservados",
+  "CERTIFICATIONS": "Certificaciones",
+  "QuickLinks": "Enlaces rápidos",
+  "SelectLanguage": "Seleccionar idioma",
+  "Close": "Cerrar",
+  "MapTitle": "Ubicaciones de las oficinas de CVIT",
+  "ISOCertification": "Certificación ISO",
+  "RoHSCertification": "Certificación RoHS",
+  "CECertification": "Certificación CE",
+  "ISO9001Certification": "Certificación ISO 9001",
+  "CVITLogo": "Logotipo de CVIT",
+  "LinkedInAriaLabel": "Conéctese con nosotros en LinkedIn",
+  "BackToTop": "Volver arriba",
+  "BackToTopAriaLabel": "Desplazarse al inicio de la página",
+  "DashboardHeading": "¡El futuro de la IA está aquí!",
+  "DashboardSubheading": "CVIT Solution Pvt Ltd",
+  "Solutions": "Soluciones",
+  "MachineVisionSystem" : "Sistema de Visión Artificial",
+  "MachineVisionLight": "Luces de visión artificial",
+  "ToggleAriaLabel": "Alternar entre Soluciones y Luces de visión artificial",
+  "Contact": "Contacto",
+  "Email": "Correo electrónico",
+  "WhatsApp": "WhatsApp",
+  "Top": "Arriba",
+  "QuickContactAriaLabel": "Opciones de contacto rápido",
+  "Loading": "Cargando...",
+  "Automobile": "Automotriz",
+  "MetalMiningCement": "Metal, minería y cemento",
+  "PharmaFmcg": "Farmacéutica y bienes de consumo",
+  "PlasticRubberIndustry": "Industria del plástico y caucho",
+  "WarehouseDistribution": "Almacén y distribución",
+  "WireIndustry": "Industria del cable",
+  "Aerospace": "Aeroespacial",
+  "IndustryAriaLabel": "Ver detalles de la industria {{name}}",
+  "BarLight": "Luz de barra",
+  "BarLightAlt": "Logotipo de luz de barra",
+  "RingLight": "Luz anular",
+  "RingLightAlt": "Logotipo de luz anular",
+  "DomeLight": "Luz de domo",
+  "DomeLightAlt": "Logotipo de luz de domo",
+  "FlatDiffusedLightWithCenterHole": "Luz difusa plana con orificio central",
+  "FlatDiffusedLightWithCenterHoleAlt": "Logotipo de luz difusa plana con orificio central",
+  "FlatDiffusedLight": "Luz difusa plana",
+  "FlatDiffusedLightAlt": "Logotipo de luz difusa plana",
+  "IndirectFlatLight": "Luz plana indirecta",
+  "IndirectFlatLightAlt": "Logotipo de luz plana indirecta",
+  "BackLight": "Retroiluminación",
+  "BackLightAlt": "Logotipo de retroiluminación",
+  "SpotLight": "Luz puntual",
+  "SpotLightAlt": "Logotipo de luz puntual",
+  "TunnelLight": "Luz de túnel",
+  "TunnelLightAlt": "Logotipo de luz de túnel",
+  "ProductAriaLabel": "Ver detalles del producto {{name}}",
+  "Welcome": "Bienvenido a CVIT",
+  "CustomerBenefitsTitle": "Beneficios para los clientes",
+  "ClientTitle": "Nuestros clientes",
+  "CaseStudyTitle": "Estudios de caso",
+  "ContactUsTitle": "Contáctenos",
+  "ProductDetailTitle": "Detalles del producto",
+  "ImplementationTitle": "Proceso de implementación",
+  "PageNotFound": "Página no encontrada",
+  "BackToHome": "Volver al inicio",
+  "BackToHomeAriaLabel": "Regresar a la página de inicio",
+  "MachineVisionApplications": "Aplicaciones de visión artificial",
+  "VideoUnavailable": "Video no disponible",
+  "NoApplicationsAvailable": "No hay aplicaciones disponibles",
+  "InspectionAccuracy": "Precisión de inspección",
+  "ProductionEfficiency": "Eficiencia de producción",
+  "LaborCostSaving": "Ahorro de costos laborales",
+  "MinimizeDowntime": "Minimizar el tiempo de inactividad",
+  "InspectionSpeed": "Velocidad de inspección",
+  "DefectFreeIndustry": "Industria sin defectos",
+  "ProductDetail": {
+    "notFound": {
+      "title": "Producto no encontrado",
+      "backButton": "Volver a Productos"
+    },
+    "navigation": {
+      "ariaLabel": "Navegación de detalles del producto",
+      "products": "PRODUCTOS",
+      "technical": "INFORMACIÓN TÉCNICA",
+      "gallery": "GALERÍA"
+    },
+    "section": {
+      "products": "PRODUCTOS",
+      "technical": "INFORMACIÓN TÉCNICA",
+      "gallery": "GALERÍA"
+    },
+    "enquire": {
+      "text": "¿Necesita luz personalizada?",
+      "button": "Consultar ahora"
+    },
+    "dimension": {
+      "title": "Resumen dimensional",
+      "alt": "dimensión de {{title}}"
+    },
+    "headerImageAlt": "vista del producto {{title}}",
+    "headerInfoImageAlt": "información adicional de {{title}}",
+    "backToProducts": "Volver a Productos"
+  },
+"CommonSpec": {
+  "title": "Especificaciones Comunes",
+  "ariaLabel": "Tabla de Especificaciones Comunes",
+
+  "typeOfIllumination": "Tipo de Iluminación",
+  "typeOfIllumination_value": "Iluminador LED",
+
+  "manufacturer": "Fabricante",
+  "manufacturer_value": "CVIT Solution",
+
+  "warranty": "Garantía",
+  "warranty_value": "6 Meses",
+
+  "illuminationMode": "Modo de Iluminación",
+  "illuminationMode_value": "Estroboscópico o Continuo",
+
+  "inputVoltage": "Voltaje de Entrada (V)",
+  "inputVoltage_value": "24V DC",
+
+  "operatingTemperature": "Temperatura de Operación",
+  "operatingTemperature_value": "-10°C a 50°C",
+
+  "ipRating": "Grado de Protección IP",
+  "ipRating_value": "IP55",
+
+  "geometryLabel": "Geometría"
+},
+"ModelStructure": {
+  "noModels": "No hay modelos disponibles para este producto.",
+  "tableAriaLabel": "Modelos estructurados y especificaciones de {{product}}",
+  "subtype": "Subtipo",
+  "model": "Modelo",
+  "dimensions": "Dimensiones",
+  "inputVolt": "Voltaje de entrada",
+  "power": "Potencia (Amp)",
+  "lumens": "Lúmenes",
+  "lumensSubtitle": "a 100 mm de distancia de trabajo",
+  "lumensUnit": "lm",
+  "lumensNA": "N/A",
+  "color": "Color",
+  "availableColors": "Colores disponibles",
+  "buyNow": "Comprar ahora",
+  "buyAriaLabel": "Comprar {{model}}",
+  "buyAlt": "Icono de compra"
+},
+"TechnicalInfo": {
+  "tableAriaLabel": "Tabla de Especificaciones Técnicas",
+  "unknownProduct": "Producto Desconocido",
+  
+  "category": "Categoría",
+  "color": "Color",
+  "colorRed": "Rojo",
+  "colorWhite": "Blanco",
+  "colorBlue": "Azul",
+  "colorGreen": "Verde",
+  
+  "colorTemperature": "Temperatura de Color",
+  "colorTempWhite": "6000K-6500K",
+  
+  "cableLength": "Longitud del Cable",
+  "cableLengthValue": "1 m",
+  
+  "connectorDefinition": "Definición del Conector",
+  "connectorDescription": "Positivo (+) - Rojo y Negativo (-) - Negro.",
+  
+  "shellMaterial": "Material de la Carcasa",
+  "shellMaterialStandard": "Aluminio Anodizado",
+  "shellMaterialDome": "Aluminio Anodizado / ABS",
+  
+  "cooling": "Enfriamiento",
+  "coolingValue": "Enfriamiento por aire natural",
+  
+  "operatingTempHumidity": "Temperatura y Humedad de Operación",
+  "operatingTempHumidityValue": "Temperatura: 0 a 50°C, Humedad: 20% a 85% HR (sin condensación)"
+},
+"CameraEnclosure": {
+  "title": "Carcasa para Cámara de Visión Artificial con Chaqueta de Refrigeración (CEWC)",
+  "description": "La carcasa CEWC está diseñada para alojar una amplia gama de cámaras de visión artificial de diferentes fabricantes. La carcasa estándar soporta cámaras de 29×29mm, 30×40mm y 60×60mm de marcas líderes como Baumer, Basler, Hikrobot, Allied Vision, FLIR, IDS y Daheng Imaging. Los modelos compatibles incluyen Ace Classic, Ace U, Blackfly USB3 y GigE, entre otros. Diseñada específicamente para aplicaciones de alta temperatura, la serie CEWC es ideal para entornos industriales con temperaturas ambientales de hasta 120°C. Para cámaras más grandes, está disponible la opción de carcasa XL. Para garantizar una instalación correcta y estabilidad, se proporcionarán soportes de montaje e instrucciones detalladas. Para soluciones de montaje personalizadas, contáctenos directamente. La carcasa incluye un cortina de aire especialmente diseñada que ayuda a mantener limpia la tapa del objetivo eliminando la suciedad. En uso intermitente, es efectiva para eliminar polvo seco e impurezas. En operación continua, también ofrece protección contra polvo húmedo, humo aceitoso y otros contaminantes.",
+
+  "features": {
+    "supportSizes": "Soporta tamaños de cámara 29x29mm, 30x40mm y 60x60mm",
+    "compatibleBrands": "Compatible con Baumer, Basler, Hikrobot, Allied Vision, FLIR, IDS, Daheng y más",
+    "highTemp": "Operación a alta temperatura hasta 120°C ambiente",
+    "airCurtain": "Sistema especial de cortina de aire para protección del objetivo",
+    "ip68Cable": "Entrada de cable clasificada IP68 (prensaestopas PG21)",
+    "finish": "Acabado electro-pulido / anodizado para durabilidad",
+    "mountingIncluded": "Soportes de montaje e instrucciones incluidos",
+    "xlOption": "Opción de carcasa XL para cámaras más grandes"
+  },
+
+  "specs": {
+    "operatingTemp": "Temperatura de operación",
+    "operatingTempValue": "Hasta 120°C",
+    "finish": "Acabado",
+    "finishValue": "Electro-pulido / Anodizado",
+    "cableEntries": "Entradas de cable",
+    "cableEntriesValue": "Prensaestopas PG21 (IP68)",
+    "windowCleaning": "Limpieza de ventana",
+    "windowCleaningValue": "Cortina de aire especialmente diseñada"
+  },
+
+  "accessories": {
+    "mountingBracket": "Soporte de montaje",
+    "airCurtain": "Cortina de aire especialmente diseñada",
+    "waterChiller": "Unidad de enfriamiento y bombeo de agua"
+  },
+
+  "nav": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "product": "PRODUCTO",
+    "technical": "TÉCNICO",
+    "accessories": "ACCESORIOS",
+    "gallery": "GALERÍA"
+  },
+
+  "sectionTitles": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "product": "PRODUCTO",
+    "technical": "ESPECIFICACIONES TÉCNICAS",
+    "dimension": "VISIÓN GENERAL DIMENSIONAL",
+    "accessories": "ACCESORIOS",
+    "gallery": "GALERÍA"
+  },
+
+  "tableHeaders": {
+    "modelNo": "N° DE MODELO",
+    "compatibleCameraSize": "Tamaño de cámara compatible",
+    "lensHousing": "Carcasa del objetivo",
+    "housingSize": "Tamaño de carcasa (OD x L)",
+    "maxAllowableOD": "OD máximo permitido (objetivo)",
+    "maxAllowableLength": "Longitud máxima permitida (objetivo)",
+    "totalWeight": "Peso total",
+    "buyNow": "Comprar ahora",
+    "accessory": "Accesorio",
+    "moreDetails": "Más detalles"
+  },
+
+  "dimensionAlt": "Dibujo dimensional CEWC",
+  "mainImageAlt": "Carcasa para cámara de visión artificial con chaqueta de refrigeración",
+  "enquireText": "¿Necesita un producto personalizado?",
+  "enquireButton": "Consultar ahora",
+  "galleryAriaLabel": "Galería",
+  "moreInfoAlt": "Más información",
+  "accessoryAriaLabel": "Ver detalles de {{name}}",
+  "buyAlt": "Comprar",
+  "buyAriaLabel": "Comprar {{model}}",
+  "backToProducts": "Volver a productos",
+
+  "comingSoonTitle": "Próximamente",
+  "comingSoonText": "Manténgase atento."
+},
+
+"CameraEnclosureWithoutCooling": {
+  "title": "Carcasa para Cámara de Visión Artificial sin Chaqueta de Refrigeración",
+  "description": "Nuestras carcasas para cámaras de visión artificial ofrecen una protección excepcional para cámaras industriales, garantizando fiabilidad en entornos duros y exigentes. Construidas para proteger contra polvo, agua, calor y otros factores ambientales, estas carcasas son compatibles con una amplia gama de modelos y tamaños de cámaras. Con una construcción robusta, instalación sencilla y opciones personalizables, son ideales para industrias como la manufactura, automatización, logística e inspección de calidad. Diseñadas para mantener el rendimiento de la cámara y prolongar la vida útil del equipo, nuestras carcasas son una opción confiable para sistemas de visión modernos.",
+
+  "features": {
+    "highQuality": "Fabricadas con materiales de alta calidad para resistir entornos industriales severos.",
+    "protection": "Protege las cámaras contra polvo, agua, calor y otros contaminantes (opciones con clasificación IP disponibles).",
+    "compatibleModels": "Diseñadas para adaptarse a diversos modelos y lentes de cámaras industriales.",
+    "coolingFeatures": "Incluye funciones de refrigeración y disipación de calor para mantener un rendimiento óptimo de la cámara.",
+    "flexibleConfig": "Configuraciones flexibles para cumplir con requisitos específicos de aplicación y cámara.",
+    "toolFreeMounting": "Sistemas de montaje sin herramientas o simplificados para una instalación rápida y segura.",
+    "durableBuild": "Construidas para soportar impactos mecánicos y exposición química en entornos rugosos.",
+    "extendedLife": "Protege equipos sensibles, prolongando su vida útil y reduciendo el tiempo de inactividad."
+  },
+
+  "models": {
+    "MVCE29X29V2": "MVCE29X29V2.68",
+    "MVCE40X30V1": "MVCE40X30V1.80",
+    "bordCameraHousing": "Carcasa para Cámara de Placa",
+    "accessories": "Accesorios"
+  },
+
+  "nav": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "product": "PRODUCTO",
+    "gallery": "GALERÍA"
+  },
+
+  "sectionTitles": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "product": "PRODUCTO",
+    "gallery": "GALERÍA"
+  },
+
+  "tableHeaders": {
+    "type": "Tipo",
+    "moreDetails": "Más Detalles"
+  },
+
+  "mainImageAlt": "Carcasa para cámara de visión artificial sin chaqueta de refrigeración",
+  "galleryAriaLabel": "Galería",
+  "moreInfoAlt": "Más información",
+  "accessoryAriaLabel": "Ver detalles de {{name}}",
+  "backToProducts": "Volver a productos",
+
+  "comingSoonTitle": "Próximamente",
+  "comingSoonText": "Manténgase atento."
+},
+"AdjustableExtensionTube": {
+  "title": "Tubo de Extensión de Longitud Ajustable",
+  "description": "Los tubos de extensión C-Mount son componentes de precisión diseñados para introducir un espaciado ajustable en un sistema óptico mientras evitan la infiltración de luz externa y la contaminación por polvo o residuos. A diferencia de los tubos de extensión de longitud fija, estos tubos cuentan con un diseño de longitud variable, lo que permite a los usuarios ajustar con precisión la distancia de extensión según sea necesario para un rendimiento óptimo del sistema. Fabricados con roscado C-Mount estándar de la industria, estos tubos de extensión garantizan una compatibilidad perfecta con una amplia gama de conjuntos ópticos, sistemas de imagen y aplicaciones de visión artificial. Construidos en aluminio anodizado negro, ofrecen alta durabilidad, alta resistencia a la corrosión y una supresión efectiva de reflejos internos. El interior cuenta con una superficie roscada para reducir aún más la luz parásita, mejorando el contraste de imagen y la eficiencia general del sistema. La naturaleza ajustable de estos tubos elimina la necesidad de múltiples tubos de longitud fija, ofreciendo mayor flexibilidad para lograr un espaciado óptico preciso. Su diseño considera la porción roscada macho, garantizando un acoplamiento mecánico seguro y estable mientras mantiene la alineación óptica adecuada. Ya sea utilizados en microscopía, visión artificial o configuraciones ópticas personalizadas, estos tubos de extensión ofrecen una solución versátil para ajustar con precisión los parámetros de imagen.",
+
+  "features": {
+    "adjustableExtension": "Para añadir una extensión de tubo ajustable a sistemas ópticos",
+    "maleFemaleThreads": "Cuenta con roscas macho/hembra en extremos opuestos",
+    "blackAnodized": "Construcción de aluminio anodizado negro",
+    "industrialUse": "Para uso en entornos industriales",
+    "easyInstall": "Instalación y mantenimiento sencillos",
+    "variousLengths": "Disponible en varias longitudes para requisitos de extensión personalizados",
+    "strayLightSuppression": "Suprime la luz parásita con superficie interna roscada",
+    "cMountCompatible": "Compatible con componentes estándar C-Mount",
+    "lightweightRigid": "Diseño ligero y rígido para estabilidad óptica",
+    "secureIntegration": "Integración mecánica segura y estable",
+    "corrosionResistant": "Acabado resistente a la corrosión para una durabilidad prolongada"
+  },
+
+  "technical": {
+    "clearAperture": "Apertura clara CA (mm)",
+    "threadType": "Tipo de rosca",
+    "type": "Tipo",
+    "function": "Función"
+  },
+
+  "tableHeaders": {
+    "model": "Modelo",
+    "weight": "Peso (kg)",
+    "outerDiameter": "Diámetro exterior (mm)",
+    "lMax": "L Máx (mm)",
+    "lMin": "L Mín (mm)",
+    "buyNow": "Comprar ahora"
+  },
+
+  "sectionTitles": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "technicalInfo": "INFORMACIÓN TÉCNICA",
+    "product": "PRODUCTO",
+    "dimension": "Visión general dimensional"
+  },
+
+  "nav": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "technicalInfo": "INFORMACIÓN TÉCNICA",
+    "product": "PRODUCTO"
+  },
+
+  "dimensionAltLH": "Dimensión lado izquierdo",
+  "dimensionAltRH": "Dimensión lado derecho",
+  "mainImageAlt": "Tubo de extensión de longitud ajustable",
+  "enquireText": "¿Necesita un tubo personalizado?",
+  "enquireButton": "Consultar ahora",
+  "buyAlt": "Comprar",
+  "buyAriaLabel": "Comprar {{model}}",
+  "backToProducts": "Volver a productos",
+
+  "comingSoonTitle": "Próximamente",
+  "comingSoonText": "Manténgase atento."
+},
+"FixedExtensionTube": {
+  "title": "Tubo de Extensión de Longitud Fija",
+  "description": "Los tubos de extensión C-Mount son componentes de precisión diseñados para introducir un espaciado adicional en un sistema óptico mientras evitan simultáneamente la infiltración de luz externa y la contaminación por polvo o residuos. Estos tubos se fabrican con roscado C-Mount estándar de la industria, garantizando una compatibilidad perfecta con una amplia gama de conjuntos ópticos, sistemas de imagen y aplicaciones de visión artificial. Construidos en aluminio anodizado negro, ofrecen alta durabilidad y resistencia a la corrosión mientras minimizan eficazmente los reflejos internos. La superficie interior de cada tubo cuenta con un diseño roscado, lo que contribuye aún más a la supresión de luz parásita, mejorando el contraste de imagen y el rendimiento general del sistema. Los tubos de extensión están disponibles en varias longitudes predefinidas, que pueden combinarse de forma modular para lograr la distancia de extensión precisa requerida para una configuración óptica dada. Es importante destacar que la longitud física del tubo supera su longitud de extensión efectiva debido a la inclusión de la porción roscada macho, que contribuye al compromiso mecánico global dentro del sistema. Este diseño garantiza una integración segura y estable mientras mantiene una alineación óptica óptima.",
+
+  "features": {
+    "fixedExtension": "Para añadir una extensión de tubo fija a sistemas ópticos",
+    "maleFemaleThreads": "Cuenta con roscas macho/hembra en extremos opuestos",
+    "blackAnodized": "Construcción de aluminio anodizado negro",
+    "industrialUse": "Para uso en entornos industriales",
+    "easyInstall": "Instalación y mantenimiento sencillos",
+    "variousLengths": "Disponible en varias longitudes para requisitos de extensión personalizados",
+    "strayLightSuppression": "Suprime la luz parásita con superficie interna roscada",
+    "cMountCompatible": "Compatible con componentes estándar C-Mount",
+    "lightweightRigid": "Diseño ligero y rígido para estabilidad óptica",
+    "secureIntegration": "Integración mecánica segura y estable",
+    "corrosionResistant": "Acabado resistente a la corrosión para una durabilidad prolongada"
+  },
+
+  "technical": {
+    "clearAperture": "Apertura clara CA (mm)",
+    "threadType": "Tipo de rosca",
+    "type": "Tipo",
+    "function": "Función"
+  },
+
+  "tableHeaders": {
+    "model": "Modelo",
+    "weight": "Peso (kg)",
+    "outerDiameter": "Diámetro exterior (mm)",
+    "length": "Longitud (mm)",
+    "buyNow": "Comprar ahora"
+  },
+
+  "sectionTitles": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "technicalInfo": "INFORMACIÓN TÉCNICA",
+    "product": "PRODUCTO",
+    "dimension": "Visión general dimensional"
+  },
+
+  "nav": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "technicalInfo": "INFORMACIÓN TÉCNICA",
+    "product": "PRODUCTO"
+  },
+
+  "dimensionAlt": "Dimensión del tubo de extensión fijo",
+  "mainImageAlt": "Tubo de extensión de longitud fija",
+  "enquireText": "¿Necesita un tubo personalizado?",
+  "enquireButton": "Consultar ahora",
+  "buyAlt": "Comprar",
+  "buyAriaLabel": "Comprar {{model}}",
+  "backToProducts": "Volver a productos",
+
+  "comingSoonTitle": "Próximamente",
+  "comingSoonText": "Manténgase atento."
+},
+"CameraEnclosureProductDetail": {
+  "models": {
+    "MVCE29X29V2_68": "MVCE29X29V2.68",
+    "MVCE40X30V1_80": "MVCE40X30V1.80"
+  },
+  "mountingInfo": {
+    "68": "El alojamiento de cámara está diseñado específicamente para cámaras de visión artificial de 29x29mm de marcas como Basler, Baumer, Hikrobot, Flir, Lucid Vision y Allied Vision, ofreciendo una protección robusta contra agua, suciedad y polvo en entornos exigentes. Su compatibilidad perfecta con el alojamiento de objetivo MVCELH68 garantiza una integración rápida y eficiente en espacio.",
+    "80": "El alojamiento de cámara está diseñado específicamente para cámaras de visión artificial de 40x30mm de marcas como Basler, Baumer, Hikrobot, Flir, Lucid Vision y Allied Vision, ofreciendo una protección robusta contra agua, suciedad y polvo en entornos exigentes. Su compatibilidad perfecta con el alojamiento de objetivo MVCELH80 garantiza una integración rápida y eficiente en espacio."
+  },
+  "lensInfo": {
+    "68": "Diseñado específicamente para el alojamiento de cámara IP68 CVIT MVCE29X29V2.68 y cámaras de escaneo de área, el alojamiento de objetivo de 68 mm ofrece una protección fiable contra agua, suciedad y polvo, asegurando un rendimiento óptimo en entornos exigentes.",
+    "80": "Diseñado específicamente para el alojamiento de cámara IP68 CVIT MVCE40X30V1.80 y cámaras de escaneo de área, el alojamiento de objetivo de 80 mm ofrece una protección fiable contra agua, suciedad y polvo, asegurando un rendimiento óptimo en entornos exigentes."
+  },
+  "lensCompatibility": {
+    "68": "Compatibilidad perfecta 68: Diseñado con precisión para acomodar todos los objetivos 2D y el alojamiento MVCE29X29V2.68 de manera fluida.",
+    "80": "Compatibilidad perfecta 80: Diseñado con precisión para acomodar todos los objetivos 2D y el alojamiento MVCE40X30V1.80 de manera fluida."
+  },
+  "lensSolution": "Este alojamiento de objetivo es la solución definitiva para proteger cámaras y objetivos en entornos duros e industriales.",
+  "lensHousingTitle": {
+    "MVCE29X29V2_68": "ALOJAMIENTO DE OBJETIVO - MVCELH68",
+    "MVCE40X30V1_80": "ALOJAMIENTO DE OBJETIVO - MVCELH80"
+  },
+  "specs": {
+    "modelNumber": "Número de modelo",
+    "type": "Tipo",
+    "housingSize": "Tamaño del alojamiento (L x An x Al)",
+    "weight": "Peso",
+    "operatingTemp": "Temperatura de operación",
+    "protectionClass": "Clase de protección",
+    "housingType": "Tipo de alojamiento",
+    "housingMaterial": "Material del alojamiento",
+    "sealMaterial": "Material de sellado",
+    "maxLensOD": "Diámetro exterior máx. (objetivo)",
+    "windowMaterial": "Material de la ventana"
+  },
+  "specsValues": {
+    "housingAccessory": "Accesorio de alojamiento",
+    "machineVisionHousing": "Alojamiento de cámara de visión artificial",
+    "lensHousing": "Alojamiento de objetivo",
+    "anodizedAluminum": "Aluminio anodizado",
+    "glass": "Vidrio"
+  },
+  "tbd": "Por definir",
+  "sectionTitles": {
+    "cameraHousing": "ALOJAMIENTO DE CÁMARA",
+    "technicalSpecs": "ESPECIFICACIONES TÉCNICAS",
+    "products": "PRODUCTOS"
+  },
+  "nav": {
+    "cameraHousing": "ALOJAMIENTO DE CÁMARA",
+    "lensHousing": "ALOJAMIENTO DE OBJETIVO"
+  },
+  "tableHeaders": {
+    "cameraHousingModel": "Nº de modelo del alojamiento de cámara",
+    "lensHousingModel": "Nº de modelo del alojamiento de objetivo",
+    "housingSize": "Tamaño del alojamiento (OD × L)",
+    "weight": "Peso",
+    "maxLensOD": "OD máx. permitido del objetivo",
+    "maxLensLength": "Longitud máx. permitida del objetivo",
+    "buyNow": "Comprar ahora"
+  },
+  "mainImageAlt": "Alojamiento de cámara - {{model}}",
+  "dimensionImageAlt": "Diagrama de dimensiones - {{model}}",
+  "mountingImageAlt": "Alojamiento de cámara con montaje - {{model}}",
+  "lensHousingImageAlt": "Alojamiento de objetivo",
+  "enquireText": "¿Necesita un producto personalizado?",
+  "enquireButton": "Consultar ahora",
+  "buyAlt": "Comprar",
+  "buyAriaLabel": "Comprar {{model}}",
+  "backToProducts": "Volver a productos",
+  "comingSoon": "Especificaciones de la serie MVCELH80 próximamente"
+},
+"BordCameraHousing": {
+  "title": "Carcasa para Cámara de Placa",
+  "description": "Somos proveedores especializados de carcasas personalizadas para cámaras de visión artificial de placa, diseñadas para cumplir con los requisitos específicos de cada aplicación. Nuestras carcasas pueden adaptarse en tamaño, orientación de montaje, material, protección ambiental y necesidades de integración para garantizar un rendimiento óptimo y durabilidad en entornos industriales. Según la aplicación y las condiciones del sitio del cliente, diseñamos, fabricamos y suministramos carcasas que ofrecen protección confiable, instalación sencilla y compatibilidad perfecta con sistemas de visión artificial.",
+
+  "mainImageAlt": "Carcasa para cámara de placa",
+  "enquireText": "¿Necesita un producto personalizado?",
+  "enquireButton": "Consultar ahora",
+  "backToProducts": "Volver a productos"
+},
+"Accesories": {
+  "title": "Soporte de Montaje MVCE29X29V2.68MB",
+  "description": "Un soporte de montaje robusto y versátil diseñado para la instalación fácil y segura de carcasas de cámara. El soporte permite un posicionamiento de ángulo ajustable (inclinación y guiñada), garantizando una alineación óptima para su configuración de cámara. Compatible con MVCE29X29V2.68.LH1. Perfecto para aplicaciones que requieren un posicionamiento preciso de la cámara en entornos industriales, de vigilancia o exteriores.",
+
+  "features": {
+    "customFit": "Ajuste personalizado",
+    "adjustableAngle": "Ángulo ajustable",
+    "quickIntegration": "Integración rápida",
+    "durableBuild": "Construcción duradera"
+  },
+
+  "sectionTitles": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "technicalInfo": "INFORMACIÓN TÉCNICA",
+    "gallery": "GALERÍA"
+  },
+
+  "nav": {
+    "keyFeatures": "CARACTERÍSTICAS PRINCIPALES",
+    "technicalInfo": "INFORMACIÓN TÉCNICA",
+    "gallery": "GALERÍA"
+  },
+
+  "tableHeaders": {
+    "modelNumber": "Número de modelo",
+    "type": "Tipo",
+    "housingAccessoriesType": "Tipo de accesorios de carcasa",
+    "bracketMaterial": "Material del soporte",
+    "manufacturer": "Fabricante",
+    "compatibleWith": "Compatible con"
+  },
+
+  "tableValues": {
+    "housingAccessory": "Accesorio de carcasa",
+    "bracket": "Soporte"
+  },
+
+  "mainImageAlt": "Soporte de montaje - Vista del producto",
+  "dimensionImageAlt": "Soporte de montaje - Diagrama de dimensiones",
+  "ariaLabels": {
+    "gallery": "Galería"
+  },
+
+  "backToProducts": "Volver a productos"
+},
+"Buy": {
+  "title": "FORMULARIO DE CONSULTA DE PRODUCTO",
+  "sections": {
+    "productInfo": "Información del Producto",
+    "personalDetails": "Datos Personales",
+    "companyBilling": "Datos de la Empresa y Facturación"
+  },
+  "labels": {
+    "modelNumber": "Número de Modelo",
+    "color": "Color",
+    "quantity": "Cantidad Requerida",
+    "contactName": "Nombre de la Persona de Contacto",
+    "phoneNumber": "Número de Contacto",
+    "emailAddress": "Dirección de Correo Electrónico",
+    "companyName": "Nombre de la Empresa",
+    "gstNumber": "Número GST",
+    "billingAddress": "Dirección de Facturación",
+    "shippingAddress": "Dirección de Envío",
+    "additionalNotes": "Notas Adicionales (Opcional)"
+  },
+  "placeholders": {
+    "model": "Rellenado automáticamente desde el producto",
+    "selectColor": "Seleccionar Color",
+    "quantity": "ej. 10",
+    "phone": "9876543210",
+    "email": "ejemplo@email.com",
+    "gst": "27ABCDE1234F1Z5",
+    "notes": "Cualquier requisito especial, instrucciones de entrega, etc."
+  },
+  "options": {
+    "color": {
+      "red": "Rojo",
+      "white": "Blanco",
+      "green": "Verde",
+      "blue": "Azul",
+      "rgb": "RGB"
+    }
+  },
+  "errors": {
+    "gstRequired": "El número GST es obligatorio.",
+    "gstLength": "El GSTIN debe tener exactamente 15 caracteres.",
+    "gstFormat": "Formato de GSTIN inválido. Ejemplo: 27ABCDE1234F1Z5",
+    "gstChecksum": "Checksum de GSTIN inválido.",
+    "phoneRequired": "El número de teléfono es obligatorio.",
+    "phoneLength": "El número de teléfono debe tener exactamente 10 dígitos.",
+    "phoneInvalid": "Número de teléfono inválido. Debe comenzar con 6, 7, 8 o 9.",
+    "emailRequired": "La dirección de correo es obligatoria.",
+    "emailInvalid": "Formato de correo electrónico inválido."
+  },
+  "buttons": {
+    "submitting": "Enviando...",
+    "fixErrors": "Por favor corrija los errores",
+    "submit": "Enviar Consulta"
+  },
+  "toast": {
+    "success": "¡Consulta enviada con éxito!",
+    "error": "Error al enviar la consulta. Inténtelo de nuevo.",
+    "networkError": "Error de red. Verifique su conexión e inténtelo de nuevo."
+  },
+  "aria": {
+    "close": "Cerrar"
+  }
+},
+"Enquire": {
+  "title": "FORMULARIO DE CONSULTA DE PRODUCTO PERSONALIZADO",
+  "sections": {
+    "productInfo": "Información del Producto",
+    "personalDetails": "Datos Personales",
+    "addressDetails": "Datos de Dirección"
+  },
+  "labels": {
+    "customProductName": "Nombre del Producto Personalizado",
+    "color": "Color",
+    "quantity": "Cantidad Requerida",
+    "contactName": "Nombre de la Persona de Contacto",
+    "phoneNumber": "Número de Contacto",
+    "emailAddress": "Dirección de Correo Electrónico",
+    "companyName": "Nombre de la Empresa",
+    "gstNumber": "Número GST",
+    "billingAddress": "Dirección de Facturación",
+    "shippingAddress": "Dirección de Envío",
+    "additionalNotes": "Notas Adicionales (Opcional)"
+  },
+  "placeholders": {
+    "customProduct": "Ingrese el nombre del producto personalizado",
+    "selectColor": "Seleccionar un color",
+    "quantity": "Ingrese cantidad",
+    "phone": "9876543210",
+    "email": "ejemplo@email.com",
+    "gst": "ej. 27ABCDE1234F1Z5",
+    "notes": "Cualquier requisito especial, instrucciones de entrega, etc."
+  },
+  "options": {
+    "color": {
+      "red": "Rojo",
+      "white": "Blanco",
+      "green": "Verde",
+      "blue": "Azul",
+      "rgb": "RGB"
+    }
+  },
+  "errors": {
+    "gstLength": "El GSTIN debe tener exactamente 15 caracteres.",
+    "gstFormat": "Formato de GSTIN inválido. Ejemplo: 27ABCDE1234F1Z5",
+    "gstChecksum": "Checksum de GSTIN inválido.",
+    "phoneRequired": "El número de teléfono es obligatorio.",
+    "phoneLength": "El número de teléfono debe tener exactamente 10 dígitos.",
+    "phoneInvalid": "Número de teléfono inválido. Debe comenzar con 6, 7, 8 o 9.",
+    "emailRequired": "La dirección de correo es obligatoria.",
+    "emailInvalid": "Formato de correo electrónico inválido."
+  },
+  "buttons": {
+    "submitting": "Enviando...",
+   "fixErrors": "Por favor, revise los campos resaltados antes de continuar",
+    "submit": "Enviar Consulta"
+  },
+  "toast": {
+    "success": "¡Consulta enviada con éxito!",
+    "error": "Error al enviar la consulta. Inténtelo de nuevo.",
+    "networkError": "Error de red. Verifique su conexión e inténtelo de nuevo."
+  },
+  "aria": {
+    "close": "Cerrar"
+  }
+},
+  "ComingSoon": {
+    "title": "Próximamente",
+    "message": "Este producto está actualmente en desarrollo. Vuelva más tarde para más información.",
+    "backButton": "Volver a productos"
+  },
+  "Products": {
+    "bar-light": { "title": "Luz de Barra", "description": { "intro": "Las luces de barra para visión artificial son módulos LED alargados de alta intensidad que proporcionan iluminación direccional y uniforme en áreas grandes de inspección. Ideales para piezas grandes o inspección en movimiento rápido en cintas transportadoras. Funcionan en campo claro o campo oscuro según el ángulo de montaje." } },
+    "ring-light": { "title": "Luz Anular", "description": { "intro": "Las luces anulares rodean el objetivo de la cámara ofreciendo iluminación uniforme y sin sombras a lo largo del eje óptico. Excelentes para reducir reflejos en superficies brillantes o irregulares." } },
+    "dome-light": { "title": "Luz de Cúpula", "description": { "intro": "Las luces de cúpula generan iluminación extremadamente difusa y sin sombras desde todas las direcciones. Ideales para superficies curvas, brillantes, texturizadas o altamente reflectantes." } },
+    "flat-diffused-light-with-center-hole": { "title": "Luz Difusa Plana con Agujero Central", "description": { "intro": "Iluminación coaxial difusa con orificio central para cámara. Reduce drásticamente los reflejos especulares en superficies planas muy reflectantes." } },
+    "flat-diffused-light": { "title": "Luz Difusa Plana", "description": { "intro": "Grandes áreas de iluminación brillante difusa y sin sombras. Muy efectiva para reducir deslumbramiento en piezas brillantes o curvas." } },
+    "indirect-flat-light": { "title": "Luz Plana Indirecta", "description": { "intro": "Iluminación muy suave y uniforme mediante reflexión interna. Excelente alternativa compacta a las luces de cúpula con mínimo deslumbramiento." } },
+    "back-light": { "title": "Luz de Fondo", "description": { "intro": "Crea siluetas de alto contraste iluminando desde detrás del objeto. Ideal para detección de bordes, medidas dimensionales y verificación de contornos." } },
+    "spot-light": { "title": "Luz Puntual", "description": { "intro": "Iluminación intensa y concentrada en áreas pequeñas. Útil para defectos puntuales, imágenes de alta velocidad y distancias mayores." } },
+    "tunnel-light": { "title": "Luz de Túnel", "description": { "intro": "Iluminación 360° uniforme y sin sombras dentro de túneles de inspección en líneas de producción continua (botellas, tubos, cables, perfiles…)." } }
+  },
+  "Careers": {
+  "PageTitle": "Carreras en CVIT | Únete a nuestro equipo",
+  "JoinOurTeam": "Únete al equipo CVIT",
+  "Description": "Forma parte de la innovación en visión artificial e Industria 4.0. Trabaja con tecnología de IA de vanguardia que está transformando industrias en todo el mundo.",
+  "CurrentOpenings": "Vacantes actuales",
+  "Overview": "Resumen",
+  "Responsibilities": "Responsabilidades",
+  "PreferredQualifications": "Requisitos deseados",
+  "TechnicalSkills": "Habilidades técnicas",
+  "ApplyNow": "Aplicar ahora",
+  "ScanQR": "Escanea el código QR para aplicar",
+  "NoSuitablePosition": "¿No encuentras tu puesto ideal?",
+  "SendResume": "¡Envíanos tu CV igualmente!",
+  "EmailHR": "Envía tu CV a",
+  "HREmail1": "nri@cvit.in",
+  "HREmail2": "kunal.wankhede@cvit.in",
+
+  "Hero": {
+    "Eyebrow": "¡Estamos contratando!",
+    "Headline": "Únete a CVIT<br /><span class=\"gradient-headline\">Construye el futuro de la Visión IA</span>",
+    "Subhead": "Potenciando la inteligencia. Entregando soluciones.",
+    "CTA": "Ver vacantes",
+    "Marquee": "CONTRATANDO → Pasante Visión Artificial • Técnico de Servicio • Ingenieros IA • Técnico de Campo"
+  },
+
+  "OpenPositions": {
+    "Title": "Vacantes abiertas",
+    "Description": "Forma parte de algo más grande. Crea IA industrial que realmente importa.",
+    "ViewDetails": "Ver detalles",
+    "CloseDetails": "Cerrar",
+    "Responsibilities": "Responsabilidades",
+    "Requirements": "Requisitos y habilidades",
+    "TechnicalSkills": "Habilidades técnicas",
+    "ApplyText": "Envía tu CV a<br /><a href=\"mailto:nri@cvit.in\">nri@cvit.in</a> y <a href=\"mailto:kunal.wankhede@cvit.in\">kunal.wankhede@cvit.in</a>",
+    "NoRoleTitle": "¿No ves tu puesto ideal?",
+    "NoRoleText": "Siempre estamos buscando talento apasionado en IA, sistemas de visión y automatización industrial.<br />Envíanos tu CV cuando quieras → <a href=\"mailto:nri@cvit.in\" class=\"cta-bold\">nri@cvit.in</a> o <a href=\"mailto:kunal.wankhede@cvit.in\" class=\"cta-bold\">kunal.wankhede@cvit.in</a>",
+    "BackToHome": "Volver al inicio"
+  },
+
+
+  "Jobs": {
+    "SoftwareEngineer": {
+      "Title": "Ingeniero de Software",
+      "Subtitle": "Pasante en Visión por Computadora",
+      "Type": "Pasantía • Tiempo completo (Presencial)",
+      "Overview": "Únete a nuestro equipo de I+D para diseñando, desarrollando y manteniendo aplicaciones de visión por computadora de última generación. Trabaja en proyectos industriales reales usando OpenCV, YOLO, TensorFlow y más.",
+      "Responsibilities": [
+        "Diseñar, desarrollar y mantener aplicaciones de visión por computadora",
+        "Solucionar y resolver defectos de software",
+        "Escribir código limpio, eficiente y bien documentado",
+        "Utilizar OpenCV para tareas de procesamiento de imágenes",
+        "Emplear NumPy para cálculos numéricos",
+        "Desarrollar y optimizar algoritmos de visión por computadora",
+        "Aplicar técnicas de machine learning para mejorar el rendimiento del modelo",
+        "Mantenerse actualizado con los últimos avances en visión por computadora",
+        "Colaborar estrechamente con el equipo para garantizar la entrega exitosa de proyectos"
+      ],
+      "Qualifications": [
+        "Estudiante o graduado en Ingeniería Informática, Eléctrica o campo relacionado",
+        "Experiencia con sistemas de control de versiones (Git)",
+        "Conocimiento de bibliotecas y frameworks de Python para machine learning (TensorFlow, Keras, PyTorch)"
+      ],
+      "TechnicalSkills": [
+        "Python", "C++", "Java", "OpenCV", "scikit-image", "YOLO",
+        "TensorFlow", "PyTorch", "Keras", "NumPy", "Pandas",
+        "CNNs", "Detección de objetos", "Segmentación de imágenes", "Git", "Docker", "Jupyter"
+      ]
+    },
+    "ServiceEngineer": {
+      "Title": "Técnico de Servicio",
+      "Subtitle": "Técnico de soporte de proyectos en sitio",
+      "Type": "Tiempo completo • 6 días/semana • 9:30 - 18:30",
+      "Overview": "Únete a nuestro equipo dinámico que brinda soporte técnico, instalación y mantenimiento de sistemas de visión industrial. Asegura un rendimiento óptimo y satisfacción del cliente mediante experiencia práctica.",
+      "Responsibilities": [
+        "Soporte técnico en sitio",
+        "Instalación de sistemas de inspección visual",
+        "Recolección y análisis de datos",
+        "Cableado eléctrico e instalación de paneles",
+        "Documentación e informes",
+        "Interacción y soporte al cliente"
+      ],
+      "Qualifications": [
+        "Diplomado o ingeniero en Ingeniería Eléctrica/Electrónica o campo técnico relacionado",
+        "Conocimientos básicos de informática",
+        "Experiencia con sistemas de inspección visual (preferente)",
+        "Cableado eléctrico y construcción de paneles",
+        "Diagnóstico de fallas en sistemas",
+        "Montaje y cableado de paneles PLC"
+      ]
+    }
+  }
+},
+  "CaseStudies": {
+    "ViewDetails": "Ver Detalles",
+    "Content": "Contenido del Estudio de Caso",
+    "Description": "Descripción del Estudio de Caso",
+    "NextCaseStudy": "Siguiente Estudio de Caso",
+    "PreviousCaseStudy": "Estudio de Caso Anterior",
+    "ProjectOverview": "Resumen del Proyecto",
+    "SystemRequirements": "Requisitos del Sistema",
+    "KeyChallenges": "Desafíos Clave",
+    "Solution": "Solución de IA de CVIT",
+    "NoSolutionAvailable": "No Hay Detalles de Solución Disponibles",
+    "CaseStudy": "Estudio de Caso",
+    "VisualOverview": "Resumen Visual",
+    "Navigation": "Navegación",
+    "1": {
+      "title": "Inspección de Adaptador de Vial",
+      "studyHeader": "Estudio de Caso 1 - Sistema de Visión por Computadora Basado en IA para Inspección de Adaptador de Vial",
+      "description": "Resumen del Proyecto:\nSe requirió un sistema de inspección visual basado en IA para adaptadores de viales durante la producción para garantizar el control de calidad y la detección de defectos.\n\nRequisitos del Sistema:\nDetectar y clasificar defectos comunes como dedos dañados, ranuras impropias y espigas rotas o faltantes.\nOperar a una velocidad de 300 PPM (piezas por minuto).\nProporcionar retroalimentación en tiempo real a la línea de producción con alta precisión.\n\nDesafíos Clave:\nVariabilidad en los tipos de defectos.\nRequisitos de inspección de alta velocidad (300 PPM).\nDefinir y establecer límites de tolerancia precisos.\n\nSolución de IA de CVIT:\nDesarrollamos un modelo de visión basado en aprendizaje profundo entrenado con miles de imágenes de adaptadores de viales aceptables y defectuosos.\nDiseñamos cálculos de alto nivel para detectar defectos tan pequeños como 200 micrones.\nIntegramos una cámara de alta velocidad y una unidad de procesamiento capaces de manejar la velocidad de inspección de 300 PPM.\nImplementamos preprocesamiento basado en bordes para garantizar una detección robusta bajo condiciones de iluminación variables.\nLogramos más del 99.99% de precisión a velocidad de producción con alertas en tiempo real para unidades defectuosas."
+    },
+    "2": {
+      "title": "OCR-OCV de Bandeja de Adaptador de Vial",
+      "studyHeader": "Estudio de Caso 2 - Sistema OCR-OCV Basado en IA para Bandejas de Adaptador de Vial",
+      "description": "Resumen del Proyecto:\nSe necesitó un sistema OCR-OCV impulsado por IA para bandejas de adaptadores de viales para garantizar la precisión y el cumplimiento de la información impresa.\n\nRequisitos del Sistema:\nVerificar texto impreso como códigos de lote, fechas de vencimiento y otros detalles críticos.\nAsegurar que el texto sea legible, correctamente colocado y coincida con los valores esperados.\n\nDesafíos Clave:\nVariabilidad en la calidad de impresión – variaciones en la propagación de tinta, desvanecimiento o manchado.\nVariabilidad de fuente y tamaño – garantizando precisión en múltiples formatos de texto.\nVerificación de alta velocidad – manteniendo la precisión mientras coincide con la velocidad de la línea de producción.\nProblemas de alineación y colocación – el texto impreso puede estar ligeramente desalineado o desplazado en la bandeja.\n\nSolución de IA de CVIT:\nImplementamos un motor OCR flexible basado en aprendizaje profundo capaz de reconocer múltiples fuentes, tamaños y orientaciones.\nAplicamos aumento de datos sintéticos para manejar condiciones de impresión deficientes como desvanecimiento, manchado o bajo contraste.\nHabilitamos comparación en tiempo real con plantillas esperadas vía OCV para garantizar la integridad de los datos.\nIntegramos un sistema de alerta para impresiones ilegibles o no coincidentes.\nLogramos más del 99.99% de precisión OCR en entornos de producción del mundo real a velocidad de línea."
+    },
+    "3": {
+      "title": "Medición de Espacio",
+      "studyHeader": "Estudio de Caso 3 - Sistema de Visión por Computadora Basado en IA para Medición de Espacio Entre Vial y Bandeja de Adaptador de Vial",
+      "description": "Resumen del Proyecto:\nSe desarrolló un sistema de visión basado en IA para automatizar la medición precisa de espacios entre viales y adaptadores en bandejas.\n\nRequisitos del Sistema:\nAsegurar que las tolerancias de espacio se mantengan consistentemente en todas las unidades.\nProporcionar retroalimentación precisa en tiempo real para apoyar el control de calidad de producción de alta velocidad.\n\nDesafíos Clave:\nPartes transparentes – dificultad para detectar bordes de viales y adaptadores debido a la transparencia.\nCondiciones de iluminación – variaciones en la iluminación afectando la captura consistente de imágenes.\nPrecisión de medición de espacio – asegurando precisión a nivel de micrón para mantener tolerancias estrictas.\n\nSolución de IA de CVIT:\nDiseñamos un modelo de visión por computadora personalizado usando detección de bordes e interpretación de red neuronal.\nUsamos cámaras de escaneo de línea de alta resolución para lograr precisión a nivel de micrón.\nAplicamos IA para corregir la distorsión de perspectiva usando estimación de pose 3D.\nIntegramos retroalimentación de medición en PLC para rechazo automático de ensamblajes defectuosos.\nEl sistema logró repetibilidad de medición de ±0.05 mm."
+    },
+    "4": {
+      "title": "Detección de Número Estampado",
+      "studyHeader": "Estudio de Caso 4 - Sistema de Visión por Computadora Basado en IA para Detección de Número Estampado",
+      "description": "Resumen del Proyecto:\nSe requirió un sistema de visión por computadora basado en IA para garantizar la detección confiable de números estampados en culatas de motor para calidad y trazabilidad.\n\nRequisitos del Sistema:\nDetectar y verificar números estampados a pesar de errores en operaciones de la máquina de estampado.\nManejar variaciones en formas de caracteres, profundidades y alineaciones causadas por inconsistencias mecánicas.\nProporcionar retroalimentación en tiempo real para mantener la calidad de producción y trazabilidad.\n\nDesafíos Clave:\nVariaciones de fuente – diferentes estilos de caracteres, tamaños y profundidades de estampado haciendo la detección consistente difícil.\nIntegración con servidor existente – asegurando conectividad sin problemas e intercambio de datos con la infraestructura actual de TI/producción del cliente.\nFalta de datos brutos – disponibilidad limitada de muestras etiquetadas para construir y entrenar un modelo robusto de aprendizaje profundo.\n\nSolución de IA de CVIT:\nDesarrollamos integración sin problemas usando bibliotecas Python, permitiendo conectividad con la infraestructura de servidor existente del cliente.\nImplementamos software OCR de alto nivel diseñado para aplicaciones industriales, capaz de manejar variaciones en fuentes y profundidades estampadas.\nOptimizamos el modelo para lograr 100% de precisión en todos los caracteres alfanuméricos usando solo el 25% de los datos principales para entrenamiento."
+    },
+    "5": {
+      "title": "Trazabilidad y Seguimiento de Neumáticos",
+      "studyHeader": "Estudio de Caso 5 - Solución de Trazabilidad y Seguimiento de Neumáticos Basada en IA",
+      "description": "Resumen del Proyecto:\nSe desarrolló un sistema de trazabilidad y seguimiento de neumáticos basado en IA para garantizar el cumplimiento en ensamblaje y etiquetado.\n\nRequisitos del Sistema:\nProporcionar 100% de trazabilidad para verificar que cada neumático fue ensamblado según la configuración del vehículo.\nAsegurar etiquetado basado en código de barras de neumáticos posterior a inspección exitosa para identificación y seguimiento.\nMantener registro de datos en tiempo real de resultados de inspección para auditoría e informes.\nSoportar integración con los sistemas existentes de producción y TI del cliente.\nEntregar alta precisión y velocidad para coincidir con el rendimiento de la línea de producción.\n\nDesafíos Clave:\nDetectar caracteres negros en neumáticos negros – asegurando reconocimiento confiable de caracteres y códigos de barras a pesar del bajo contraste entre impresión y superficie.\nMantener el tiempo de producción – logrando inspección y trazabilidad precisas sin ralentizar el rendimiento de la línea de ensamblaje.\n\nSolución de IA de CVIT:\nImplementamos un sistema híbrido: reconocimiento de partes basado en IA + detección de código de barras/QR.\nIntegrados con sistema MES para registrar marcas de tiempo, ubicación y estado para cada componente.\nUsamos cámaras de múltiples ángulos para garantizar visibilidad de 360°.\nLogramos 99% de cobertura de seguimiento con alertas automáticas para etiquetas faltantes o ilegibles."
+    },
+    "6": {
+      "title": "Detección de Presencia de Sellador de Puerta",
+      "studyHeader": "Estudio de Caso 6 - Sistema de Visión por Computadora Basado en IA para Detección de Presencia de Sellador de Puerta",
+      "description": "Resumen del Proyecto:\nSe requirió un sistema de visión por computadora basado en IA para garantizar la detección precisa de presencia de sellador de puerta durante la producción.\n\nRequisitos del Sistema:\nDetectar la presencia o ausencia de tiras de sellador con alta precisión.\nManejar variaciones de partes debido a diferentes modelos y diseños de puertas.\nVerificar el número correcto de tiras de sellador para garantizar el cumplimiento de estándares de ensamblaje.\nProporcionar retroalimentación de inspección en tiempo real para apoyar el control de calidad de producción.\n\nDesafíos Clave:\nDetección de bajo contraste – el color del sellador a menudo similar al marco de la puerta, haciendo la diferenciación difícil.\nVariabilidad de aplicación – el sellador aplicado por robot puede resultar en áreas faltantes o mal colocadas.\nInspección en tiempo real – la inspección debe completarse inmediatamente antes de la siguiente etapa de producción para evitar retrabajo o defectos pasando río abajo.\n\nSolución de IA de CVIT:\nEl sistema primero detecta el tipo de parte de puerta para determinar la cantidad requerida de sellador y posiciones de tiras.\nImplementamos algoritmos de visión de aprendizaje profundo capaces de distinguir sellador incluso cuando el color coincide estrechamente con el marco de la puerta.\nIntegramos inspección basada en perfil y bordes para identificar áreas de sellador faltantes o mal colocadas.\nDiseñado para inspección en tiempo real, asegurando que los defectos sean marcados antes de la siguiente etapa de producción.\nIntegrados con sensor neumático para asegurar partes hasta verificar cumplimiento, evitando que partes defectuosas avancen.\nLogramos alta precisión a velocidad de línea, reduciendo retrabajo y asegurando cumplimiento de ensamblaje."
+    },
+    "7": {
+      "title": "Detección de Apertura/Cierre de Cristal de Ventana",
+      "studyHeader": "Estudio de Caso 7 - Sistema de Visión por Computadora Basado en IA para Detección de Apertura/Cierre de Cristal de Ventana",
+      "description": "Resumen del Proyecto:\nSe desarrolló un sistema de inspección visual basado en IA para garantizar que los cristales de ventana estén cerrados antes del proceso de rociado.\n\nRequisitos del Sistema:\nInspeccionar cristales de ventana desde lados izquierdo, derecho y superior para verificar cierre adecuado.\nDetectar cualquier cristal cerrado incompletamente con alta precisión.\nDetener automáticamente la línea transportadora al detectar cristal defectuoso para evitar que entre en la etapa de rociado.\nOperar en tiempo real sin impactar el rendimiento de la producción.\n\nDesafíos Clave:\nDetección de cristal transparente – asegurando detección de cierre confiable a pesar de la transparencia y reflejos.\nDiseño de iluminación personalizado – necesidad de configuración de iluminación para mejorar la visibilidad de bordes de cristal y espacios de cierre.\nCumplimiento de precisión de producción – logrando precisión de inspección requerida mientras mantiene la velocidad de la línea de producción.\n\nSolución de IA de CVIT:\nMide precisamente los espacios de cristal para detectar cierres incompletos.\nIdentifica cristales defectuosos en tiempo real con alta precisión.\nIntegrados con línea de producción para detener automáticamente operaciones al detectar defectos, evitando que productos defectuosos avancen.\nOpera sin problemas sin impactar el rendimiento de la producción."
+    },
+    "8": {
+      "title": "Inspección TYVEK de Cubeta",
+      "studyHeader": "Estudio de Caso 8 - Sistema de Visión por Computadora Basado en IA para Inspección TYVEK de Cubeta",
+      "description": "Resumen del Proyecto:\nSe desarrolló un sistema de visión artificial basado en IA para inspeccionar la colocación de láminas TYVEK Interior y Exterior en cubetas durante la producción. El sistema asegura que cada lámina TYVEK esté correctamente posicionada, completamente asentada y cumpla con los estándares de aceptación del cliente antes de pasar a la siguiente etapa.\n\nRequisitos del Sistema:\nDetectar si el TYVEK Interior está correctamente centrado y completamente colocado dentro del área de alcance cuadrada definida dentro de la cubeta.\nDetectar si el TYVEK Exterior cubre completamente la superficie exterior de la cubeta sin huecos visibles.\nIdentificar y clasificar defectos comunes de colocación como desalineación, pliegues, arrugas o bordes levantados.\nProporcionar salida OK/NOK en tiempo real para retroalimentación inmediata de la línea.\n\nDesafíos Clave:\nPropiedades del Material TYVEK – El material TYVEK blanco y semitransparente crea bajo contraste contra la superficie de la cubeta, dificultando la detección de bordes.\nDetección de Defectos Sutiles – Desplazamientos pequeños (tan pequeños como 1 mm de hueco en la cubeta exterior) deben detectarse de manera confiable.\nTipos de Defectos Variados – El sistema debe distinguir con precisión entre desalineación, esquinas dobladas, arrugas y bordes levantados.\nProcesamiento en Tiempo Real – La inspección debe completarse dentro del tiempo de ciclo de producción sin ralentizar la línea.\n\nSolución de IA de CVIT:\nSe implementaron modelos de visión IA separados para la inspección de TYVEK Interior y Exterior, cada uno entrenado con imágenes de muestra OK y NOK etiquetadas.\nSe usaron cámaras de alta resolución con iluminación difusa personalizada para maximizar el contraste de los bordes TYVEK contra las superficies de la cubeta.\nSe implementaron algoritmos de detección de límites para verificar que los cuatro lados del TYVEK Interior permanezcan dentro del área de alcance cuadrada definida.\nSe aplicó lógica de medición de huecos para el TYVEK Exterior para detectar cualquier superficie visible de la cubeta incluyendo huecos tan pequeños como 1 mm.\nSe integró salida OK/NOK automatizada con la línea de producción para alertas inmediatas al operador sobre colocaciones defectuosas."
+    },
+    "9": {
+      "title": "Inspección de Bin de Cable de Freno de Mano",
+      "studyHeader": "Caso de Estudio 9 - Sistema de Verificación de Selección de Cable de Freno de Mano",
+      "description": "Resumen del Proyecto:\nEn la estación de ensamblaje de cables de freno de mano, hay cuatro tipos diferentes de cables disponibles. Durante el ensamblaje, los operarios tomaban con frecuencia el tipo incorrecto de cable y lo montaban en el eje. El cliente necesitaba un sistema de visión que verificara si el operario tomaba el cable correcto según la variante del eje, y que detuviera el transportador de inmediato ante una selección incorrecta.\n\nRequisitos del Proyecto:\nMonitorear los 4 bins de cables en la estación de ensamblaje.\nIdentificar de qué bin toma el cable el operario en cada ciclo de ensamblaje.\nVerificar el tipo de cable tomado contra la señal de variante de eje actual del sistema de control de producción.\nDetener el transportador inmediatamente si se accede al bin incorrecto.\n\nDesafíos Clave:\nLas cuatro variantes de cable son idénticas en tamaño, color y dimensión, lo que hace extremadamente difícil distinguirlas por apariencia.\nEl sistema debe identificar con precisión el bin al que accede el operario dentro del tiempo de ciclo de producción, incluso cuando trabajan rápido.\nLa señal de variante del sistema de control de producción debe recibirse y verificarse antes de cada selección.\n\nSolución CVIT:\nEl sistema de visión está integrado con el sistema de control de producción existente y recibe el número de variante del eje antes de cada ensamblaje para determinar qué cable debe tomarse.\nEl sistema monitorea los cuatro bins y captura el movimiento de la mano del operario y la zona de toma para identificar cuál bin está siendo accedido.\nUna selección correcta genera OK y la línea continúa. Un acceso al bin incorrecto genera NOK inmediatamente y detiene el transportador.\nEl sistema logra 100% de precisión en la detección de tomas de cable desde el bin correcto."
+    },
+    "10": {
+      "title": "Inspección de Placa VIN",
+      "studyHeader": "Caso de Estudio 10 - Sistema de Detección y Verificación de Placa VIN",
+      "description": "Resumen del Proyecto:\nEl cliente necesitaba una solución que detectara la placa VIN en el vehículo y leyera el Número de Identificación del Vehículo. El número detectado debía verificarse contra el VIN maestro para confirmar que la identidad del vehículo es correcta en la estación de inspección.\n\nRequisitos del Proyecto:\nDetectar y localizar la placa VIN en el vehículo.\nLeer y reconocer el Número de Identificación del Vehículo desde la placa.\nVerificar el número detectado contra el registro VIN maestro.\nIdentificar correctamente cada carácter alfanumérico en la placa VIN y compararlo con el formato VIN estándar.\n\nDesafíos Clave:\nCada carácter alfanumérico debe detectarse y reconocerse correctamente, incluyendo caracteres visualmente similares como la letra O y el número 0, o la letra I y el número 1.\nEl VIN detectado no solo debe coincidir con el registro maestro sino también ajustarse al formato VIN estándar para detectar cualquier error.\nEl sistema debe operar a plena velocidad de la línea de producción sin causar paradas ni retrasos.\n\nSolución CVIT:\nEl sistema de visión está integrado con el MES y PLC existentes para obtener el VIN esperado de cada vehículo en tiempo real.\nEl sistema captura la imagen de la placa VIN, lee todos los caracteres y los compara contra el VIN maestro y el formato estándar.\nUn VIN coincidente genera OK y el vehículo es autorizado. Cualquier discrepancia o carácter ilegible genera NOK y activa una alerta.\nEl sistema opera a plena velocidad de línea y logra 99.9% de precisión en la detección de placa VIN."
+    },
+    "11": {
+      "title": "Inspección de Gancho de Cuchara",
+      "studyHeader": "Estudio de Caso 11 - Sistema de Visión por Computadora Basado en IA para Inspección de Seguridad de Gancho de Cuchara",
+      "description": "Resumen del Proyecto:\nSe desarrolló un sistema de seguridad de visión artificial basado en IA para operaciones de plantas siderúrgicas para verificar si la cuchara está correctamente encajada en el gancho de la grúa antes de levantar material fundido. El sistema ayuda a los operadores de grúas a prevenir accidentes causados por alineación incorrecta cuchara-gancho, especialmente en entornos de baja visibilidad y alta temperatura.\n\nRequisitos del Sistema:\nCapturar imágenes en el punto de carga de la cuchara usando una cámara de visión artificial.\nAnalizar la alineación entre la cuchara y el gancho de la grúa usando algoritmos de IA.\nDeterminar si la conexión del gancho es correcta y segura para el levantamiento.\nProporcionar indicación visual inmediata a través de una lámpara de torre – Verde para levantamiento seguro, Rojo para corrección requerida.\nOperar de manera confiable en condiciones industriales adversas incluyendo calor, polvo y baja iluminación.\n\nDesafíos Clave:\nEntorno Adverso – Las condiciones de la planta siderúrgica implican calor extremo, polvo y vapor que pueden obstruir la vista de la cámara y afectar la calidad de la imagen.\nCondiciones de Baja Visibilidad – Los operadores de grúas a menudo trabajan en áreas con poca visibilidad, haciendo que la inspección manual sea poco confiable.\nVentana de Seguridad Crítica – La inspección debe completarse antes de que comience el levantamiento, dejando una ventana de tiempo muy corta para una detección precisa.\nVariabilidad de Cuchara y Gancho – Diferentes tamaños de cucharas y configuraciones de ganchos requieren que el modelo de IA generalice a través de múltiples tipos de equipos.\n\nSolución de IA de CVIT:\nSe instalaron cámaras de visión artificial robustecidas con carcasas protectoras diseñadas para entornos de plantas siderúrgicas de alta temperatura y polvorientos.\nSe implementó un modelo de detección de alineación basado en IA entrenado con imágenes de cucharas correcta e incorrectamente enganchadas en múltiples configuraciones de equipos.\nSe integró procesamiento de imágenes en tiempo real en un dispositivo de borde o servidor de IA para garantizar inferencia rápida dentro de la ventana de seguridad previa al levantamiento.\nSe conectó la salida del sistema a un indicador de lámpara de torre – Luz Verde señala una cuchara correctamente enganchada permitiendo que el levantamiento continúe, y Luz Roja señala una conexión incorrecta requiriendo corrección del operador antes de levantar.\nSe habilitó monitoreo automatizado para reducir la dependencia de verificaciones visuales manuales, mejorando el cumplimiento de seguridad y previniendo accidentes de caída de cucharas."
+    },
+    "12": {
+      "title": "Inspección 360° de Culata de Motor",
+      "studyHeader": "Caso de Estudio 12 - Sistema de Inspección Completa 360° para Culatas de Motor",
+      "description": "Resumen del Proyecto:\nEl cliente requería una inspección completa de 360° de la superficie de las culatas de motor mientras el motor permanece estacionario en la línea de producción. El sistema de inspección utiliza una cámara montada en un robot colaborativo que se mueve alrededor de la culata siguiendo una trayectoria preplaneada, capturando imágenes desde múltiples ángulos para detectar defectos superficiales.\n\nRequisitos del Proyecto:\nRealizar una inspección completa de 360° de la culata mientras el motor permanece estacionario.\nIntegrar un sistema de cámara montada en robot para lograr movimiento y cobertura flexible desde múltiples ángulos.\nMantener el tiempo de ciclo de inspección alineado con la velocidad de la línea de producción para no afectar la producción normal.\nDetectar defectos superficiales en la culata incluyendo grietas, marcas de aceite, marcas negras y daño físico.\n\nDesafíos Clave:\nLas culatas tienen geometría compleja con orificios, ranuras y características internas, lo que dificulta la iluminación uniforme y la cobertura completa de la superficie.\nTodas las superficies críticas deben cubrirse en un único paso automatizado sin dejar puntos ciegos de inspección.\nLa inspección completa de 360° debe finalizar dentro del tiempo de takt de producción sin causar paradas de línea.\n\nSolución CVIT:\nUna cámara montada en un robot colaborativo se mueve alrededor de la culata estacionaria siguiendo una trayectoria de inspección circular preprogramada.\nLa captura de imágenes desde múltiples ángulos garantiza cobertura completa de 360° sin puntos ciegos.\nLa captura de imagen está sincronizada con la posición del robot para garantizar imágenes nítidas y consistentes en cada zona de inspección.\nLas áreas críticas propensas a grietas, marcas de aceite, marcas negras y daños se inspeccionan con atención focalizada.\nLos resultados de inspección se muestran en tiempo real y se genera un informe para que el equipo de calidad lo revise."
+    }
+  },
+  "IndustryDetail": {
+    "automobile": {
+      "title": "Aplicaciones de visión artificial para la industria automotriz",
+      "description": "La industria automotriz se centra en el diseño, fabricación, inspección y automatización de vehículos. La visión artificial desempeña un papel crucial en el aseguramiento de la calidad y la seguridad.",
+      "applications": [
+        "Inspección de kits",
+        "Inspección de calidad de pintura",
+        "Seguridad y protección",
+        "Detección de defectos de superficie",
+        "Verificación de presencia/ausencia de piezas",
+        "Orientación de piezas",
+        "Identificación de objetos",
+        "Verificación de ensamblaje",
+        "Identificación de números VIN",
+        "Escaneo de códigos de barras",
+        "Detección de movimiento humano",
+        "Identificación de colores",
+        "Reconocimiento óptico de caracteres",
+        "Medición dimensional",
+        "Guía robótica",
+        "Inspección de calidad de piezas",
+        "Inspección de soldaduras",
+        "Inspección de arandelas de empuje",
+        "Inspección de flechas de pistón",
+        "Inspección de resortes de válvula",
+        "Lectura de códigos QR",
+        "Inspección de espacios de bujías",
+        "OCR de números estampados",
+        "Inspección de selladores",
+        "Inspección de culatas",
+        "Inspección de cigüeñales",
+        "Inspección de piñones",
+        "Inspección de anillos de pistón",
+        "Inspección de asientos de válvula",
+        "Inspección de guías de válvula",
+        "Inspección de limpiaparabrisas",
+        "Inspección de rieles de techo",
+        "Inspección de antenas",
+        "Manija de puerta",
+        "Detección de tiras de goma de puerta",
+        "Identificación de tipo y color de patines",
+        "Detección de cámaras",
+        "Detección PDC",
+        "Identificación de tipo de faros y luces antiniebla"
+      ]
+    },
+    "metalMiningCement": {
+      "title": "Aplicaciones de visión artificial para la industria del metal, minería y cemento",
+      "description": "En las industrias del metal, minería y cemento, la visión artificial garantiza procesos seguros, eficientes y orientados a la calidad mediante inspección, análisis y monitoreo en tiempo real.",
+      "applications": [
+        "Detección de movimiento humano",
+        "Sistema de monitoreo de cubos de cinta transportadora DPC",
+        "Inspección de corte de láminas",
+        "Detección de nódulos en placas de cátodo",
+        "Inspección de cintas transportadoras en línea",
+        "Inspección de barras fundidas",
+        "Inspección de patios de carbón",
+        "Monitoreo de tamaño de piedra caliza",
+        "Monitoreo de tamaño de carbón",
+        "Inspección de camiones",
+        "Medición dimensional",
+        "Inspección de perforación de agujeros profundos",
+        "Detección de defectos de superficie",
+        "Placa de matrícula de vehículos",
+        "Sistema de monitoreo de patios de maniobra",
+        "Inspección de soldaduras",
+        "Sistema de inspección de vagones",
+        "Inspección OCR de sacos de cemento"
+      ]
+    },
+    "pharmaFmcg": {
+      "title": "Aplicaciones de visión artificial para la industria farmacéutica y de bienes de consumo",
+      "description": "Las industrias farmacéutica y de bienes de consumo dependen de la visión artificial para un control de calidad rápido y consistente en líneas de producción de alta velocidad, asegurando la integridad de la marca y el cumplimiento.",
+      "applications": [
+        "Inspección de bandejas",
+        "Inspección de etiquetas de botellas",
+        "Inspección de empaques",
+        "Inspección de tapas",
+        "Inspección de latas de aluminio",
+        "Inspección de empaquetado",
+        "Inspección de botellas",
+        "Inspección de bolsas",
+        "Escaneo de códigos de barras y trazabilidad",
+        "Inspección de cajas",
+        "Inspección de partículas extrañas",
+        "Inspección de tabletas",
+        "Verificación de nivel de llenado de botellas",
+        "Identificación de formas y tamaños",
+        "Identificación y trazabilidad de fechas de fabricación y MRP",
+        "Reconocimiento óptico de caracteres",
+        "Inspección de calidad de alimentos",
+        "Inspección de sellos"
+      ]
+    },
+    "plasticRubber": {
+      "title": "Aplicaciones de visión artificial para la industria del plástico y caucho",
+      "description": "En la fabricación de plásticos y caucho, la visión artificial mejora la velocidad de inspección, detecta inconsistencias y soporta la automatización en líneas de moldeo y extrusión.",
+      "applications": [
+        "Detección de marcas de flujo",
+        "Escaneo de códigos de barras",
+        "Clasificación y ordenamiento de piezas",
+        "Inspección de etiquetas y marcados",
+        "Clasificación y ordenamiento de defectos",
+        "Verificación de ensamblaje",
+        "Inspección de empaquetado",
+        "Inspección de moldes",
+        "Detección de defectos de superficie",
+        "Medición dimensional"
+      ]
+    },
+    "warehouseDistribution": {
+      "title": "Aplicaciones de visión artificial para almacén y distribución",
+      "description": "Los sistemas de almacén y distribución aprovechan la visión artificial para la automatización, la precisión del inventario, la inspección de empaques y la optimización del flujo de trabajo.",
+      "applications": [
+        "Control de seguridad y acceso",
+        "Medición dimensional y cubicación",
+        "Ordenamiento y enrutamiento",
+        "Inspección de palets",
+        "Recogida y colocación robótica",
+        "Identificación de artículos",
+        "Escaneo automático de códigos de barras",
+        "Análisis y reportes en tiempo real",
+        "Sistema contra incendios",
+        "Despaletización y paletización"
+      ]
+    },
+    "wire": {
+      "title": "Aplicaciones de visión artificial para la industria del cable",
+      "description": "La industria del cable utiliza la visión artificial para monitoreo en tiempo real, medición precisa y detección de defectos para mantener altos estándares de producción.",
+      "applications": [
+        "Inspección de disposición de cables",
+        "Inspección de bobinas",
+        "Inspección de impresiones",
+        "Inspección CTC",
+        "Inspección de esmalte",
+        "Inspección térmica de cables",
+        "Detección de defectos de superficie",
+        "Inspección OFC",
+        "Medición de grosor de cables",
+        "Inspección de calidad de cables"
+      ]
+    },
+    "aerospace": {
+      "title": "Aplicaciones de visión artificial para la industria de fabricación aeroespacial",
+      "description": "En la fabricación aeroespacial, la visión artificial garantiza precisión, seguridad y cumplimiento mediante sistemas de inspección visual y seguimiento automatizados.",
+      "applications": [
+        "Detección de defectos de superficie",
+        "Cálculo de horas de trabajo",
+        "Inspección de acabado de superficie",
+        "Inspección de secuencia de piezas",
+        "Verificación de orientación/ensamblaje previo de piezas",
+        "Inspección de precisión dimensional",
+        "Detección de movimiento humano",
+        "Reconocimiento óptico de caracteres",
+        "Detección de partículas/objetos extraños",
+        "Verificación de seguridad y protección",
+        "Inspección previa al despacho",
+        "Detección de incendios",
+        "Inspección BIW",
+        "Soluciones de visión personalizadas"
+      ]
+    }
+  },
+  "AboutUsMissionVision": {
+    "about": {
+      "title": "Sobre nosotros",
+      "heading": "Superando los límites",
+      "text": "En CVIT Solution, estamos dedicados a superar los límites de la visión artificial para abordar desafíos críticos en diversas industrias. Nos especializamos en desarrollar aplicaciones de visión artificial de vanguardia. Aprovechando el poder de la Inteligencia Artificial, permitimos a las empresas automatizar tareas, obtener información valiosa de datos visuales y crear aplicaciones innovadoras que alguna vez se consideraron imposibles.",
+      "ariaLabel": "Ver la sección Sobre nosotros",
+      "imageAlt": "Imagen de Sobre nosotros"
+    },
+    "vision": {
+      "title": "Nuestra visión",
+      "heading": "Crear sistemas más seguros, eficientes e inteligentes",
+      "text": "Nuestra visión es estar a la vanguardia de la innovación, aprovechando el potencial de la visión artificial para resolver problemas complejos. Creemos que la visión artificial tiene la capacidad de transformar industrias y crear sistemas más seguros, eficientes e inteligentes.",
+      "ariaLabel": "Ver la sección Nuestra visión",
+      "imageAlt": "Imagen de Nuestra visión"
+    },
+    "mission": {
+      "title": "Nuestra misión",
+      "heading": "Hacer una industria sin defectos",
+      "text": "Nuestra misión es lograr una industria sin defectos a través de nuestros sistemas avanzados de visión artificial.",
+      "ariaLabel": "Ver la sección Nuestra misión",
+      "imageAlt": "Imagen de Nuestra misión"
+    }
+  },
+  "CoreValues": {
+    "sectionTitle": "Nuestros valores fundamentales",
+    "sectionAriaLabel": "Sección de nuestros valores fundamentales",
+    "value1": {
+      "title": "Innovación",
+      "description": "Superamos continuamente los límites y adoptamos tecnologías de vanguardia para impulsar avances en sistemas de visión artificial basados en IA."
+    },
+    "value2": {
+      "title": "Excelencia",
+      "description": "Estamos comprometidos a ofrecer soluciones de la más alta calidad, precisión, fiabilidad y rendimiento que superan las expectativas de nuestros clientes."
+    },
+    "value3": {
+      "title": "Integridad",
+      "description": "Mantenemos los más altos estándares éticos en todas nuestras interacciones, garantizando transparencia, honestidad y confiabilidad."
+    },
+    "value4": {
+      "title": "Centrado en el cliente",
+      "description": "Priorizamos entender y satisfacer las necesidades de nuestros clientes, proporcionando soluciones integrales y soporte de servicio."
+    },
+    "value5": {
+      "title": "Responsabilidad",
+      "description": "Asumimos la responsabilidad de nuestros compromisos y acciones, garantizando la rendición de cuentas en el cumplimiento de promesas y la obtención de resultados."
+    },
+    "value6": {
+      "title": "Pasión",
+      "description": "Estamos apasionados por nuestro trabajo y el impacto de los sistemas de visión artificial basados en IA, lo que nos impulsa a innovar y marcar la diferencia en industrias de todo el mundo."
+    }
+  },
+  "Implementation": {
+    "title": "Hoja de Ruta de Implementación",
+    "ariaLabel": "Hoja de Ruta de Implementación",
+    "timelineAriaLabel": "Línea de tiempo de desarrollo de sitios web",
+    "step1": {
+      "badge": "PASO 1",
+      "title": "Comprensión de Requisitos",
+      "description": [
+        "Definir el alcance del proyecto y realizar un estudio integral del proceso actual en el sitio del cliente.",
+        "Analizar los parámetros clave del proyecto, incluidas las restricciones ambientales y operativas.",
+        "Discutir oportunidades de automatización para reemplazar o mejorar procesos manuales utilizando sistemas de visión artificial.",
+        "Evaluar la viabilidad y las limitaciones de implementar un sistema de visión artificial en el taller."
+      ],
+      "ariaLabel": "Paso 1: Comprensión de Requisitos"
+    },
+    "step2": {
+      "badge": "PASO 2",
+      "title": "Diseño y Configuración de Hardware",
+      "description": [
+        "Diseñar y fabricar componentes de hardware personalizados, como soportes de montaje de cámaras.",
+        "Carcasas protectoras para cámaras y computadoras.",
+        "Configuraciones de iluminación específicas para visión artificial."
+      ],
+      "ariaLabel": "Paso 2: Diseño y Configuración de Hardware"
+    },
+    "step3": {
+      "badge": "PASO 3",
+      "title": "Diseño de Software y Red",
+      "description": [
+        "Finalizar la arquitectura del sistema de visión y el flujo de procesos.",
+        "Diseñar una interfaz amigable para operadores y administradores."
+      ],
+      "ariaLabel": "Paso 3: Diseño de Software y Red"
+    },
+    "step4": {
+      "badge": "PASO 4",
+      "title": "Documento de Requisitos Empresariales (BRD) y Proceso de Aprobación de Diseño (DAP)",
+      "description": [
+        "Preparar y aprobar el BRD que cubre los requisitos y entregables del proyecto de principio a fin.",
+        "Documento de diseño que captura las especificaciones técnicas y funcionales acordadas."
+      ],
+      "ariaLabel": "Paso 4: Documento de Requisitos Empresariales (BRD) y Proceso de Aprobación de Diseño (DAP)"
+    },
+    "step5": {
+      "badge": "PASO 5",
+      "title": "Adquisición de Materiales",
+      "description": [
+        "Adquirir todos los componentes de hardware según las especificaciones y cantidades aprobadas."
+      ],
+      "ariaLabel": "Paso 5: Adquisición de Materiales"
+    },
+    "step6": {
+      "badge": "PASO 6",
+      "title": "Prototipado de Software",
+      "description": [
+        "Desarrollar y personalizar algoritmos de IA.",
+        "Realizar pruebas unitarias en módulos de software individuales.",
+        "Integrar módulos con el modelo de IA y realizar validación interna."
+      ],
+      "ariaLabel": "Paso 6: Prototipado de Software"
+    },
+    "step7": {
+      "badge": "PASO 7",
+      "title": "Instalación en Sitio",
+      "description": [
+        "Instalar todo el hardware físico, incluidas las carcasas de servidores y los sistemas de cámaras, en el sitio del cliente."
+      ],
+      "ariaLabel": "Paso 7: Instalación en Sitio"
+    },
+    "step8": {
+      "badge": "PASO 8",
+      "title": "Recolección de Datos y Generación de Modelos de IA",
+      "description": [
+        "Recolectar datos de imágenes/videos específicos del proceso.",
+        "Realizar anotación y preprocesamiento de datos.",
+        "Entrenar modelos de IA y realizar pruebas iterativas para optimizar el rendimiento."
+      ],
+      "ariaLabel": "Paso 8: Recolección de Datos y Generación de Modelos de IA"
+    },
+    "step9": {
+      "badge": "PASO 9",
+      "title": "Integración de Sistemas",
+      "description": [
+        "Integrar el sistema de visión con sistemas de control de usuarios (por ejemplo, PLCs, HMIs).",
+        "Base de datos de la planta o sistemas MES/ERP."
+      ],
+      "ariaLabel": "Paso 9: Integración de Sistemas"
+    },
+    "step10": {
+      "badge": "PASO 10",
+      "title": "Pruebas de Aceptación de Usuarios (UAT)",
+      "description": [
+        "Realizar UAT de sistema completo con las partes interesadas del cliente.",
+        "Capturar y resolver cualquier problema durante el UAT.",
+        "Finalizar la solución tras la aprobación exitosa del usuario."
+      ],
+      "ariaLabel": "Paso 10: Pruebas de Aceptación de Usuarios (UAT)"
+    }
+  },
+  "OurExpertise": {
+    "ariaLabel": "Nuestras competencias",
+    "subtitle": "Donde la habilidad se encuentra con la innovación",
+    "heading": "NUESTRAS COMPETENCIAS",
+    "item1": {
+      "title": "Competencia técnica"
+    },
+    "item2": {
+      "title": "Experiencia en la industria"
+    },
+    "item3": {
+      "title": "Investigación y desarrollo"
+    },
+    "item4": {
+      "title": "Colaboraciones y asociaciones"
+    },
+    "item5": {
+      "title": "Soluciones innovadoras"
+    },
+    "item6": {
+      "title": "Soporte y mantenimiento continuos"
+    }
+  },
+   "SupportingPartners": {
+    "heading": "NUESTROS SOCIOS DE APOYO",
+    "tidesLogoAlt": "Logo de Tides",
+    "hikrobotLogoAlt": "Logo de HIKROBOT",
+    "baumerLogoAlt": "Logo de Baumer India"
+  },
+  "Review": {
+    "headingPrimary": "Somos un negocio que se preocupa, y se nota",
+    "indiamartLogoAlt": "Logo de Indiamart",
+    "indiamartHeading": "Contáctanos en Indiamart",
+    "indiamartSubtext": "Descubre nuestros servicios",
+    "googleLogoAlt": "Logo de Google",
+    "googleHeading": "Califícanos en Google",
+    "googleSubtext": "{{count}} reseñas"
+  },
+  "ContactUsPage": {
+    "formHeading": "Discuta su proyecto",
+    "formNamePlaceholder": "Nombre completo",
+    "formEmailPlaceholder": "Dirección de correo electrónico",
+    "formSubjectPlaceholder": "Asunto",
+    "formPhonePlaceholder": "Número de teléfono",
+    "formMessagePlaceholder": "Mensaje",
+    "formCheckboxLabel": "Al hacer clic en la casilla de verificación, acepta usar los términos de nuestro 'Formulario' y consiente el uso de cookies en el navegador.",
+    "formSubmitButton": "Enviar mensaje",
+    "infoHeading": "Encuéntrenos",
+    "officeAddressTitle": "Dirección de la oficina",
+    "officeAddress": "Oficina 206, Xion Mall, cerca de D-Mart, Wakad-Hinjewadi Road, Hinjewadi Pune, Maharashtra, India, 411057",
+    "registeredAddressTitle": "Dirección registrada",
+    "registeredAddress": "S.Nº 176/1/9/1, Piso-203, Sadguru CL-03, Manjoba Mandir, Pune, Maharashtra, India, 411057",
+    "gstNumberTitle": "Número GST",
+    "gstNumber": "27AALCC1717A1Z3",
+    "emailAddressTitle": "Dirección de correo electrónico",
+    "emailAddress": "sales@cvit.in",
+    "phoneNumberTitle": "Número de teléfono",
+    "phoneNumber": "+91 8390245646",
+    "toastSuccess": "¡Mensaje enviado con éxito!",
+    "toastError": "Algo salió mal. Por favor, intenta de nuevo.",
+    "toastNetworkError": "Error de red. Por favor, intenta de nuevo."
+  },
+  "Privacy": {
+      "title": "Política de Privacidad",
+      "subtitle": "Última actualización: 19 de septiembre de 2025",
+      "introText": "Gracias por visitar el sitio web de CVIT Solutions. Su privacidad es importante para nosotros.",
+      "ReadPolicy": "Leer la política de privacidad",
+      "introDescription": "Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información cuando utiliza nuestro sitio y servicios relacionados.",
+      "section1": {
+        "title": "1. Información que recopilamos",
+        "description": "Podemos recopilar información de las siguientes maneras:",
+        "subsection1": {
+          "title": "Información que proporciona voluntariamente:",
+          "description": "Cuando envía formularios (contacto, consultas, demostraciones, cotizaciones, etc.), puede proporcionar información personal como su nombre, dirección de correo electrónico, número de teléfono, nombre de la empresa, cargo, requisitos del proyecto."
+        },
+        "subsection2": {
+          "title": "Información recopilada automáticamente:",
+          "description": "Cuando visita o navega por el sitio, recopilamos automáticamente ciertos datos técnicos/de uso, que incluyen, pero no se limitan a, su dirección IP, tipo y versión del navegador, sistema operativo, páginas visitadas, tiempo dedicado a las páginas, páginas de referencia/salida y datos de flujo de clics."
+        },
+        "subsection3": {
+          "title": "Cookies y tecnologías de seguimiento:",
+          "description": "Podemos usar cookies, balizas web, píxeles de seguimiento y tecnologías similares para recopilar información sobre su uso del sitio, mejorar la funcionalidad, realizar análisis y personalizar su experiencia."
+        }
+      },
+      "section2": {
+        "title": "2. Uso de la información",
+        "description": "Usamos la información recopilada para diversos fines, incluyendo:",
+        "list": {
+          "respondToInquiries": "Responder a sus consultas o solicitudes (información, cotizaciones, soporte).",
+          "provideServices": "Proporcionar, mantener y mejorar nuestros servicios y sitio.",
+          "sendUpdates": "Enviarle actualizaciones, boletines, comunicaciones de marketing (si ha dado su consentimiento).",
+          "analyzeTraffic": "Comprender los patrones de uso, analizar el tráfico y el rendimiento del sitio.",
+          "enhanceSecurity": "Mejorar la seguridad y prevenir/detectar fraudes o abusos.",
+          "fulfillLegalObligations": "Cumplir con obligaciones legales o regulatorias, si las hay."
+        }
+      },
+      "section3": {
+        "title": "3. Compartir información",
+        "description": "No vendemos su información personal a terceros. Sin embargo, podemos compartir su información en las siguientes circunstancias:",
+        "list": {
+          "serviceProviders": "Con proveedores de servicios que nos ayudan con alojamiento, análisis de sitios web, comunicaciones por correo electrónico, gestión de relaciones con clientes, seguridad, etc., quienes actúan bajo acuerdos para proteger sus datos.",
+          "legalReasons": "Por razones legales: Si así lo requiere la ley, regulación, proceso legal o solicitud gubernamental aplicable.",
+          "protectRights": "Para proteger los derechos, la seguridad o la propiedad de CVIT Solutions, nuestros usuarios o el público.",
+          "corporateTransaction": "En caso de una transacción corporativa (fusión, adquisición, venta de activos), siempre que la parte adquirente acepte proteger la información de acuerdo con esta política."
+        }
+      },
+      "section4": {
+        "title": "4. Cookies y tecnologías de seguimiento",
+        "list": {
+          "useCookies": "Usamos cookies y herramientas similares para rastrear el uso del sitio y mejorar su experiencia.",
+          "controlCookies": "Puede controlar o deshabilitar las cookies a través de la configuración de su navegador. Sin embargo, deshabilitar las cookies puede afectar algunas funciones o el rendimiento del sitio.",
+          "cookieTypes": "Los tipos de cookies utilizadas pueden incluir: cookies esenciales, cookies de rendimiento/análisis, cookies funcionales y cookies de publicidad (si corresponde)."
+        }
+      },
+      "section5": {
+        "title": "5. Retención de datos",
+        "description": "Retendremos su información personal solo durante el tiempo necesario para cumplir con los fines descritos en esta política (por ejemplo, responder a solicitudes, proporcionar servicios, cumplir con obligaciones legales). Posteriormente, eliminaremos o anonimizaremos sus datos de manera segura."
+      },
+      "section6": {
+        "title": "6. Seguridad",
+        "description": "Implementamos medidas técnicas, administrativas y organizativas razonables para proteger su información personal contra accesos no autorizados, alteraciones, divulgaciones o destrucción. Sin embargo, ningún sistema es completamente seguro; la transmisión de datos por internet conlleva riesgos inherentes."
+      },
+      "section7": {
+        "title": "7. Transferencias internacionales de datos",
+        "description": "Dado que el sitio está alojado en internet y puede usar proveedores de servicios en diferentes jurisdicciones, sus datos pueden almacenarse o transferirse a países distintos al suyo. Tomaremos medidas para garantizar que dichas transferencias cumplan con las leyes de protección de datos aplicables."
+      },
+      "section8": {
+        "title": "8. Sus derechos",
+        "description": "Dependiendo de su ubicación, puede tener los siguientes derechos con respecto a su información personal:",
+        "list": {
+          "access": {
+            "title": "Acceso",
+            "description": "Solicitar acceso a su información personal"
+          },
+          "rectification": {
+            "title": "Rectificación",
+            "description": "Solicitar la corrección de datos inexactos"
+          },
+          "deletion": {
+            "title": "Eliminación",
+            "description": "Solicitar la eliminación de sus datos bajo ciertas condiciones"
+          },
+          "objection": {
+            "title": "Objeción",
+            "description": "Objetar el procesamiento de sus datos para fines específicos"
+          },
+          "portability": {
+            "title": "Portabilidad",
+            "description": "Recibir sus datos en un formato estructurado y comúnmente utilizado"
+          },
+          "withdrawConsent": {
+            "title": "Retirar consentimiento",
+            "description": "Retirar el consentimiento para el procesamiento de datos (cuando el consentimiento es la base legal)"
+          }
+        },
+        "contact": "Para ejercer estos derechos, contáctenos utilizando la información proporcionada a continuación."
+      },
+      "section9": {
+        "title": "9. Privacidad de los niños",
+        "description": "Nuestro sitio no está destinado a niños menores de 13 años. No recopilamos intencionadamente información personal de niños menores de 13 años. Si descubrimos que hemos recopilado dicha información, tomaremos medidas para eliminarla."
+      }
+    },
+
+  "Navbar": {
+    "Home": "Inicio",
+    "Brochure": "Folleto",
+    "ContactUs": "Contáctanos",
+    "Careers": "Carreras",
+    "CVITLogo": "Logo CVIT",
+    "Menu": {
+      "Products": "Productos",
+      "Industries": "Industrias",
+      "CaseStudies": "Estudios de caso",
+      "AboutUs": "Sobre nosotros",
+      "Careers": "Carreras"
+    },
+    "ariaLabel": {
+      "primaryNavigation": "Navegación principal",
+      "homeLink": "Navegar a la página de inicio",
+      "mainMenu": "Menú principal",
+      "submenu": "Submenú de {{name}}",
+      "submenuToggle": "Alternar submenú de {{name}}",
+      "item": "Ver detalles de {{name}}",
+      "downloadBrochure": "Descargar folleto PDF",
+      "contactUs": "Navegar a la sección de Contáctenos"
+    },
+    "Products": {
+    "MachineVisionLight": {
+      "title": "Luces de Visión Artificial",
+      "BarLight": "Luz de Barra",
+      "RingLight": "Luz Anular",
+      "DomeLight": "Luz de Domo",
+      "FlatDiffusedLightWithCenterHole": "Luz Difusa Plana con Orificio Central",
+      "FlatDiffusedLight": "Luz Difusa Plana",
+      "IndirectFlatLight": "Luz Plana Indirecta",
+      "BackLight": "Retroiluminación",
+      "SpotLight": "Luz Puntual",
+      "TunnelLight": "Luz de Túnel"
+    },
+    "MachineVisionCamerasEnclosure": {
+      "title": "Carcasas para Cámaras",
+      "WithCoolingJacket": "Con Chaqueta de Enfriamiento",
+      "WithoutCoolingJacket": "Sin Chaqueta de Enfriamiento"
+    },
+    "MachineVisionLensExtensionTube": {
+      "title": "Tubos de Extensión de Lentes",
+      "AdjustableLength": "Longitud Ajustable",
+      "FixLength": "Longitud Fija"
+    },
+    "MachineVisionDemoStand": {
+      "title": "Soportes de Demostración",
+      "V1": "Versión 1",
+      "V2": "Versión 2",
+      "V3": "Versión 3"
+    }
+  },
+  "Industries": {
+      "Automobile": "Automoción",
+      "MetalMiningCement": "Metal, Minería y Cemento",
+      "PharmaFmcg": "Farmacéutica y FMCG",
+      "PlasticRubberIndustry": "Plásticos y Caucho",
+      "WarehouseDistribution": "Almacenes y Distribución",
+      "WireIndustry": "Industria del Cable",
+      "Aerospace": "Aeroespacial"
+    },
+    "CaseStudies": {
+      "VialAdapterInspection": "Inspección de Adaptador de Vial",
+      "AdapterPacketInspection": "OCR-OCV Bandeja de Adaptadores",
+      "GapMeasurement": "Medición de Huecos",
+      "PunchedNumberDetection": "Detección de Números Estampados",
+      "TracingAndTracking": "Trazabilidad de Neumáticos",
+      "DoorSealantAbsence": "Detección de Sellador en Puertas",
+      "WindowGlass": "Detección de Ventana Abierta/Cerrada",
+      "TubTyvekInspection": "Inspección TYVEK de Cubeta",
+      "HandBrakeCableInspection": "Inspección de Bin de Cable de Freno de Mano",
+      "VINInspection": "Inspección de Placa de Número VIN",
+      "LadleHookInspection": "Inspección de Gancho de Cuchara",
+     "AndroidBarcodeScanning": "Escaneo de Códigos de Barras Android",
+     "CylinderHeadInspection": "Inspección de Culata 360°"
+    },
+    "AboutUsMissionVision": {
+      "about": { "title": "Sobre Nosotros" },
+      "mission": { "title": "Nuestra Misión" },
+      "vision": { "title": "Nuestra Visión" }
+    }
+  },
+
+  "CookieConsent": {
+      "title": "🍪 Consentimiento de Cookies",
+      "description": "Usamos cookies para mejorar su experiencia de navegación y proporcionar contenido personalizado.",
+      "settingsButton": "Configuración de Cookies",
+      "privacyPolicyText": "Lea nuestra",
+      "privacyPolicyLink": "Política de Privacidad",
+      "acceptAllButton": "Aceptar Todas",
+      "declineAllButton": "Rechazar Todas",
+      "modal": {
+        "title": "Configuración de Cookies",
+        "description": "Utilizamos diferentes tipos de cookies para garantizar la mejor experiencia en nuestro sitio web. Las cookies esenciales son necesarias para la funcionalidad básica. Administre sus preferencias a continuación:",
+        "closeAriaLabel": "Cerrar configuración de cookies",
+        "essential": {
+          "title": "Cookies Esenciales",
+          "description": "Necesarias para que el sitio web funcione correctamente. Estas cookies garantizan las funcionalidades básicas y las características de seguridad del sitio web.",
+          "toggleLabel": "Habilitado",
+          "examplesLabel": "Ejemplos:",
+          "examples": "Cookies de sesión, cookies de autenticación, cookies de seguridad"
+        },
+        "analytics": {
+          "title": "Cookies de Análisis",
+          "description": "Nos ayudan a entender cómo interactúan los visitantes con nuestro sitio web mediante la recolección y reporte de información de forma anónima.",
+          "examplesLabel": "Ejemplos:",
+          "examples": "Google Analytics, estadísticas de uso del sitio web, seguimiento del comportamiento de los visitantes"
+        },
+        "functional": {
+          "title": "Cookies Funcionales",
+          "description": "Habilitan funciones y servicios del sitio web que ha solicitado, como recordar sus preferencias o información de inicio de sesión.",
+          "examplesLabel": "Ejemplos:",
+          "examples": "Preferencia de idioma, gestión de sesiones de inicio de sesión, funcionalidad del carrito de compras"
+        },
+        "advertising": {
+          "title": "Cookies de Publicidad",
+          "description": "Entregan anuncios relevantes y miden su efectividad mediante el seguimiento de su comportamiento de navegación en los sitios web.",
+          "examplesLabel": "Ejemplos:",
+          "examples": "Google AdSense, Facebook Pixel, publicidad dirigida, seguimiento del rendimiento de anuncios"
+        },
+        "toggleEnabled": "Habilitado",
+        "toggleDisabled": "Deshabilitado",
+        "resetButton": "Restablecer a Valores Predeterminados",
+        "cancelButton": "Cancelar",
+        "saveButton": "Guardar Configuración"
+      }
+    }
+}
