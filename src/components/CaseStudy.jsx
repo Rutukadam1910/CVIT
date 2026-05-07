@@ -171,7 +171,7 @@ import TubTyvekImg from "../assets/CaseStudies/Tub_Tyvek_Inner_OK.png";
 import HandBrakeCableImg from "../assets/CaseStudies/Hand_Brake_Cable_1.jpg";
 import VINInspectionImg from "../assets/CaseStudies/VIN_Number_detection.png";
 import LadleHookImg from "../assets/CaseStudies/Ladle_Hook_Inspection.png";
-import CylinderHeadImg from "../assets/CaseStudies/Cylinder_Head_Inspection.jpg";
+import CylinderHeadImg from "../assets/CaseStudies/Cylinder_Head_Inspection.png";
 import "../Styles/CaseStudy.css";
 
 const caseStudies = [

@@ -2583,11 +2583,11 @@ import sealentPresenceImg from "../assets/CaseStudies/Door_Sealent_Presence_3.pn
 import vialAdapterImg from "../assets/CaseStudies/vial_adapter_3.png";
 import tracingTrackingImg from "../assets/CaseStudies/Tracing_And_Tracking_3.png";
 import WindowGlassImg from "../assets/CaseStudies/Window_Glass_3.png";
-import TubTyvekImg from "../assets/CaseStudies/Tub_Tyvek_Inner_OK_3.jpg";
-import HandBrakeCableImg from "../assets/CaseStudies/Hand_Brake_Cable_3.jpg";
+import TubTyvekImg from "../assets/CaseStudies/Tub_Tyvek_Inner_OK_3.png";
+import HandBrakeCableImg from "../assets/CaseStudies/Hand_Brake_Cable_3.png";
 import VINInspectionImg from "../assets/CaseStudies/VIN_Number_detection_3.png";
 import LadleHookImg from "../assets/CaseStudies/Ladle_Hook_Inspection_3.png";
-import CylinderHeadImg from "../assets/CaseStudies/Cylinder_Head_Inspection_3.jpg";
+import CylinderHeadImg from "../assets/CaseStudies/Cylinder_Head_Inspection_3.png";
 import "../Styles/CaseStudyDetail.css";
 import Navbar from "./Navbar";
 import SideBar from "./Sidebar";
