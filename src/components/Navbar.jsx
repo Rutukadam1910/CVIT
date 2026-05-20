@@ -36,42 +36,44 @@ const navbarData = {
     ],
   },
   Industries: [
-    { slug: "automobile", name: "Navbar.Industries.Automobile" },
-    { slug: "metal-mining-cement", name: "Navbar.Industries.MetalMiningCement" },
-    { slug: "pharma-fmcg", name: "Navbar.Industries.PharmaFmcg" },
-    { slug: "plastic-rubber", name: "Navbar.Industries.PlasticRubberIndustry" },
-    { slug: "warehouse-distribution", name: "Navbar.Industries.WarehouseDistribution" },
-    { slug: "wire", name: "Navbar.Industries.WireIndustry" },
-    { slug: "aerospace", name: "Navbar.Industries.Aerospace" },
+    { slug: "automobile",              name: "Navbar.Industries.Automobile" },
+    { slug: "metal-mining-cement",     name: "Navbar.Industries.MetalMiningCement" },
+    { slug: "pharma-fmcg",             name: "Navbar.Industries.PharmaFmcg" },
+    { slug: "plastic-rubber",          name: "Navbar.Industries.PlasticRubberIndustry" },
+    { slug: "warehouse-distribution",  name: "Navbar.Industries.WarehouseDistribution" },
+    { slug: "wire",                    name: "Navbar.Industries.WireIndustry" },
+    { slug: "aerospace",               name: "Navbar.Industries.Aerospace" },
   ],
   CaseStudies: [
-    { key: "Navbar.CaseStudies.VialAdapterInspection", id: 1 },
-    { key: "Navbar.CaseStudies.AdapterPacketInspection", id: 2 },
-    { key: "Navbar.CaseStudies.GapMeasurement", id: 3 },
-    { key: "Navbar.CaseStudies.PunchedNumberDetection", id: 4 },
-    { key: "Navbar.CaseStudies.TracingAndTracking", id: 5 },
-    { key: "Navbar.CaseStudies.DoorSealantAbsence", id: 6 },
-    { key: "Navbar.CaseStudies.WindowGlass", id: 7 },
-    { key: "Navbar.CaseStudies.TubTyvekInspection", id: 8 },
-    { key: "Navbar.CaseStudies.HandBrakeCableInspection", id: 9 },
-    { key: "Navbar.CaseStudies.VINInspection", id: 10 },
-    { key: "Navbar.CaseStudies.LadleHookInspection", id: 11 },
-   { key: "Navbar.CaseStudies.CylinderHeadInspection", id: 12 },
+    { key: "Navbar.CaseStudies.VialAdapterInspection",    id: 1  },
+    { key: "Navbar.CaseStudies.AdapterPacketInspection",  id: 2  },
+    { key: "Navbar.CaseStudies.GapMeasurement",           id: 3  },
+    { key: "Navbar.CaseStudies.PunchedNumberDetection",   id: 4  },
+    { key: "Navbar.CaseStudies.TracingAndTracking",       id: 5  },
+    { key: "Navbar.CaseStudies.DoorSealantAbsence",       id: 6  },
+    { key: "Navbar.CaseStudies.WindowGlass",              id: 7  },
+    { key: "Navbar.CaseStudies.TubTyvekInspection",       id: 8  },
+    { key: "Navbar.CaseStudies.HandBrakeCableInspection", id: 9  },
+    { key: "Navbar.CaseStudies.VINInspection",            id: 10 },
+    { key: "Navbar.CaseStudies.LadleHookInspection",      id: 11 },
+    { key: "Navbar.CaseStudies.CylinderHeadInspection",   id: 12 },
+    { key: "Navbar.CaseStudies.BagSealWrinkleInspection", id: 13 },
+    { key: "Navbar.CaseStudies.AndroidBarcodeScanning",   id: 14 },
   ],
   AboutUs: [
-    { name: "Navbar.AboutUsMissionVision.about.title", scrollTo: "about" },
+    { name: "Navbar.AboutUsMissionVision.about.title",   scrollTo: "about"   },
     { name: "Navbar.AboutUsMissionVision.mission.title", scrollTo: "mission" },
-    { name: "Navbar.AboutUsMissionVision.vision.title", scrollTo: "vision" },
+    { name: "Navbar.AboutUsMissionVision.vision.title",  scrollTo: "vision"  },
   ],
   Careers: [
-    { name: "Navbar.Careers", path: "/careers" }
+    { name: "Navbar.Careers", path: "/careers" },
   ],
 };
 
 const Navbar = () => {
   const { t } = useTranslation();
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [toggledSubmenu, setToggledSubmenu] = useState({});
+  const [openSubmenu, setOpenSubmenu] = useState(null); // ← single key, not a map
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef(null);
   const navigate = useNavigate();
@@ -84,7 +86,7 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setOpenDropdown(null);
-        setToggledSubmenu({});
+        setOpenSubmenu(null);
         setIsMobileMenuOpen(false);
       }
     };
@@ -105,206 +107,108 @@ const Navbar = () => {
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
   }, [isMobileMenuOpen]);
 
   const toggleDropdown = (menu) => {
     setOpenDropdown((prev) => (prev === menu ? null : menu));
+    setOpenSubmenu(null); // close any open subcategory when switching top-level menu
   };
 
+  // Exclusive toggle: clicking a path opens it and closes all others;
+  // clicking the already-open path closes it.
   const toggleSubmenu = (path, e) => {
     e.stopPropagation();
-    setToggledSubmenu((prev) => ({
-      ...prev,
-      [path]: !prev[path],
-    }));
+    setOpenSubmenu((prev) => (prev === path ? null : path));
   };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
     setOpenDropdown(null);
-    setToggledSubmenu({});
+    setOpenSubmenu(null);
   };
 
- const toSlug = (key) => {
-  if (!key) return "";
-  const last = key.split(".").pop(); 
-  return last
-    .replace(/([a-z])([A-Z])/g, "$1-$2") 
-    .toLowerCase();
-};
+  const toSlug = (key) => {
+    if (!key) return "";
+    const last = key.split(".").pop();
+    return last.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+  };
 
-
-  // Handlers
-  const handleCareersClick = () => {
-    navigate("/careers");
+  // Close-all helper used by every nav action
+  const closeAll = () => {
     setOpenDropdown(null);
-    setToggledSubmenu({});
+    setOpenSubmenu(null);
     setIsMobileMenuOpen(false);
   };
 
-const handleProductClick = (name) => {
-  const slug = toSlug(name);
-  navigate(`/product/${slug}`);
-  setOpenDropdown(null);
-  setToggledSubmenu({});
-  setIsMobileMenuOpen(false);
-};
+  const handleCareersClick     = () => { navigate("/careers");                           closeAll(); };
+  const handleProductClick     = (name) => { navigate(`/product/${toSlug(name)}`);       closeAll(); };
+  const handleIndustryClick    = (slug) => { navigate(`/industry/${slug}`);              closeAll(); };
+  const handleCaseStudyClick   = (id)   => { navigate(`/case-study/${id}`);             closeAll(); };
+  const handleAboutUsClick     = (scrollTo) => { navigate("/", { state: { scrollTo } }); closeAll(); };
+  const handleBrochureClick    = () => closeAll();
 
-  const handleIndustryClick = (slug) => {
-    navigate(`/industry/${slug}`);
-    setOpenDropdown(null);
-    setToggledSubmenu({});
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleCaseStudyClick = (id) => {
-    navigate(`/case-study/${id}`);
-    setOpenDropdown(null);
-    setToggledSubmenu({});
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleAboutUsClick = (scrollTo) => {
-    navigate("/", { state: { scrollTo } });
-    setOpenDropdown(null);
-    setToggledSubmenu({});
-    setIsMobileMenuOpen(false);
-  };
-
-  // Updated handleContactClick function
   const handleContactClick = () => {
     if (location.pathname === "/") {
-      // If on the dashboard, scroll to the Contact Us section
       navigate("/", { state: { scrollTo: "Contact Us" } });
     } else {
-      // If not on the dashboard, navigate to the contact-us page
       navigate("/contact-us");
     }
-    setOpenDropdown(null);
-    setToggledSubmenu({});
-    setIsMobileMenuOpen(false);
+    closeAll();
   };
 
-  const handleBrochureClick = () => {
-    setOpenDropdown(null);
-    setToggledSubmenu({});
-    setIsMobileMenuOpen(false);
-  };
-
-  const renderNestedMenu = (items, level = 0, parentPath = "") => {
+  const renderNestedMenu = (items) => {
     return items.map((item, index) => {
-      const currentPath = `${parentPath}-${index}`;
-
-      // Careers Direct Link
       if (item.path === "/careers") {
         return (
-          <li
-            key="careers"
-            className="sub-sub-item"
-            role="menuitem"
-            tabIndex={0}
+          <li key="careers" className="sub-sub-item" role="menuitem" tabIndex={0}
             onClick={handleCareersClick}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleCareersClick();
-              }
-            }}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleCareersClick(); } }}
           >
             {t("Navbar.Careers")}
           </li>
         );
       }
-
-      // Industries
       if (item.slug) {
         return (
-          <li
-            key={item.slug}
-            className="sub-sub-item"
-            role="menuitem"
-            tabIndex={0}
+          <li key={item.slug} className="sub-sub-item" role="menuitem" tabIndex={0}
             onClick={() => handleIndustryClick(item.slug)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleIndustryClick(item.slug);
-              }
-            }}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleIndustryClick(item.slug); } }}
           >
             {t(item.name)}
           </li>
         );
       }
-
-      // Case Studies
       if (item.key && item.id) {
         return (
-          <li
-            key={item.id}
-            className="sub-sub-item"
-            role="menuitem"
-            tabIndex={0}
+          <li key={item.id} className="sub-sub-item" role="menuitem" tabIndex={0}
             onClick={() => handleCaseStudyClick(item.id)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleCaseStudyClick(item.id);
-              }
-            }}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleCaseStudyClick(item.id); } }}
           >
             {t(item.key)}
           </li>
         );
       }
-
-      // About Us
       if (item.scrollTo) {
         return (
-          <li
-            key={item.scrollTo}
-            className="sub-sub-item"
-            role="menuitem"
-            tabIndex={0}
+          <li key={item.scrollTo} className="sub-sub-item" role="menuitem" tabIndex={0}
             onClick={() => handleAboutUsClick(item.scrollTo)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleAboutUsClick(item.scrollTo);
-              }
-            }}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleAboutUsClick(item.scrollTo); } }}
           >
             {t(item.name)}
           </li>
         );
       }
-
-      // Products
       if (item.name) {
         return (
-          <li
-            key={item.name}
-            className="sub-sub-item"
-            role="menuitem"
-            tabIndex={0}
+          <li key={item.name} className="sub-sub-item" role="menuitem" tabIndex={0}
             onClick={() => handleProductClick(item.name)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleProductClick(item.name);
-              }
-            }}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleProductClick(item.name); } }}
           >
             {t(item.name)}
           </li>
         );
       }
-
       return null;
     });
   };
@@ -318,12 +222,7 @@ const handleProductClick = (name) => {
         role="button"
         tabIndex={0}
         aria-label={t("Navbar.ariaLabel.homeLink")}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            navigate("/");
-          }
-        }}
+        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate("/"); } }}
       >
         <img src={logo} alt={t("Navbar.CVITLogo")} />
       </div>
@@ -345,12 +244,7 @@ const handleProductClick = (name) => {
           onClick={() => navigate("/")}
           role="menuitem"
           tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              navigate("/");
-            }
-          }}
+          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate("/"); } }}
         >
           {t("Navbar.Home")}
         </li>
@@ -366,12 +260,7 @@ const handleProductClick = (name) => {
               aria-haspopup="true"
               aria-expanded={isOpen}
               tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  toggleDropdown(menu);
-                }
-              }}
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleDropdown(menu); } }}
             >
               {t(`Navbar.Menu.${menu}`)}
               <span className="plus" aria-hidden="true">+</span>
@@ -381,7 +270,7 @@ const handleProductClick = (name) => {
                   {menu === "Products" && typeof items === "object" ? (
                     Object.entries(items).map(([subcat, subitems], index) => {
                       const path = `products-${toSlug(subcat)}-${index}`;
-                      const isSubOpen = toggledSubmenu[path];
+                      const isSubOpen = openSubmenu === path; // ← compare to single key
                       return (
                         <li key={subcat} className="nested-dropdown-item">
                           <div
@@ -389,17 +278,17 @@ const handleProductClick = (name) => {
                             onClick={(e) => toggleSubmenu(path, e)}
                             role="button"
                             tabIndex={0}
-                            onKeyDown={(e) => {
-                              if (e.key === "Enter" || e.key === " ") {
-                                e.preventDefault();
-                                toggleSubmenu(path, e);
-                              }
-                            }}
+                            aria-expanded={isSubOpen}
+                            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleSubmenu(path, e); } }}
                           >
                             {t(subcat)}
                             <span className={`arrow ${isSubOpen ? "rotated" : ""}`}>▼</span>
                           </div>
-                          {isSubOpen && <ul className="nested-submenu">{renderNestedMenu(subitems)}</ul>}
+                          {isSubOpen && (
+                            <ul className="nested-submenu">
+                              {renderNestedMenu(subitems)}
+                            </ul>
+                          )}
                         </li>
                       );
                     })

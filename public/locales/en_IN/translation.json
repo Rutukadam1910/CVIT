@@ -857,11 +857,11 @@
       "studyHeader": "AI-Based Machine Vision System for Stamped Number Detection",
       "description": "Project Overview:\nAn AI-based machine vision system was required to ensure reliable detection of stamped numbers on engine cylinder heads for quality and traceability.\n\nSystem Requirements:\nDetect and verify stamped numbers despite errors in stamping machine operations.\nHandle variations in character shapes, depths, and alignments caused by mechanical inconsistencies.\nProvide real-time feedback to maintain production quality and traceability.\n\nKey Challenges:\nFont variations – different character styles, sizes, and stamping depths making consistent detection difficult.\nIntegration with existing server – ensuring seamless connectivity and data exchange with the client's current IT/production infrastructure.\nLack of raw data – limited availability of labeled samples to build and train a robust deep learning model.\n\nCVIT AI Solution:\nDeveloped seamless integration using Python libraries, enabling connectivity with the client's existing server infrastructure.\nImplemented high-level OCR software designed for industrial applications, capable of handling variations in stamped fonts and depths.\nOptimized the model to achieve 100% accuracy on all alphanumeric characters using only 25% of the main data for training."
     },
-    "5": {
-      "title": "Tire Traceability and Tracking",
-      "studyHeader": "AI-Based Tire Traceability and Tracking Solution",
-      "description": "Project Overview:\nAn AI-based tire traceability and tracking system was developed to ensure compliance in assembly and labeling.\n\nSystem Requirements:\nProvide 100% traceability to verify each tire was assembled per vehicle configuration.\nEnsure barcode-based labeling of tires post-successful inspection for identification and tracking.\nMaintain real-time data logging of inspection results for audit and reporting.\nSupport integration with the client's existing production and IT systems.\nDeliver high accuracy and speed to match production line throughput.\n\nKey Challenges:\nDetecting black characters on black tires – ensuring reliable character and barcode recognition despite low contrast between print and surface.\nMaintaining production time – achieving precise inspection and traceability without slowing assembly line throughput.\n\nCVIT AI Solution:\nImplemented a hybrid system: AI-based part recognition + barcode/QR detection.\nIntegrated with MES system to log timestamps, location, and status for each component.\nUsed multiple-angle cameras to ensure 360° visibility.\nAchieved 99% tracking coverage with automatic alerts for missing or illegible tags."
-    },
+     "5": {
+    "title": "Tire Tracing and Tracking",
+    "studyHeader": "AI-Based Tire Tracing and Tracking Solution",
+    "description": "Project Overview:\nAn AI-based tire tracing and tracking system was developed to ensure compliance in assembly and labeling.\n\nSystem Requirements:\nProvide 100% traceability to verify each tire was assembled per vehicle configuration.\nEnsure barcode-based labeling of tires post-successful inspection for identification and tracking.\nMaintain real-time data logging of inspection results for audit and reporting.\nSupport integration with the client's existing production and IT systems.\nDeliver high accuracy and speed to match production line throughput.\n\nKey Challenges:\nDetecting black characters on black tires – ensuring reliable character and barcode recognition despite low contrast between print and surface.\nMaintaining production time – achieving precise inspection and traceability without slowing assembly line throughput.\n\nCVIT AI Solution:\nImplemented a hybrid system: AI-based part recognition + barcode/QR detection.\nIntegrated with MES system to log timestamps, location, and status for each component.\nUsed multiple-angle cameras to ensure 360° visibility.\nAchieved 99% tracking coverage with automatic alerts for missing or illegible tags."
+  },
     "6": {
       "title": "Door Sealant Presence Detection",
       "studyHeader": "AI-Based Machine Vision System for Door Sealant Presence Detection",
@@ -896,7 +896,17 @@
       "title": "AI-Based Machine Vision System – 360° Cylinder Head Inspection",
       "studyHeader": "AI-Based Machine Vision System for 360° Cylinder Head Inspection",
       "description": "Project Overview:\nThe customer requires a complete 360° inspection of cylinder heads while the engine remains stationary on the production line. A cobot-mounted smart camera system moves around the stationary cylinder head along a pre-programmed path, capturing images from multiple angles to detect surface defects and ensure quality at production speed.\n\nProject Requirements:\n360° inspection of cylinder heads while the engine remains stationary.\nIntegration of a cobot-mounted camera system for flexible movement.\nCycle time aligned with production rate.\nDetection of defects such as cracks, oil marks, black marks, and damages.\n\nKey Challenges:\nComplex geometry of cylinder heads (holes, grooves, internal features) makes complete surface coverage and uniform lighting difficult.\nAll critical surfaces must be inspected in a single automated pass without any blind spots.\nThe full 360° inspection must complete within the production takt time without causing line stoppages.\n\nCVIT Solution:\nCobot-mounted smart camera performs circular/optimized path around stationary cylinder head.\nMulti-angle image acquisition ensures complete 360° coverage.\nTrigger-based image capture synchronized with cobot positions.\nPre-programmed inspection paths with dynamic adjustments.\nROI-based inspection for critical zones.\nDashboard for visualization and reporting."
-    }
+    },
+    "13": {
+        "title": "Bag Seal Wrinkle Inspection",
+        "studyHeader": "AI-Based Machine Vision System for Bag Seal Wrinkle Inspection",
+        "description": "Project Overview:\nAn AI-based machine vision system was developed to inspect sterile packaging bag seals during production. The system detects wrinkles, folds, and sealing defects in real time to ensure proper sealing quality before the bag moves to the next production stage.\n\nSystem Requirements:\nInspect single and double bag sealing areas.\nDetect wrinkles, folds, and seal deformation.\nProvide real-time OK/NOK inspection results.\nStore inspection images and defect history.\nIntegrate with PLC systems for rejection handling.\n\nKey Challenges:\nTransparent bags create reflection and lighting variation.\nSmall wrinkles are difficult to detect manually.\nInspection must work accurately at high production speed.\nVariations in bag position affect inspection consistency.\n\nCVIT AI Solution:\nAI vision system detects wrinkles and sealing defects with high accuracy.\nMultiple machine vision cameras inspect different sealing zones.\nReal-time AI inspection provides instant OK/NOK results.\nDefect images are automatically saved for traceability.\nIntegrated PLC communication enables alarm, rejection, and conveyor stop functions."
+      },
+      "14": {
+        "title": "Android Barcode Scanning & Part Verification",
+        "studyHeader": "AI-Based Android Application for Barcode Scanning & Part Verification",
+        "description": "Project Overview:\nAn Android-based barcode scanning system was developed to verify whether all parts assembled on construction equipment match the required vehicle model configuration. The system uses a handheld Android device to scan VIN numbers and part serial numbers in real time during assembly.\n\nSystem Requirements:\nScan VIN numbers and part serial numbers using a handheld Android device.\nVerify assembled parts according to vehicle model configuration.\nDetect wrong or missing parts during assembly.\nProvide instant OK/NOK validation results.\nMaintain assembly traceability and inspection records.\nSupport loading of vehicle and part master data.\n\nKey Challenges:\nManaging multiple VIN and part configuration data.\nReal-time validation of scanned parts during assembly.\nAvoiding wrong part assembly across different vehicle models.\nEnsuring smooth communication between Android device and server database.\n\nCVIT AI Solution:\nCVIT developed an Android application for VIN and part barcode scanning.\nThe system verifies scanned parts with the configured vehicle model in real time.\nWeb-based GUI allows easy upload of vehicle and part data in XLSX format.\nInstant alerts are generated if incorrect parts are assembled.\nInspection data and traceability records are automatically maintained."
+      }
   },
   "IndustryDetail": {
     "automobile": {
@@ -1240,15 +1250,27 @@
     "hikrobotLogoAlt": "HIKROBOT Logo",
     "baumerLogoAlt": "Baumer India Logo"
   },
+
   "Review": {
-    "headingPrimary": "We are a business who cares _ and it shows.",
+    "headingPrimary": "We Are a Business That Cares, And It Shows",
     "indiamartLogoAlt": "Indiamart Logo",
-    "indiamartHeading": "Reach us On Indiamart",
+    "indiamartHeading": "Reach Us on Indiamart",
     "indiamartSubtext": "Discover Our Services",
     "googleLogoAlt": "Google Logo",
     "googleHeading": "Rate Us on Google",
-    "googleSubtext": "{{count}} reviews"
+    "googleSubtext": "{{count}} reviews",
+    "stats": {
+      "projects": "Projects Deployed",
+      "successRate": "Success Rate",
+      "team": "People Strong Team",
+      "lights": "Machine Vision Lights Sold",
+      "projectsValue": "70+",
+      "successRateValue": "100%",
+      "teamValue": "17",
+      "lightsValue": "1000+"
+    }
   },
+
   "ContactUsPage": {
     "formHeading": "DISCUSS YOUR PROJECT",
     "formNamePlaceholder": "Full name",
@@ -1446,8 +1468,9 @@
       "HandBrakeCableInspection": "Hand Brake Cable Bin Inspection",
       "VINInspection": "VIN Number Plate Inspection",
       "LadleHookInspection": "Ladle Hook Inspection",
-      "AndroidBarcodeScanning": "Android Barcode Scanning",
-      "CylinderHeadInspection": "360° Cylinder Head Inspection"
+      "CylinderHeadInspection": "360° Cylinder Head Inspection",
+     "BagSealWrinkleInspection": "Bag Seal Wrinkle Inspection",
+        "AndroidBarcodeScanning": "Android Barcode Scanning & Part Verification"
     },
     "AboutUsMissionVision": {
       "about": {

@@ -66,11 +66,9 @@ nav {
   outline: none;
 }
 
-/* Nested submenu — hover only works inside an already-open dropdown */
-.nested-dropdown-item:hover > .nested-submenu,
-.nested-dropdown-item:focus-within > .nested-submenu {
-  display: block;
-}
+/* ── REMOVED: hover/focus-within auto-open of nested submenu ──
+   Submenu is now rendered conditionally by React state (click only).
+   No CSS rule should ever show .nested-submenu — React controls display. */
 
 .subcategory-heading {
   display: flex;
@@ -119,9 +117,7 @@ nav {
   max-width: 350px;
   border-radius: 4.02px;
   z-index: 1000;
-  display: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  visibility: visible;
   word-wrap: break-word;
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
@@ -208,14 +204,12 @@ ul.menu > li {
   box-sizing: border-box;
 }
 
-/* ── DROPDOWN FIX: color on hover always fine, but underline only on open ── */
 ul.menu > li:hover,
 ul.menu > li.active,
 ul.menu > li.open {
   color: var(--red);
 }
 
-/* Underline only on open item, not on hover */
 ul.menu > li.open::after {
   content: '';
   position: absolute;
@@ -227,7 +221,6 @@ ul.menu > li.open::after {
   border-radius: 1px;
 }
 
-/* ── DROPDOWN FIX: open via .open class only, NOT hover ── */
 .dropdown {
   position: absolute;
   top: 100%;
@@ -248,12 +241,10 @@ ul.menu > li.open::after {
   text-rendering: optimizeLegibility;
 }
 
-/* Only .open triggers dropdown — hover does NOT */
 ul.menu > li.open .dropdown {
   display: block;
 }
 
-/* ── DROPDOWN FIX: plus icon rotates only on .open, not on hover ── */
 ul.menu > li.hasDropdown > span.plus {
   font-weight: 900;
   color: var(--red);
@@ -374,6 +365,7 @@ ul.menu > li.hasDropdown:hover:not(.open) > span.plus {
 .broucher {
   background: #ef3a3a;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .broucher:hover,
@@ -524,16 +516,10 @@ ul.menu > li.hasDropdown:hover:not(.open) > span.plus {
     margin-top: 0.2rem;
     font-size: 0.7rem;
     word-wrap: break-word;
-    display: none;
     font-family: var(--font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-  }
-
-  .nested-dropdown-item:hover > .nested-submenu,
-  .nested-dropdown-item:focus-within > .nested-submenu {
-    display: block;
   }
 
   .subcategory-heading {

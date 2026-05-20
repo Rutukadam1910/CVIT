@@ -821,10 +821,10 @@
       "description": "Projektübersicht:\nEin KI-basiertes Maschinensehsystem war erforderlich, um die zuverlässige Erkennung gestempelter Nummern auf Motorzylinderköpfen für Qualität und Rückverfolgbarkeit sicherzustellen.\n\nSystemanforderungen:\nErkennung und Überprüfung gestempelter Nummern trotz Fehler in Stempelmaschinenoperationen.\nUmgang mit Variationen in Zeichenformen, Tiefen und Ausrichtungen, die durch mechanische Inkonsistenzen verursacht werden.\nBereitstellung von Echtzeit-Feedback zur Aufrechterhaltung der Produktionsqualität und Rückverfolgbarkeit.\n\nHerausforderungen:\nSchriftvariationen – unterschiedliche Zeichenstile, Größen und Stempeltiefen, die eine konsistente Erkennung erschweren.\nIntegration mit vorhandenem Server – Sicherstellung nahtloser Konnektivität und Datenaustausch mit der aktuellen IT/Produktionsinfrastruktur des Kunden.\nMangel an Rohdaten – begrenzte Verfügbarkeit markierter Proben zum Aufbau und Training eines robusten Deep-Learning-Modells.\n\nCVIT KI-Lösung:\nEntwicklung nahtloser Integration unter Verwendung von Python-Bibliotheken, die Konnektivität mit der vorhandenen Serverinfrastruktur des Kunden ermöglicht.\nImplementierung von High-Level-OCR-Software für industrielle Anwendungen, die mit Variationen in gestempelten Schriftarten und Tiefen umgehen kann.\nOptimierung des Modells zur Erzielung von 100% Genauigkeit auf allen alphanumerischen Zeichen unter Verwendung von nur 25% der Hauptdaten für das Training."
     },
     "5": {
-      "title": "Reifen-Rückverfolgung und -verfolgung",
-      "studyHeader": "Fallstudie 5 - KI-basierte Reifen-Rückverfolgungs- und -verfolgungslösung",
-      "description": "Projektübersicht:\nEin KI-basiertes Reifen-Rückverfolgungs- und -verfolgungssystem wurde entwickelt, um Konformität bei Montage und Kennzeichnung sicherzustellen.\n\nSystemanforderungen:\nBereitstellung von 100% Rückverfolgbarkeit zur Überprüfung, dass jeder Reifen gemäß Fahrzeugkonfiguration montiert wurde.\nSicherstellung der barcode-basierten Kennzeichnung von Reifen nach erfolgreicher Inspektion zur Identifikation und Verfolgung.\nAufrechterhaltung der Echtzeit-Datenprotokollierung von Inspektionsergebnissen für Audit und Berichterstattung.\nUnterstützung der Integration mit den vorhandenen Produktions- und IT-Systemen des Kunden.\nLieferung hoher Genauigkeit und Geschwindigkeit zur Anpassung an den Produktionsliniendurchsatz.\n\nHerausforderungen:\nErkennung schwarzer Zeichen auf schwarzen Reifen – Sicherstellung zuverlässiger Zeichen- und Barcode-Erkennung trotz geringen Kontrasts zwischen Druck und Oberfläche.\nAufrechterhaltung der Produktionszeit – Erzielung präziser Inspektion und Rückverfolgung ohne Verlangsamung des Montageflinien-Durchsatzes.\n\nCVIT KI-Lösung:\nImplementierung eines Hybridsystems: KI-basierte Teilerkennung + Barcode/QR-Erkennung.\nIntegration mit MES-System zur Protokollierung von Zeitstempeln, Standort und Status für jedes Bauteil.\nVerwendung von Mehrwinkelkameras zur Sicherstellung von 360°-Sichtbarkeit.\nErzielung von 99% Abdeckung der Verfolgung mit automatischen Warnungen für fehlende oder unleserliche Tags."
-    },
+    "title": "Reifenverfolgung und Tracking",
+    "studyHeader": "KI-basierte Lösung zur Reifenverfolgung und -nachverfolgung",
+    "description": "Projektübersicht:\nEin KI-basiertes System zur Reifenverfolgung und -nachverfolgung wurde entwickelt, um die Einhaltung von Montage- und Kennzeichnungsvorschriften sicherzustellen.\n\nSystemanforderungen:\nBereitstellung von 100% Rückverfolgbarkeit, um zu überprüfen, ob jeder Reifen gemäß der Fahrzeugkonfiguration montiert wurde.\nSicherstellung einer barcodebasierten Kennzeichnung der Reifen nach erfolgreicher Inspektion zur Identifikation und Nachverfolgung.\nEchtzeit-Datenprotokollierung der Inspektionsergebnisse für Audit- und Berichtszwecke.\nUnterstützung der Integration mit den bestehenden Produktions- und IT-Systemen des Kunden.\nBereitstellung hoher Genauigkeit und Geschwindigkeit, um den Durchsatz der Produktionslinie zu erfüllen.\n\nHerausforderungen:\nErkennung schwarzer Zeichen auf schwarzen Reifen – zuverlässige Zeichen- und Barcodeerkennung trotz geringem Kontrast zwischen Druck und Oberfläche.\nAufrechterhaltung der Produktionszeit – präzise Inspektion und Rückverfolgbarkeit ohne Verlangsamung der Produktionslinie.\n\nCVIT KI-Lösung:\nImplementierung eines Hybridsystems: KI-basierte Teilerkennung + Barcode/QR-Erkennung.\nIntegration mit dem MES-System zur Protokollierung von Zeitstempel, Standort und Status jeder Komponente.\nEinsatz von Kameras aus mehreren Winkeln für 360°-Sichtbarkeit.\nErreichte 99% Tracking-Abdeckung mit automatischen Warnmeldungen bei fehlenden oder unlesbaren Tags."
+  },
     "6": {
       "title": "Türdichtung-Präsenzerkennung",
       "studyHeader": "Fallstudie 6 - KI-basiertes Maschinensehsystem zur Erkennung der Präsenz von Türdichtungen",
@@ -859,7 +859,18 @@
       "title": "KI-basiertes Maschinensehsystem – 360° Zylinderkopf-Inspektion",
       "studyHeader": "KI-basiertes Maschinensehsystem für 360° Zylinderkopf-Inspektion",
       "description": "Projektübersicht:\nDer Kunde benötigt eine vollständige 360°-Inspektion von Zylinderköpfen, während der Motor auf der Produktionslinie stationär bleibt. Ein an einem Cobot montiertes Kamerasystem bewegt sich entlang eines vorprogrammierten Pfades um den stationären Zylinderkopf und erfasst Bilder aus mehreren Winkeln zur Erkennung von Oberflächenfehlern.\n\nProjektanforderungen:\n360°-Inspektion von Zylinderköpfen bei stationärem Motor.\nIntegration eines Cobot-montierten Kamerasystems für flexible Bewegung.\nZykluszeit abgestimmt auf die Produktionsrate.\nErkennung von Defekten wie Rissen, Ölspuren, schwarzen Markierungen und Schäden.\n\nHerausforderungen:\nDie komplexe Geometrie der Zylinderköpfe (Löcher, Nuten, innere Merkmale) macht eine vollständige Oberflächenabdeckung und gleichmäßige Beleuchtung schwierig.\nAlle kritischen Oberflächen müssen in einem einzigen automatisierten Durchgang ohne Blindstellen inspiziert werden.\nDie vollständige 360°-Inspektion muss innerhalb der Produktionstaktzeit abgeschlossen werden, ohne Linienstopps zu verursachen.\n\nCVIT-Lösung:\nAm Cobot montierte Smartkamera führt kreisförmige/optimierte Bewegungen um den stationären Zylinderkopf durch.\nMehrwinkel-Bilderfassung gewährleistet vollständige 360°-Abdeckung.\nTriggerbasierte Bildaufnahme synchronisiert mit Cobot-Positionen.\nVorprogrammierte Inspektionspfade mit dynamischen Anpassungen.\nROI-basierte Inspektion für kritische Zonen.\nDashboard zur Visualisierung und Berichterstattung."
-    }
+    },
+          "13": {
+        "title": "Beutelversiegelungs-Faltenprüfung",
+        "studyHeader": "KI-basiertes Bildverarbeitungssystem zur Beutelversiegelungs-Faltenprüfung",
+        "description": "Projektübersicht:\nEin KI-basiertes Bildverarbeitungssystem wurde entwickelt, um sterile Beutelversiegelungen während der Produktion zu prüfen.\n\nSystemanforderungen:\nPrüfung von Einfach- und Doppelversiegelungen.\nErkennung von Falten und Verformungen.\nEchtzeit-OK/NOK-Ergebnisse.\nSpeicherung von Bildern und Fehlerhistorien.\nPLC-Integration für Ausschleusung.\n\nHerausforderungen:\nTransparente Beutel verursachen Reflexionen.\nKleine Falten sind schwer manuell erkennbar.\nHohe Produktionsgeschwindigkeit.\nPositionsabweichungen beeinflussen die Genauigkeit.\n\nCVIT KI-Lösung:\nKI erkennt Falten und Versiegelungsfehler präzise.\nMehrere Kameras prüfen verschiedene Bereiche.\nSofortige OK/NOK-Ergebnisse.\nFehlerbilder werden gespeichert.\nPLC-Kommunikation für Alarm und Ausschleusung."
+      },
+      "14": {
+        "title": "Android-Barcode-Scanning & Teileprüfung",
+        "studyHeader": "KI-basierte Android-Anwendung für Barcode-Scanning und Teileprüfung",
+        "description": "Projektübersicht:\nEin Android-basiertes Barcode-Scansystem wurde entwickelt, um Fahrzeugteile gemäß Modellkonfiguration zu prüfen.\n\nSystemanforderungen:\nScannen von VIN- und Teilenummern.\nPrüfung der montierten Teile.\nErkennung falscher oder fehlender Teile.\nEchtzeit-OK/NOK-Ergebnisse.\nRückverfolgbarkeit sicherstellen.\n\nHerausforderungen:\nVerwaltung mehrerer VIN-Daten.\nEchtzeitvalidierung.\nVermeidung falscher Montage.\nStabile Datenbankkommunikation.\n\nCVIT KI-Lösung:\nCVIT entwickelte eine Android-App für Barcode-Scanning.\nEchtzeitprüfung der Teile.\nWeb-GUI für XLSX-Datenimport.\nSofortige Warnungen bei Fehlern.\nAutomatische Rückverfolgbarkeit."
+      }
+
   },
   "IndustryDetail": {
     "automobile": {
@@ -1203,14 +1214,24 @@
     "hikrobotLogoAlt": "HIKROBOT Logo",
     "baumerLogoAlt": "Baumer India Logo"
   },
-  "Review": {
-    "headingPrimary": "Wir sind ein Unternehmen, das sich kümmert, und das zeigt sich",
+   "Review": {
+    "headingPrimary": "Wir sind ein Unternehmen, dem seine Kunden am Herzen liegen – und das sieht man",
     "indiamartLogoAlt": "Indiamart Logo",
-    "indiamartHeading": "Erreichen Sie uns auf Indiamart",
+    "indiamartHeading": "Kontaktieren Sie uns auf Indiamart",
     "indiamartSubtext": "Entdecken Sie unsere Dienstleistungen",
     "googleLogoAlt": "Google Logo",
     "googleHeading": "Bewerten Sie uns auf Google",
-    "googleSubtext": "{{count}} Bewertungen"
+    "googleSubtext": "{{count}} Bewertungen",
+    "stats": {
+      "projects": "Abgeschlossene Projekte",
+      "successRate": "Erfolgsrate",
+      "team": "Teamstärke",
+      "lights": "Verkaufte Machine-Vision-Leuchten",
+      "projectsValue": "70+",
+      "successRateValue": "100%",
+      "teamValue": "17",
+      "lightsValue": "1000+"
+    }
   },
   "ContactUsPage": {
     "formHeading": "Ihr Projekt besprechen",
@@ -1410,8 +1431,9 @@
       "HandBrakeCableInspection": "Handbremskabel-Behälter-Inspektion",
       "VINInspection": "FIN-Nummernschild-Inspektion",
       "LadleHookInspection": "Gießlöffel-Haken-Inspektion",
-      "AndroidBarcodeScanning": "Android-Barcode-Scanning",
-      "CylinderHeadInspection": "360° Zylinderkopf-Inspektion"
+      "CylinderHeadInspection": "360° Zylinderkopf-Inspektion",
+     "BagSealWrinkleInspection": "Beutelversiegelungs-Faltenprüfung",
+        "AndroidBarcodeScanning": "Android-Barcode-Scanning & Teileprüfung"
     },
     "AboutUsMissionVision": {
       "about": {

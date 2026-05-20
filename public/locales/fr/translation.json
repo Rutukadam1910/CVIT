@@ -821,9 +821,9 @@
       "description": "Aperçu du Projet:\nUn système de vision par ordinateur basé sur l'IA était requis pour assurer la détection fiable des numéros estampillés sur les culasses de moteur pour la qualité et la traçabilité.\n\nExigences du Système:\nDétecter et vérifier les numéros estampillés malgré les erreurs dans les opérations de la machine à estampiller.\nGérer les variations dans les formes de caractères, profondeurs et alignements causées par des incohérences mécaniques.\nFournir un retour en temps réel pour maintenir la qualité de production et la traçabilité.\n\nDéfis Clés:\nVariations de police – différents styles de caractères, tailles et profondeurs d'estampillage rendant la détection cohérente difficile.\nIntégration avec serveur existant – assurant une connectivité transparente et l'échange de données avec l'infrastructure actuelle de TI/production du client.\nManque de données brutes – disponibilité limitée d'échantillons étiquetés pour construire et entraîner un modèle robuste d'apprentissage profond.\n\nSolution IA de CVIT:\nNous avons développé une intégration transparente utilisant les bibliothèques Python, permettant la connectivité avec l'infrastructure de serveur existante du client.\nNous avons implémenté un logiciel OCR de haut niveau conçu pour les applications industrielles, capable de gérer les variations dans les polices et profondeurs estampillées.\nNous avons optimisé le modèle pour atteindre 100% de précision sur tous les caractères alphanumériques en utilisant seulement 25% des données principales pour l'entraînement."
     },
     "5": {
-      "title": "Traçabilité et Suivi de Pneus",
-      "studyHeader": "Étude de Cas 5 - Solution de Traçabilité et Suivi de Pneus Basée sur l'IA",
-      "description": "Aperçu du Projet:\nUn système de traçabilité et suivi de pneus basé sur l'IA a été développé pour assurer la conformité dans l'assemblage et l'étiquetage.\n\nExigences du Système:\nFournir 100% de traçabilité pour vérifier que chaque pneu a été assemblé selon la configuration du véhicule.\nAssurer l'étiquetage basé sur code-barres des pneus après inspection réussie pour identification et suivi.\nMaintenir l'enregistrement de données en temps réel des résultats d'inspection pour audit et rapports.\nSoutenir l'intégration avec les systèmes existants de production et TI du client.\nLivrer une haute précision et vitesse pour correspondre au débit de la ligne de production.\n\nDéfis Clés:\nDétecter des caractères noirs sur des pneus noirs – assurant la reconnaissance fiable de caractères et codes-barres malgré le faible contraste entre l'impression et la surface.\nMaintenir le temps de production – atteignant une inspection et traçabilité précises sans ralentir le débit de la ligne d'assemblage.\n\nSolution IA de CVIT:\nNous avons implémenté un système hybride : reconnaissance de pièces basée sur l'IA + détection de code-barres/QR.\nIntégrés avec le système MES pour enregistrer les horodatages, emplacement et état pour chaque composant.\nNous avons utilisé des caméras à angles multiples pour assurer une visibilité à 360°.\nNous avons atteint 99% de couverture de suivi avec des alertes automatiques pour étiquettes manquantes ou illisibles."
+      "title": "Traçabilité et Suivi des Pneus",
+      "studyHeader": "Solution de Traçabilité et Suivi des Pneus basée sur l’IA",
+      "description": "Aperçu du projet :\nUn système de traçabilité et de suivi des pneus basé sur l’IA a été développé pour garantir la conformité lors de l’assemblage et de l’étiquetage.\n\nExigences du système :\nFournir une traçabilité à 100% pour vérifier que chaque pneu est assemblé selon la configuration du véhicule.\nAssurer l’étiquetage des pneus basé sur des codes-barres après une inspection réussie pour l’identification et le suivi.\nMaintenir l’enregistrement en temps réel des résultats d’inspection pour les audits et rapports.\nPermettre l’intégration avec les systèmes de production et informatiques existants du client.\nOffrir une grande précision et une vitesse élevée pour correspondre au débit de la ligne de production.\n\nDéfis clés :\nDétection de caractères noirs sur des pneus noirs – garantir une reconnaissance fiable des caractères et des codes-barres malgré le faible contraste.\nMaintenir le temps de production – assurer une inspection précise et une traçabilité sans ralentir la ligne d’assemblage.\n\nSolution IA CVIT :\nMise en œuvre d’un système hybride : reconnaissance de pièces basée sur l’IA + détection de codes-barres/QR.\nIntégration avec le système MES pour enregistrer l’horodatage, l’emplacement et le statut de chaque composant.\nUtilisation de caméras multi-angles pour assurer une visibilité à 360°.\nAtteinte de 99% de couverture de suivi avec alertes automatiques pour les étiquettes manquantes ou illisibles."
     },
     "6": {
       "title": "Détection de Présence de Joint de Porte",
@@ -859,6 +859,16 @@
       "title": "Système de Vision par Ordinateur Basé sur l'IA – Inspection 360° Culasse",
       "studyHeader": "Système de Vision par Ordinateur Basé sur l'IA pour Inspection 360° Culasse Moteur",
       "description": "Aperçu du Projet:\nLe client requiert une inspection complète à 360° des culasses moteur pendant que le moteur reste stationnaire sur la ligne de production. Un système de caméra monté sur cobot se déplace autour de la culasse stationnaire selon une trajectoire préprogrammée, capturant des images depuis plusieurs angles pour détecter les défauts de surface.\n\nExigences du Projet:\nInspection à 360° des culasses moteur pendant que le moteur reste stationnaire.\nIntégration d'un système de caméra monté sur cobot pour un mouvement flexible.\nTemps de cycle aligné sur la cadence de production.\nDétection de défauts tels que fissures, traces d'huile, marques noires et dommages.\n\nDéfis Clés:\nLa géométrie complexe des culasses (trous, rainures, caractéristiques internes) rend la couverture complète de la surface et l'éclairage uniforme difficiles.\nToutes les surfaces critiques doivent être inspectées en un seul passage automatisé sans zones aveugles.\nL'inspection complète à 360° doit se terminer dans le temps de takt de production sans causer d'arrêts de ligne.\n\nSolution CVIT:\nLa caméra intelligente montée sur cobot effectue un parcours circulaire/optimisé autour de la culasse stationnaire.\nL'acquisition d'images multi-angles garantit une couverture complète à 360°.\nCapture d'images basée sur déclencheur synchronisée avec les positions du cobot.\nParcours d'inspection préprogrammés avec ajustements dynamiques.\nInspection basée sur ROI pour les zones critiques.\nTableau de bord pour la visualisation et les rapports."
+    },
+    "13": {
+      "title": "Inspection des plis de scellage des sacs",
+      "studyHeader": "Système de vision industrielle IA pour l’inspection des plis de scellage des sacs",
+      "description": "Aperçu du Projet:\nUn système de vision industrielle basé sur l’IA a été développé pour inspecter les scellages de sacs stériles pendant la production. Le système détecte les plis, déformations et défauts d’étanchéité en temps réel.\n\nExigences du système:\nInspecter les zones de scellage simples et doubles.\nDétecter les plis et déformations.\nFournir des résultats OK/NOK en temps réel.\nEnregistrer les images et historiques des défauts.\nIntégration PLC pour le rejet automatique.\n\nDéfis clés:\nLes sacs transparents créent des reflets.\nLes petits plis sont difficiles à détecter manuellement.\nInspection nécessaire à grande vitesse.\nLes variations de position affectent la précision.\n\nSolution IA de CVIT:\nLe système IA détecte les défauts avec haute précision.\nPlusieurs caméras inspectent différentes zones.\nRésultats OK/NOK instantanés.\nImages enregistrées pour la traçabilité.\nCommunication PLC pour alarmes et rejet automatique."
+    },
+    "14": {
+      "title": "Scan Android de codes-barres et vérification des pièces",
+      "studyHeader": "Application Android IA pour le scan de codes-barres et la vérification des pièces",
+      "description": "Aperçu du Projet:\nUn système Android de scan de codes-barres a été développé pour vérifier les pièces assemblées selon la configuration du véhicule.\n\nExigences du système:\nScanner les VIN et numéros de pièces.\nVérifier les pièces assemblées.\nDétecter les pièces incorrectes ou manquantes.\nFournir des résultats OK/NOK.\nMaintenir la traçabilité.\n\nDéfis clés:\nGestion de multiples configurations VIN.\nValidation en temps réel.\nPrévention des erreurs d’assemblage.\nCommunication stable avec la base de données.\n\nSolution IA de CVIT:\nCVIT a développé une application Android de scan.\nValidation en temps réel des pièces.\nChargement des données via interface Web XLSX.\nAlertes instantanées pour pièces incorrectes.\nHistorique de traçabilité enregistré automatiquement."
     }
   },
   "IndustryDetail": {
@@ -1204,13 +1214,23 @@
     "baumerLogoAlt": "Logo Baumer India"
   },
   "Review": {
-    "headingPrimary": "Nous sommes une entreprise qui se soucie, et cela se voit",
+    "headingPrimary": "Nous sommes une entreprise qui se soucie de ses clients, et cela se voit",
     "indiamartLogoAlt": "Logo Indiamart",
     "indiamartHeading": "Contactez-nous sur Indiamart",
     "indiamartSubtext": "Découvrez nos services",
     "googleLogoAlt": "Logo Google",
-    "googleHeading": "Notez-nous sur Google",
-    "googleSubtext": "{{count}} avis"
+    "googleHeading": "Évaluez-nous sur Google",
+    "googleSubtext": "{{count}} avis",
+    "stats": {
+      "projects": "Projets réalisés",
+      "successRate": "Taux de réussite",
+      "team": "Équipe",
+      "lights": "Lumières de vision industrielle vendues",
+      "projectsValue": "70+",
+      "successRateValue": "100%",
+      "teamValue": "17",
+      "lightsValue": "1000+"
+    }
   },
   "ContactUsPage": {
     "formHeading": "Discutez de votre projet",
@@ -1410,8 +1430,9 @@
       "HandBrakeCableInspection": "Inspection Bac de Câble de Frein à Main",
       "VINInspection": "Inspection de Plaque VIN",
       "LadleHookInspection": "Inspection de Crochet de Louche",
-      "AndroidBarcodeScanning": "Scan Code-Barres Android",
-      "CylinderHeadInspection": "Inspection Culasse 360°"
+      "CylinderHeadInspection": "Inspection Culasse 360°",
+      "BagSealWrinkleInspection": "Inspection des plis de scellage des sacs",
+      "AndroidBarcodeScanning": "Scan Android de codes-barres et vérification des pièces"
     },
     "AboutUsMissionVision": {
       "about": {

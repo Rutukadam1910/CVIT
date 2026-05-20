@@ -821,9 +821,9 @@
       "description": "Resumen del Proyecto:\nSe requirió un sistema de visión por computadora basado en IA para garantizar la detección confiable de números estampados en culatas de motor para calidad y trazabilidad.\n\nRequisitos del Sistema:\nDetectar y verificar números estampados a pesar de errores en operaciones de la máquina de estampado.\nManejar variaciones en formas de caracteres, profundidades y alineaciones causadas por inconsistencias mecánicas.\nProporcionar retroalimentación en tiempo real para mantener la calidad de producción y trazabilidad.\n\nDesafíos Clave:\nVariaciones de fuente – diferentes estilos de caracteres, tamaños y profundidades de estampado haciendo la detección consistente difícil.\nIntegración con servidor existente – asegurando conectividad sin problemas e intercambio de datos con la infraestructura actual de TI/producción del cliente.\nFalta de datos brutos – disponibilidad limitada de muestras etiquetadas para construir y entrenar un modelo robusto de aprendizaje profundo.\n\nSolución de IA de CVIT:\nDesarrollamos integración sin problemas usando bibliotecas Python, permitiendo conectividad con la infraestructura de servidor existente del cliente.\nImplementamos software OCR de alto nivel diseñado para aplicaciones industriales, capaz de manejar variaciones en fuentes y profundidades estampadas.\nOptimizamos el modelo para lograr 100% de precisión en todos los caracteres alfanuméricos usando solo el 25% de los datos principales para entrenamiento."
     },
     "5": {
-      "title": "Trazabilidad y Seguimiento de Neumáticos",
-      "studyHeader": "Estudio de Caso 5 - Solución de Trazabilidad y Seguimiento de Neumáticos Basada en IA",
-      "description": "Resumen del Proyecto:\nSe desarrolló un sistema de trazabilidad y seguimiento de neumáticos basado en IA para garantizar el cumplimiento en ensamblaje y etiquetado.\n\nRequisitos del Sistema:\nProporcionar 100% de trazabilidad para verificar que cada neumático fue ensamblado según la configuración del vehículo.\nAsegurar etiquetado basado en código de barras de neumáticos posterior a inspección exitosa para identificación y seguimiento.\nMantener registro de datos en tiempo real de resultados de inspección para auditoría e informes.\nSoportar integración con los sistemas existentes de producción y TI del cliente.\nEntregar alta precisión y velocidad para coincidir con el rendimiento de la línea de producción.\n\nDesafíos Clave:\nDetectar caracteres negros en neumáticos negros – asegurando reconocimiento confiable de caracteres y códigos de barras a pesar del bajo contraste entre impresión y superficie.\nMantener el tiempo de producción – logrando inspección y trazabilidad precisas sin ralentizar el rendimiento de la línea de ensamblaje.\n\nSolución de IA de CVIT:\nImplementamos un sistema híbrido: reconocimiento de partes basado en IA + detección de código de barras/QR.\nIntegrados con sistema MES para registrar marcas de tiempo, ubicación y estado para cada componente.\nUsamos cámaras de múltiples ángulos para garantizar visibilidad de 360°.\nLogramos 99% de cobertura de seguimiento con alertas automáticas para etiquetas faltantes o ilegibles."
+      "title": "Rastreo y Seguimiento de Neumáticos",
+      "studyHeader": "Solución de Rastreo y Seguimiento de Neumáticos basada en IA",
+      "description": "Resumen del Proyecto:\nSe desarrolló un sistema basado en IA para el rastreo y seguimiento de neumáticos con el fin de garantizar el cumplimiento en el ensamblaje y etiquetado.\n\nRequisitos del Sistema:\nProporcionar trazabilidad del 100% para verificar que cada neumático se ensambló según la configuración del vehículo.\nGarantizar el etiquetado basado en códigos de barras después de una inspección exitosa para identificación y seguimiento.\nMantener el registro de datos en tiempo real de los resultados de inspección para auditoría e informes.\nPermitir la integración con los sistemas de producción e IT existentes del cliente.\nOfrecer alta precisión y velocidad para coincidir con el rendimiento de la línea de producción.\n\nDesafíos Clave:\nDetectar caracteres negros en neumáticos negros – garantizar un reconocimiento confiable de caracteres y códigos de barras a pesar del bajo contraste.\nMantener el tiempo de producción – lograr inspección y trazabilidad precisas sin ralentizar la línea de ensamblaje.\n\nSolución de IA de CVIT:\nImplementación de un sistema híbrido: reconocimiento de piezas basado en IA + detección de códigos de barras/QR.\nIntegración con el sistema MES para registrar marca de tiempo, ubicación y estado de cada componente.\nUso de cámaras de múltiples ángulos para garantizar visibilidad de 360°.\nLogro del 99% de cobertura de seguimiento con alertas automáticas para etiquetas faltantes o ilegibles."
     },
     "6": {
       "title": "Detección de Presencia de Sellador de Puerta",
@@ -859,6 +859,16 @@
       "title": "Sistema de Visión por Computadora Basado en IA – Inspección 360° de Culata",
       "studyHeader": "Sistema de Visión por Computadora Basado en IA para Inspección 360° de Culata de Motor",
       "description": "Resumen del Proyecto:\nEl cliente requiere una inspección completa de 360° de las culatas de motor mientras el motor permanece estacionario en la línea de producción. Un sistema de cámara montado en cobot se mueve alrededor de la culata estacionaria a lo largo de una trayectoria preprogramada, capturando imágenes desde múltiples ángulos para detectar defectos superficiales.\n\nRequisitos del Proyecto:\nInspección 360° de culatas de motor mientras el motor permanece estacionario.\nIntegración de un sistema de cámara montado en cobot para movimiento flexible.\nTiempo de ciclo alineado con la tasa de producción.\nDetección de defectos como grietas, marcas de aceite, marcas negras y daños.\n\nDesafíos Clave:\nLa geometría compleja de las culatas (orificios, ranuras, características internas) dificulta la cobertura completa de la superficie y la iluminación uniforme.\nTodas las superficies críticas deben inspeccionarse en un único paso automatizado sin puntos ciegos.\nLa inspección completa de 360° debe finalizar dentro del tiempo de takt de producción sin causar paradas de línea.\n\nSolución CVIT:\nLa cámara inteligente montada en cobot realiza una trayectoria circular/optimizada alrededor de la culata estacionaria.\nLa adquisición de imágenes desde múltiples ángulos garantiza cobertura completa de 360°.\nCaptura de imágenes basada en disparador sincronizada con posiciones del cobot.\nRutas de inspección preprogramadas con ajustes dinámicos.\nInspección basada en ROI para zonas críticas.\nPanel de control para visualización e informes."
+    },
+    "13": {
+      "title": "Inspección de arrugas en sellado de bolsas",
+      "studyHeader": "Sistema de visión artificial basado en IA para inspección de arrugas en sellado de bolsas",
+      "description": "Resumen del Proyecto:\nSe desarrolló un sistema de visión artificial basado en IA para inspeccionar sellos de bolsas estériles durante la producción.\n\nRequisitos del sistema:\nInspeccionar áreas de sellado simples y dobles.\nDetectar arrugas y deformaciones.\nResultados OK/NOK en tiempo real.\nGuardar imágenes e historial.\nIntegración PLC.\n\nDesafíos clave:\nLas bolsas transparentes generan reflejos.\nLas arrugas pequeñas son difíciles de detectar.\nAlta velocidad de producción.\nVariaciones de posición afectan la inspección.\n\nSolución de IA de CVIT:\nLa IA detecta defectos con alta precisión.\nMúltiples cámaras inspeccionan zonas.\nResultados instantáneos OK/NOK.\nImágenes guardadas para trazabilidad.\nComunicación PLC para alarmas y rechazo."
+    },
+    "14": {
+      "title": "Escaneo Android de códigos de barras y verificación de piezas",
+      "studyHeader": "Aplicación Android basada en IA para escaneo de códigos y verificación de piezas",
+      "description": "Resumen del Proyecto:\nSe desarrolló un sistema Android de escaneo de códigos para verificar piezas ensambladas según la configuración del vehículo.\n\nRequisitos del sistema:\nEscanear VIN y números de piezas.\nVerificar piezas ensambladas.\nDetectar piezas faltantes o incorrectas.\nResultados OK/NOK instantáneos.\nMantener trazabilidad.\n\nDesafíos clave:\nGestión de múltiples datos VIN.\nValidación en tiempo real.\nEvitar ensamblajes incorrectos.\nComunicación estable con base de datos.\n\nSolución de IA de CVIT:\nCVIT desarrolló una aplicación Android.\nVerificación en tiempo real.\nCarga de datos XLSX vía interfaz web.\nAlertas instantáneas.\nRegistros automáticos de trazabilidad."
     }
   },
   "IndustryDetail": {
@@ -1204,13 +1214,23 @@
     "baumerLogoAlt": "Logo de Baumer India"
   },
   "Review": {
-    "headingPrimary": "Somos un negocio que se preocupa, y se nota",
+    "headingPrimary": "Somos una empresa que se preocupa, y se nota",
     "indiamartLogoAlt": "Logo de Indiamart",
     "indiamartHeading": "Contáctanos en Indiamart",
     "indiamartSubtext": "Descubre nuestros servicios",
     "googleLogoAlt": "Logo de Google",
     "googleHeading": "Califícanos en Google",
-    "googleSubtext": "{{count}} reseñas"
+    "googleSubtext": "{{count}} reseñas",
+    "stats": {
+      "projects": "Proyectos realizados",
+      "successRate": "Tasa de éxito",
+      "team": "Equipo de personas",
+      "lights": "Luces de visión artificial vendidas",
+      "projectsValue": "70+",
+      "successRateValue": "100%",
+      "teamValue": "17",
+      "lightsValue": "1000+"
+    }
   },
   "ContactUsPage": {
     "formHeading": "Discuta su proyecto",
@@ -1410,8 +1430,9 @@
       "HandBrakeCableInspection": "Inspección de Bin de Cable de Freno de Mano",
       "VINInspection": "Inspección de Placa de Número VIN",
       "LadleHookInspection": "Inspección de Gancho de Cuchara",
-      "AndroidBarcodeScanning": "Escaneo de Códigos de Barras Android",
-      "CylinderHeadInspection": "Inspección de Culata 360°"
+      "CylinderHeadInspection": "Inspección de Culata 360°",
+      "BagSealWrinkleInspection": "Inspección de arrugas en sellado de bolsas",
+      "AndroidBarcodeScanning": "Escaneo Android de códigos de barras y verificación de piezas"
     },
     "AboutUsMissionVision": {
       "about": {
