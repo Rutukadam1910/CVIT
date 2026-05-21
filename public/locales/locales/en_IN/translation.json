@@ -5,7 +5,7 @@
   "ImplementationRoadmap": "Implementation Roadmap",
   "OurClients": "Our Clients",
   "ContactUs": "Contact Us",
-  "Catalogue": "Catalog",
+  "Catalogue": "Catalogue",
   "Brochure": "Brochure",
   "MVLights": "Machine Vision Lights",
   "PrivacyPolicy": "Privacy Policy",
@@ -49,8 +49,8 @@
   "RingLightAlt": "Ring Light Logo",
   "DomeLight": "Dome Light",
   "DomeLightAlt": "Dome Light Logo",
-  "FlatDiffusedLightWithCenterHole": "Flat Diffused Light with Center Hole",
-  "FlatDiffusedLightWithCenterHoleAlt": "Flat Diffused Light with Center Hole Logo",
+  "FlatDiffusedLightWithCenterHole": "Flat Diffused Light with Centre Hole",
+  "FlatDiffusedLightWithCenterHoleAlt": "Flat Diffused Light with Centre Hole Logo",
   "FlatDiffusedLight": "Flat Diffused Light",
   "FlatDiffusedLightAlt": "Flat Diffused Light Logo",
   "IndirectFlatLight": "Indirect Flat Light",
@@ -77,8 +77,8 @@
   "NoApplicationsAvailable": "No Applications Available",
   "InspectionAccuracy": "Inspection Accuracy",
   "ProductionEfficiency": "Production Efficiency",
-  "LaborCostSaving": "Labor Cost Saving",
-  "MinimizeDowntime": "Minimize Downtime",
+  "LaborCostSaving": "Labour Cost Saving",
+  "MinimizeDowntime": "Minimise Downtime",
   "InspectionSpeed": "Inspection Speed",
   "DefectFreeIndustry": "Defect-Free Industry",
   "ProductDetail": {
@@ -119,7 +119,7 @@
     "warranty": "Warranty",
     "warranty_value": "6 Months",
     "illuminationMode": "Illumination Mode",
-    "illuminationMode_value": "Strobed or Constant",
+    "illuminationMode_value": "Strobed or Continuous",
     "inputVoltage": "Input Voltage (V)",
     "inputVoltage_value": "24V DC",
     "operatingTemperature": "Operating Temperature",
@@ -129,64 +129,120 @@
     "geometryLabel": "Geometry"
   },
   "ModelStructure": {
-    "noModels": "इस उत्पाद के लिए कोई मॉडल उपलब्ध नहीं है।",
-    "tableAriaLabel": "{{product}} संरचित मॉडल और विनिर्देश",
-    "subtype": "उप-प्रकार",
-    "model": "मॉडल",
-    "dimensions": "आयाम",
-    "inputVolt": "इनपुट वोल्ट",
-    "power": "पावर (एम्प)",
-    "lumens": "ल्यूमेन्स",
-    "lumensSubtitle": "100 मिमी कार्य दूरी पर",
+    "noModels": "No models available for this product.",
+    "tableAriaLabel": "{{product}} structured models and specifications",
+    "subtype": "Subtype",
+    "model": "Model",
+    "dimensions": "Dimensions",
+    "inputVolt": "Input Voltage",
+    "power": "Power (Amp)",
+    "lumens": "Lumens",
+    "lumensSubtitle": "at 100 mm working distance",
     "lumensUnit": "lm",
     "lumensNA": "N/A",
-    "color": "रंग",
-    "availableColors": "उपलब्ध रंग",
-    "buyNow": "अभी खरीदें",
-    "buyAriaLabel": "{{model}} खरीदें",
-    "buyAlt": "खरीद आइकन"
+    "color": "Colour",
+    "availableColors": "Available Colours",
+    "buyNow": "Buy Now",
+    "buyAriaLabel": "Buy {{model}}",
+    "buyAlt": "Buy icon"
   },
   "TechnicalInfo": {
     "tableAriaLabel": "Technical Specifications Table",
     "unknownProduct": "Unknown Product",
     "category": "Category",
-    "color": "Color",
+    "color": "Colour",
     "colorRed": "Red",
     "colorWhite": "White",
     "colorBlue": "Blue",
     "colorGreen": "Green",
-    "colorTemperature": "Color Temperature",
+    "colorTemperature": "Colour Temperature",
     "colorTempWhite": "6000K-6500K",
     "cableLength": "Cable Length",
-    "cableLengthValue": "1m",
+    "cableLengthValue": "1 m",
     "connectorDefinition": "Connector Definition",
     "connectorDescription": "Positive (+) - Red & Negative (-) - Black.",
     "shellMaterial": "Shell Material",
-    "shellMaterialStandard": "Anodized Aluminum",
-    "shellMaterialDome": "Anodized Aluminum / ABS",
+    "shellMaterialStandard": "Anodized Aluminium",
+    "shellMaterialDome": "Anodized Aluminium / ABS",
     "cooling": "Cooling",
     "coolingValue": "Natural air cooling",
     "operatingTempHumidity": "Operating Temperature and Humidity",
-    "operatingTempHumidityValue": "Temperature: 0 to 50ºC, Humidity: 20% to 85%RH (non-condensing)"
+    "operatingTempHumidityValue": "Temperature: 0 to 50°C, Humidity: 20% to 85% RH (non-condensing)"
+  },
+  "Products": {
+    "bar-light": {
+      "title": "Bar Light",
+      "description": {
+        "intro": "Machine vision bar lights are elongated, high-output LED lighting modules designed to provide consistent and directional illumination across wide inspection areas. They are ideal for inspecting large parts or items moving at high speed on conveyor lines. Depending on mounting orientation, they can work in bright-field mode (perpendicular to surface) for flat/printed/reflective features or in dark-field mode (low/grazing angle) to highlight fine surface defects such as scratches, burrs, dents, and edges."
+      }
+    },
+    "ring-light": {
+      "title": "Ring Light",
+      "description": {
+        "intro": "Machine vision ring lights are circular LED illuminators mounted around the camera lens, delivering uniform, shadow-free lighting along the optical axis. Excellent for minimizing glare on shiny or irregular surfaces and suitable for both bright-field and diffuse illumination applications."
+      }
+    },
+    "dome-light": {
+      "title": "Dome Light",
+      "description": {
+        "intro": "Dome lights provide extremely diffuse, even, and shadow-free illumination from all directions. Their hemispherical design virtually eliminates reflections and hotspots, making them ideal for imaging curved, glossy, textured, or highly reflective surfaces."
+      }
+    },
+    "flat-diffused-light-with-center-hole": {
+      "title": "Flat Diffused Light with Center Hole",
+      "description": {
+        "intro": "Coaxial flat diffused lights with central aperture deliver uniform on-axis bright-field illumination. The diffused surface and camera-through-hole design significantly reduces specular reflections and is particularly effective for detecting subtle surface defects on flat, mirror-like, or semi-reflective materials."
+      }
+    },
+    "flat-diffused-light": {
+      "title": "Flat Diffused Light",
+      "description": {
+        "intro": "Flat diffused lights create large, uniform, shadowless bright-field illumination areas. Their strong diffusion greatly reduces glare and specular reflections, making them very suitable for inspection of shiny, curved or irregular surfaces."
+      }
+    },
+    "indirect-flat-light": {
+      "title": "Indirect Flat Light",
+      "description": {
+        "intro": "Indirect (or low-angle) flat lights use internal reflection to create extremely uniform, soft, diffuse illumination with almost no direct light path to the object. They provide excellent glare-free lighting and are often used as a compact alternative to dome lights, especially in space-constrained applications."
+      }
+    },
+    "back-light": {
+      "title": "Back Light",
+      "description": {
+        "intro": "Back lights create high-contrast silhouettes by illuminating from behind the object. They are the preferred lighting technique for edge detection, dimensional measurement, presence/absence checking, hole/bore inspection, and part outline/gasket inspection."
+      }
+    },
+    "spot-light": {
+      "title": "Spot Light",
+      "description": {
+        "intro": "Spot lights deliver intense, concentrated, directional illumination to small specific areas. They are commonly used for high-speed imaging, highlighting small surface defects (scratches, dents, engravings), or providing strong illumination at longer working distances."
+      }
+    },
+    "tunnel-light": {
+      "title": "Tunnel Light",
+      "description": {
+        "intro": "Tunnel lights (linear dome / tunnel illuminators) provide bright, uniform, 360° shadow-free illumination inside conveyor tunnels or inspection stations, ideal for high-speed continuous inspection of cylindrical, round, or continuously moving products (bottles, pipes, cables, extrusions, etc.)."
+      }
+    }
   },
   "CameraEnclosure": {
     "title": "Machine Vision Camera Enclosure with Cooling Jacket (CEWC)",
     "description": "The CEWC camera enclosure is designed to accommodate a wide range of machine vision cameras from various manufacturers. The standard enclosure supports 29×29mm, 30×40mm, and 60×60mm cameras from leading brands such as Baumer, Basler, Hikrobot, Allied Vision, FLIR, IDS, and Daheng Imaging. Compatible models include the Ace Classic, Ace U, Blackfly USB3 and GigE, etc. Engineered specifically for high-temperature applications, CEWC series is ideal for industrial environments with ambient temperatures of up to 120°C. For larger cameras, an XL housing option is available. To ensure proper installation and stability, mounting brackets and detailed mounting instructions will be provided. For customized mounting solutions, please contact us directly. The enclosure includes a specially designed air curtain that helps keep the lens cover clean by removing dirt. In intermittent use, it is effective at clearing dry dust and impurities. For continuous operation, it also provides protection against moist dust, oily smoke, and other contaminants.",
     "features": {
-      "1": "Supports 29x29mm, 30x40mm & 60x60mm camera sizes",
-      "2": "Compatible with Baumer, Basler, Hikrobot, Allied Vision, FLIR, IDS, Daheng and more",
-      "3": "High-temperature operation up to 120°C ambient",
-      "4": "Special air curtain system for lens protection",
-      "5": "IP68-rated cable entry (PG21 gland)",
-      "6": "Electro-polished / anodized finish for durability",
-      "7": "Mounting brackets & instructions included",
-      "8": "XL housing option for larger cameras"
+      "supportSizes": "Supports 29x29mm, 30x40mm & 60x60mm camera sizes",
+      "compatibleBrands": "Compatible with Baumer, Basler, Hikrobot, Allied Vision, FLIR, IDS, Daheng and more",
+      "highTemp": "High-temperature operation up to 120°C ambient",
+      "airCurtain": "Special air curtain system for lens protection",
+      "ip68Cable": "IP68-rated cable entry (PG21 gland)",
+      "finish": "Electro-polished / anodised finish for durability",
+      "mountingIncluded": "Mounting brackets & instructions included",
+      "xlOption": "XL housing option for larger cameras"
     },
     "specs": {
       "operatingTemp": "Operating Temperature",
       "operatingTempValue": "Up to 120°C",
       "finish": "Finish",
-      "finishValue": "Electro-polished / Anodized",
+      "finishValue": "Electro-polished / Anodised",
       "cableEntries": "Cable Entries",
       "cableEntriesValue": "PG21 Gland (IP68)",
       "windowCleaning": "Window Cleaning",
@@ -225,17 +281,21 @@
       "moreDetails": "More Details"
     },
     "dimensionAlt": "CEWC Dimensional Drawing",
-    "enquireText": "Need customized Product?",
+    "mainImageAlt": "Machine Vision Camera Enclosure with Cooling Jacket",
+    "enquireText": "Need a customised product?",
     "enquireButton": "Enquire Now",
     "galleryAriaLabel": "Gallery",
     "moreInfoAlt": "More info",
     "accessoryAriaLabel": "View details for {{name}}",
+    "buyAlt": "Buy",
+    "buyAriaLabel": "Buy {{model}}",
+    "backToProducts": "Back to Products",
     "comingSoonTitle": "Coming Soon",
     "comingSoonText": "Stay tuned."
   },
   "CameraEnclosureWithoutCooling": {
     "title": "Machine Vision Camera Enclosure without Cooling Jacket",
-    "description": "Our Machine Vision Camera Enclosures deliver exceptional protection for industrial cameras, ensuring reliability in harsh and demanding environments. Built to safeguard against dust, water, heat, and other environmental factors, these enclosures are compatible with a wide range of camera models and sizes. Featuring robust construction, easy installation, and customizable options, they are ideal for industries such as manufacturing, automation, logistics, and quality inspection. Designed to maintain camera performance while extending equipment lifespan, our enclosures are a trusted choice for modern vision systems.",
+    "description": "Our Machine Vision Camera Enclosures deliver exceptional protection for industrial cameras, ensuring reliability in harsh and demanding environments. Built to safeguard against dust, water, heat, and other environmental factors, these enclosures are compatible with a wide range of camera models and sizes. Featuring robust construction, easy installation, and customisable options, they are ideal for industries such as manufacturing, automation, logistics, and quality inspection. Designed to maintain camera performance while extending equipment lifespan, our enclosures are a trusted choice for modern vision systems.",
     "features": {
       "highQuality": "Made from high-quality materials to withstand harsh industrial environments.",
       "protection": "Shields cameras from dust, water, heat, and other contaminants (IP-rated options available).",
@@ -270,6 +330,56 @@
     "galleryAriaLabel": "Gallery",
     "moreInfoAlt": "More info",
     "accessoryAriaLabel": "View details for {{name}}",
+    "backToProducts": "Back to Products",
+    "comingSoonTitle": "Coming Soon",
+    "comingSoonText": "Stay tuned."
+  },
+  "FixedExtensionTube": {
+    "title": "Fixed Length Extension Tube",
+    "description": "C-Mount Extension Tubes serve as precision-engineered components designed to introduce additional spacing within an optical system while simultaneously preventing external light infiltration and contamination from dust or debris. These extension tubes are manufactured with industry-standard C-Mount threading, ensuring seamless compatibility with a broad spectrum of optical assemblies, imaging systems, and machine vision applications. Constructed from black anodized aluminum, these tubes exhibit high durability and corrosion resistance while effectively minimizing internal reflections. The interior surface of each extension tube features a threaded design, further aiding in the suppression of stray light, thereby enhancing image contrast and overall system performance. Extension Tubes are available in various predefined lengths, which can be modularly combined to achieve the precise extension distance required for a given optical setup. It is important to note that the physical length of the tube exceeds its effective extension length due to the inclusion of the male threaded portion, which contributes to the overall mechanical engagement within the system. This design consideration ensures secure and stable integration while maintaining optimal optical alignment.",
+    "features": {
+      "fixedExtension": "For adding a fixed tube extension to optical systems",
+      "maleFemaleThreads": "Feature male/female threads at opposite ends",
+      "blackAnodized": "Black anodized aluminum construction",
+      "industrialUse": "For use in industrial environments",
+      "easyInstall": "Easy installation and maintenance",
+      "variousLengths": "Available in various lengths for custom extension requirements",
+      "strayLightSuppression": "Suppresses stray light with internal threaded surface",
+      "cMountCompatible": "Compatible with standard C-Mount components",
+      "lightweightRigid": "Lightweight and rigid design for optical stability",
+      "secureIntegration": "Secure and stable mechanical integration",
+      "corrosionResistant": "Corrosion-resistant finish for long-lasting durability"
+    },
+    "technical": {
+      "clearAperture": "Clear Aperture CA (mm)",
+      "threadType": "Thread Type",
+      "type": "Type",
+      "function": "Function"
+    },
+    "tableHeaders": {
+      "model": "Model",
+      "weight": "Weight (kg)",
+      "outerDiameter": "Outer Diameter (mm)",
+      "length": "Length (mm)",
+      "buyNow": "Buy Now"
+    },
+    "sectionTitles": {
+      "keyFeatures": "KEY FEATURES",
+      "technicalInfo": "TECHNICAL INFORMATION",
+      "product": "PRODUCT",
+      "dimension": "Dimensional Overview"
+    },
+    "nav": {
+      "keyFeatures": "KEY FEATURES",
+      "technicalInfo": "TECHNICAL INFORMATION",
+      "product": "PRODUCT"
+    },
+    "dimensionAlt": "Fixed Extension Tube Dimension",
+    "mainImageAlt": "Fixed Length Extension Tube",
+    "enquireText": "Need customized tube?",
+    "enquireButton": "Enquire Now",
+    "buyAlt": "Buy",
+    "buyAriaLabel": "Buy {{model}}",
     "backToProducts": "Back to Products",
     "comingSoonTitle": "Coming Soon",
     "comingSoonText": "Stay tuned."
@@ -326,55 +436,43 @@
     "comingSoonTitle": "Coming Soon",
     "comingSoonText": "Stay tuned."
   },
-  "FixedExtensionTube": {
-    "title": "Fixed Length Extension Tube",
-    "description": "C-Mount Extension Tubes serve as precision-engineered components designed to introduce additional spacing within an optical system while simultaneously preventing external light infiltration and contamination from dust or debris. These extension tubes are manufactured with industry-standard C-Mount threading, ensuring seamless compatibility with a broad spectrum of optical assemblies, imaging systems, and machine vision applications. Constructed from black anodized aluminum, these tubes exhibit high durability and corrosion resistance while effectively minimizing internal reflections. The interior surface of each extension tube features a threaded design, further aiding in the suppression of stray light, thereby enhancing image contrast and overall system performance. Extension Tubes are available in various predefined lengths, which can be modularly combined to achieve the precise extension distance required for a given optical setup. It is important to note that the physical length of the tube exceeds its effective extension length due to the inclusion of the male threaded portion, which contributes to the overall mechanical engagement within the system. This design consideration ensures secure and stable integration while maintaining optimal optical alignment.",
+  "Accesories": {
+    "title": "Mounting Bracket MVCE29X29V2.68MB",
+    "description": "A robust and versatile mounting bracket designed for the easy and secure installation of camera enclosures. The bracket allows for adjustable angle (Pitch and Yaw) positioning, enabling optimal alignment for your camera setup. Compatible with MVCE29X29V2.68.LH1. Perfect for applications requiring precise camera positioning in industrial, surveillance, or outdoor environments.",
     "features": {
-      "fixedExtension": "For adding a fixed tube extension to optical systems",
-      "maleFemaleThreads": "Feature male/female threads at opposite ends",
-      "blackAnodized": "Black anodized aluminum construction",
-      "industrialUse": "For use in industrial environments",
-      "easyInstall": "Easy installation and maintenance",
-      "variousLengths": "Available in various lengths for custom extension requirements",
-      "strayLightSuppression": "Suppresses stray light with internal threaded surface",
-      "cMountCompatible": "Compatible with standard C-Mount components",
-      "lightweightRigid": "Lightweight and rigid design for optical stability",
-      "secureIntegration": "Secure and stable mechanical integration",
-      "corrosionResistant": "Corrosion-resistant finish for long-lasting durability"
-    },
-    "technical": {
-      "clearAperture": "Clear Aperture CA (mm)",
-      "threadType": "Thread Type",
-      "type": "Type",
-      "function": "Function"
-    },
-    "tableHeaders": {
-      "model": "Model",
-      "weight": "Weight (kg)",
-      "outerDiameter": "Outer Diameter (mm)",
-      "length": "Length (mm)",
-      "buyNow": "Buy Now"
+      "customFit": "Custom Fit",
+      "adjustableAngle": "Adjustable Angle",
+      "quickIntegration": "Quick Integration",
+      "durableBuild": "Durable Build"
     },
     "sectionTitles": {
       "keyFeatures": "KEY FEATURES",
-      "technicalInfo": "TECHNICAL INFORMATION",
-      "product": "PRODUCT",
-      "dimension": "Dimensional Overview"
+      "technicalInfo": "TECHNICAL INFO",
+      "gallery": "GALLERY"
     },
     "nav": {
       "keyFeatures": "KEY FEATURES",
-      "technicalInfo": "TECHNICAL INFORMATION",
-      "product": "PRODUCT"
+      "technicalInfo": "TECHNICAL INFO",
+      "gallery": "GALLERY"
     },
-    "dimensionAlt": "Fixed Extension Tube Dimension",
-    "mainImageAlt": "Fixed Length Extension Tube",
-    "enquireText": "Need customized tube?",
-    "enquireButton": "Enquire Now",
-    "buyAlt": "Buy",
-    "buyAriaLabel": "Buy {{model}}",
-    "backToProducts": "Back to Products",
-    "comingSoonTitle": "Coming Soon",
-    "comingSoonText": "Stay tuned."
+    "tableHeaders": {
+      "modelNumber": "Model Number",
+      "type": "Type",
+      "housingAccessoriesType": "Housing Accessories Type",
+      "bracketMaterial": "Bracket Material",
+      "manufacturer": "Manufacturer",
+      "compatibleWith": "Compatible With"
+    },
+    "tableValues": {
+      "housingAccessory": "Housing Accessory",
+      "bracket": "Bracket"
+    },
+    "mainImageAlt": "Mounting Bracket - Product View",
+    "dimensionImageAlt": "Mounting Bracket - Dimension Diagram",
+    "ariaLabels": {
+      "gallery": "Gallery"
+    },
+    "backToProducts": "Back to Products"
   },
   "CameraEnclosureProductDetail": {
     "models": {
@@ -441,7 +539,7 @@
     "dimensionImageAlt": "Dimension Diagram - {{model}}",
     "mountingImageAlt": "Camera Enclosure with Mounting - {{model}}",
     "lensHousingImageAlt": "Lens Housing",
-    "enquireText": "Need customized product?",
+    "enquireText": "Need customised product?",
     "enquireButton": "Enquire Now",
     "buyAlt": "Buy",
     "buyAriaLabel": "Buy {{model}}",
@@ -456,14 +554,30 @@
     "enquireButton": "Enquire Now",
     "backToProducts": "Back to Products"
   },
-  "Accesories": {
+  "MountingBracket": {
     "title": "Mounting Bracket MVCE29X29V2.68MB",
-    "description": "A robust and versatile mounting bracket designed for the easy and secure installation of camera enclosures. The bracket allows for adjustable angle (Pitch and Yaw) positioning, enabling optimal alignment for your camera setup. Compatible with MVCE29X29V2.68.LH1. Perfect for applications requiring precise camera positioning in industrial, surveillance, or outdoor environments.",
+    "description": "A robust and versatile mounting bracket designed for the easy and secure installation of camera enclosures. The bracket allows for adjustable angle (Pitch and Yaw) positioning, enabling optimal alignment for your camera setup. Compatible with MVCE29X29V2.68.LH1 Perfect for applications requiring precise camera positioning in industrial, surveillance, or outdoor environments.",
     "features": {
       "customFit": "Custom Fit",
       "adjustableAngle": "Adjustable Angle",
       "quickIntegration": "Quick Integration",
       "durableBuild": "Durable Build"
+    },
+    "specs": {
+      "modelNumber": "Model Number",
+      "type": "Type",
+      "housingAccessoriesType": "Housing Accessories Type",
+      "bracketMaterial": "Bracket Material",
+      "manufacturer": "Manufacturer",
+      "compatibleWith": "Compatible With"
+    },
+    "specsValues": {
+      "modelNumber": "MVCE29X29V2.68MB",
+      "type": "Housing Accessory",
+      "bracket": "Bracket",
+      "ss304": "SS 304",
+      "cvitSolution": "CVIT SOLUTION PVT LTD",
+      "compatibleModel": "MVCE29X29V2.68.LH1"
     },
     "sectionTitles": {
       "keyFeatures": "KEY FEATURES",
@@ -475,23 +589,8 @@
       "technicalInfo": "TECHNICAL INFO",
       "gallery": "GALLERY"
     },
-    "tableHeaders": {
-      "modelNumber": "Model Number",
-      "type": "Type",
-      "housingAccessoriesType": "Housing Accessories Type",
-      "bracketMaterial": "Bracket Material",
-      "manufacturer": "Manufacturer",
-      "compatibleWith": "Compatible With"
-    },
-    "tableValues": {
-      "housingAccessory": "Housing Accessory",
-      "bracket": "Bracket"
-    },
     "mainImageAlt": "Mounting Bracket - Product View",
     "dimensionImageAlt": "Mounting Bracket - Dimension Diagram",
-    "ariaLabels": {
-      "gallery": "Gallery"
-    },
     "backToProducts": "Back to Products"
   },
   "Buy": {
@@ -545,7 +644,7 @@
     },
     "buttons": {
       "submitting": "Submitting...",
-      "fixErrors": "Please check the highlighted fields before proceeding",
+      "fixErrors": "Please Fix Errors",
       "submit": "Submit Inquiry"
     },
     "toast": {
@@ -556,6 +655,11 @@
     "aria": {
       "close": "Close"
     }
+  },
+  "ComingSoon": {
+    "title": "Coming Soon",
+    "message": "This product is currently under development. Please check back later for more information.",
+    "backButton": "Back to Products"
   },
   "Enquire": {
     "title": "CUSTOMISED PRODUCT ENQUIRY FORM",
@@ -607,7 +711,7 @@
     },
     "buttons": {
       "submitting": "Submitting...",
-      "fixErrors": "Please check the highlighted fields before proceeding",
+      "fixErrors": "Please Fix Errors",
       "submit": "Submit Enquiry"
     },
     "toast": {
@@ -619,86 +723,37 @@
       "close": "Close"
     }
   },
-  "ComingSoon": {
-    "title": "Coming Soon",
-    "message": "This product is currently under development. Please check back later for more information.",
-    "backButton": "Back to Products"
-  },
-  "Products": {
-    "bar-light": {
-      "title": "Bar Light",
-      "description": {
-        "intro": "Machine vision bar lights are elongated, high-output LED lighting modules designed to provide consistent and directional illumination across wide inspection areas. They are well-suited for tasks such as examining large-scale parts or monitoring items moving at high speed on conveyor lines. Depending on their mounting orientation, these lights can function in bright-field mode—positioned perpendicularly to the object surface to improve the visibility of flat, printed, or reflective features—or in dark-field mode, where they are angled shallowly to highlight fine surface structures, edges, and imperfections like scratches, burrs, or dents. Their performance is supported by attributes such as uniform light distribution, adjustable intensity control, and the option to select from multiple spectral outputs (white, red, blue, green, infrared, or ultraviolet). This versatility allows bar lights to be tuned to the optical characteristics of different materials and inspection objectives, while ensuring stable illumination necessary for reliable image processing and advanced vision analysis."
-      }
-    },
-    "ring-light": {
-      "title": "Ring Light",
-      "description": {
-        "intro": "Machine vision ring lights are circular LED-based illumination units engineered to deliver consistent, shadow-minimized lighting aligned with a camera’s optical axis. Their annular design ensures balanced light distribution across the inspection area, which improves contrast and reduces shading when imaging components with uneven geometries or reflective finishes. By varying the mounting angle and distance, ring lights can be applied in bright-field mode to enhance printed or flat surfaces, or in diffuse mode to suppress glare from polished metals, plastics, or glass.These illuminators are produced in multiple wavelengths—including visible, infrared, and ultraviolet—so that lighting can be tuned to material characteristics and inspection goals. Advanced variants offer adjustable intensity, strobe operation, and optional polarizers for improved control of reflections. Their coaxial placement with the lens makes them highly effective in precision tasks such as defect detection, code recognition, assembly verification, and dimensional inspection, where uniform, stable lighting is essential."
-      }
-    },
-    "dome-light": {
-      "title": "Dome Light",
-      "description": {
-        "intro": "The Machine Vision Dome Light provides smooth, uniform illumination ideal for precision inspection. Its curved dome design spreads light evenly from all angles, reducing reflections and eliminating shadows on shiny, contoured, or textured surfaces. High-output LEDs ensure stable brightness and are available in multiple wavelengths, including white, red, blue, and infrared to suit diverse imaging needs. The durable aluminum body enhances heat dissipation, supporting long operating life and consistent performance in continuous industrial use. Optional dimming, strobe control, and compatibility with machine vision systems make this dome light suitable for electronics, automotive, medical, and high-accuracy optical inspections."
-      }
-    },
-    "flat-diffused-light-with-center-hole": {
-      "title": "Flat Diffused Light With Center Hole",
-      "description": {
-        "intro": "Machine vision diffused flat lights with a central hole are specialized illumination devices designed for coaxial, on-axis bright field lighting. By integrating a highly-diffusive panel with a central camera aperture, it provides uniform, low-glare illumination that travels along the same optical path as the camera's lens. This unique configuration effectively minimizes shadows and specular reflections on highly reflective, flat surfaces, while simultaneously ensuring that any remaining reflections are directed back into the camera. This makes them exceptionally effective for revealing subtle surface defects like scratches or micro-cracks that would be difficult to detect with other lighting techniques."
-      }
-    },
-    "flat-diffused-light": {
-      "title": "Flat Diffused Light",
-      "description": {
-        "intro": "Machine vision diffused flat lights are illumination devices that provide a highly uniform, shadow-less light source by scattering light from multiple angles. This bright field illumination technique is especially effective for inspecting objects with shiny, curved, or irregular surfaces. The light's diffusion minimizes harsh reflections and glare, allowing for the clear detection of surface defects, features, and textures that would be obscured by conventional lighting."
-      }
-    },
-    "indirect-flat-light": {
-      "title": "Indirect Flat Light",
-      "description": {
-        "intro": "A machine vision indirect flat light is a specialized illumination device that provides a highly uniform, diffused, and low-glare light source. Unlike a direct light, this system uses internal LEDs to illuminate a highly reflective, internal surface. The light is then scattered and re-emitted from this surface, which acts as a large, homogeneous light source, mimicking the soft, shadow-less illumination of an overcast sky. This design is highly effective at eliminating the hotspots and harsh directional shadows common with conventional lighting. Many models include a central aperture for the camera lens, enabling a coaxial lighting setup. This alignment allows the camera to capture images on-axis, which is crucial for minimizing specular reflections and glare on highly polished or curved surfaces. The result is a consistent, shadow-less image that reveals subtle surface details, such as scratches or dents, without being overwhelmed by reflective artifacts. The compact, flat form factor also makes it a space-saving alternative to traditional dome lights."
-      }
-    },
-    "back-light": {
-      "title": "Back Light",
-      "description": {
-        "intro": "Back Lights produce strong background illumination to create silhouettes of the object, useful for shape and outline inspection."
-      }
-    },
-    "spot-light": {
-      "title": "Spot Light",
-      "description": {
-        "intro": "Machine vision spot lights are high-intensity, point-source LED illumination devices that project a focused beam of light onto a specific area. By using lenses and collimators, they concentrate light to provide very high illuminance, making them suitable for high-speed imaging or illuminating features on low-reflectivity surfaces. Their directional nature allows them to be used for both bright field and dark field applications to highlight surface anomalies like scratches or engraved markings. Compact and powerful, they are ideal for targeted illumination over varying working distances and for use in tight spaces."
-      }
-    },
-    "tunnel-light": {
-      "title": "Tunnel Light",
-      "description": {
-        "intro": "Tunnel Lights provide bright, uniform lighting inside conveyor tunnels for capturing defect-free product images in production lines."
-      }
-    }
-  },
   "Careers": {
-    "PageTitle": "Careers at CVIT",
+    "PageTitle": "Careers at CVIT | Join Our Team in Pune, India",
+    "MetaDescription": "Explore exciting career opportunities at CVIT Solution Pvt Ltd in Machine Vision, AI, and Industrial Automation. Join us in building the future of intelligent manufacturing.",
+    "JoinOurTeam": "Join Our Team at CVIT",
+    "Description": "Be part of innovation in Machine Vision & Automation. Work with cutting-edge AI technology that’s transforming industries worldwide.",
+    "CurrentOpenings": "Current Openings",
+    "Overview": "Overview",
+    "Responsibilities": "Responsibilities",
+    "PreferredQualifications": "Preferred Qualifications",
+    "TechnicalSkills": "Technical Skills",
+    "ApplyNow": "Apply Now",
+    "ScanQR": "Scan QR Code to Apply",
+    "NoSuitablePosition": "Can't find a suitable position?",
+    "SendResume": "Send us your resume anyway!",
+    "EmailHR": "Email your CV to",
+    "HREmail1": "nri@cvit.in",
+    "HREmail2": "kunal.wankhede@cvit.in",
     "Hero": {
       "Eyebrow": "We're Hiring",
       "Headline": "Join CVIT<br /><span class=\"gradient-headline\">Build the Future of Vision AI</span>",
       "Subhead": "Empowering Intelligence. Delivering Solutions.",
-      "CTA": "Open Roles",
-      "Marquee": "NOW HIRING → Computer Vision Intern • Service Engineer"
+      "CTA": "View Open Positions",
+      "Marquee": "NOW HIRING → Computer Vision Intern • Service Engineer • AI Engineers • Field Technicians"
     },
     "OpenPositions": {
       "Title": "Open Positions",
       "Description": "Be part of something bigger. Build industrial AI that matters.",
       "ViewDetails": "View Details",
       "CloseDetails": "Close",
-      "Responsibilities": "Responsibilities",
-      "Requirements": "Requirements & Skills",
-      "TechnicalSkills": "Technical Skills",
-      "ApplyText": "Send your resume to<br /><a href=\"mailto:nri@cvit.in\">nri@cvit.in</a> and <a href=\"mailto:kunal.wankhede@cvit.in\">kunal.wankhede@cvit.in</a>",
-      "NoRoleTitle": "Not seeing your role?",
+      "ApplyText": "Send your resume to <br /><a href=\"mailto:nri@cvit.in\">nri@cvit.in</a> and <a href=\"mailto:kunal.wankhede@cvit.in\">kunal.wankhede@cvit.in</a>",
+      "NoRoleTitle": "Not seeing your dream role?",
       "NoRoleText": "We're always looking for passionate talent in AI, Vision Systems & Industrial Automation.<br />Send your resume anytime → <a href=\"mailto:nri@cvit.in\" class=\"cta-bold\">nri@cvit.in</a> or <a href=\"mailto:kunal.wankhede@cvit.in\" class=\"cta-bold\">kunal.wankhede@cvit.in</a>",
       "BackToHome": "Back to Home"
     },
@@ -713,8 +768,8 @@
           "Troubleshoot and resolve software defects",
           "Write clean, efficient, and well-documented code",
           "Use OpenCV for image processing tasks",
-          "Utilize NumPy for numerical computations",
-          "Develop and optimize computer vision algorithms",
+          "Utilise NumPy for numerical computations",
+          "Develop and optimise computer vision algorithms",
           "Apply machine learning techniques to enhance model performance",
           "Stay updated with the latest advancements in computer vision",
           "Collaborate closely with team members to ensure successful project delivery"
@@ -747,7 +802,7 @@
       "ServiceEngineer": {
         "Title": "Service Engineer",
         "Subtitle": "On-site Project Support Technician",
-        "Type": "Full-time • 6 Days/Week • 9:30 to 6:30",
+        "Type": "Full-time • 6 Days/Week • 9:30 AM - 6:30 PM",
         "Overview": "Join our dynamic team delivering technical support, installation, and maintenance of industrial vision systems. Ensure optimal performance and client satisfaction through hands-on expertise.",
         "Responsibilities": [
           "On-Site Technical Support",
@@ -758,10 +813,10 @@
           "Customer Interaction and Support"
         ],
         "Qualifications": [
-          "Bachelor's degree or Diploma in Electrical Engineering or related technical discipline",
+          "Bachelor's degree or Diploma in Electrical Engineering, Electronics, or related technical discipline",
           "Basic Computer Knowledge",
-          "Experience with Vision Inspection Systems",
-          "Electrical Wiring",
+          "Experience with Vision Inspection Systems (preferred)",
+          "Electrical Wiring & Panel Building",
           "System Troubleshooting",
           "PLC Panel assembly and cabling"
         ]
@@ -840,7 +895,7 @@
     "12": {
       "title": "AI-Based Machine Vision System – 360° Cylinder Head Inspection",
       "studyHeader": "AI-Based Machine Vision System for 360° Cylinder Head Inspection",
-      "description": "Project Overview:\nThe customer requires a complete 360° inspection of cylinder heads while the engine remains stationary on the production line. Multiple machine vision cameras are fixed at strategic positions around the stationary cylinder head, capturing images from multiple angles simultaneously to detect surface defects and ensure quality at production speed.\n\nProject Requirements:\n360° inspection of cylinder heads while the engine remains stationary.\nIntegration of multiple machine vision cameras fixed at multiple positions for full-coverage imaging.\nCycle time aligned with production rate.\nDetection of defects such as cracks, oil marks, black marks, and damages.\n\nKey Challenges:\nComplex geometry of cylinder heads (holes, grooves, internal features) makes complete surface coverage and uniform lighting difficult.\nAll critical surfaces must be inspected in a single automated pass without any blind spots.\nThe full 360° inspection must complete within the production takt time without causing line stoppages.\n\nCVIT Solution:\nMultiple machine vision cameras fixed at optimized positions around the stationary cylinder head.\nSimultaneous multi-angle image acquisition ensures complete 360° coverage.\nTrigger-based image capture synchronized with production line signals.\nPre-programmed inspection zones with dynamic adjustments.\nROI-based inspection for critical zones.\nDashboard for visualization and reporting."
+      "description": "Project Overview:\nThe customer requires a complete 360° inspection of cylinder heads while the engine remains stationary on the production line. Multiple machine vision cameras are strategically positioned around the stationary cylinder head, capturing images from multiple angles to detect surface defects and ensure quality at production speed.\n\nProject Requirements:\n360° inspection of cylinder heads while the engine remains stationary.\nIntegration of multiple machine vision cameras for full-coverage imaging.\nCycle time aligned with production rate.\nDetection of defects such as cracks, oil marks, black marks, and damages.\n\nKey Challenges:\nComplex geometry of cylinder heads (holes, grooves, internal features) makes complete surface coverage and uniform lighting difficult.\nAll critical surfaces must be inspected in a single automated pass without any blind spots.\nThe full 360° inspection must complete within the production takt time without causing line stoppages.\n\nCVIT Solution:\nMultiple machine vision cameras positioned at optimized angles around the stationary cylinder head.\nMulti-angle image acquisition ensures complete 360° coverage.\nTrigger-based image capture synchronized with production line signals.\nPre-programmed inspection zones with dynamic adjustments.\nROI-based inspection for critical zones.\nDashboard for visualization and reporting."
     },
     "13": {
       "title": "Bag Seal Wrinkle Inspection",
@@ -1221,13 +1276,13 @@
     "formSubjectPlaceholder": "Subject",
     "formPhonePlaceholder": "Phone number",
     "formMessagePlaceholder": "Message",
-    "formCheckboxLabel": "By checking the box, you agree to our 'Form' terms and consent to cookie usage in the browser.",
+    "formCheckboxLabel": "By clicking Checkbox, you agree to use our 'Form' terms and consent to cookie usage in browser.",
     "formSubmitButton": "Send Message",
     "infoHeading": "FIND US",
     "officeAddressTitle": "Office Address",
-    "officeAddress": "Office 206, Xion Mall, Near D-Mart, Wakad-Hinjewadi Road, Hinjewadi Pune, Maharashtra, India,411057",
+    "officeAddress": "Office 206, Xion Mall, Near D-Mart, Wakad-Hinjewadi Road, Hinjewadi Pune, Maharashtra, India, 411057",
     "registeredAddressTitle": "Registered Address",
-    "registeredAddress": "S.No. 176/1/9/1, Apt-203, Sadguru CL-03, Manjoba Mandir, Pune, Maharashtra, India, 411057",
+    "registeredAddress": "S.NO. 176/1/9/1 FL-203, Sadguru CL-03, Manjoba Mandir, Pune, Maharashtra, India, 411057",
     "gstNumberTitle": "GST Number",
     "gstNumber": "27AALCC1717A1Z3",
     "emailAddressTitle": "Email Address",
@@ -1342,7 +1397,6 @@
     "Home": "Home",
     "Brochure": "Brochure",
     "ContactUs": "Contact Us",
-    "Careers": "Careers",
     "CVITLogo": "CVIT Logo",
     "Menu": {
       "Products": "Products",
@@ -1393,29 +1447,28 @@
     },
     "Industries": {
       "Automobile": "Automobile",
-      "MetalMiningCement": "Metal, Mining & Cement",
-      "PharmaFmcg": "Pharma & FMCG",
-      "PlasticRubberIndustry": "Plastic & Rubber Industry",
-      "WarehouseDistribution": "Warehouse & Distribution",
+      "MetalMiningCement": "Metal, Mining and Cement",
+      "PharmaFmcg": "Pharma and FMCG",
+      "PlasticRubberIndustry": "Plastic and Rubber Industry",
+      "WarehouseDistribution": "Warehouse and Distribution",
       "WireIndustry": "Wire Industry",
       "Aerospace": "Aerospace"
     },
     "CaseStudies": {
-      "VialAdapterInspection": "Vial Adaptor Inspection",
-      "AdapterPacketInspection": "Vial Adaptor Tray OCR-OCV",
+      "VialAdapterInspection": "Vial Adapter Inspection",
+      "AdapterPacketInspection": "Adapter Packet Inspection",
       "GapMeasurement": "Gap Measurement",
-      "PunchedNumberDetection": "Stamped Number Detection",
-      "TracingAndTracking": "Tire Traceability and Tracking",
-      "DoorSealantAbsence": "Door Sealant Presence Detection",
-      "WindowGlass": "Window Glass Open/Close Detection",
+      "PunchedNumberDetection": "Punched Number Detection",
+      "TracingAndTracking": "Tracing and Tracking",
+      "DoorSealantAbsence": "Door Sealant Absence",
+      "WindowGlass": "Window Glass",
       "TubTyvekInspection": "Tub TYVEK Inspection",
       "HandBrakeCableInspection": "Hand Brake Cable Bin Inspection",
       "VINInspection": "VIN Number Plate Inspection",
       "LadleHookInspection": "Ladle Hook Inspection",
       "CylinderHeadInspection": "360° Cylinder Head Inspection",
       "BagSealWrinkleInspection": "Bag Seal Wrinkle Inspection",
-      "AndroidBarcodeScanning": "Android Barcode Scanning & Part Verification",
-      "TyreTracingAndTracking": "Tire Tracing and Tracking"
+      "AndroidBarcodeScanning": "Android Barcode Scanning & Part Verification"
     },
     "AboutUsMissionVision": {
       "about": {
@@ -1427,10 +1480,11 @@
       "vision": {
         "title": "Our Vision"
       }
-    }
+    },
+    "Careers": "Careers"
   },
   "CookieConsent": {
-    "title": "Cookie Consent",
+    "title": "🍪 Cookie Consent",
     "description": "We use cookies to improve your browsing experience and provide personalized content.",
     "settingsButton": "Cookie Settings",
     "privacyPolicyText": "Read our",

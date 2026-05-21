@@ -840,7 +840,7 @@
     "12": {
       "title": "AI-Based Machine Vision System – 360° Cylinder Head Inspection",
       "studyHeader": "AI-Based Machine Vision System for 360° Cylinder Head Inspection",
-      "description": "Project Overview:\nThe customer requires a complete 360° inspection of cylinder heads while the engine remains stationary on the production line. Multiple machine vision cameras are fixed at strategic positions around the stationary cylinder head, capturing images from multiple angles simultaneously to detect surface defects and ensure quality at production speed.\n\nProject Requirements:\n360° inspection of cylinder heads while the engine remains stationary.\nIntegration of multiple machine vision cameras fixed at multiple positions for full-coverage imaging.\nCycle time aligned with production rate.\nDetection of defects such as cracks, oil marks, black marks, and damages.\n\nKey Challenges:\nComplex geometry of cylinder heads (holes, grooves, internal features) makes complete surface coverage and uniform lighting difficult.\nAll critical surfaces must be inspected in a single automated pass without any blind spots.\nThe full 360° inspection must complete within the production takt time without causing line stoppages.\n\nCVIT Solution:\nMultiple machine vision cameras fixed at optimized positions around the stationary cylinder head.\nSimultaneous multi-angle image acquisition ensures complete 360° coverage.\nTrigger-based image capture synchronized with production line signals.\nPre-programmed inspection zones with dynamic adjustments.\nROI-based inspection for critical zones.\nDashboard for visualization and reporting."
+      "description": "Project Overview:\nThe customer requires a complete 360° inspection of cylinder heads while the engine remains stationary on the production line. Multiple machine vision cameras are strategically positioned around the stationary cylinder head, capturing images from multiple angles to detect surface defects and ensure quality at production speed.\n\nProject Requirements:\n360° inspection of cylinder heads while the engine remains stationary.\nIntegration of multiple machine vision cameras for full-coverage imaging.\nCycle time aligned with production rate.\nDetection of defects such as cracks, oil marks, black marks, and damages.\n\nKey Challenges:\nComplex geometry of cylinder heads (holes, grooves, internal features) makes complete surface coverage and uniform lighting difficult.\nAll critical surfaces must be inspected in a single automated pass without any blind spots.\nThe full 360° inspection must complete within the production takt time without causing line stoppages.\n\nCVIT Solution:\nMultiple machine vision cameras positioned at optimized angles around the stationary cylinder head.\nMulti-angle image acquisition ensures complete 360° coverage.\nTrigger-based image capture synchronized with production line signals.\nPre-programmed inspection zones with dynamic adjustments.\nROI-based inspection for critical zones.\nDashboard for visualization and reporting."
     },
     "13": {
       "title": "Bag Seal Wrinkle Inspection",
@@ -1414,8 +1414,7 @@
       "LadleHookInspection": "Ladle Hook Inspection",
       "CylinderHeadInspection": "360° Cylinder Head Inspection",
       "BagSealWrinkleInspection": "Bag Seal Wrinkle Inspection",
-      "AndroidBarcodeScanning": "Android Barcode Scanning & Part Verification",
-      "TyreTracingAndTracking": "Tire Tracing and Tracking"
+      "AndroidBarcodeScanning": "Android Barcode Scanning & Part Verification"
     },
     "AboutUsMissionVision": {
       "about": {

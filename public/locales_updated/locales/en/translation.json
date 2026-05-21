@@ -840,13 +840,14 @@
     "12": {
       "title": "AI-Based Machine Vision System – 360° Cylinder Head Inspection",
       "studyHeader": "AI-Based Machine Vision System for 360° Cylinder Head Inspection",
-      "description": "Project Overview:\nThe customer requires a complete 360° inspection of cylinder heads while the engine remains stationary on the production line. Multiple machine vision cameras are fixed at strategic positions around the stationary cylinder head, capturing images from multiple angles simultaneously to detect surface defects and ensure quality at production speed.\n\nProject Requirements:\n360° inspection of cylinder heads while the engine remains stationary.\nIntegration of multiple machine vision cameras fixed at multiple positions for full-coverage imaging.\nCycle time aligned with production rate.\nDetection of defects such as cracks, oil marks, black marks, and damages.\n\nKey Challenges:\nComplex geometry of cylinder heads (holes, grooves, internal features) makes complete surface coverage and uniform lighting difficult.\nAll critical surfaces must be inspected in a single automated pass without any blind spots.\nThe full 360° inspection must complete within the production takt time without causing line stoppages.\n\nCVIT Solution:\nMultiple machine vision cameras fixed at optimized positions around the stationary cylinder head.\nSimultaneous multi-angle image acquisition ensures complete 360° coverage.\nTrigger-based image capture synchronized with production line signals.\nPre-programmed inspection zones with dynamic adjustments.\nROI-based inspection for critical zones.\nDashboard for visualization and reporting."
+      "description": "Project Overview:\nThe customer requires a complete 360° inspection of cylinder heads while the engine remains stationary on the production line. A Camera Vision camera system moves around the stationary cylinder head along a pre-programmed path, capturing images from multiple angles to detect surface defects and ensure quality at production speed.\n\nProject Requirements:\n360° inspection of cylinder heads while the engine remains stationary.\nIntegration of a Camera Vision camera system for flexible movement.\nCycle time aligned with production rate.\nDetection of defects such as cracks, oil marks, black marks, and damages.\n\nKey Challenges:\nComplex geometry of cylinder heads (holes, grooves, internal features) makes complete surface coverage and uniform lighting difficult.\nAll critical surfaces must be inspected in a single automated pass without any blind spots.\nThe full 360° inspection must complete within the production takt time without causing line stoppages.\n\nCVIT Solution:\nCamera Vision camera performs circular/optimized path around stationary cylinder head.\nMulti-angle image acquisition ensures complete 360° coverage.\nTrigger-based image capture synchronized with camera positions.\nPre-programmed inspection paths with dynamic adjustments.\nROI-based inspection for critical zones.\nDashboard for visualization and reporting."
     },
     "13": {
       "title": "Bag Seal Wrinkle Inspection",
       "studyHeader": "AI-Based Machine Vision System for Bag Seal Wrinkle Inspection",
       "description": "Project Overview:\nAn AI-based machine vision system was developed to inspect sterile packaging bag seals during production. The system detects wrinkles, folds, and sealing defects in real time to ensure proper sealing quality before the bag moves to the next production stage.\n\nSystem Requirements:\nInspect single and double bag sealing areas.\nDetect wrinkles, folds, and seal deformation.\nProvide real-time OK/NOK inspection results.\nStore inspection images and defect history.\nIntegrate with PLC systems for rejection handling.\n\nKey Challenges:\nTransparent bags create reflection and lighting variation.\nSmall wrinkles are difficult to detect manually.\nInspection must work accurately at high production speed.\nVariations in bag position affect inspection consistency.\n\nCVIT AI Solution:\nAI vision system detects wrinkles and sealing defects with high accuracy.\nMultiple machine vision cameras inspect different sealing zones.\nReal-time AI inspection provides instant OK/NOK results.\nDefect images are automatically saved for traceability.\nIntegrated PLC communication enables alarm, rejection, and conveyor stop functions."
     },
+    
     "14": {
       "title": "Android Barcode Scanning & Part Verification",
       "studyHeader": "AI-Based Android Application for Barcode Scanning & Part Verification",
@@ -1195,25 +1196,25 @@
     "hikrobotLogoAlt": "HIKROBOT Logo",
     "baumerLogoAlt": "Baumer India Logo"
   },
-  "Review": {
-    "headingPrimary": "We Are a Business That Cares, And It Shows",
-    "indiamartLogoAlt": "Indiamart Logo",
-    "indiamartHeading": "Reach Us on Indiamart",
-    "indiamartSubtext": "Discover Our Services",
-    "googleLogoAlt": "Google Logo",
-    "googleHeading": "Rate Us on Google",
-    "googleSubtext": "{{count}} reviews",
-    "stats": {
-      "projects": "Projects Deployed",
-      "successRate": "Success Rate",
-      "team": "People Strong Team",
-      "lights": "Machine Vision Lights Sold",
-      "projectsValue": "70+",
-      "successRateValue": "100%",
-      "teamValue": "17",
-      "lightsValue": "1000+"
-    }
-  },
+"Review": {
+  "headingPrimary": "We Are a Business That Cares, And It Shows",
+  "indiamartLogoAlt": "Indiamart Logo",
+  "indiamartHeading": "Reach Us on Indiamart",
+  "indiamartSubtext": "Discover Our Services",
+  "googleLogoAlt": "Google Logo",
+  "googleHeading": "Rate Us on Google",
+  "googleSubtext": "{{count}} reviews",
+  "stats": {
+    "projects": "Projects Deployed",
+    "successRate": "Success Rate",
+    "team": "People Strong Team",
+    "lights": "Machine Vision Lights Sold",
+    "projectsValue": "70+",
+    "successRateValue": "100%",
+    "teamValue": "17",
+    "lightsValue": "1000+"
+  }
+},
   "ContactUsPage": {
     "formHeading": "DISCUSS YOUR PROJECT",
     "formNamePlaceholder": "Full name",
@@ -1414,8 +1415,8 @@
       "LadleHookInspection": "Ladle Hook Inspection",
       "CylinderHeadInspection": "360° Cylinder Head Inspection",
       "BagSealWrinkleInspection": "Bag Seal Wrinkle Inspection",
-      "AndroidBarcodeScanning": "Android Barcode Scanning & Part Verification",
-      "TyreTracingAndTracking": "Tire Tracing and Tracking"
+      "AndroidBarcodeScanning": "Android Barcode Scanning & Part Verification"
+
     },
     "AboutUsMissionVision": {
       "about": {

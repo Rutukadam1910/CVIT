@@ -1,0 +1,411 @@
+/* ===== CompanyData Section ===== */
+
+.cd-section {
+  position: relative;
+  width: 100%;
+  padding: 6rem 1rem 5rem;
+  background: #0a0a0a;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ── Background grid ── */
+.cd-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(239, 58, 58, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 58, 58, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: cd-grid-drift 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes cd-grid-drift {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
+
+/* ── Scanline overlay ── */
+.cd-scanline {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* ── Ambient orbs ── */
+.cd-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: cd-orb-pulse 8s ease-in-out infinite alternate;
+}
+
+.cd-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(239, 58, 58, 0.12), transparent 70%);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.cd-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1), transparent 70%);
+  bottom: -80px;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.cd-orb-3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08), transparent 70%);
+  top: 40%;
+  left: 50%;
+  animation-delay: 5s;
+}
+
+@keyframes cd-orb-pulse {
+  0%   { transform: scale(1) translate(0, 0); opacity: 0.6; }
+  100% { transform: scale(1.3) translate(20px, -20px); opacity: 1; }
+}
+
+/* ── Inner container ── */
+.cd-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.cd-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+              transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cd-header--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cd-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.cd-eyebrow-text {
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: #EF3A3A;
+  font-weight: 600;
+}
+
+.cd-eyebrow-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #EF3A3A);
+}
+
+.cd-eyebrow-line:last-child {
+  background: linear-gradient(90deg, #EF3A3A, transparent);
+}
+
+.cd-title {
+  font-family: "Special Gothic Expanded One", "Arial Black", sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.cd-title-accent {
+  color: #EF3A3A;
+ 
+}
+
+.cd-subtitle {
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* ── Cards Grid ── */
+.cd-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .cd-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .cd-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .cd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Individual Card ── */
+.cd-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  cursor: default;
+
+  /* Reveal animation */
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  animation: cd-card-reveal 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: calc(var(--delay, 0ms) + 400ms);
+
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.4s ease;
+}
+
+.cd-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 60px var(--glow, rgba(239,58,58,0.2));
+}
+
+@keyframes cd-card-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animated gradient border */
+.cd-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--accent, #EF3A3A) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 0.4s;
+}
+
+.cd-card:hover .cd-card-border {
+  opacity: 1;
+}
+
+/* Inner glow */
+.cd-card-glow {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 100px;
+  background: radial-gradient(circle, var(--glow, rgba(239,58,58,0.2)), transparent 70%);
+  pointer-events: none;
+  transition: opacity 0.4s;
+  opacity: 0;
+}
+
+.cd-card:hover .cd-card-glow {
+  opacity: 1;
+}
+
+/* ── Icon ── */
+.cd-icon-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.cd-icon-wrap svg {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 8px var(--accent, #EF3A3A));
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cd-card:hover .cd-icon-wrap svg {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.cd-icon-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--accent, #EF3A3A);
+  opacity: 0.3;
+  animation: cd-icon-spin 6s linear infinite;
+}
+
+.cd-icon-ring::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent, #EF3A3A);
+  box-shadow: 0 0 8px var(--accent, #EF3A3A);
+}
+
+@keyframes cd-icon-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Number ── */
+.cd-number {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.cd-digit {
+  font-family: "Special Gothic Expanded One", "Arial Black", sans-serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.1);
+  font-variant-numeric: tabular-nums;
+}
+
+.cd-suffix {
+  font-family: "Special Gothic Expanded One", "Arial Black", sans-serif;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+  text-shadow: 0 0 20px var(--accent, #EF3A3A);
+}
+
+/* ── Label ── */
+.cd-label {
+  font-size: clamp(0.75rem, 1.1vw, 0.88rem);
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 140px;
+}
+
+/* ── Bottom accent bar ── */
+.cd-bar {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 0.4s, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 12px var(--accent, #EF3A3A);
+}
+
+.cd-card:hover .cd-bar {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* ── Top border flash on hover ── */
+.cd-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent, #EF3A3A), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.cd-card:hover::before {
+  opacity: 1;
+}
+
+/* ── Responsive tweaks ── */
+@media (max-width: 560px) {
+  .cd-section {
+    padding: 4rem 0.8rem 3.5rem;
+  }
+
+  .cd-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .cd-digit {
+    font-size: 2rem;
+  }
+
+  .cd-label {
+    font-size: 0.7rem;
+    max-width: 120px;
+  }
+
+  .cd-header {
+    margin-bottom: 2.5rem;
+  }
+}
