@@ -76,11 +76,11 @@
   "VideoUnavailable": "视频不可用",
   "NoApplicationsAvailable": "无可用应用",
   "InspectionAccuracy": "检测精度",
-  "ProductionEfficiency": "生产效率",
-  "LaborCostSaving": "劳动力成本节约",
-  "MinimizeDowntime": "最小化停机时间",
+  "ProductionEfficiency": "运营效率",
+  "LaborCostSaving": "减少人工工作量",
+  "MinimizeDowntime": "停机预防",
   "InspectionSpeed": "检测速度",
-  "DefectFreeIndustry": "无缺陷工业",
+  "DefectFreeIndustry": "质量保证率",
   "ProductDetail": {
     "notFound": {
       "title": "产品未找到",

@@ -76,11 +76,11 @@
   "VideoUnavailable": "वीडियो उपलब्ध नहीं है",
   "NoApplicationsAvailable": "कोई अनुप्रयोग उपलब्ध नहीं है",
   "InspectionAccuracy": "निरीक्षण सटीकता",
-  "ProductionEfficiency": "उत्पादन दक्षता",
-  "LaborCostSaving": "श्रम लागत बचत",
-  "MinimizeDowntime": "डाउनटाइम कम करें",
+  "ProductionEfficiency": "परिचालन दक्षता",
+  "LaborCostSaving": "मैनुअल प्रयास में कमी",
+  "MinimizeDowntime": "डाउनटाइम रोकथाम",
   "InspectionSpeed": "निरीक्षण गति",
-  "DefectFreeIndustry": "दोषमुक्त उद्योग",
+  "DefectFreeIndustry": "गुणवत्ता आश्वासन दर",
   "ProductDetail": {
     "notFound": {
       "title": "उत्पाद नहीं मिला",

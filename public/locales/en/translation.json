@@ -76,11 +76,11 @@
   "VideoUnavailable": "Video Unavailable",
   "NoApplicationsAvailable": "No Applications Available",
   "InspectionAccuracy": "Inspection Accuracy",
-  "ProductionEfficiency": "Production Efficiency",
-  "LaborCostSaving": "Labor Cost Saving",
-  "MinimizeDowntime": "Minimize Downtime",
+  "ProductionEfficiency": "Operational Efficiency",
+  "LaborCostSaving": "Manual Effort Reduction",
+  "MinimizeDowntime": "Downtime Prevention",
   "InspectionSpeed": "Inspection Speed",
-  "DefectFreeIndustry": "Defect-Free Industry",
+  "DefectFreeIndustry": "Quality Assurance Rate",
   "ProductDetail": {
     "notFound": {
       "title": "Product not found",

@@ -8,6 +8,7 @@ const CustomerBenefitsdata = ({
   label,
   value,
   unit,
+  decimals = 0, 
   min = 0,
   max = 100,
   size: propSize = 360,
@@ -16,29 +17,18 @@ const CustomerBenefitsdata = ({
 }) => {
   const { t } = useTranslation();
 
-  // Much more aggressive responsive sizing for small screens
   const getGaugeSize = useMemo(() => {
     return () => {
       const width = window.innerWidth;
-      if (width <= 100) {
-        return { size: propSize * 0.08, strokeWidth: propStrokeWidth * 0.08 };
-      } else if (width <= 160) {
-        return { size: propSize * 0.12, strokeWidth: propStrokeWidth * 0.12 };
-      } else if (width <= 240) {
-        return { size: propSize * 0.16, strokeWidth: propStrokeWidth * 0.16 };
-      } else if (width <= 320) {
-        return { size: propSize * 0.2, strokeWidth: propStrokeWidth * 0.2 };
-      } else if (width <= 480) {
-        return { size: propSize * 0.3, strokeWidth: propStrokeWidth * 0.3 };
-      } else if (width <= 720) {
-        return { size: propSize * 0.4, strokeWidth: propStrokeWidth * 0.4 };
-      } else if (width <= 900) {
-        return { size: propSize * 0.5, strokeWidth: propStrokeWidth * 0.5 };
-      } else if (width <= 1100) {
-        return { size: propSize * 0.6, strokeWidth: propStrokeWidth * 0.6 };
-      } else if (width <= 1300) {
-        return { size: propSize * 0.7, strokeWidth: propStrokeWidth * 0.7 };
-      }
+      if (width <= 100) return { size: propSize * 0.08, strokeWidth: propStrokeWidth * 0.08 };
+      else if (width <= 160) return { size: propSize * 0.12, strokeWidth: propStrokeWidth * 0.12 };
+      else if (width <= 240) return { size: propSize * 0.16, strokeWidth: propStrokeWidth * 0.16 };
+      else if (width <= 320) return { size: propSize * 0.2, strokeWidth: propStrokeWidth * 0.2 };
+      else if (width <= 480) return { size: propSize * 0.3, strokeWidth: propStrokeWidth * 0.3 };
+      else if (width <= 720) return { size: propSize * 0.4, strokeWidth: propStrokeWidth * 0.4 };
+      else if (width <= 900) return { size: propSize * 0.5, strokeWidth: propStrokeWidth * 0.5 };
+      else if (width <= 1100) return { size: propSize * 0.6, strokeWidth: propStrokeWidth * 0.6 };
+      else if (width <= 1300) return { size: propSize * 0.7, strokeWidth: propStrokeWidth * 0.7 };
       return { size: propSize, strokeWidth: propStrokeWidth };
     };
   }, [propSize, propStrokeWidth]);
@@ -71,34 +61,33 @@ const CustomerBenefitsdata = ({
         const totalFrames = 200;
 
         const isSpeedMetric = unit === "x";
-        // For "10x" → we want needle at 10 on the 0–100 scale
-        const targetGaugeValue = isSpeedMetric ? 10 : Math.min(value, max);
+        const targetGaugeValue = isSpeedMetric ? 100 : Math.min(value, max);
         const targetAngle = valueToAngle(targetGaugeValue);
 
         const animate = () => {
           frame++;
           const progress = frame / totalFrames;
-          const eased = 1 - Math.pow(1 - progress, 3); // Smooth ease-out
+          const eased = 1 - Math.pow(1 - progress, 3);
           const bounce = eased + Math.sin(progress * Math.PI) * 0.008;
 
-          // Display value animation
-          if (label === t("DefectFreeIndustry")) {
-            setDisplayValue((99.9 * eased).toFixed(1));
-          } else if (isSpeedMetric) {
-            // Smooth count from 1.0x → 10.0x
-            const displaySpeed = 1 + (9 * eased);
-            setDisplayValue(displaySpeed.toFixed(1));
+         
+          if (isSpeedMetric) {
+            const displaySpeed = 1 + (99 * eased);
+            setDisplayValue(Math.floor(displaySpeed));
+          } else if (decimals > 0) {
+            setDisplayValue((value * eased).toFixed(decimals));
           } else {
             setDisplayValue(Math.floor(value * eased));
           }
 
-          // Needle moves to correct position: 10x = 10 on gauge
           setNeedleAngle(startAngle + (targetAngle - startAngle) * bounce);
 
           if (frame < totalFrames) {
             requestAnimationFrame(animate);
           } else if (isSpeedMetric) {
-            setDisplayValue("10.0");
+            setDisplayValue("100");
+          } else if (decimals > 0) {
+            setDisplayValue(value.toFixed(decimals));
           }
         };
 
@@ -107,7 +96,7 @@ const CustomerBenefitsdata = ({
     }, 134);
 
     return () => clearTimeout(timeout);
-  }, [value, max, trigger, label, unit, t, startAngle]);
+  }, [value, max, trigger, unit, decimals, startAngle]);
 
   const segments = [
     { from: 0, to: 50, color: "#8A1F1F" },
@@ -116,7 +105,7 @@ const CustomerBenefitsdata = ({
   ];
 
   const ticks = [];
-  for (let t = 0; t <= max; t += 10) ticks.push(t);
+  for (let tick = 0; tick <= max; tick += 10) ticks.push(tick);
 
   const polarToCartesian = (angle, r) => {
     const rad = (Math.PI / 180) * angle;
@@ -200,35 +189,31 @@ const CustomerBenefitsdata = ({
               />
             );
           })}
-          {ticks.map((t, i) => {
-            if (t === min || t === max) return null;
-            const angle = valueToAngle(t);
+          {ticks.map((tick, i) => {
+            if (tick === min || tick === max) return null;
+            const angle = valueToAngle(tick);
             const [x1, y1] = polarToCartesian(angle, radius - strokeWidth / 2);
             const [x2, y2] = polarToCartesian(angle, radius + strokeWidth / 2);
             return (
               <line
                 key={i}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
+                x1={x1} y1={y1} x2={x2} y2={y2}
                 stroke="rgba(255,255,255,0.25)"
                 strokeWidth={1.008 * (size / 360)}
               />
             );
           })}
-          {ticks.map((t, i) => {
-            const angle = valueToAngle(t);
+          {ticks.map((tick, i) => {
+            const angle = valueToAngle(tick);
             const [x, y] = polarToCartesian(angle, radius + 27.36 * (size / 360));
             return (
               <text
                 key={i}
-                x={x}
-                y={y}
+                x={x} y={y}
                 className="tick-label"
-                style={{ fontSize: `${0.72 * (size / 360)}rem`}}
+                style={{ fontSize: `${0.72 * (size / 360)}rem` }}
               >
-                {t}
+                {tick}
               </text>
             );
           })}
@@ -245,11 +230,11 @@ const CustomerBenefitsdata = ({
       >
         <div
           className={`gauge-value ${visible ? "opacity-1" : "opacity-0"}`}
-          style={{ fontSize: `${1.2 * (size / 360)}rem`}}
+          style={{ fontSize: `${1.2 * (size / 360)}rem` }}
         >
           {unit === "x" ? `${displayValue}x` : `${displayValue}${unit}`}
         </div>
-        <h3 className="gauge-label" style={{ fontSize: `${1.35 * (size / 360)}rem`}}>
+        <h3 className="gauge-label" style={{ fontSize: `${1.35 * (size / 360)}rem` }}>
           {label}
         </h3>
       </div>
@@ -265,14 +250,15 @@ const CustomerBenefits = () => {
     threshold: 0.3,
   });
 
-const metrics = [
-  { label: t("InspectionAccuracy"), value: 99, unit: "%" },
-  { label: t("ProductionEfficiency"), value: 20, unit: "%" },
-  { label: t("LaborCostSaving"), value: 30, unit: "%" }, 
-  { label: t("MinimizeDowntime"), value: 25, unit: "%" }, 
-  { label: t("InspectionSpeed"), value: 10, unit: "x" },
-  { label: t("DefectFreeIndustry"), value: 99.9, unit: "%" },
-];
+  const metrics = [
+  
+    { label: t("InspectionAccuracy"),  value: 99.8,  unit: "%", decimals: 1 },
+    { label: t("ProductionEfficiency"), value: 87,   unit: "%", decimals: 0 },
+    { label: t("LaborCostSaving"),      value: 82,   unit: "%", decimals: 0 },
+    { label: t("MinimizeDowntime"),     value: 88,   unit: "%", decimals: 0 },
+    { label: t("InspectionSpeed"),      value: 100,  unit: "x", decimals: 0 },
+    { label: t("DefectFreeIndustry"),   value: 99.97, unit: "%", decimals: 2 },
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -286,7 +272,6 @@ const metrics = [
           <h1 className="customer-benefits-title">{t("CustomerBenefitsTitle")}</h1>
         </div>
 
-        {/* Single grid for all metrics - CSS will handle responsive layout */}
         <div className="metrics-grid">
           {metrics.map((metric) => (
             <CustomerBenefitsdata key={metric.label} {...metric} trigger={inView} />

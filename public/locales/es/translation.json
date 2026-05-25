@@ -76,11 +76,11 @@
   "VideoUnavailable": "Video no disponible",
   "NoApplicationsAvailable": "No hay aplicaciones disponibles",
   "InspectionAccuracy": "Precisión de inspección",
-  "ProductionEfficiency": "Eficiencia de producción",
-  "LaborCostSaving": "Ahorro de costos laborales",
-  "MinimizeDowntime": "Minimizar el tiempo de inactividad",
+  "ProductionEfficiency": "Eficiencia operativa",
+  "LaborCostSaving": "Reducción del esfuerzo manual",
+  "MinimizeDowntime": "Prevención de tiempos de inactividad",
   "InspectionSpeed": "Velocidad de inspección",
-  "DefectFreeIndustry": "Industria sin defectos",
+  "DefectFreeIndustry": "Tasa de garantía de calidad",
   "ProductDetail": {
     "notFound": {
       "title": "Producto no encontrado",
