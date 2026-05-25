@@ -1490,5 +1490,15 @@
       "cancelButton": "Annuler",
       "saveButton": "Enregistrer les paramètres"
     }
+  },
+  "CompanyData": {
+    "eyebrow": "INDICATEURS DE PERFORMANCE",
+    "title": "Nos",
+    "titleAccent": "Chiffres",
+    "subtitle": "Précision, performance et résultats éprouvés — les données derrière notre excellence.",
+    "stat1Label": "Projets Déployés",
+    "stat2Label": "Taux de Réussite",
+    "stat3Label": "Membres de l'Équipe",
+    "stat4Label": "Lumières de Vision Vendues"
   }
 }

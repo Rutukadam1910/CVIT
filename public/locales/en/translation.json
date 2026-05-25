@@ -1472,5 +1472,15 @@
       "cancelButton": "Cancel",
       "saveButton": "Save Settings"
     }
+  },
+  "CompanyData": {
+    "eyebrow": "PERFORMANCE METRICS",
+    "title": "Our",
+    "titleAccent": "Numbers",
+    "subtitle": "Precision, performance, and proven results — the data behind our excellence.",
+    "stat1Label": "Projects Deployed",
+    "stat2Label": "Success Rate",
+    "stat3Label": "People Strong Team",
+    "stat4Label": "Machine Vision Lights Sold"
   }
 }

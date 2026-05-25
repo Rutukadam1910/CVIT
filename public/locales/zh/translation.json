@@ -1475,5 +1475,15 @@
       "cancelButton": "取消",
       "saveButton": "保存设置"
     }
+  },
+  "CompanyData": {
+    "eyebrow": "绩效指标",
+    "title": "我们的",
+    "titleAccent": "数字",
+    "subtitle": "精准、高效、经过验证的成果——我们卓越背后的数据。",
+    "stat1Label": "已部署项目",
+    "stat2Label": "成功率",
+    "stat3Label": "团队成员",
+    "stat4Label": "机器视觉灯已售出"
   }
 }

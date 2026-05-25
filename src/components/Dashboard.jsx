@@ -660,6 +660,7 @@ const Dashboard = ({ type }) => {
     setToggleState(type);
     setShowRestContent(type === "dashboardOne");
   }, [type]);
+  
 
   // Handle scroll restoration and deep linking
   useEffect(() => {

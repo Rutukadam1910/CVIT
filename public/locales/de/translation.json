@@ -1490,5 +1490,15 @@
       "cancelButton": "Abbrechen",
       "saveButton": "Einstellungen speichern"
     }
+  },
+  "CompanyData": {
+    "eyebrow": "LEISTUNGSKENNZAHLEN",
+    "title": "Unsere",
+    "titleAccent": "Zahlen",
+    "subtitle": "Präzision, Leistung und bewährte Ergebnisse — die Daten hinter unserer Exzellenz.",
+    "stat1Label": "Projekte umgesetzt",
+    "stat2Label": "Erfolgsquote",
+    "stat3Label": "Mitglieder im Team",
+    "stat4Label": "Maschinenvisionsleuchten verkauft"
   }
 }

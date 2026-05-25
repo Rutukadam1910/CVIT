@@ -1490,5 +1490,15 @@
       "cancelButton": "Cancelar",
       "saveButton": "Guardar Configuración"
     }
+  },
+  "CompanyData": {
+    "eyebrow": "MÉTRICAS DE RENDIMIENTO",
+    "title": "Nuestros",
+    "titleAccent": "Números",
+    "subtitle": "Precisión, rendimiento y resultados comprobados — los datos detrás de nuestra excelencia.",
+    "stat1Label": "Proyectos Desplegados",
+    "stat2Label": "Tasa de Éxito",
+    "stat3Label": "Miembros del Equipo",
+    "stat4Label": "Luces de Visión Artificial Vendidas"
   }
 }
