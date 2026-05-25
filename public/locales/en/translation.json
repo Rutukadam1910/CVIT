@@ -76,11 +76,7 @@
   "VideoUnavailable": "Video Unavailable",
   "NoApplicationsAvailable": "No Applications Available",
   "InspectionAccuracy": "Inspection Accuracy",
-  "ProductionEfficiency": "Operational Efficiency",
-  "LaborCostSaving": "Manual Effort Reduction",
-  "MinimizeDowntime": "Downtime Prevention",
   "InspectionSpeed": "Inspection Speed",
-  "DefectFreeIndustry": "Quality Assurance Rate",
   "ProductDetail": {
     "notFound": {
       "title": "Product not found",
@@ -1482,5 +1478,9 @@
     "stat2Label": "Success Rate",
     "stat3Label": "People Strong Team",
     "stat4Label": "Machine Vision Lights Sold"
-  }
+  },
+  "OperationalEfficiency": "Operational Efficiency",
+  "ManualEffortReduction": "Manual Effort Reduction",
+  "DowntimePrevention": "Downtime Prevention",
+  "QualityAssuranceRate": "Quality Assurance Rate"
 }

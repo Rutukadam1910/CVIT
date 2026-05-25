@@ -76,11 +76,7 @@
   "VideoUnavailable": "Video nicht verfügbar",
   "NoApplicationsAvailable": "Keine Anwendungen verfügbar",
   "InspectionAccuracy": "Inspektionsgenauigkeit",
-  "ProductionEfficiency": "Betriebseffizienz",
-  "LaborCostSaving": "Reduzierung des manuellen Aufwands",
-  "MinimizeDowntime": "Ausfallzeitprävention",
   "InspectionSpeed": "Inspektionsgeschwindigkeit",
-  "DefectFreeIndustry": "Qualitätssicherungsrate",
   "ProductDetail": {
     "notFound": {
       "title": "Produkt nicht gefunden",
@@ -1500,5 +1496,9 @@
     "stat2Label": "Erfolgsquote",
     "stat3Label": "Mitglieder im Team",
     "stat4Label": "Maschinenvisionsleuchten verkauft"
-  }
+  },
+  "OperationalEfficiency": "Betriebseffizienz",
+  "ManualEffortReduction": "Reduzierung des manuellen Aufwands",
+  "DowntimePrevention": "Ausfallzeitprävention",
+  "QualityAssuranceRate": "Qualitätssicherungsrate"
 }

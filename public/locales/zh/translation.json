@@ -76,11 +76,7 @@
   "VideoUnavailable": "视频不可用",
   "NoApplicationsAvailable": "无可用应用",
   "InspectionAccuracy": "检测精度",
-  "ProductionEfficiency": "运营效率",
-  "LaborCostSaving": "减少人工工作量",
-  "MinimizeDowntime": "停机预防",
   "InspectionSpeed": "检测速度",
-  "DefectFreeIndustry": "质量保证率",
   "ProductDetail": {
     "notFound": {
       "title": "产品未找到",
@@ -1485,5 +1481,9 @@
     "stat2Label": "成功率",
     "stat3Label": "团队成员",
     "stat4Label": "机器视觉灯已售出"
-  }
+  },
+  "OperationalEfficiency": "运营效率",
+  "ManualEffortReduction": "减少人工工作量",
+  "DowntimePrevention": "停机预防",
+  "QualityAssuranceRate": "质量保证率"
 }

@@ -76,11 +76,7 @@
   "VideoUnavailable": "वीडियो उपलब्ध नहीं है",
   "NoApplicationsAvailable": "कोई अनुप्रयोग उपलब्ध नहीं है",
   "InspectionAccuracy": "निरीक्षण सटीकता",
-  "ProductionEfficiency": "परिचालन दक्षता",
-  "LaborCostSaving": "मैनुअल प्रयास में कमी",
-  "MinimizeDowntime": "डाउनटाइम रोकथाम",
   "InspectionSpeed": "निरीक्षण गति",
-  "DefectFreeIndustry": "गुणवत्ता आश्वासन दर",
   "ProductDetail": {
     "notFound": {
       "title": "उत्पाद नहीं मिला",
@@ -1500,5 +1496,9 @@
     "stat2Label": "सफलता दर",
     "stat3Label": "मजबूत टीम के सदस्य",
     "stat4Label": "मशीन विज़न लाइट्स बेचीं"
-  }
+  },
+  "OperationalEfficiency": "परिचालन दक्षता",
+  "ManualEffortReduction": "मैनुअल प्रयास में कमी",
+  "DowntimePrevention": "डाउनटाइम रोकथाम",
+  "QualityAssuranceRate": "गुणवत्ता आश्वासन दर"
 }

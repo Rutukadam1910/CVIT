@@ -76,11 +76,7 @@
   "VideoUnavailable": "Video no disponible",
   "NoApplicationsAvailable": "No hay aplicaciones disponibles",
   "InspectionAccuracy": "Precisión de inspección",
-  "ProductionEfficiency": "Eficiencia operativa",
-  "LaborCostSaving": "Reducción del esfuerzo manual",
-  "MinimizeDowntime": "Prevención de tiempos de inactividad",
   "InspectionSpeed": "Velocidad de inspección",
-  "DefectFreeIndustry": "Tasa de garantía de calidad",
   "ProductDetail": {
     "notFound": {
       "title": "Producto no encontrado",
@@ -1500,5 +1496,9 @@
     "stat2Label": "Tasa de Éxito",
     "stat3Label": "Miembros del Equipo",
     "stat4Label": "Luces de Visión Artificial Vendidas"
-  }
+  },
+  "OperationalEfficiency": "Eficiencia operativa",
+  "ManualEffortReduction": "Reducción del esfuerzo manual",
+  "DowntimePrevention": "Prevención de tiempos de inactividad",
+  "QualityAssuranceRate": "Tasa de garantía de calidad"
 }

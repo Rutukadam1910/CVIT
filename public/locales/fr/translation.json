@@ -76,11 +76,7 @@
   "VideoUnavailable": "Vidéo non disponible",
   "NoApplicationsAvailable": "Aucune application disponible",
   "InspectionAccuracy": "Précision d'inspection",
-  "ProductionEfficiency": "Efficacité opérationnelle",
-  "LaborCostSaving": "Réduction des efforts manuels",
-  "MinimizeDowntime": "Prévention des temps d'arrêt",
   "InspectionSpeed": "Vitesse d'inspection",
-  "DefectFreeIndustry": "Taux d'assurance qualité",
   "ProductDetail": {
     "notFound": {
       "title": "Produit non trouvé",
@@ -1500,5 +1496,9 @@
     "stat2Label": "Taux de Réussite",
     "stat3Label": "Membres de l'Équipe",
     "stat4Label": "Lumières de Vision Vendues"
-  }
+  },
+  "OperationalEfficiency": "Efficacité opérationnelle",
+  "ManualEffortReduction": "Réduction des efforts manuels",
+  "DowntimePrevention": "Prévention des temps d'arrêt",
+  "QualityAssuranceRate": "Taux d'assurance qualité"
 }

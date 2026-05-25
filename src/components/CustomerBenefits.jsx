@@ -8,15 +8,13 @@ const CustomerBenefitsdata = ({
   label,
   value,
   unit,
-  decimals = 0, 
+  decimals = 0,
   min = 0,
   max = 100,
   size: propSize = 360,
   strokeWidth: propStrokeWidth = 39.6,
   trigger,
 }) => {
-  const { t } = useTranslation();
-
   const getGaugeSize = useMemo(() => {
     return () => {
       const width = window.innerWidth;
@@ -61,6 +59,7 @@ const CustomerBenefitsdata = ({
         const totalFrames = 200;
 
         const isSpeedMetric = unit === "x";
+        // Speed needle goes to 100 (full scale); others use actual value
         const targetGaugeValue = isSpeedMetric ? 100 : Math.min(value, max);
         const targetAngle = valueToAngle(targetGaugeValue);
 
@@ -70,7 +69,7 @@ const CustomerBenefitsdata = ({
           const eased = 1 - Math.pow(1 - progress, 3);
           const bounce = eased + Math.sin(progress * Math.PI) * 0.008;
 
-         
+          // Animation driven by value + decimals prop — no label string comparisons
           if (isSpeedMetric) {
             const displaySpeed = 1 + (99 * eased);
             setDisplayValue(Math.floor(displaySpeed));
@@ -251,13 +250,12 @@ const CustomerBenefits = () => {
   });
 
   const metrics = [
-  
-    { label: t("InspectionAccuracy"),  value: 99.8,  unit: "%", decimals: 1 },
-    { label: t("ProductionEfficiency"), value: 87,   unit: "%", decimals: 0 },
-    { label: t("LaborCostSaving"),      value: 82,   unit: "%", decimals: 0 },
-    { label: t("MinimizeDowntime"),     value: 88,   unit: "%", decimals: 0 },
-    { label: t("InspectionSpeed"),      value: 100,  unit: "x", decimals: 0 },
-    { label: t("DefectFreeIndustry"),   value: 99.97, unit: "%", decimals: 2 },
+    { label: t("InspectionAccuracy"),    value: 99.8,  unit: "%", decimals: 1 },
+    { label: t("OperationalEfficiency"), value: 87,    unit: "%", decimals: 0 },
+    { label: t("ManualEffortReduction"), value: 82,    unit: "%", decimals: 0 },
+    { label: t("DowntimePrevention"),    value: 88,    unit: "%", decimals: 0 },
+    { label: t("InspectionSpeed"),       value: 100,   unit: "x", decimals: 0 },
+    { label: t("QualityAssuranceRate"),  value: 99.97, unit: "%", decimals: 2 },
   ];
 
   useEffect(() => {
